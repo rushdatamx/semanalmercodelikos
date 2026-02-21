@@ -2,29 +2,82 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Slide1Portada from "@/components/Slide1Portada";
-import Slide2Semaforo from "@/components/Slide2Semaforo";
-import Slide3Alertas from "@/components/Slide3Alertas";
-import Slide4PropuestaOC from "@/components/Slide4PropuestaOC";
-import Slide5Tendencia from "@/components/Slide5Tendencia";
-import Slide6Acciones from "@/components/Slide6Acciones";
+import AbaSlide1Portada from "@/components/AbaSlide1Portada";
+import AbaSlide2Semaforo from "@/components/AbaSlide2Semaforo";
+import AbaSlide3Alertas from "@/components/AbaSlide3Alertas";
+import AbaSlide4PropuestaOC from "@/components/AbaSlide4PropuestaOC";
+import AbaSlide5Tendencia from "@/components/AbaSlide5Tendencia";
+import AbaSlide6Acciones from "@/components/AbaSlide6Acciones";
+import FyvSlide1Portada from "@/components/FyvSlide1Portada";
+import FyvSlide2Semaforo from "@/components/FyvSlide2Semaforo";
+import FyvSlide3Alertas from "@/components/FyvSlide3Alertas";
+import FyvSlide4PropuestaOC from "@/components/FyvSlide4PropuestaOC";
+import FyvSlide5Tendencia from "@/components/FyvSlide5Tendencia";
+import FyvSlide6Acciones from "@/components/FyvSlide6Acciones";
 
-const slides = [
-  Slide1Portada,
-  Slide2Semaforo,
-  Slide3Alertas,
-  Slide4PropuestaOC,
-  Slide5Tendencia,
-  Slide6Acciones,
+const departments = [
+  {
+    id: "abarrotes",
+    label: "Abarrotes",
+    color: "#F5A623",
+    slides: [
+      AbaSlide1Portada,
+      AbaSlide2Semaforo,
+      AbaSlide3Alertas,
+      AbaSlide4PropuestaOC,
+      AbaSlide5Tendencia,
+      AbaSlide6Acciones,
+    ],
+  },
+  {
+    id: "fyv",
+    label: "Frutas y Verduras",
+    color: "#27AE60",
+    slides: [
+      FyvSlide1Portada,
+      FyvSlide2Semaforo,
+      FyvSlide3Alertas,
+      FyvSlide4PropuestaOC,
+      FyvSlide5Tendencia,
+      FyvSlide6Acciones,
+    ],
+  },
 ];
 
 export default function Home() {
+  const [deptIdx, setDeptIdx] = useState(0);
   const [current, setCurrent] = useState(0);
+
+  const dept = departments[deptIdx];
+  const slides = dept.slides;
   const Slide = slides[current];
+
+  const switchDept = (idx: number) => {
+    setDeptIdx(idx);
+    setCurrent(0);
+  };
 
   return (
     <div className="min-h-screen bg-[#E8E8E8] flex flex-col items-center justify-center py-8">
       <div className="relative">
+        {/* Department tabs */}
+        <div className="flex justify-center gap-2 mb-4">
+          {departments.map((d, i) => (
+            <button
+              key={d.id}
+              onClick={() => switchDept(i)}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
+                i === deptIdx
+                  ? "text-white shadow-md"
+                  : "bg-white text-gray-500 hover:bg-gray-100 border border-gray-200"
+              }`}
+              style={i === deptIdx ? { backgroundColor: d.color } : undefined}
+            >
+              {d.label}
+            </button>
+          ))}
+        </div>
+
         <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-300">
           <Slide />
         </div>
@@ -43,9 +96,10 @@ export default function Home() {
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  i === current ? "bg-[#F5A623]" : "bg-gray-400 hover:bg-gray-500"
-                }`}
+                className="w-2.5 h-2.5 rounded-full transition-colors"
+                style={{
+                  backgroundColor: i === current ? dept.color : "#9CA3AF",
+                }}
               />
             ))}
           </div>
@@ -60,7 +114,7 @@ export default function Home() {
         </div>
 
         <p className="text-center text-gray-500 text-xs mt-3">
-          Slide {current + 1} / {slides.length} · Usa las flechas para navegar
+          {dept.label} · Slide {current + 1} / {slides.length}
         </p>
       </div>
     </div>
