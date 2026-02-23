@@ -4,17 +4,17 @@ import SlideWrapper from "./SlideWrapper";
 import { AlertCircle, Clock } from "lucide-react";
 
 const urgentes = [
-  "Surtir Roja 200g y Amarilla 200g en MERCO Buenavista — agotadas ambas",
-  "Surtir Roja 200g y Amarilla 200g en MERCO Colinas — agotadas ambas",
-  "Surtir Roja 200g y Amarilla 200g en MERCO Apodaca Centro — agotadas ambas",
-  "4 tiendas agotadas de cada código — $209/día en venta perdida combinada",
+  "4 tiendas agotadas de Tostada Amarilla 200g — $488/día en venta perdida total",
+  "MERCO Colinas: agotada Roja 200g Y Amarilla 200g — surtir ambas de inmediato",
+  "2 tiendas agotadas de Tostada Roja 200g (Buenavista y Colinas)",
+  "Manantiales y Los Pilares: agotadas de Amarilla 200g — programar envío urgente",
 ];
 
 const semana = [
-  "Generar OC por 3,957 unidades ($54K) para cubrir 45 días en tiendas críticas",
-  "Redistribuir Roja 200g desde San Antonio (544 días inv) e Israel Cavazos (489 días)",
-  "Redistribuir Amarilla 200g desde Frontera Centro (289 días inv)",
-  "Programar envío a 15 tiendas con <7 días de inventario (7 Roja + 8 Amarilla)",
+  "Generar OC por 3,056 uds ($35K) para cubrir 45 días en tiendas agotadas y próximas",
+  "Redistribuir Roja 200g desde MERCO Otilio (750 días inv) y Apodaca (411 días)",
+  "Redistribuir Amarilla 200g desde MERCO Ramos Arizpe y Sendero Sta Catarina (exceso)",
+  "Monitorear 6 tiendas próximas de Amarilla 200g que pueden caer a AGOTADO",
 ];
 
 export default function FyvSlide6Acciones() {

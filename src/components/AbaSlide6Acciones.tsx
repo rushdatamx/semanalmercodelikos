@@ -4,17 +4,17 @@ import SlideWrapper from "./SlideWrapper";
 import { AlertCircle, Clock } from "lucide-react";
 
 const urgentes = [
-  "Surtir Tostada Roja 70PZ en MERCO Los Pilares — 0 uds, $2,128/día perdidos",
-  "Surtir Tostada Roja 70PZ en MERCO Buenavista — 0 uds, $1,687/día perdidos",
-  "Reabastecer 17 tiendas próximas a agotarse (<7 días de inventario)",
-  "Solo quedan 7.8 días de inventario a nivel cadena",
+  "5 tiendas próximas a agotarse (<7 días inv) de Tostada Roja 70PZ",
+  "MERCO Buenavista solo tiene 7 uds (0.2 días de inv)",
+  "MERCO Montemorelos con 131 uds (4.8 días de inv)",
+  "19 tiendas en estado BAJO (7-14 días) — monitorear esta semana",
 ];
 
 const semana = [
-  "Generar OC por 27,588 unidades ($877K) para cubrir 45 días en tiendas críticas",
-  "Verificar consumo en MERCO Solidaridad (5 uds restantes, 0.2 días inv)",
-  "Revisar sobreinventario en 1 tienda con >45 días para posible redistribución",
-  "Programar envío urgente a las 2 tiendas agotadas",
+  "Generar OC por 7,256 uds ($231K) para cubrir 45 días en 5 tiendas próximas",
+  "Revisar sobreinventario en MERCO Castaños (99 días) — posible redistribución",
+  "Monitorear Solidaridad, García y Girasoles (7-8 días) que podrían bajar a PRÓXIMO",
+  "Programar envío prioritario a Buenavista (0.2 días) y Montemorelos (4.8 días)",
 ];
 
 export default function AbaSlide6Acciones() {

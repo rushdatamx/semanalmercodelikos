@@ -4,25 +4,26 @@ import SlideWrapper from "./SlideWrapper";
 import { ShoppingCart } from "lucide-react";
 
 const propuestas = [
-  { tienda: "MERCO Buenavista", producto: "Tostada Amarilla 200g", clasif: "AGOTADO", uds: 262, costo: 3010 },
-  { tienda: "MERCO Apodaca Centro", producto: "Tostada Roja 200g", clasif: "AGOTADO", uds: 254, costo: 2921 },
-  { tienda: "MERCO Ramos Arizpe", producto: "Tostada Amarilla 200g", clasif: "PRÓXIMO", uds: 267, costo: 3067 },
-  { tienda: "MERCO García", producto: "Tostada Roja 200g", clasif: "AGOTADO", uds: 249, costo: 2864 },
-  { tienda: "MERCO Buenavista", producto: "Tostada Roja 200g", clasif: "AGOTADO", uds: 84, costo: 966 },
-  { tienda: "MERCO Apodaca Centro", producto: "Tostada Amarilla 200g", clasif: "AGOTADO", uds: 66, costo: 758 },
-  { tienda: "MERCO Pueblo Nuevo", producto: "Tostada Amarilla 200g", clasif: "AGOTADO", uds: 60, costo: 689 },
-  { tienda: "MERCO Colinas", producto: "Tostada Roja 200g", clasif: "AGOTADO", uds: 15, costo: 172 },
-  { tienda: "MERCO Colinas", producto: "Tostada Amarilla 200g", clasif: "AGOTADO", uds: 8, costo: 92 },
-  { tienda: "MERCO Ramos Arizpe", producto: "Tostada Roja 200g", clasif: "PRÓXIMO", uds: 200, costo: 2300 },
-  { tienda: "Saltillo Madero", producto: "Tostada Roja 200g", clasif: "PRÓXIMO", uds: 180, costo: 2070 },
-  { tienda: "MERCO Los Pilares", producto: "Tostada Amarilla 200g", clasif: "PRÓXIMO", uds: 175, costo: 2011 },
-  { tienda: "Manantiales", producto: "Tostada Roja 200g", clasif: "PRÓXIMO", uds: 165, costo: 1898 },
-  { tienda: "Manantiales", producto: "Tostada Amarilla 200g", clasif: "PRÓXIMO", uds: 150, costo: 1724 },
+  { tienda: "MERCO Buenavista", producto: "Tostada Roja 200g", clasif: "AGOTADO", uds: 464, costo: 5336 },
+  { tienda: "MERCO Colinas", producto: "Tostada Roja 200g", clasif: "AGOTADO", uds: 15, costo: 173 },
+  { tienda: "MERCO Colinas", producto: "Tostada Amarilla 200g", clasif: "AGOTADO", uds: 363, costo: 4171 },
+  { tienda: "MERCO La Sierrita", producto: "Tostada Amarilla 200g", clasif: "AGOTADO", uds: 356, costo: 4090 },
+  { tienda: "MERCO Los Pilares", producto: "Tostada Amarilla 200g", clasif: "AGOTADO", uds: 194, costo: 2229 },
+  { tienda: "Manantiales", producto: "Tostada Amarilla 200g", clasif: "AGOTADO", uds: 174, costo: 1999 },
+  { tienda: "Manantiales", producto: "Tostada Roja 200g", clasif: "PRÓXIMO", uds: 218, costo: 2507 },
+  { tienda: "MERCO Cadereyta", producto: "Tostada Roja 200g", clasif: "PRÓXIMO", uds: 213, costo: 2450 },
+  { tienda: "MERCO Saltillo Centro", producto: "Tostada Roja 200g", clasif: "PRÓXIMO", uds: 167, costo: 1920 },
+  { tienda: "MERCO Aramberri", producto: "Tostada Amarilla 200g", clasif: "PRÓXIMO", uds: 209, costo: 2401 },
+  { tienda: "MERCO Nuevo Repueblo", producto: "Tostada Amarilla 200g", clasif: "PRÓXIMO", uds: 177, costo: 2034 },
+  { tienda: "MERCO Pueblo Nuevo", producto: "Tostada Amarilla 200g", clasif: "PRÓXIMO", uds: 162, costo: 1862 },
+  { tienda: "MERCO Sta Elena Zuazua", producto: "Tostada Amarilla 200g", clasif: "PRÓXIMO", uds: 144, costo: 1655 },
+  { tienda: "Urdiñola", producto: "Tostada Amarilla 200g", clasif: "PRÓXIMO", uds: 104, costo: 1195 },
+  { tienda: "MERCO Buenavista", producto: "Tostada Amarilla 200g", clasif: "PRÓXIMO", uds: 96, costo: 1103 },
 ];
 
-const TOTAL_LINEAS = 23;
-const TOTAL_UDS = 3957;
-const TOTAL_COSTO = 54060;
+const TOTAL_LINEAS = 15;
+const TOTAL_UDS = 3056;
+const TOTAL_COSTO = 35125;
 
 export default function FyvSlide4PropuestaOC() {
   return (
@@ -31,7 +32,7 @@ export default function FyvSlide4PropuestaOC() {
         <ShoppingCart className="w-7 h-7 text-[#27AE60]" />
         <h2 className="text-3xl font-bold text-gray-800">Propuesta OC — Frutas y Verduras</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-4">{TOTAL_LINEAS} combinaciones tienda-SKU · Top 14 por urgencia</p>
+      <p className="text-gray-500 text-sm mb-4">{TOTAL_LINEAS} combinaciones tienda-SKU · Ordenado por urgencia</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-sm">

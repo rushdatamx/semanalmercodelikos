@@ -14,35 +14,32 @@ const estadoColor: Record<Estado, string> = {
 };
 
 const data: { tienda: string; estado: Estado }[] = [
-  { tienda: "MERCO Los Pilares", estado: "AGOTADO" },
-  { tienda: "MERCO Buenavista", estado: "AGOTADO" },
-  { tienda: "MERCO Solidaridad", estado: "PRÓXIMO" },
-  { tienda: "Sendero Sta Catarina", estado: "PRÓXIMO" },
-  { tienda: "Saltillo Madero", estado: "PRÓXIMO" },
+  { tienda: "MERCO Buenavista", estado: "PRÓXIMO" },
   { tienda: "MERCO Montemorelos", estado: "PRÓXIMO" },
-  { tienda: "MERCO Ramos Arizpe", estado: "PRÓXIMO" },
-  { tienda: "MERCO Colinas", estado: "PRÓXIMO" },
-  { tienda: "MERCO Girasoles", estado: "PRÓXIMO" },
-  { tienda: "MERCO El Jaral", estado: "PRÓXIMO" },
-  { tienda: "MERCO Israel Cavazos", estado: "PRÓXIMO" },
-  { tienda: "Manantiales", estado: "PRÓXIMO" },
+  { tienda: "MERCO Otilio", estado: "PRÓXIMO" },
   { tienda: "MERCO Aramberri", estado: "PRÓXIMO" },
-  { tienda: "MERCO García", estado: "PRÓXIMO" },
-  { tienda: "MERCO Pueblo Nuevo", estado: "PRÓXIMO" },
-  { tienda: "Paraje San José", estado: "PRÓXIMO" },
-  { tienda: "MERCO Cadereyta", estado: "PRÓXIMO" },
-  { tienda: "MERCO San Rafael", estado: "PRÓXIMO" },
-  { tienda: "MERCO Nuevo Repueblo", estado: "PRÓXIMO" },
-  { tienda: "MERCO Rosita", estado: "BAJO" },
-  { tienda: "Piedras Negras", estado: "BAJO" },
-  { tienda: "MERCO Lincoln", estado: "BAJO" },
-  { tienda: "Paseo Monclova", estado: "BAJO" },
-  { tienda: "MERCO Libramiento", estado: "BAJO" },
-  { tienda: "MERCO Arboledas", estado: "BAJO" },
-  { tienda: "MERCO La Fe", estado: "BAJO" },
-  { tienda: "MERCO Sta Elena Zuazua", estado: "BAJO" },
+  { tienda: "MERCO Los Pilares", estado: "PRÓXIMO" },
+  { tienda: "MERCO Solidaridad", estado: "BAJO" },
+  { tienda: "MERCO García", estado: "BAJO" },
+  { tienda: "MERCO Girasoles", estado: "BAJO" },
+  { tienda: "MERCO Ramos Arizpe", estado: "BAJO" },
+  { tienda: "MERCO El Jaral", estado: "BAJO" },
   { tienda: "MERCO Frontera Centro", estado: "BAJO" },
-  { tienda: "MERCO Nueva Rosita", estado: "BAJO" },
+  { tienda: "MERCO Parras", estado: "BAJO" },
+  { tienda: "MERCO Colinas", estado: "BAJO" },
+  { tienda: "Saltillo Madero", estado: "BAJO" },
+  { tienda: "MERCO Sendero Sta Catarina", estado: "BAJO" },
+  { tienda: "Manantiales", estado: "BAJO" },
+  { tienda: "MERCO Saltillo Centro", estado: "BAJO" },
+  { tienda: "MERCO Cadereyta", estado: "BAJO" },
+  { tienda: "MERCO La Sierrita", estado: "BAJO" },
+  { tienda: "MERCO Piedras Negras", estado: "BAJO" },
+  { tienda: "MERCO Mixcoac", estado: "BAJO" },
+  { tienda: "MERCO Paraje San José", estado: "BAJO" },
+  { tienda: "MERCO Saltillo Sendero", estado: "BAJO" },
+  { tienda: "MERCO San Roque", estado: "BAJO" },
+  { tienda: "MERCO Castaños", estado: "EXCESO" },
+  { tienda: "INV OMSA Otros", estado: "EXCESO" },
 ];
 
 function Badge({ estado }: { estado: Estado }) {
@@ -59,7 +56,7 @@ export default function AbaSlide3Alertas() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <h2 className="text-3xl font-bold text-gray-800 mb-1">Alertas por Tienda — Abarrotes</h2>
-      <p className="text-gray-500 text-sm mb-4">Tostada Roja 70PZ · {data.length} tiendas con alerta de {40} totales</p>
+      <p className="text-gray-500 text-sm mb-4">Tostada Roja 70PZ · {data.length} tiendas con alerta de 41 totales</p>
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-sm">
           <thead>

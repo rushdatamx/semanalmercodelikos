@@ -13,12 +13,12 @@ import {
 } from "recharts";
 
 const data = [
-  { mes: "Ago 25", roja200: 36278, amarilla200: 43902 },
   { mes: "Sep 25", roja200: 52540, amarilla200: 54659 },
   { mes: "Oct 25", roja200: 39673, amarilla200: 39693 },
   { mes: "Nov 25", roja200: 41908, amarilla200: 32637 },
   { mes: "Dic 25", roja200: 54242, amarilla200: 63624 },
   { mes: "Ene 26", roja200: 57885, amarilla200: 47386 },
+  { mes: "Feb 26", roja200: 82453, amarilla200: 88757 },
 ];
 
 const formatPesos = (v: number) => `$${(v / 1000).toFixed(0)}K`;

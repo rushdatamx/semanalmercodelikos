@@ -20,37 +20,37 @@ export default function AbaSlide2Semaforo() {
           <div className="space-y-4">
             <div className="flex justify-between border-b border-gray-100 pb-3">
               <span className="text-gray-500">Inv. total cadena</span>
-              <span className="text-gray-800 font-bold text-lg">8,275 uds</span>
+              <span className="text-gray-800 font-bold text-lg">14,229 uds</span>
             </div>
             <div className="flex justify-between border-b border-gray-100 pb-3">
               <span className="text-gray-500">Inv. total $</span>
-              <span className="text-gray-800 font-bold text-lg">$263,102</span>
+              <span className="text-gray-800 font-bold text-lg">$452,446</span>
             </div>
             <div className="flex justify-between border-b border-gray-100 pb-3">
               <span className="text-gray-500">Días inv. cadena</span>
-              <span className="text-gray-800 font-bold text-lg">7.8</span>
+              <span className="text-gray-800 font-bold text-lg">20.2</span>
             </div>
             <div className="flex justify-between border-b border-gray-100 pb-3">
               <span className="text-gray-500">Venta último mes</span>
-              <span className="text-gray-800 font-bold text-lg">$1,309K</span>
+              <span className="text-gray-800 font-bold text-lg">$1,212K</span>
             </div>
             <hr className="border-gray-200" />
             <div className="grid grid-cols-2 gap-3 text-sm">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#E31837]" />
-                <span className="text-gray-600">Agotadas: <b className="text-gray-800">2</b></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-orange-500" />
-                <span className="text-gray-600">Próximas: <b className="text-gray-800">17</b></span>
+                <div className="w-3 h-3 rounded-full bg-[#27AE60]" />
+                <span className="text-gray-600">OK: <b className="text-gray-800">15</b></span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <span className="text-gray-600">Bajo: <b className="text-gray-800">10</b></span>
+                <span className="text-gray-600">Bajo: <b className="text-gray-800">19</b></span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-[#27AE60]" />
-                <span className="text-gray-600">OK: <b className="text-gray-800">10</b></span>
+                <div className="w-3 h-3 rounded-full bg-orange-500" />
+                <span className="text-gray-600">Próximas: <b className="text-gray-800">5</b></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-blue-500" />
+                <span className="text-gray-600">Exceso: <b className="text-gray-800">2</b></span>
               </div>
             </div>
           </div>

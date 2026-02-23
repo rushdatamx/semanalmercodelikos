@@ -20,7 +20,7 @@ export default function FyvSlide1Portada() {
         <div className="flex items-center justify-center gap-3">
           <img src="/merco-logo.jpg" alt="MERCO" className="h-16 object-contain" />
         </div>
-        <p className="text-xl text-gray-500">Semana del 18 de febrero 2026</p>
+        <p className="text-xl text-gray-500">Semana del 23 de febrero 2026</p>
         <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#27AE60]/50 text-[#27AE60] text-sm font-semibold">
           2 Códigos Prioritarios
         </div>

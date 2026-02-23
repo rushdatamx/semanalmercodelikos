@@ -12,12 +12,12 @@ import {
 } from "recharts";
 
 const data = [
-  { mes: "Ago 25", venta: 1280425 },
   { mes: "Sep 25", venta: 1092867 },
   { mes: "Oct 25", venta: 1342189 },
   { mes: "Nov 25", venta: 1754577 },
   { mes: "Dic 25", venta: 1709928 },
   { mes: "Ene 26", venta: 1309462 },
+  { mes: "Feb 26", venta: 1211787 },
 ];
 
 const formatPesos = (v: number) => `$${(v / 1000).toFixed(0)}K`;
