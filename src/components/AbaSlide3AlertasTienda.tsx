@@ -46,9 +46,6 @@ const data: Row[] = [
   { tienda: "MERCO Castaños", Tostadas: "OK", "PDQ 340": "AGOTADO", "PDQ 45": "BAJO", "Cacah Granel": "SIN VTA", Otros: "OK" },
   { tienda: "MERCO Nuevo Repueblo", Tostadas: "BAJO", "PDQ 340": "OK", "PDQ 45": "AGOTADO", "Cacah Granel": "N/A", Otros: "SIN VTA" },
   { tienda: "MERCO Pueblo Nuevo", Tostadas: "BAJO", "PDQ 340": "OK", "PDQ 45": "SIN VTA", "Cacah Granel": "AGOTADO", Otros: "BAJO" },
-  { tienda: "Super Roma Cumbres", Tostadas: "N/A", "PDQ 340": "N/A", "PDQ 45": "AGOTADO", "Cacah Granel": "N/A", Otros: "AGOTADO" },
-  { tienda: "Super Roma Herradura", Tostadas: "N/A", "PDQ 340": "N/A", "PDQ 45": "AGOTADO", "Cacah Granel": "N/A", Otros: "AGOTADO" },
-  { tienda: "Super Roma Roma", Tostadas: "N/A", "PDQ 340": "N/A", "PDQ 45": "AGOTADO", "Cacah Granel": "N/A", Otros: "AGOTADO" },
 ];
 
 const groups = ["Tostadas", "PDQ 340", "PDQ 45", "Cacah Granel", "Otros"] as const;
