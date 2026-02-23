@@ -31,7 +31,7 @@ const recomendaciones: Recomendacion[] = [
   },
   {
     accion: "Redistribuir",
-    producto: "PDQ 45g (3 sabores)",
+    producto: "Papa 45g (3 sabores)",
     tiendas: "9 tiendas agotadas + 7 bajo umbral",
     nota: "Tiendas nuevas sin reposición — verificar cobertura",
   },
@@ -49,7 +49,7 @@ const recomendaciones: Recomendacion[] = [
   },
   {
     accion: "Monitorear",
-    producto: "PDQ 340g (3 sabores)",
+    producto: "Papa 340g (3 sabores)",
     tiendas: "4 agotadas + 5 bajo umbral promedio",
     nota: "Distribución dispersa — consolidar en tiendas con rotación",
   },

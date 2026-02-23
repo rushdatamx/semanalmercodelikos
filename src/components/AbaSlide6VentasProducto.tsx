@@ -14,14 +14,14 @@ const productos: Producto[] = [
   { nombre: "Durito Teja 20pzs", venta: 184883, grupo: "Otros" },
   { nombre: "Tostada Roja 200g", venta: 140337, grupo: "Tostadas" },
   { nombre: "Tostada Amarilla 200g", venta: 136142, grupo: "Tostadas" },
-  { nombre: "Papa Natural 45g", venta: 104856, grupo: "PDQ 45" },
+  { nombre: "Papa Natural 45g", venta: 104856, grupo: "Papa 45g" },
   { nombre: "Cacahuate Mixto 1kg", venta: 81951, grupo: "Cacahuates" },
-  { nombre: "Papa Fuego 45g", venta: 80378, grupo: "PDQ 45" },
-  { nombre: "Papa Jalapeño 45g", venta: 71837, grupo: "PDQ 45" },
-  { nombre: "Papa Fuego 340g", venta: 55303, grupo: "PDQ 340" },
+  { nombre: "Papa Fuego 45g", venta: 80378, grupo: "Papa 45g" },
+  { nombre: "Papa Jalapeño 45g", venta: 71837, grupo: "Papa 45g" },
+  { nombre: "Papa Fuego 340g", venta: 55303, grupo: "Papa 340g" },
   { nombre: "Cacahuate Cantinero 1kg", venta: 47492, grupo: "Cacahuates" },
-  { nombre: "Papa Sal 340g", venta: 43733, grupo: "PDQ 340" },
-  { nombre: "Papa Jalapeño 340g", venta: 41401, grupo: "PDQ 340" },
+  { nombre: "Papa Sal 340g", venta: 43733, grupo: "Papa 340g" },
+  { nombre: "Papa Jalapeño 340g", venta: 41401, grupo: "Papa 340g" },
   { nombre: "Cheto Mix 400g", venta: 17856, grupo: "Otros" },
   { nombre: "Rueda Natural 400g", venta: 16922, grupo: "Otros" },
   { nombre: "Minicuadro Natural 400g", venta: 13933, grupo: "Otros" },
@@ -36,8 +36,8 @@ const maxVenta = productos[0].venta;
 
 const grupoColor: Record<string, string> = {
   Tostadas: "#E74C3C",
-  "PDQ 45": "#3B82F6",
-  "PDQ 340": "#F5A623",
+  "Papa 45g": "#3B82F6",
+  "Papa 340g": "#F5A623",
   Cacahuates: "#8B5CF6",
   Otros: "#6B7280",
   "4Buddies": "#EC4899",
@@ -133,12 +133,12 @@ export default function AbaSlide6VentasProducto() {
           <p className="text-[9px] text-gray-500">79.7% del total</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
-          <p className="text-[9px] text-gray-400">PDQ 45g (3)</p>
+          <p className="text-[9px] text-gray-400">Papa 45g (3)</p>
           <p className="text-base font-bold text-[#3B82F6]">{fmt(104856 + 80378 + 71837)}</p>
           <p className="text-[9px] text-gray-500">7.3% del total</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
-          <p className="text-[9px] text-gray-400">PDQ 340g (3)</p>
+          <p className="text-[9px] text-gray-400">Papa 340g (3)</p>
           <p className="text-base font-bold text-[#F5A623]">{fmt(55303 + 43733 + 41401)}</p>
           <p className="text-[9px] text-gray-500">4.0% del total</p>
         </div>

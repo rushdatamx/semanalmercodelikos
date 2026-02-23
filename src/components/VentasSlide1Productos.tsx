@@ -37,8 +37,8 @@ const fmtVar = (v26: number, v25: number) => {
 
 const tagMap: Record<string, { label: string; bg: string; text: string }> = {
   "#E74C3C": { label: "Tostada", bg: "#E74C3C20", text: "#C0392B" },
-  "#F5A623": { label: "PDQ 340", bg: "#F5A62320", text: "#B8860B" },
-  "#3B82F6": { label: "PDQ 45", bg: "#3B82F620", text: "#2563EB" },
+  "#F5A623": { label: "Papa 340g", bg: "#F5A62320", text: "#B8860B" },
+  "#3B82F6": { label: "Papa 45g", bg: "#3B82F620", text: "#2563EB" },
   "#9CA3AF": { label: "Otros", bg: "#9CA3AF20", text: "#6B7280" },
 };
 
@@ -171,12 +171,12 @@ export default function VentasSlide1Productos() {
           <p className="text-[9px] text-gray-500">$2.8M combinados</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2.5 text-center">
-          <p className="text-[9px] text-gray-400 mb-0.5">PDQ 45gr (3 sabores)</p>
+          <p className="text-[9px] text-gray-400 mb-0.5">Papa 45g (3 sabores)</p>
           <p className="text-lg font-bold text-blue-600">6.5%</p>
           <p className="text-[9px] text-gray-500">$257K · Nuevos</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2.5 text-center">
-          <p className="text-[9px] text-gray-400 mb-0.5">PDQ 340gr (3 sabores)</p>
+          <p className="text-[9px] text-gray-400 mb-0.5">Papa 340g (3 sabores)</p>
           <p className="text-lg font-bold text-[#B8860B]">3.6%</p>
           <p className="text-[9px] text-gray-500">$140K · Nuevos</p>
         </div>
