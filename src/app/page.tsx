@@ -3,15 +3,11 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import AbaSlide1Portada from "@/components/AbaSlide1Portada";
-import AbaSlide2ResumenDDI from "@/components/AbaSlide2ResumenDDI";
-import AbaSlide3AlertasTienda from "@/components/AbaSlide3AlertasTienda";
 import AbaSlide4SugeridoCompra from "@/components/AbaSlide4SugeridoCompra";
 import AbaSlide5Tendencia from "@/components/AbaSlide5Tendencia";
 import AbaSlide6VentasProducto from "@/components/AbaSlide6VentasProducto";
 import AbaSlide7Recomendaciones from "@/components/AbaSlide7Recomendaciones";
 import FyvSlide1Portada from "@/components/FyvSlide1Portada";
-import FyvSlide2ResumenDDI from "@/components/FyvSlide2ResumenDDI";
-import FyvSlide3AlertasTienda from "@/components/FyvSlide3AlertasTienda";
 import FyvSlide4SugeridoCompra from "@/components/FyvSlide4SugeridoCompra";
 import FyvSlide5Tendencia from "@/components/FyvSlide5Tendencia";
 import FyvSlide6VentasProducto from "@/components/FyvSlide6VentasProducto";
@@ -26,8 +22,6 @@ const departments = [
     color: "#F5A623",
     slides: [
       AbaSlide1Portada,
-      AbaSlide2ResumenDDI,
-      AbaSlide3AlertasTienda,
       AbaSlide4SugeridoCompra,
       AbaSlide5Tendencia,
       AbaSlide6VentasProducto,
@@ -40,8 +34,6 @@ const departments = [
     color: "#27AE60",
     slides: [
       FyvSlide1Portada,
-      FyvSlide2ResumenDDI,
-      FyvSlide3AlertasTienda,
       FyvSlide4SugeridoCompra,
       FyvSlide5Tendencia,
       FyvSlide6VentasProducto,
