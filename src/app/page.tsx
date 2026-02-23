@@ -14,6 +14,8 @@ import FyvSlide3Alertas from "@/components/FyvSlide3Alertas";
 import FyvSlide4PropuestaOC from "@/components/FyvSlide4PropuestaOC";
 import FyvSlide5Tendencia from "@/components/FyvSlide5Tendencia";
 import FyvSlide6Acciones from "@/components/FyvSlide6Acciones";
+import VentasSlide1Productos from "@/components/VentasSlide1Productos";
+import VentasSlide2Tiendas from "@/components/VentasSlide2Tiendas";
 
 const departments = [
   {
@@ -40,6 +42,15 @@ const departments = [
       FyvSlide4PropuestaOC,
       FyvSlide5Tendencia,
       FyvSlide6Acciones,
+    ],
+  },
+  {
+    id: "ventas",
+    label: "Ventas",
+    color: "#3B82F6",
+    slides: [
+      VentasSlide1Productos,
+      VentasSlide2Tiendas,
     ],
   },
 ];
