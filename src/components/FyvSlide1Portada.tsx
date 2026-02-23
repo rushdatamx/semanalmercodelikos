@@ -22,7 +22,7 @@ export default function FyvSlide1Portada() {
         </div>
         <p className="text-xl text-gray-500">Semana del 23 de febrero 2026</p>
         <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#27AE60]/50 text-[#27AE60] text-sm font-semibold">
-          2 Códigos Prioritarios
+          12 productos · Botanas Mi Marca
         </div>
       </div>
     </SlideWrapper>

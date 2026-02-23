@@ -21,8 +21,8 @@ export default function AbaSlide1Portada() {
           <img src="/merco-logo.jpg" alt="MERCO" className="h-16 object-contain" />
         </div>
         <p className="text-xl text-gray-500">Semana del 23 de febrero 2026</p>
-        <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#F26522]/50 text-[#F26522] text-sm font-semibold">
-          Tostada Roja 70PZ
+        <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#F5A623]/50 text-[#F5A623] text-sm font-semibold">
+          20 productos · Botanas Delikos
         </div>
       </div>
     </SlideWrapper>
