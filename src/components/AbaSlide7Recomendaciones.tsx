@@ -15,58 +15,25 @@ const recomendaciones: Recomendacion[] = [
     accion: "Surtir urgente",
     producto: "Tostada Amarilla 200g",
     tiendas: "La Sierrita, Manantiales, Colinas, Los Pilares",
-    nota: "4 tiendas agotadas — producto con alta rotación",
+    nota: "4 tiendas agotadas · 9 bajo 15 días — 3er SKU en ventas ($136K)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Roja 200g",
-    tiendas: "Colinas, Buenavista",
-    nota: "2 tiendas agotadas — crecimiento +75% vs mes anterior",
+    tiendas: "Buenavista, Colinas, Manantiales, Paraje San José",
+    nota: "2 agotadas + 5 bajo 15 días — priorizar tiendas de alto volumen",
   },
   {
     accion: "Reabastecer",
     producto: "Tostada Roja 70PZ",
-    tiendas: "Solidaridad, García, Girasoles (+14 más)",
-    nota: "17 tiendas bajo 15 días — producto estrella $1.2M/mes",
-  },
-  {
-    accion: "Redistribuir",
-    producto: "Papa 45g (3 sabores)",
-    tiendas: "9 tiendas agotadas + 7 bajo umbral",
-    nota: "Tiendas nuevas sin reposición — verificar cobertura",
-  },
-  {
-    accion: "Redistribuir",
-    producto: "Cacahuate Granel (3 SKUs)",
-    tiendas: "10+ tiendas agotadas por código",
-    nota: "Producto con exceso en pocas tiendas y faltante en muchas",
-  },
-  {
-    accion: "Reabastecer",
-    producto: "Durito Teja 20pzs",
-    tiendas: "11 tiendas bajo umbral",
-    nota: "2do producto en ventas — DDI cadena 61 días pero desbalanceado",
-  },
-  {
-    accion: "Monitorear",
-    producto: "Papa 340g (3 sabores)",
-    tiendas: "4 agotadas + 5 bajo umbral promedio",
-    nota: "Distribución dispersa — consolidar en tiendas con rotación",
-  },
-  {
-    accion: "Sin acción",
-    producto: "Palomitas 4Buddies (3 sabores)",
-    tiendas: "—",
-    nota: "Inventario alto (475-678 DDI) — no requiere reposición",
+    tiendas: "Buenavista, Los Pilares, García, Montemorelos (+13 más)",
+    nota: "17 tiendas bajo 15 días — producto estrella 64% de la venta ($2.5M)",
   },
 ];
 
 const accionColor: Record<string, string> = {
   "Surtir urgente": "bg-red-100 text-red-700",
   Reabastecer: "bg-yellow-100 text-yellow-700",
-  Redistribuir: "bg-orange-100 text-orange-700",
-  Monitorear: "bg-blue-100 text-blue-700",
-  "Sin acción": "bg-gray-100 text-gray-500",
 };
 
 export default function AbaSlide7Recomendaciones() {
@@ -74,9 +41,9 @@ export default function AbaSlide7Recomendaciones() {
     <SlideWrapper className="bg-[#F5F5F5] p-8">
       <div className="flex items-center gap-3 mb-1">
         <ClipboardList className="w-6 h-6 text-[#F5A623]" />
-        <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Abarrotes</h2>
+        <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Tostadas</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-3">Acciones sugeridas por producto · Semana del 23 Feb 2026</p>
+      <p className="text-gray-500 text-xs mb-3">Acciones sugeridas · 3 SKUs de tostada · Semana del 23 Feb 2026</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">

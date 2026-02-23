@@ -13,34 +13,34 @@ interface Sugerido {
 }
 
 const data: Sugerido[] = [
-  { producto: "Papa Natural 45g", tienda: "MERCO Rosita", ddi: 0, invActual: 0, vtaDiaria: 9.9, udsSugeridas: 148 },
-  { producto: "Papa Fuego 45g", tienda: "MERCO Montemorelos", ddi: 0, invActual: 0, vtaDiaria: 7.7, udsSugeridas: 115 },
-  { producto: "Papa Fuego 45g", tienda: "MERCO Piedras Negras", ddi: 0, invActual: 0, vtaDiaria: 7.6, udsSugeridas: 114 },
-  { producto: "Papa Natural 45g", tienda: "MERCO Montemorelos", ddi: 0, invActual: 0, vtaDiaria: 7.2, udsSugeridas: 109 },
-  { producto: "Papa Natural 45g", tienda: "MERCO Girasoles", ddi: 0, invActual: 0, vtaDiaria: 5.8, udsSugeridas: 88 },
-  { producto: "Papa Natural 45g", tienda: "MERCO Nuevo Repueblo", ddi: 0, invActual: 0, vtaDiaria: 5.2, udsSugeridas: 78 },
-  { producto: "Papa Jalapeño 45g", tienda: "Manantiales", ddi: 0, invActual: 0, vtaDiaria: 4.2, udsSugeridas: 64 },
-  { producto: "Papa Jalapeño 45g", tienda: "MERCO Nuevo Repueblo", ddi: 0, invActual: 0, vtaDiaria: 3.8, udsSugeridas: 58 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO La Sierrita", ddi: 0, invActual: 0, vtaDiaria: 3.2, udsSugeridas: 48 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Buenavista", ddi: 0, invActual: 0, vtaDiaria: 3.1, udsSugeridas: 46 },
-  { producto: "Papa Jalapeño 45g", tienda: "Saltillo Madero", ddi: 0, invActual: 0, vtaDiaria: 3.0, udsSugeridas: 45 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Los Pilares", ddi: 0, invActual: 0, vtaDiaria: 2.8, udsSugeridas: 42 },
-  { producto: "Papa Fuego 45g", tienda: "MERCO Hidalgo", ddi: 0, invActual: 0, vtaDiaria: 2.8, udsSugeridas: 42 },
-  { producto: "Cacahuate Mixto 1kg", tienda: "MERCO Piedras Negras", ddi: 0, invActual: 0, vtaDiaria: 2.5, udsSugeridas: 38 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Colinas", ddi: 0, invActual: 0, vtaDiaria: 2.3, udsSugeridas: 35 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Buenavista", ddi: 0.2, invActual: 7, vtaDiaria: 51.8, udsSugeridas: 765 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Los Pilares", ddi: 7.6, invActual: 280, vtaDiaria: 47.6, udsSugeridas: 352 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Garcia", ddi: 8.7, invActual: 334, vtaDiaria: 46.1, udsSugeridas: 290 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Montemorelos", ddi: 5.5, invActual: 131, vtaDiaria: 30.1, udsSugeridas: 285 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Solidaridad", ddi: 9.0, invActual: 277, vtaDiaria: 44.4, udsSugeridas: 268 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Girasoles", ddi: 10.0, invActual: 356, vtaDiaria: 45.0, udsSugeridas: 225 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Aramberri", ddi: 7.7, invActual: 241, vtaDiaria: 30.0, udsSugeridas: 220 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO El Jaral", ddi: 10.9, invActual: 349, vtaDiaria: 36.4, udsSugeridas: 150 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Ramos Arizpe", ddi: 9.9, invActual: 273, vtaDiaria: 28.6, udsSugeridas: 147 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Otilio", ddi: 7.5, invActual: 115, vtaDiaria: 18.3, udsSugeridas: 137 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Colinas", ddi: 12.8, invActual: 397, vtaDiaria: 34.3, udsSugeridas: 74 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Madero", ddi: 12.4, invActual: 243, vtaDiaria: 26.2, udsSugeridas: 68 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Urdiñola", ddi: 0.4, invActual: 2, vtaDiaria: 3.6, udsSugeridas: 52 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Snd. Sta. Catarina", ddi: 13.6, invActual: 325, vtaDiaria: 38.2, udsSugeridas: 55 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO La Sierrita", ddi: 0.0, invActual: 0, vtaDiaria: 3.2, udsSugeridas: 48 },
 ];
 
-const TOTAL_LINEAS = 158;
-const TOTAL_UDS = 6273;
+const TOTAL_LINEAS = 38;
+const TOTAL_UDS = 3761;
 
 export default function AbaSlide4SugeridoCompra() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-8">
       <div className="flex items-center gap-3 mb-1">
         <ShoppingCart className="w-6 h-6 text-[#F5A623]" />
-        <h2 className="text-2xl font-bold text-gray-800">Sugerido de Compra — Abarrotes</h2>
+        <h2 className="text-2xl font-bold text-gray-800">Sugerido de Compra — Tostadas</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-3">Productos con DDI &lt; 15 días · Cobertura objetivo: 15 días · Venta diaria por tienda · Top 15 de {TOTAL_LINEAS} líneas</p>
+      <p className="text-gray-500 text-xs mb-3">3 SKUs de tostada con DDI &lt; 15 días · Cobertura objetivo: 15 días · Venta diaria por tienda · Top 15 de {TOTAL_LINEAS} líneas</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">
@@ -74,7 +74,7 @@ export default function AbaSlide4SugeridoCompra() {
       </div>
 
       <div className="mt-2 flex justify-between items-center">
-        <p className="text-[10px] text-gray-400">Venta diaria calculada por tienda-producto · Top 15 de {TOTAL_LINEAS} combinaciones</p>
+        <p className="text-[10px] text-gray-400">Venta diaria por tienda-producto · 3 SKUs tostada · Top 15 de {TOTAL_LINEAS} combinaciones</p>
         <div className="flex gap-6">
           <div className="text-right">
             <p className="text-gray-500 text-[10px]">Total líneas</p>

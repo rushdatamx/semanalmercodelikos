@@ -22,7 +22,7 @@ export default function AbaSlide1Portada() {
         </div>
         <p className="text-xl text-gray-500">Semana del 23 de febrero 2026</p>
         <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#F5A623]/50 text-[#F5A623] text-sm font-semibold">
-          20 productos · Botanas Delikos
+          3 SKUs Tostada · Depto. Abarrotes
         </div>
       </div>
     </SlideWrapper>
