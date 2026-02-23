@@ -13,25 +13,25 @@ interface Sugerido {
 }
 
 const data: Sugerido[] = [
-  { producto: "Minicuadro S/Chile 300g", tienda: "MERCO San Buena", ddi: 0, invActual: 0, vtaDiaria: 22.5, udsSugeridas: 339 },
-  { producto: "Minicuadro S/Chile 300g", tienda: "MERCO Israel Cavazos", ddi: 0, invActual: 0, vtaDiaria: 22.5, udsSugeridas: 339 },
-  { producto: "Papa Deshid. Natural", tienda: "MERCO Israel Cavazos", ddi: 0, invActual: 0, vtaDiaria: 17.4, udsSugeridas: 261 },
-  { producto: "Churrito Rojo 454g", tienda: "MERCO Solidaridad", ddi: 0, invActual: 0, vtaDiaria: 13.3, udsSugeridas: 199 },
-  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Republica", ddi: 0, invActual: 0, vtaDiaria: 12.0, udsSugeridas: 181 },
-  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Acuña", ddi: 0, invActual: 0, vtaDiaria: 12.0, udsSugeridas: 181 },
-  { producto: "Conchitas 454g", tienda: "MERCO Republica", ddi: 0, invActual: 0, vtaDiaria: 11.2, udsSugeridas: 168 },
-  { producto: "Cacahuate Cantinero 454g", tienda: "MERCO Republica", ddi: 0, invActual: 0, vtaDiaria: 9.9, udsSugeridas: 149 },
-  { producto: "Cacahuate Botanero 454g", tienda: "MERCO Apodaca Centro", ddi: 6.6, invActual: 5, vtaDiaria: 16.8, udsSugeridas: 142 },
-  { producto: "Minicuadro S/Chile 300g", tienda: "MERCO El Jaral", ddi: 9.0, invActual: 17, vtaDiaria: 22.5, udsSugeridas: 137 },
-  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Otilio", ddi: 3.7, invActual: 1, vtaDiaria: 12.0, udsSugeridas: 136 },
-  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Mixcoac", ddi: 4.9, invActual: 3, vtaDiaria: 12.0, udsSugeridas: 122 },
-  { producto: "Churrito Rojo 454g", tienda: "MERCO Buenavista", ddi: 7.7, invActual: 3, vtaDiaria: 13.3, udsSugeridas: 98 },
-  { producto: "Conchitas 454g", tienda: "MERCO El Jaral", ddi: 6.8, invActual: 1, vtaDiaria: 11.2, udsSugeridas: 92 },
-  { producto: "Cacahuate Japonés 454g", tienda: "MERCO Buenavista", ddi: 7.7, invActual: 3, vtaDiaria: 8.1, udsSugeridas: 59 },
+  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Acuña", ddi: 0, invActual: 0, vtaDiaria: 0.7, udsSugeridas: 11 },
+  { producto: "Conchitas 454g", tienda: "MERCO Republica", ddi: 0, invActual: 0, vtaDiaria: 0.6, udsSugeridas: 9 },
+  { producto: "Cacahuate Cantinero 454g", tienda: "MERCO Republica", ddi: 0, invActual: 0, vtaDiaria: 0.6, udsSugeridas: 9 },
+  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Republica", ddi: 0, invActual: 0, vtaDiaria: 0.5, udsSugeridas: 8 },
+  { producto: "Churrito Rojo 454g", tienda: "MERCO Solidaridad", ddi: 0, invActual: 0, vtaDiaria: 0.2, udsSugeridas: 4 },
+  { producto: "Minicuadro S/Chile 300g", tienda: "MERCO San Buena", ddi: 0, invActual: 0, vtaDiaria: 0.3, udsSugeridas: 4 },
+  { producto: "Minicuadro S/Chile 300g", tienda: "MERCO Israel Cavazos", ddi: 0, invActual: 0, vtaDiaria: 0.2, udsSugeridas: 4 },
+  { producto: "Papa Deshid. Natural", tienda: "MERCO Israel Cavazos", ddi: 0, invActual: 0, vtaDiaria: 0.0, udsSugeridas: 1 },
+  { producto: "Cacahuate Botanero 454g", tienda: "MERCO Apodaca Centro", ddi: 6.6, invActual: 5, vtaDiaria: 0.7, udsSugeridas: 7 },
+  { producto: "Minicuadro S/Chile 300g", tienda: "MERCO El Jaral", ddi: 9.0, invActual: 17, vtaDiaria: 0.9, udsSugeridas: 6 },
+  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Mixcoac", ddi: 4.9, invActual: 3, vtaDiaria: 0.5, udsSugeridas: 5 },
+  { producto: "Rotini Sin Chile 300g", tienda: "MERCO Montemorelos", ddi: 10.9, invActual: 15, vtaDiaria: 1.1, udsSugeridas: 5 },
+  { producto: "Minicuadro S/Chile 300g", tienda: "MERCO Republica", ddi: 11.4, invActual: 14, vtaDiaria: 1.3, udsSugeridas: 5 },
+  { producto: "Minicuadro S/Chile 300g", tienda: "MERCO La Sierrita", ddi: 11.4, invActual: 21, vtaDiaria: 1.2, udsSugeridas: 5 },
+  { producto: "Churrito Rojo 454g", tienda: "MERCO Buenavista", ddi: 7.7, invActual: 3, vtaDiaria: 0.3, udsSugeridas: 3 },
 ];
 
 const TOTAL_LINEAS = 21;
-const TOTAL_UDS = 3051;
+const TOTAL_UDS = 103;
 
 export default function FyvSlide4SugeridoCompra() {
   return (
@@ -40,7 +40,7 @@ export default function FyvSlide4SugeridoCompra() {
         <ShoppingCart className="w-6 h-6 text-[#27AE60]" />
         <h2 className="text-2xl font-bold text-gray-800">Sugerido de Compra — Frutas y Verduras</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-3">Productos con DDI &lt; 15 días · Cobertura objetivo: 15 días · {TOTAL_LINEAS} líneas</p>
+      <p className="text-gray-500 text-xs mb-3">Productos con DDI &lt; 15 días · Cobertura objetivo: 15 días · Venta diaria por tienda · {TOTAL_LINEAS} líneas</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">
@@ -74,7 +74,7 @@ export default function FyvSlide4SugeridoCompra() {
       </div>
 
       <div className="mt-2 flex justify-between items-center">
-        <p className="text-[10px] text-gray-400">Mostrando las {TOTAL_LINEAS} combinaciones producto-tienda con DDI &lt; 15</p>
+        <p className="text-[10px] text-gray-400">Venta diaria calculada por tienda-producto · {TOTAL_LINEAS} combinaciones con DDI &lt; 15</p>
         <div className="flex gap-6">
           <div className="text-right">
             <p className="text-gray-500 text-[10px]">Total líneas</p>
