@@ -13,21 +13,21 @@ interface Recomendacion {
 const recomendaciones: Recomendacion[] = [
   {
     accion: "Surtir urgente",
-    producto: "Tostada Amarilla 200g",
-    tiendas: "La Sierrita, Manantiales, Colinas, Los Pilares",
-    nota: "4 tiendas agotadas · 9 bajo 15 días — 3er SKU en ventas ($136K)",
-  },
-  {
-    accion: "Surtir urgente",
     producto: "Tostada Roja 200g",
-    tiendas: "Buenavista, Colinas, Manantiales, Paraje San José",
-    nota: "2 agotadas + 5 bajo 15 días — priorizar tiendas de alto volumen",
+    tiendas: "Colinas",
+    nota: "1 tienda agotada + 4 bajo umbral (Mixcoac, Saltillo Centro, Cadereyta, Los Pilares)",
   },
   {
     accion: "Reabastecer",
     producto: "Tostada Roja 70PZ",
-    tiendas: "Buenavista, Los Pilares, García, Montemorelos (+13 más)",
-    nota: "17 tiendas bajo 15 días — producto estrella 64% de la venta ($2.5M)",
+    tiendas: "Ramos Arizpe, El Jaral, Solidaridad, Buenavista, García (+12 más)",
+    nota: "17 tiendas bajo 15 días — producto estrella 71% de la venta ($2.6M)",
+  },
+  {
+    accion: "Reabastecer",
+    producto: "Tostada Amarilla 200g",
+    tiendas: "Pueblo Nuevo, Otilio, Colinas, Nuevo Repueblo, Libramiento (+6 más)",
+    nota: "11 tiendas bajo 15 días — DDI mín 0.4",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function AbaSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#F5A623]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Tostadas</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-3">Acciones sugeridas · 3 SKUs de tostada · Semana del 23 Feb 2026</p>
+      <p className="text-gray-500 text-xs mb-3">Acciones sugeridas · 3 SKUs de tostada · Semana del 2 Mar 2026</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">

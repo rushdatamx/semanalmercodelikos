@@ -10,18 +10,18 @@ interface Producto {
 }
 
 const productos: Producto[] = [
-  { nombre: "Minicuadro Sin Chile 300g", venta: 40027, grupo: "Minicuadros" },
-  { nombre: "Papa Deshid. Natural 170g", venta: 38830, grupo: "Papas Desh" },
-  { nombre: "Cacahuate Botanero 454g", venta: 32214, grupo: "Cacah MM" },
-  { nombre: "Rotini Sin Chile 300g", venta: 29482, grupo: "Rotinis" },
-  { nombre: "Cacahuate Virginia 454g", venta: 26808, grupo: "Cacah MM" },
-  { nombre: "Papa Deshid. Fuego 170g", venta: 24262, grupo: "Papas Desh" },
-  { nombre: "Cacahuate Cantinero 454g", venta: 22064, grupo: "Cacah MM" },
-  { nombre: "Churrito Rojo 454g", venta: 21240, grupo: "Fritos" },
-  { nombre: "Conchitas 454g", venta: 18541, grupo: "Fritos" },
-  { nombre: "Cacahuate Japonés 454g", venta: 18410, grupo: "Cacah MM" },
-  { nombre: "Minicuadro Con Chile 300g", venta: 9565, grupo: "Minicuadros" },
-  { nombre: "Rotini Con Chile 300g", venta: 8002, grupo: "Rotinis" },
+  { nombre: "Minicuadro s/Chile 300g", venta: 43619, grupo: "Minicuadros" },
+  { nombre: "Papa Deshid. Natural 170g", venta: 41370, grupo: "Papas Desh" },
+  { nombre: "Cacahuate Botanero 454g", venta: 34584, grupo: "Cacah MM" },
+  { nombre: "Rotini s/Chile 300g", venta: 31588, grupo: "Rotinis" },
+  { nombre: "Cacahuate Virginia 454g", venta: 28678, grupo: "Cacah MM" },
+  { nombre: "Papa Deshid. Fuego 170g", venta: 25196, grupo: "Papas Desh" },
+  { nombre: "Cacahuate Cantinero 454g", venta: 23736, grupo: "Cacah MM" },
+  { nombre: "Churrito Rojo 454g", venta: 22832, grupo: "Fritos" },
+  { nombre: "Conchitas 454g", venta: 19504, grupo: "Fritos" },
+  { nombre: "Cacahuate Japonés 454g", venta: 19288, grupo: "Cacah MM" },
+  { nombre: "Minicuadro c/Chile 300g", venta: 11816, grupo: "Minicuadros" },
+  { nombre: "Rotini c/Chile 300g", venta: 9719, grupo: "Rotinis" },
 ];
 
 const maxVenta = productos[0].venta;
@@ -119,11 +119,11 @@ export default function FyvSlide6VentasProducto() {
 
       <div className="mt-3 grid grid-cols-5 gap-2">
         {[
-          { label: "Minicuadros", value: 40027 + 9565, color: "#3B82F6" },
-          { label: "Cacah MM", value: 32214 + 26808 + 22064 + 18410, color: "#8B5CF6" },
-          { label: "Papas Desh", value: 38830 + 24262, color: "#EC4899" },
-          { label: "Rotinis", value: 29482 + 8002, color: "#F5A623" },
-          { label: "Fritos", value: 21240 + 18541, color: "#E74C3C" },
+          { label: "Minicuadros", value: 43619 + 11816, color: "#3B82F6" },
+          { label: "Cacah MM", value: 34584 + 28678 + 23736 + 19288, color: "#8B5CF6" },
+          { label: "Papas Desh", value: 41370 + 25196, color: "#EC4899" },
+          { label: "Rotinis", value: 31588 + 9719, color: "#F5A623" },
+          { label: "Fritos", value: 22832 + 19504, color: "#E74C3C" },
         ].map((g) => (
           <div key={g.label} className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
             <p className="text-[9px] text-gray-400">{g.label}</p>

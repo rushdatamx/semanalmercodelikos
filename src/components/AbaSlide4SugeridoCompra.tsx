@@ -13,25 +13,25 @@ interface Sugerido {
 }
 
 const data: Sugerido[] = [
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Buenavista", ddi: 0.2, invActual: 7, vtaDiaria: 51.8, udsSugeridas: 765 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Los Pilares", ddi: 7.6, invActual: 280, vtaDiaria: 47.6, udsSugeridas: 352 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Garcia", ddi: 8.7, invActual: 334, vtaDiaria: 46.1, udsSugeridas: 290 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Montemorelos", ddi: 5.5, invActual: 131, vtaDiaria: 30.1, udsSugeridas: 285 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Solidaridad", ddi: 9.0, invActual: 277, vtaDiaria: 44.4, udsSugeridas: 268 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Girasoles", ddi: 10.0, invActual: 356, vtaDiaria: 45.0, udsSugeridas: 225 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Aramberri", ddi: 7.7, invActual: 241, vtaDiaria: 30.0, udsSugeridas: 220 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO El Jaral", ddi: 10.9, invActual: 349, vtaDiaria: 36.4, udsSugeridas: 150 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Ramos Arizpe", ddi: 9.9, invActual: 273, vtaDiaria: 28.6, udsSugeridas: 147 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Otilio", ddi: 7.5, invActual: 115, vtaDiaria: 18.3, udsSugeridas: 137 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Colinas", ddi: 12.8, invActual: 397, vtaDiaria: 34.3, udsSugeridas: 74 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Madero", ddi: 12.4, invActual: 243, vtaDiaria: 26.2, udsSugeridas: 68 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Urdiñola", ddi: 0.4, invActual: 2, vtaDiaria: 3.6, udsSugeridas: 52 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Snd. Sta. Catarina", ddi: 13.6, invActual: 325, vtaDiaria: 38.2, udsSugeridas: 55 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO La Sierrita", ddi: 0.0, invActual: 0, vtaDiaria: 3.2, udsSugeridas: 48 },
+  { producto: "Tostada Roja 200g", tienda: "MERCO Colinas", ddi: 0, invActual: 0, vtaDiaria: 1.9, udsSugeridas: 58 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Pueblo Nuevo", ddi: 0.4, invActual: 1, vtaDiaria: 2.4, udsSugeridas: 71 },
+  { producto: "Tostada Roja 200g", tienda: "MERCO Mixcoac", ddi: 0.7, invActual: 1, vtaDiaria: 1.3, udsSugeridas: 39 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Otilio", ddi: 1.9, invActual: 3, vtaDiaria: 1.6, udsSugeridas: 44 },
+  { producto: "Tostada Roja 200g", tienda: "MERCO Saltillo Centro", ddi: 2.0, invActual: 4, vtaDiaria: 2.0, udsSugeridas: 57 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Ramos Arizpe", ddi: 2.5, invActual: 73, vtaDiaria: 28.8, udsSugeridas: 791 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO El Jaral", ddi: 2.6, invActual: 96, vtaDiaria: 36.5, udsSugeridas: 998 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Solidaridad", ddi: 2.6, invActual: 118, vtaDiaria: 44.7, udsSugeridas: 1222 },
+  { producto: "Tostada Roja 200g", tienda: "MERCO Cadereyta", ddi: 3.0, invActual: 3, vtaDiaria: 1.0, udsSugeridas: 27 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Buenavista", ddi: 3.2, invActual: 167, vtaDiaria: 51.8, udsSugeridas: 1387 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Colinas", ddi: 3.4, invActual: 8, vtaDiaria: 2.3, udsSugeridas: 62 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Nuevo Repueblo", ddi: 3.6, invActual: 14, vtaDiaria: 3.9, udsSugeridas: 104 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Saltillo Sendero", ddi: 4.8, invActual: 142, vtaDiaria: 29.6, udsSugeridas: 745 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Libramiento", ddi: 5.1, invActual: 31, vtaDiaria: 6.1, udsSugeridas: 152 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Garcia", ddi: 5.3, invActual: 246, vtaDiaria: 46.5, udsSugeridas: 1149 },
 ];
 
-const TOTAL_LINEAS = 38;
-const TOTAL_UDS = 3761;
+const TOTAL_LINEAS = 33;
+const TOTAL_UDS = 6906;
 
 export default function AbaSlide4SugeridoCompra() {
   return (

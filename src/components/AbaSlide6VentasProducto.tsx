@@ -10,26 +10,26 @@ interface Producto {
 }
 
 const productos: Producto[] = [
-  { nombre: "Tostada Roja 70PZ", venta: 2521248, grupo: "Tostadas" },
-  { nombre: "Durito Teja 20pzs", venta: 184883, grupo: "Otros" },
-  { nombre: "Tostada Roja 200g", venta: 140337, grupo: "Tostadas" },
-  { nombre: "Tostada Amarilla 200g", venta: 136142, grupo: "Tostadas" },
-  { nombre: "Papa Natural 45g", venta: 104856, grupo: "Papa 45g" },
-  { nombre: "Cacahuate Mixto 1kg", venta: 81951, grupo: "Cacahuates" },
-  { nombre: "Papa Fuego 45g", venta: 80378, grupo: "Papa 45g" },
-  { nombre: "Papa Jalapeño 45g", venta: 71837, grupo: "Papa 45g" },
-  { nombre: "Papa Fuego 340g", venta: 55303, grupo: "Papa 340g" },
-  { nombre: "Cacahuate Cantinero 1kg", venta: 47492, grupo: "Cacahuates" },
-  { nombre: "Papa Sal 340g", venta: 43733, grupo: "Papa 340g" },
-  { nombre: "Papa Jalapeño 340g", venta: 41401, grupo: "Papa 340g" },
-  { nombre: "Cheto Mix 400g", venta: 17856, grupo: "Otros" },
-  { nombre: "Rueda Natural 400g", venta: 16922, grupo: "Otros" },
-  { nombre: "Minicuadro Natural 400g", venta: 13933, grupo: "Otros" },
-  { nombre: "Cacahuate Salado 1kg", venta: 13347, grupo: "Cacahuates" },
-  { nombre: "Rodajitas 4Buddies 30g", venta: 4225, grupo: "4Buddies" },
-  { nombre: "Palomitas Classic 25g", venta: 3109, grupo: "4Buddies" },
-  { nombre: "Palomitas Elote 25g", venta: 2763, grupo: "4Buddies" },
-  { nombre: "Palomitas Cheddar 25g", venta: 2551, grupo: "4Buddies" },
+  { nombre: "Tostada Roja 70PZ", venta: 2621424, grupo: "Tostadas" },
+  { nombre: "Durito Teja 20PZ", venta: 193415, grupo: "Otros" },
+  { nombre: "Tostada Roja 200g", venta: 149697, grupo: "Tostadas" },
+  { nombre: "Tostada Amarilla 200g", venta: 144313, grupo: "Tostadas" },
+  { nombre: "Papa Casera Sal 45g", venta: 103410, grupo: "Papa 45g" },
+  { nombre: "Cacahuate Mixto 1KG", venta: 86699, grupo: "Cacahuates" },
+  { nombre: "Papa Casera Fuego 45g", venta: 76245, grupo: "Papa 45g" },
+  { nombre: "Papa Casera Jalapeño 45g", venta: 68216, grupo: "Papa 45g" },
+  { nombre: "Papa Casera Fuego 340g", venta: 57294, grupo: "Papa 340g" },
+  { nombre: "Cacahuate Cantinero 1KG", venta: 49094, grupo: "Cacahuates" },
+  { nombre: "Papa Casera Sal 340g", venta: 45632, grupo: "Papa 340g" },
+  { nombre: "Papa Casera Jalapeño 340g", venta: 42420, grupo: "Papa 340g" },
+  { nombre: "Cheto Mix 400g", venta: 18176, grupo: "Otros" },
+  { nombre: "Rueda Natural 400g", venta: 17447, grupo: "Otros" },
+  { nombre: "Minicuadro Natural 400g", venta: 14111, grupo: "Otros" },
+  { nombre: "Cacahuate Salado 1KG", venta: 13530, grupo: "Cacahuates" },
+  { nombre: "Rodajitas de Papa 30g", venta: 3442, grupo: "4Buddies" },
+  { nombre: "Palomitas Classic White 25g", venta: 3216, grupo: "4Buddies" },
+  { nombre: "Palomitas Street Elote 25g", venta: 2858, grupo: "4Buddies" },
+  { nombre: "Palomitas W.Cheddar 25g", venta: 2645, grupo: "4Buddies" },
 ];
 
 const maxVenta = productos[0].venta;
@@ -129,23 +129,23 @@ export default function AbaSlide6VentasProducto() {
       <div className="mt-2 grid grid-cols-4 gap-3">
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
           <p className="text-[9px] text-gray-400">Tostadas (3)</p>
-          <p className="text-base font-bold text-[#E74C3C]">{fmt(2521248 + 140337 + 136142)}</p>
-          <p className="text-[9px] text-gray-500">79.7% del total</p>
+          <p className="text-base font-bold text-[#E74C3C]">{fmt(2621424 + 149697 + 144313)}</p>
+          <p className="text-[9px] text-gray-500">78.5% del total</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
           <p className="text-[9px] text-gray-400">Papa 45g (3)</p>
-          <p className="text-base font-bold text-[#3B82F6]">{fmt(104856 + 80378 + 71837)}</p>
-          <p className="text-[9px] text-gray-500">7.3% del total</p>
+          <p className="text-base font-bold text-[#3B82F6]">{fmt(103410 + 76245 + 68216)}</p>
+          <p className="text-[9px] text-gray-500">6.7% del total</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
           <p className="text-[9px] text-gray-400">Papa 340g (3)</p>
-          <p className="text-base font-bold text-[#F5A623]">{fmt(55303 + 43733 + 41401)}</p>
-          <p className="text-[9px] text-gray-500">4.0% del total</p>
+          <p className="text-base font-bold text-[#F5A623]">{fmt(57294 + 45632 + 42420)}</p>
+          <p className="text-[9px] text-gray-500">3.9% del total</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
           <p className="text-[9px] text-gray-400">Cacahuates (3)</p>
-          <p className="text-base font-bold text-[#8B5CF6]">{fmt(81951 + 47492 + 13347)}</p>
-          <p className="text-[9px] text-gray-500">4.1% del total</p>
+          <p className="text-base font-bold text-[#8B5CF6]">{fmt(86699 + 49094 + 13530)}</p>
+          <p className="text-[9px] text-gray-500">4.0% del total</p>
         </div>
       </div>
     </SlideWrapper>
