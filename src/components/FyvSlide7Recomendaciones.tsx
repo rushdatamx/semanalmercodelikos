@@ -12,52 +12,46 @@ interface Recomendacion {
 
 const recomendaciones: Recomendacion[] = [
   {
-    accion: "Surtir urgente",
-    producto: "Rotini s/Chile 300g",
-    tiendas: "Pueblo Nuevo, Snd. Sta. Catarina, Apodaca Centro",
-    nota: "3 tiendas agotadas + 10 bajo umbral — #4 en ventas FyV ($32K)",
+    accion: "Reabastecer",
+    producto: "Cacahuate Virginia 454g",
+    tiendas: "Piedras Negras, Saltillo Sendero, Apodaca Centro + Garcia",
+    nota: "3 agotadas + 1 bajo umbral — #5 en ventas FyV ($36K)",
   },
   {
-    accion: "Surtir urgente",
+    accion: "Reabastecer",
     producto: "Minicuadro s/Chile 300g",
-    tiendas: "San Buena, Apodaca Centro",
-    nota: "2 agotadas + 11 bajo umbral — #1 en ventas FyV ($44K)",
+    tiendas: "Israel Cavazos, El Jaral + 2 bajo umbral",
+    nota: "2 agotadas + 2 bajo umbral — #1 en ventas FyV ($60K)",
   },
   {
-    accion: "Surtir urgente",
-    producto: "Cacahuate Botanero 454g",
-    tiendas: "La Sierrita, Apodaca Centro",
-    nota: "2 agotadas + 4 bajo umbral — #3 en ventas FyV ($35K)",
-  },
-  {
-    accion: "Surtir urgente",
+    accion: "Reabastecer",
     producto: "Papa Deshid. Natural 170g",
-    tiendas: "Israel Cavazos, Apodaca Centro",
-    nota: "2 agotadas + 6 bajo umbral — #2 en ventas FyV ($41K)",
-  },
-  {
-    accion: "Surtir urgente",
-    producto: "Churrito Rojo 454g",
-    tiendas: "Garcia",
-    nota: "1 agotada + 7 bajo umbral",
+    tiendas: "Israel Cavazos, Paraje San José",
+    nota: "2 agotadas — #2 en ventas FyV ($58K)",
   },
   {
     accion: "Reabastecer",
-    producto: "Minicuadro c/Chile 300g",
-    tiendas: "Apodaca Centro (agotado) + 9 bajo umbral",
-    nota: "1 agotada + 9 bajo umbral — DDI mín 2.3",
+    producto: "Rotini s/Chile 300g",
+    tiendas: "El Jaral (agotada) + 1 bajo umbral",
+    nota: "1 agotada + 1 bajo umbral — #4 en ventas FyV ($46K)",
   },
   {
     accion: "Reabastecer",
-    producto: "Rotini c/Chile 300g",
-    tiendas: "Republica, Snd. Sta. Catarina, Pueblo Nuevo (+7 más)",
-    nota: "10 tiendas bajo umbral — DDI mín 1.6",
+    producto: "Cacahuate Botanero 454g",
+    tiendas: "Apodaca Centro (agotada)",
+    nota: "1 agotada — #3 en ventas FyV ($48K)",
   },
   {
     accion: "Monitorear",
-    producto: "Conchitas 454g",
-    tiendas: "Lindavista, Solidaridad, Pueblo Nuevo, Libramiento",
-    nota: "4 tiendas bajo umbral — DDI mín 6.1",
+    producto: "Cacahuate Cantinero 454g",
+    tiendas: "Republica, Apodaca Centro",
+    nota: "2 tiendas bajo umbral — DDI mín 5.2",
+  },
+  {
+    accion: "Monitorear",
+    producto: "Rotini c/Chile 300g",
+    tiendas: "Solidaridad",
+    nota: "1 tienda bajo umbral — DDI 6.0",
   },
 ];
 
@@ -75,7 +69,7 @@ export default function FyvSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#27AE60]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Frutas y Verduras</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-3">Acciones sugeridas por producto · Semana del 2 Mar 2026</p>
+      <p className="text-gray-500 text-xs mb-3">Acciones sugeridas por producto · Semana del 9 Mar 2026</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">

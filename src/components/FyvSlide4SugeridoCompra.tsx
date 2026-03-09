@@ -13,25 +13,25 @@ interface Sugerido {
 }
 
 const data: Sugerido[] = [
-  { producto: "Cacahuate Cantinero 454g", tienda: "MERCO Saltillo Sendero", ddi: 0, invActual: 0, vtaDiaria: 0.3, udsSugeridas: 9 },
-  { producto: "Papa Deshid. Natural 170g", tienda: "MERCO Apodaca Centro", ddi: 0, invActual: 0, vtaDiaria: 0.8, udsSugeridas: 23 },
-  { producto: "Papa Deshid. Natural 170g", tienda: "MERCO Israel Cavazos", ddi: 0, invActual: 0, vtaDiaria: 0.0, udsSugeridas: 1 },
-  { producto: "Minicuadro s/Chile 300g", tienda: "MERCO Apodaca Centro", ddi: 0, invActual: 0, vtaDiaria: 0.6, udsSugeridas: 18 },
-  { producto: "Minicuadro c/Chile 300g", tienda: "MERCO Apodaca Centro", ddi: 0, invActual: 0, vtaDiaria: 0.9, udsSugeridas: 28 },
-  { producto: "Minicuadro s/Chile 300g", tienda: "MERCO San Buena", ddi: 0, invActual: 0, vtaDiaria: 0.4, udsSugeridas: 13 },
-  { producto: "Cacahuate Japonés 454g", tienda: "MERCO Buenavista", ddi: 0, invActual: 0, vtaDiaria: 0.3, udsSugeridas: 10 },
-  { producto: "Cacahuate Botanero 454g", tienda: "MERCO La Sierrita", ddi: 0, invActual: 0, vtaDiaria: 0.6, udsSugeridas: 17 },
-  { producto: "Churrito Rojo 454g", tienda: "MERCO Garcia", ddi: 0, invActual: 0, vtaDiaria: 0.3, udsSugeridas: 10 },
-  { producto: "Rotini s/Chile 300g", tienda: "MERCO Apodaca Centro", ddi: 0, invActual: 0, vtaDiaria: 0.6, udsSugeridas: 19 },
-  { producto: "Cacahuate Botanero 454g", tienda: "MERCO Apodaca Centro", ddi: 0, invActual: 0, vtaDiaria: 0.8, udsSugeridas: 23 },
-  { producto: "Rotini s/Chile 300g", tienda: "MERCO Snd. Sta. Catarina", ddi: 0, invActual: 0, vtaDiaria: 1.2, udsSugeridas: 36 },
-  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Otilio", ddi: 0, invActual: 0, vtaDiaria: 0.3, udsSugeridas: 8 },
-  { producto: "Rotini s/Chile 300g", tienda: "MERCO Pueblo Nuevo", ddi: 0, invActual: 0, vtaDiaria: 0.4, udsSugeridas: 11 },
-  { producto: "Rotini s/Chile 300g", tienda: "MERCO Montemorelos", ddi: 0.9, invActual: 1, vtaDiaria: 1.1, udsSugeridas: 32 },
+  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Piedras Negras", ddi: 0, invActual: 0, vtaDiaria: 0.2, udsSugeridas: 3 },
+  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Saltillo Sendero", ddi: 0, invActual: 0, vtaDiaria: 0.3, udsSugeridas: 5 },
+  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Apodaca Centro", ddi: 0, invActual: 0, vtaDiaria: 0.4, udsSugeridas: 6 },
+  { producto: "Cacahuate Botanero 454g", tienda: "MERCO Apodaca Centro", ddi: 0, invActual: 0, vtaDiaria: 0.5, udsSugeridas: 8 },
+  { producto: "Minicuadro s/Chile 300g", tienda: "MERCO Israel Cavazos", ddi: 0, invActual: 0, vtaDiaria: 0.6, udsSugeridas: 9 },
+  { producto: "Minicuadro s/Chile 300g", tienda: "MERCO El Jaral", ddi: 0, invActual: 0, vtaDiaria: 0.4, udsSugeridas: 6 },
+  { producto: "Papa Deshid. Natural 170g", tienda: "MERCO Israel Cavazos", ddi: 0, invActual: 0, vtaDiaria: 0.4, udsSugeridas: 6 },
+  { producto: "Papa Deshid. Natural 170g", tienda: "MERCO Paraje San José", ddi: 0, invActual: 0, vtaDiaria: 0.3, udsSugeridas: 5 },
+  { producto: "Rotini s/Chile 300g", tienda: "MERCO El Jaral", ddi: 0, invActual: 0, vtaDiaria: 0.8, udsSugeridas: 12 },
+  { producto: "Cacahuate Cantinero 454g", tienda: "MERCO Republica", ddi: 5.2, invActual: 3, vtaDiaria: 0.6, udsSugeridas: 6 },
+  { producto: "Rotini c/Chile 300g", tienda: "MERCO Solidaridad", ddi: 6.0, invActual: 5, vtaDiaria: 0.8, udsSugeridas: 7 },
+  { producto: "Cacahuate Japones 454g", tienda: "MERCO Apodaca Centro", ddi: 7.3, invActual: 4, vtaDiaria: 0.5, udsSugeridas: 4 },
+  { producto: "Cacahuate Virginia 454g", tienda: "MERCO Garcia", ddi: 8.1, invActual: 6, vtaDiaria: 0.7, udsSugeridas: 5 },
+  { producto: "Minicuadro s/Chile 300g", tienda: "MERCO Girasoles", ddi: 9.0, invActual: 12, vtaDiaria: 1.3, udsSugeridas: 8 },
+  { producto: "Papa Deshid. Fuego 170g", tienda: "MERCO Apodaca Centro", ddi: 9.5, invActual: 5, vtaDiaria: 0.5, udsSugeridas: 3 },
 ];
 
-const TOTAL_LINEAS = 82;
-const TOTAL_UDS = 1423;
+const TOTAL_LINEAS = 19;
+const TOTAL_UDS = 130;
 
 export default function FyvSlide4SugeridoCompra() {
   return (
