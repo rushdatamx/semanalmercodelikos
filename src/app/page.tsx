@@ -11,6 +11,9 @@ import FyvSlide4SugeridoCompra from "@/components/FyvSlide4SugeridoCompra";
 import FyvSlide6VentasProducto from "@/components/FyvSlide6VentasProducto";
 import FyvSlide7Recomendaciones from "@/components/FyvSlide7Recomendaciones";
 import VentasSlideResumen from "@/components/VentasSlideResumen";
+import NegSlide1KPIs from "@/components/NegSlide1KPIs";
+import NegSlide2TopTiendas from "@/components/NegSlide2TopTiendas";
+import NegSlide3Promociones from "@/components/NegSlide3Promociones";
 
 const departments = [
   {
@@ -41,6 +44,16 @@ const departments = [
     color: "#3B82F6",
     slides: [
       VentasSlideResumen,
+    ],
+  },
+  {
+    id: "negocio",
+    label: "Negocio",
+    color: "#8E44AD",
+    slides: [
+      NegSlide1KPIs,
+      NegSlide2TopTiendas,
+      NegSlide3Promociones,
     ],
   },
 ];
