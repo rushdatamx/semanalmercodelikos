@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import AbaSlide1Portada from "@/components/AbaSlide1Portada";
 import AbaSlide4SugeridoCompra from "@/components/AbaSlide4SugeridoCompra";
@@ -49,7 +50,7 @@ const departments = [
   {
     id: "negocio",
     label: "Negocio",
-    color: "#8E44AD",
+    color: "#F5A623",
     slides: [
       NegSlide1KPIs,
       NegSlide2TopTiendas,
@@ -58,9 +59,23 @@ const departments = [
   },
 ];
 
-export default function Home() {
-  const [deptIdx, setDeptIdx] = useState(0);
+function HomeInner() {
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get("tab");
+  const initialTab = tabParam ? departments.findIndex((d) => d.id === tabParam) : 0;
+
+  const [deptIdx, setDeptIdx] = useState(initialTab >= 0 ? initialTab : 0);
   const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (tabParam) {
+      const idx = departments.findIndex((d) => d.id === tabParam);
+      if (idx >= 0) {
+        setDeptIdx(idx);
+        setCurrent(0);
+      }
+    }
+  }, [tabParam]);
 
   const dept = departments[deptIdx];
   const slides = dept.slides;
@@ -132,5 +147,13 @@ export default function Home() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense>
+      <HomeInner />
+    </Suspense>
   );
 }

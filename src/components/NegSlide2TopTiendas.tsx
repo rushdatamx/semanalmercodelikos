@@ -1,181 +1,157 @@
 "use client";
 
 import SlideWrapper from "./SlideWrapper";
-import { MapPin, AlertTriangle } from "lucide-react";
+import { MapPin } from "lucide-react";
 
-/* ── Store data ── */
-interface ProductRow {
-  nombre: string;
-  venta: string;
-  inv: number;
-  ddi: number;
+/* ── Top 10 tiendas with top 3 products ── */
+interface ProductInfo {
+  name: string;
+  pct: string;
 }
 
-interface StoreData {
+interface StoreRow {
   rank: number;
   nombre: string;
-  ventaTotal: string;
-  productos: ProductRow[];
+  venta: string;
+  ventaNum: number;
+  top3: ProductInfo[];
 }
 
-const stores: StoreData[] = [
+const stores: StoreRow[] = [
   {
-    rank: 1,
-    nombre: "MERCO GARCIA",
-    ventaTotal: "$216,128",
-    productos: [
-      { nombre: "Tostada Roja 70PZ", venta: "$141,603", inv: 135, ddi: 3.2 },
-      { nombre: "Durito Teja 20pzs", venta: "$15,416", inv: 22, ddi: 6.5 },
-      { nombre: "Papa Natural 45g", venta: "$10,461", inv: 283, ddi: 27.9 },
-    ],
+    rank: 1, nombre: "MERCO GARCIA", venta: "$216,128", ventaNum: 216128,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "66%" }, { name: "Durito Teja", pct: "7%" }, { name: "Papa Natural 45g", pct: "5%" }],
   },
   {
-    rank: 2,
-    nombre: "MERCO LOS PILARES",
-    ventaTotal: "$207,903",
-    productos: [
-      { nombre: "Tostada Roja 70PZ", venta: "$147,700", inv: 233, ddi: 6.4 },
-      { nombre: "Tostada Roja 200g", venta: "$8,114", inv: 66, ddi: 9.8 },
-      { nombre: "Durito Teja 20pzs", venta: "$8,105", inv: 2, ddi: 3.1 },
-    ],
+    rank: 2, nombre: "MERCO LOS PILARES", venta: "$207,903", ventaNum: 207903,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "71%" }, { name: "Tost. Roja 200g", pct: "4%" }, { name: "Durito Teja", pct: "4%" }],
   },
   {
-    rank: 3,
-    nombre: "MERCO GIRASOLES",
-    ventaTotal: "$189,485",
-    productos: [
-      { nombre: "Tostada Roja 70PZ", venta: "$127,118", inv: 460, ddi: 13.4 },
-      { nombre: "Durito Teja 20pzs", venta: "$8,366", inv: 15, ddi: 12.7 },
-      { nombre: "Tostada Amarilla 200g", venta: "$6,757", inv: 102, ddi: 17.8 },
-    ],
+    rank: 3, nombre: "MERCO GIRASOLES", venta: "$189,485", ventaNum: 189485,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "67%" }, { name: "Durito Teja", pct: "4%" }, { name: "Tost. Amar. 200g", pct: "4%" }],
+  },
+  {
+    rank: 4, nombre: "MERCO MIXCOAC", venta: "$188,956", ventaNum: 188956,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "80%" }, { name: "Durito Teja", pct: "4%" }, { name: "Tost. Amar. 200g", pct: "2%" }],
+  },
+  {
+    rank: 5, nombre: "MERCO BUENAVISTA", venta: "$188,875", ventaNum: 188875,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "68%" }, { name: "Durito Teja", pct: "9%" }, { name: "Tost. Amar. 200g", pct: "5%" }],
+  },
+  {
+    rank: 6, nombre: "MERCO EL JARAL", venta: "$187,148", ventaNum: 187148,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "62%" }, { name: "Cacah. Mixto", pct: "5%" }, { name: "Tost. Amar. 200g", pct: "4%" }],
+  },
+  {
+    rank: 7, nombre: "MERCO SAN ROQUE", venta: "$180,480", ventaNum: 180480,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "74%" }, { name: "Durito Teja", pct: "5%" }, { name: "Papa Natural 45g", pct: "4%" }],
+  },
+  {
+    rank: 8, nombre: "MERCO SENDERO STA. CATARINA", venta: "$176,159", ventaNum: 176159,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "55%" }, { name: "Durito Teja", pct: "6%" }, { name: "Papa Natural 45g", pct: "4%" }],
+  },
+  {
+    rank: 9, nombre: "MERCO SOLIDARIDAD", venta: "$172,983", ventaNum: 172983,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "69%" }, { name: "Tost. Roja 200g", pct: "6%" }, { name: "Tost. Amar. 200g", pct: "5%" }],
+  },
+  {
+    rank: 10, nombre: "MERCO STA. ELENA ZUAZUA", venta: "$158,425", ventaNum: 158425,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "56%" }, { name: "Durito Teja", pct: "5%" }, { name: "Tost. Roja 200g", pct: "4%" }],
   },
 ];
 
-const ddiColor = (ddi: number): string => {
-  if (ddi < 7) return "bg-red-100 text-red-700";
-  if (ddi < 15) return "bg-yellow-100 text-yellow-700";
-  return "bg-green-100 text-green-700";
-};
+const maxVenta = stores[0].ventaNum;
 
-const ddiDot = (ddi: number): string => {
-  if (ddi < 7) return "bg-red-500";
-  if (ddi < 15) return "bg-yellow-500";
-  return "bg-green-500";
-};
+function StoreCard({ store }: { store: StoreRow }) {
+  return (
+    <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2.5 flex flex-col gap-1.5">
+      {/* Top row: rank + name + venta */}
+      <div className="flex items-center gap-2.5">
+        <div
+          className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-[11px] ${
+            store.rank === 1
+              ? "bg-[#F5A623]"
+              : store.rank <= 3
+              ? "bg-[#F5A623]/70"
+              : "bg-gray-400"
+          }`}
+        >
+          {store.rank}
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-[12px] font-bold text-gray-800 truncate">
+              {store.nombre}
+            </p>
+            <span
+              className={`text-[12px] font-bold flex-shrink-0 ${
+                store.rank <= 3 ? "text-[#F5A623]" : "text-gray-600"
+              }`}
+            >
+              {store.venta}
+            </span>
+          </div>
+          {/* Progress bar */}
+          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mt-1">
+            <div
+              className="h-full rounded-full bg-[#F5A623]"
+              style={{
+                width: `${(store.ventaNum / maxVenta) * 100}%`,
+                opacity: store.rank <= 3 ? 1 : 0.5,
+              }}
+            />
+          </div>
+        </div>
+      </div>
+      {/* Top 3 products as small badges */}
+      <div className="flex items-center gap-1 ml-9">
+        {store.top3.map((p, i) => (
+          <span
+            key={i}
+            className="text-[8px] px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 whitespace-nowrap"
+          >
+            {p.name} <span className="font-bold text-gray-700">{p.pct}</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function NegSlide2TopTiendas() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-6">
       {/* Header */}
-      <div className="flex items-center gap-3 mb-1">
-        <MapPin className="w-6 h-6 text-[#8E44AD]" />
+      <div className="flex items-center gap-3 mb-3">
+        <MapPin className="w-6 h-6 text-[#F5A623]" />
         <div>
           <h2 className="text-xl font-bold text-gray-800">
-            Top 3 Tiendas — Productos y Disponibilidad
+            Top 10 Tiendas por Venta
           </h2>
           <p className="text-[10px] text-gray-500">
-            Venta Ene-Mar 2026 -- Inventario al 8 de marzo
+            Venta acumulada Ene-Mar 2026 -- 40 tiendas activas -- Top 3
+            productos por tienda
           </p>
         </div>
       </div>
 
-      {/* DDI legend */}
-      <div className="flex items-center gap-4 mb-3">
-        <span className="text-[9px] text-gray-400 font-semibold uppercase">DDI:</span>
-        <div className="flex items-center gap-1">
-          <div className="w-2 h-2 rounded-full bg-red-500" />
-          <span className="text-[9px] text-gray-500">&lt; 7 dias</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-2 h-2 rounded-full bg-yellow-500" />
-          <span className="text-[9px] text-gray-500">7-14 dias</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-2 h-2 rounded-full bg-green-500" />
-          <span className="text-[9px] text-gray-500">15+ dias</span>
-        </div>
-      </div>
-
-      {/* 3 Store cards */}
-      <div className="grid grid-cols-3 gap-4 flex-1 min-h-0">
+      {/* Two-column layout */}
+      <div className="grid grid-cols-2 gap-x-4 gap-y-2.5 flex-1 min-h-0">
         {stores.map((store) => (
-          <div
-            key={store.rank}
-            className="bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col overflow-hidden"
-          >
-            {/* Store header */}
-            <div className="bg-[#8E44AD]/5 border-b border-[#8E44AD]/10 px-4 py-3">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-[#8E44AD] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
-                  #{store.rank}
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-gray-800">{store.nombre}</p>
-                  <p className="text-xs text-[#8E44AD] font-bold">{store.ventaTotal}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Products table */}
-            <div className="flex-1 px-2 py-2">
-              <table className="w-full text-[10px]">
-                <thead>
-                  <tr className="text-gray-400 text-[9px] uppercase">
-                    <th className="text-left py-1 px-1.5">Producto</th>
-                    <th className="text-right py-1 px-1.5">Venta</th>
-                    <th className="text-right py-1 px-1.5">Inv</th>
-                    <th className="text-right py-1 px-1.5">DDI</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {store.productos.map((p, j) => (
-                    <tr key={j} className="border-b border-gray-50">
-                      <td className="py-1.5 px-1.5 text-gray-700 font-medium">{p.nombre}</td>
-                      <td className="py-1.5 px-1.5 text-right text-gray-600">{p.venta}</td>
-                      <td className="py-1.5 px-1.5 text-right text-gray-600">
-                        {p.inv.toLocaleString()}
-                      </td>
-                      <td className="py-1.5 px-1.5 text-right">
-                        <div className="flex items-center justify-end gap-1">
-                          <div className={`w-1.5 h-1.5 rounded-full ${ddiDot(p.ddi)}`} />
-                          <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold ${ddiColor(p.ddi)}`}>
-                            {p.ddi.toFixed(1)}
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Store summary */}
-            <div className="px-3 pb-2">
-              <div className="flex items-center gap-1.5">
-                {store.productos.map((p, j) => (
-                  <div
-                    key={j}
-                    className={`flex-1 h-1.5 rounded-full ${
-                      p.ddi < 7 ? "bg-red-400" : p.ddi < 15 ? "bg-yellow-400" : "bg-green-400"
-                    }`}
-                  />
-                ))}
-              </div>
-              <p className="text-[8px] text-gray-400 mt-1 text-center">
-                {store.productos.filter((p) => p.ddi < 15).length} de {store.productos.length}{" "}
-                productos bajo umbral
-              </p>
-            </div>
-          </div>
+          <StoreCard key={store.rank} store={store} />
         ))}
       </div>
 
-      {/* Insight */}
-      <div className="mt-3 bg-white rounded-xl border border-[#8E44AD]/20 shadow-sm px-4 py-2.5 flex items-start gap-2">
-        <AlertTriangle className="w-4 h-4 text-[#8E44AD] flex-shrink-0 mt-0.5" />
+      {/* Footer insight */}
+      <div className="mt-3 bg-white rounded-xl border border-[#F5A623]/20 shadow-sm px-4 py-2 flex items-start gap-2">
+        <div className="w-4 h-4 rounded-full bg-[#F5A623]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <span className="text-[9px] font-bold text-[#F5A623]">i</span>
+        </div>
         <p className="text-[11px] text-gray-700">
-          <span className="font-bold text-[#8E44AD]">En las 3 tiendas mas importantes, 6 de 9 combinaciones producto-tienda estan por debajo de 15 DDI.</span>{" "}
-          La disponibilidad en tiendas top es el principal riesgo.
+          <span className="font-bold text-[#F5A623]">
+            Tostada Roja 70PZ domina en las 10 tiendas (55-80% de la venta).
+          </span>{" "}
+          Las top 10 concentran el 38% de la venta total. Rango: $158K - $216K.
         </p>
       </div>
     </SlideWrapper>
