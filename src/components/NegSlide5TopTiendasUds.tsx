@@ -3,7 +3,7 @@
 import SlideWrapper from "./SlideWrapper";
 import { MapPin } from "lucide-react";
 
-/* ── Top 10 tiendas with top 3 products (20 SKUs Abarrotes only) ── */
+/* ── Top 10 tiendas by UNITS with top 3 products (20 SKUs Abarrotes only) ── */
 interface ProductInfo {
   name: string;
   pct: string;
@@ -12,60 +12,59 @@ interface ProductInfo {
 interface StoreRow {
   rank: number;
   nombre: string;
-  venta: string;
-  ventaNum: number;
+  uds: string;
+  udsNum: number;
   top3: ProductInfo[];
 }
 
 const stores: StoreRow[] = [
   {
-    rank: 1, nombre: "MERCO GARCIA", venta: "$207,105", ventaNum: 207105,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "68%" }, { name: "Durito Teja", pct: "7%" }, { name: "Papa Natural 45g", pct: "5%" }],
+    rank: 1, nombre: "MERCO GARCIA", uds: "7,552", udsNum: 7552,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "46%" }, { name: "Papa Natural 45g", pct: "15%" }, { name: "Papa Fuego 45g", pct: "11%" }],
   },
   {
-    rank: 2, nombre: "MERCO LOS PILARES", venta: "$180,248", ventaNum: 180248,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "82%" }, { name: "Tost. Roja 200g", pct: "5%" }, { name: "Durito Teja", pct: "4%" }],
+    rank: 2, nombre: "MERCO SOLIDARIDAD", uds: "5,769", udsNum: 5769,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "50%" }, { name: "Tost. Roja 200g", pct: "13%" }, { name: "Tost. Amar. 200g", pct: "10%" }],
   },
   {
-    rank: 3, nombre: "MERCO MIXCOAC", venta: "$179,894", ventaNum: 179894,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "84%" }, { name: "Durito Teja", pct: "5%" }, { name: "Tost. Amar. 200g", pct: "2%" }],
+    rank: 3, nombre: "MERCO EL JARAL", uds: "5,566", udsNum: 5566,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "51%" }, { name: "Papa Natural 45g", pct: "13%" }, { name: "Tost. Amar. 200g", pct: "9%" }],
   },
   {
-    rank: 4, nombre: "MERCO BUENAVISTA", venta: "$173,427", ventaNum: 173427,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "74%" }, { name: "Durito Teja", pct: "10%" }, { name: "Tost. Amar. 200g", pct: "5%" }],
+    rank: 4, nombre: "MERCO SENDERO STA. CATARINA", uds: "5,399", udsNum: 5399,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "44%" }, { name: "Papa Natural 45g", pct: "16%" }, { name: "Papa Jalapeño 45g", pct: "11%" }],
   },
   {
-    rank: 5, nombre: "MERCO GIRASOLES", venta: "$166,632", ventaNum: 166632,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "76%" }, { name: "Durito Teja", pct: "5%" }, { name: "Tost. Amar. 200g", pct: "4%" }],
+    rank: 5, nombre: "MERCO SAN ROQUE", uds: "5,389", udsNum: 5389,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "60%" }, { name: "Papa Natural 45g", pct: "13%" }, { name: "Papa Fuego 45g", pct: "8%" }],
   },
   {
-    rank: 6, nombre: "MERCO SAN ROQUE", venta: "$166,433", ventaNum: 166433,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "80%" }, { name: "Durito Teja", pct: "5%" }, { name: "Papa Natural 45g", pct: "4%" }],
+    rank: 6, nombre: "MERCO LOS PILARES", uds: "5,306", udsNum: 5306,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "68%" }, { name: "Tost. Roja 200g", pct: "11%" }, { name: "Papa Natural 45g", pct: "5%" }],
   },
   {
-    rank: 7, nombre: "MERCO EL JARAL", venta: "$163,395", ventaNum: 163395,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "71%" }, { name: "Cacah. Mixto 1kg", pct: "6%" }, { name: "Tost. Amar. 200g", pct: "4%" }],
+    rank: 7, nombre: "MERCO GIRASOLES", uds: "5,249", udsNum: 5249,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "59%" }, { name: "Tost. Amar. 200g", pct: "9%" }, { name: "Tost. Roja 200g", pct: "8%" }],
   },
   {
-    rank: 8, nombre: "MERCO SOLIDARIDAD", venta: "$161,098", ventaNum: 161098,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "74%" }, { name: "Tost. Roja 200g", pct: "6%" }, { name: "Tost. Amar. 200g", pct: "5%" }],
+    rank: 8, nombre: "MERCO FRONTERA CENTRO", uds: "5,191", udsNum: 5191,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "34%" }, { name: "Papa Fuego 45g", pct: "17%" }, { name: "Tost. Roja 200g", pct: "13%" }],
   },
   {
-    rank: 9, nombre: "MERCO SENDERO STA. CATARINA", venta: "$150,692", ventaNum: 150692,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "64%" }, { name: "Durito Teja", pct: "7%" }, { name: "Papa Natural 45g", pct: "5%" }],
+    rank: 9, nombre: "MERCO MIXCOAC", uds: "5,063", udsNum: 5063,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "73%" }, { name: "Papa Fuego 45g", pct: "7%" }, { name: "Tost. Amar. 200g", pct: "5%" }],
   },
   {
-    rank: 10, nombre: "MERCO COLINAS", venta: "$149,965", ventaNum: 149965,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "77%" }, { name: "Durito Teja", pct: "5%" }, { name: "Tost. Amar. 200g", pct: "3%" }],
+    rank: 10, nombre: "MERCO ROSITA", uds: "4,924", udsNum: 4924,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "28%" }, { name: "Papa Natural 45g", pct: "14%" }, { name: "Tost. Roja 200g", pct: "14%" }],
   },
 ];
 
-const maxVenta = stores[0].ventaNum;
+const maxUds = stores[0].udsNum;
 
 function StoreCard({ store }: { store: StoreRow }) {
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2.5 flex flex-col gap-1.5">
-      {/* Top row: rank + name + venta */}
       <div className="flex items-center gap-2.5">
         <div
           className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-[11px] ${
@@ -88,22 +87,20 @@ function StoreCard({ store }: { store: StoreRow }) {
                 store.rank <= 3 ? "text-[#F5A623]" : "text-gray-600"
               }`}
             >
-              {store.venta}
+              {store.uds} uds
             </span>
           </div>
-          {/* Progress bar */}
           <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mt-1">
             <div
               className="h-full rounded-full bg-[#F5A623]"
               style={{
-                width: `${(store.ventaNum / maxVenta) * 100}%`,
+                width: `${(store.udsNum / maxUds) * 100}%`,
                 opacity: store.rank <= 3 ? 1 : 0.5,
               }}
             />
           </div>
         </div>
       </div>
-      {/* Top 3 products as small badges */}
       <div className="flex items-center gap-1 ml-9">
         {store.top3.map((p, i) => (
           <span
@@ -118,40 +115,37 @@ function StoreCard({ store }: { store: StoreRow }) {
   );
 }
 
-export default function NegSlide2TopTiendas() {
+export default function NegSlide5TopTiendasUds() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-6">
-      {/* Header */}
       <div className="flex items-center gap-3 mb-3">
         <MapPin className="w-6 h-6 text-[#F5A623]" />
         <div>
           <h2 className="text-xl font-bold text-gray-800">
-            Top 10 Tiendas por Venta
+            Top 10 Tiendas por Unidades
           </h2>
           <p className="text-[10px] text-gray-500">
-            Venta acumulada Ene-Mar 2026 -- 20 SKUs Abarrotes -- Top 3
+            Unidades acumuladas Ene-Mar 2026 -- 20 SKUs Abarrotes -- Top 3
             productos por tienda
           </p>
         </div>
       </div>
 
-      {/* Two-column layout */}
       <div className="grid grid-cols-2 gap-x-4 gap-y-2.5 flex-1 min-h-0">
         {stores.map((store) => (
           <StoreCard key={store.rank} store={store} />
         ))}
       </div>
 
-      {/* Footer insight */}
       <div className="mt-3 bg-white rounded-xl border border-[#F5A623]/20 shadow-sm px-4 py-2 flex items-start gap-2">
         <div className="w-4 h-4 rounded-full bg-[#F5A623]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
           <span className="text-[9px] font-bold text-[#F5A623]">i</span>
         </div>
         <p className="text-[11px] text-gray-700">
           <span className="font-bold text-[#F5A623]">
-            Tostada Roja 70PZ domina en las 10 tiendas (64-84% de la venta).
+            El ranking por unidades cambia vs MXN.
           </span>{" "}
-          Rango: $150K - $207K. Mixcoac destaca con 84% de concentracion en un solo producto.
+          Solidaridad, El Jaral y Sendero Sta. Catarina suben al top 5. Rosita y Frontera Centro aparecen por alto volumen de papas 45g.
         </p>
       </div>
     </SlideWrapper>

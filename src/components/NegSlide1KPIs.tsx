@@ -7,15 +7,15 @@ import { BarChart3, Store, TrendingUp, Trophy, MapPin } from "lucide-react";
 const kpis = [
   {
     label: "Venta Ene-Feb 2026",
-    value: "$4,079,433",
-    badge: "+57.6% vs Ene-Feb 2025",
+    value: "$3,713,285",
+    badge: "+66.6% vs Ene-Feb 2025",
     badgeColor: "bg-green-100 text-green-700",
     icon: BarChart3,
   },
   {
     label: "Tiendas activas",
     value: "40",
-    badge: "100% cobertura",
+    badge: "20 SKUs Abarrotes",
     badgeColor: "bg-blue-100 text-blue-700",
     icon: Store,
   },
@@ -30,18 +30,18 @@ interface MonthPivot {
 }
 
 const ventaPivot: MonthPivot[] = [
-  { mes: "Ene", v2025: 1136569, v2026: 1934057 },
-  { mes: "Feb", v2025: 1451855, v2026: 2145375 },
-  { mes: "Mar", v2025: 1797487, v2026: 957094, note2026: "8 dias" },
-  { mes: "Abr", v2025: 1530968, v2026: null },
-  { mes: "May", v2025: 1871875, v2026: null },
-  { mes: "Jun", v2025: 1498686, v2026: null },
-  { mes: "Jul", v2025: 1514628, v2026: null },
-  { mes: "Ago", v2025: 2209936, v2026: null },
-  { mes: "Sep", v2025: 1982935, v2026: null },
-  { mes: "Oct", v2025: 2036693, v2026: null },
-  { mes: "Nov", v2025: 2508032, v2026: null },
-  { mes: "Dic", v2025: 2435668, v2026: null },
+  { mes: "Ene", v2025: 1011279, v2026: 1790595 },
+  { mes: "Feb", v2025: 1217578, v2026: 1922690 },
+  { mes: "Mar", v2025: 1557837, v2026: 818599, note2026: "8 dias" },
+  { mes: "Abr", v2025: 1403335, v2026: null },
+  { mes: "May", v2025: 1664232, v2026: null },
+  { mes: "Jun", v2025: 1339041, v2026: null },
+  { mes: "Jul", v2025: 1393720, v2026: null },
+  { mes: "Ago", v2025: 1924156, v2026: null },
+  { mes: "Sep", v2025: 1636879, v2026: null },
+  { mes: "Oct", v2025: 1831879, v2026: null },
+  { mes: "Nov", v2025: 2119907, v2026: null },
+  { mes: "Dic", v2025: 2174004, v2026: null },
 ];
 
 const fmt = (n: number) =>
@@ -54,20 +54,20 @@ const pctChange = (v26: number, v25: number) => {
 
 /* ── Top 5 products ── */
 const top5Productos = [
-  { rank: 1, nombre: "Tostada Roja 70PZ", venta: "$3,172,514", share: "63.0%" },
-  { rank: 2, nombre: "Durito Teja 20pzs", venta: "$267,107", share: "5.3%" },
-  { rank: 3, nombre: "Tostada Amarilla 200g", venta: "$186,268", share: "3.7%" },
-  { rank: 4, nombre: "Tostada Roja 200g", venta: "$186,127", share: "3.7%" },
-  { rank: 5, nombre: "Papa Natural 45g", venta: "$149,789", share: "3.0%" },
+  { rank: 1, nombre: "Tostada Roja 70PZ", venta: "$3,173,016", share: "70.0%" },
+  { rank: 2, nombre: "Durito Teja 20pzs", venta: "$234,713", share: "5.2%" },
+  { rank: 3, nombre: "Tostada Amarilla 200g", venta: "$186,269", share: "4.1%" },
+  { rank: 4, nombre: "Tostada Roja 200g", venta: "$186,129", share: "4.1%" },
+  { rank: 5, nombre: "Papa Natural 45g", venta: "$125,668", share: "2.8%" },
 ];
 
 /* ── Top 5 tiendas ── */
 const top5Tiendas = [
-  { rank: 1, nombre: "MERCO Garcia", venta: "$216,128" },
-  { rank: 2, nombre: "MERCO Los Pilares", venta: "$207,903" },
-  { rank: 3, nombre: "MERCO Girasoles", venta: "$189,485" },
-  { rank: 4, nombre: "MERCO Mixcoac", venta: "$188,956" },
-  { rank: 5, nombre: "MERCO Buenavista", venta: "$188,875" },
+  { rank: 1, nombre: "MERCO Garcia", venta: "$207,105" },
+  { rank: 2, nombre: "MERCO Los Pilares", venta: "$180,248" },
+  { rank: 3, nombre: "MERCO Mixcoac", venta: "$179,894" },
+  { rank: 4, nombre: "MERCO Buenavista", venta: "$173,427" },
+  { rank: 5, nombre: "MERCO Girasoles", venta: "$166,632" },
 ];
 
 export default function NegSlide1KPIs() {
@@ -78,7 +78,7 @@ export default function NegSlide1KPIs() {
         <TrendingUp className="w-6 h-6 text-[#F5A623]" />
         <div>
           <h2 className="text-xl font-bold text-gray-800">Salud del Negocio DELIKOS en MERCO</h2>
-          <p className="text-[10px] text-gray-500">Ene-Mar 2026 -- Reporte para Direccion</p>
+          <p className="text-[10px] text-gray-500">Ene-Mar 2026 -- 20 productos Abarrotes -- Reporte para Direccion</p>
         </div>
       </div>
 
