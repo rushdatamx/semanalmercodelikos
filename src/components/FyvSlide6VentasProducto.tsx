@@ -10,18 +10,18 @@ interface Producto {
 }
 
 const productos: Producto[] = [
-  { nombre: "Minicuadro s/Chile 300g", venta: 60481, grupo: "Minicuadros" },
-  { nombre: "Papa Deshid. Natural 170g", venta: 57899, grupo: "Papas Desh" },
-  { nombre: "Cacahuate Botanero 454g", venta: 47753, grupo: "Cacah MM" },
-  { nombre: "Rotini s/Chile 300g", venta: 45709, grupo: "Rotinis" },
-  { nombre: "Cacahuate Virginia 454g", venta: 36400, grupo: "Cacah MM" },
-  { nombre: "Papa Deshid. Fuego 170g", venta: 32723, grupo: "Papas Desh" },
-  { nombre: "Cacahuate Cantinero 454g", venta: 32427, grupo: "Cacah MM" },
-  { nombre: "Churrito Rojo 454g", venta: 30945, grupo: "Fritos" },
-  { nombre: "Minicuadro c/Chile 300g", venta: 27952, grupo: "Minicuadros" },
-  { nombre: "Conchitas 454g", venta: 24631, grupo: "Fritos" },
-  { nombre: "Cacahuate Japonés 454g", venta: 23937, grupo: "Cacah MM" },
-  { nombre: "Rotini c/Chile 300g", venta: 19323, grupo: "Rotinis" },
+  { nombre: "Minicuadro s/Chile 300g", venta: 85697, grupo: "Minicuadros" },
+  { nombre: "Papa Deshid. Natural 170g", venta: 84339, grupo: "Papas Desh" },
+  { nombre: "Cacahuate Botanero 454g", venta: 69775, grupo: "Cacah MM" },
+  { nombre: "Rotini s/Chile 300g", venta: 68647, grupo: "Rotinis" },
+  { nombre: "Cacahuate Virginia 454g", venta: 53618, grupo: "Cacah MM" },
+  { nombre: "Minicuadro c/Chile 300g", venta: 53032, grupo: "Minicuadros" },
+  { nombre: "Papa Deshid. Fuego 170g", venta: 49468, grupo: "Papas Desh" },
+  { nombre: "Cacahuate Cantinero 454g", venta: 48018, grupo: "Cacah MM" },
+  { nombre: "Churrito Rojo 454g", venta: 46219, grupo: "Fritos" },
+  { nombre: "Rotini c/Chile 300g", venta: 41419, grupo: "Rotinis" },
+  { nombre: "Conchitas 454g", venta: 37405, grupo: "Fritos" },
+  { nombre: "Cacahuate Japonés 454g", venta: 37175, grupo: "Cacah MM" },
 ];
 
 const maxVenta = productos[0].venta;
@@ -49,7 +49,7 @@ export default function FyvSlide6VentasProducto() {
         <Award className="w-6 h-6 text-[#27AE60]" />
         <h2 className="text-2xl font-bold text-gray-800">Ventas por Producto — Frutas y Verduras</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-3">Ene–Mar 2026 · 12 productos · Total: {fmt(totalVenta)}</p>
+      <p className="text-gray-500 text-xs mb-3">Dic 25–Mar 2026 · 12 productos · Total: {fmt(totalVenta)}</p>
 
       <div className="flex gap-5 flex-1">
         {/* Left column: 1-6 */}
@@ -119,11 +119,11 @@ export default function FyvSlide6VentasProducto() {
 
       <div className="mt-3 grid grid-cols-5 gap-2">
         {[
-          { label: "Minicuadros", value: 60481 + 27952, color: "#3B82F6" },
-          { label: "Cacah MM", value: 47753 + 36400 + 32427 + 23937, color: "#8B5CF6" },
-          { label: "Papas Desh", value: 57899 + 32723, color: "#EC4899" },
-          { label: "Rotinis", value: 45709 + 19323, color: "#F5A623" },
-          { label: "Fritos", value: 30945 + 24631, color: "#E74C3C" },
+          { label: "Minicuadros", value: 85697 + 53032, color: "#3B82F6" },
+          { label: "Cacah MM", value: 69775 + 53618 + 48018 + 37175, color: "#8B5CF6" },
+          { label: "Papas Desh", value: 84339 + 49468, color: "#EC4899" },
+          { label: "Rotinis", value: 68647 + 41419, color: "#F5A623" },
+          { label: "Fritos", value: 46219 + 37405, color: "#E74C3C" },
         ].map((g) => (
           <div key={g.label} className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
             <p className="text-[9px] text-gray-400">{g.label}</p>

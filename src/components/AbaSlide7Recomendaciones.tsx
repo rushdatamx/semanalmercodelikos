@@ -14,20 +14,20 @@ const recomendaciones: Recomendacion[] = [
   {
     accion: "Reabastecer",
     producto: "Tostada Roja 70PZ",
-    tiendas: "8 tiendas bajo umbral (Garcia, Los Pilares, San Roque, Aramberri +4 más)",
+    tiendas: "8 tiendas bajo umbral (Garcia, Los Pilares, San Roque, Aramberri +4)",
     sugerido: "8 pallets (1,920 uds)",
   },
   {
     accion: "Reabastecer",
     producto: "Tostada Roja 200g",
-    tiendas: "11 tiendas bajo umbral (Otilio, Saltillo Centro, Garcia +8 más)",
-    sugerido: "57 cajas (1,368 uds)",
+    tiendas: "10 tiendas bajo umbral (Saltillo Centro, Garcia, Montemorelos +7)",
+    sugerido: "51 cajas (1,224 uds)",
   },
   {
     accion: "Reabastecer",
     producto: "Tostada Amarilla 200g",
-    tiendas: "19 tiendas bajo umbral (Otilio, Rosita, Castaños +16 más)",
-    sugerido: "93 cajas (2,232 uds)",
+    tiendas: "18 tiendas bajo umbral (Rosita, Castaños, Aramberri +15)",
+    sugerido: "88 cajas (2,112 uds)",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function AbaSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#F5A623]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Tostadas</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-3">Acciones sugeridas · 3 SKUs de tostada · Semana del 9 Mar 2026</p>
+      <p className="text-gray-500 text-xs mb-3">Acciones sugeridas · 3 SKUs de tostada · Semana del 10 Mar 2026</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">
@@ -76,10 +76,10 @@ export default function AbaSlide7Recomendaciones() {
         <p className="text-xs font-bold text-gray-700 mb-1">Resumen OC sugerida vs OC recibida (4-Mar)</p>
         <div className="space-y-0.5 text-[11px] text-gray-600">
           <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">8 pallets</span> (1,920 uds)</span><span className="text-green-600 font-bold">OC CUBRE (+250%)</span></div>
-          <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">57 cajas</span> (1,368 uds)</span><span className="text-orange-600 font-bold">SUGERIDO ADICIONAL: 35 cajas</span></div>
-          <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">93 cajas</span> (2,232 uds)</span><span className="text-orange-600 font-bold">SUGERIDO ADICIONAL: 65 cajas</span></div>
+          <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">51 cajas</span> (1,224 uds)</span><span className="text-orange-600 font-bold">SUGERIDO ADICIONAL: 35 cajas</span></div>
+          <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">88 cajas</span> (2,112 uds)</span><span className="text-orange-600 font-bold">SUGERIDO ADICIONAL: 70 cajas</span></div>
         </div>
-        <p className="text-[10px] text-gray-500 mt-1">Total sugerido: 5,520 uds · OC del 4-Mar-2026</p>
+        <p className="text-[10px] text-gray-500 mt-1">Total sugerido: 5,256 uds · OC del 4-Mar-2026</p>
       </div>
     </SlideWrapper>
   );

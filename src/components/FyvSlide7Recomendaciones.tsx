@@ -12,46 +12,58 @@ interface Recomendacion {
 
 const recomendaciones: Recomendacion[] = [
   {
-    accion: "Reabastecer",
+    accion: "Surtir urgente",
     producto: "Cacahuate Virginia 454g",
-    tiendas: "Piedras Negras, Saltillo Sendero, Apodaca Centro + Garcia",
-    nota: "3 agotadas + 1 bajo umbral — #5 en ventas FyV ($36K)",
+    tiendas: "Piedras Negras, Saltillo Sendero, Apodaca Centro (agotadas) + Garcia",
+    nota: "3 agotadas + 1 bajo umbral — #5 en ventas FyV ($54K)",
   },
   {
-    accion: "Reabastecer",
+    accion: "Surtir urgente",
     producto: "Minicuadro s/Chile 300g",
-    tiendas: "Israel Cavazos, El Jaral + 2 bajo umbral",
-    nota: "2 agotadas + 2 bajo umbral — #1 en ventas FyV ($60K)",
+    tiendas: "Israel Cavazos, El Jaral (agotadas) + San Buena, Girasoles",
+    nota: "2 agotadas + 2 bajo umbral — #1 en ventas FyV ($86K)",
   },
   {
-    accion: "Reabastecer",
+    accion: "Surtir urgente",
     producto: "Papa Deshid. Natural 170g",
-    tiendas: "Israel Cavazos, Paraje San José",
-    nota: "2 agotadas — #2 en ventas FyV ($58K)",
+    tiendas: "Israel Cavazos, Paraje San José (agotadas)",
+    nota: "2 agotadas — #2 en ventas FyV ($84K)",
   },
   {
-    accion: "Reabastecer",
+    accion: "Surtir urgente",
     producto: "Rotini s/Chile 300g",
-    tiendas: "El Jaral (agotada) + 1 bajo umbral",
-    nota: "1 agotada + 1 bajo umbral — #4 en ventas FyV ($46K)",
+    tiendas: "El Jaral (agotada) + Apodaca Centro",
+    nota: "1 agotada + 1 bajo umbral — #4 en ventas FyV ($69K)",
   },
   {
-    accion: "Reabastecer",
+    accion: "Surtir urgente",
     producto: "Cacahuate Botanero 454g",
     tiendas: "Apodaca Centro (agotada)",
-    nota: "1 agotada — #3 en ventas FyV ($48K)",
+    nota: "1 agotada — #3 en ventas FyV ($70K)",
   },
   {
-    accion: "Monitorear",
+    accion: "Reabastecer",
     producto: "Cacahuate Cantinero 454g",
     tiendas: "Republica, Apodaca Centro",
-    nota: "2 tiendas bajo umbral — DDI mín 5.2",
+    nota: "2 tiendas bajo umbral — DDI 11.4-11.5",
+  },
+  {
+    accion: "Reabastecer",
+    producto: "Rotini c/Chile 300g",
+    tiendas: "Republica",
+    nota: "1 tienda bajo umbral — DDI 4.8",
+  },
+  {
+    accion: "Reabastecer",
+    producto: "Cacahuate Japonés 454g",
+    tiendas: "Apodaca Centro",
+    nota: "1 tienda bajo umbral — DDI 2.1",
   },
   {
     accion: "Monitorear",
-    producto: "Rotini c/Chile 300g",
-    tiendas: "Solidaridad",
-    nota: "1 tienda bajo umbral — DDI 6.0",
+    producto: "Papa Deshid. Fuego 170g",
+    tiendas: "Apodaca Centro",
+    nota: "DDI 15.0 — justo en el umbral",
   },
 ];
 
@@ -69,7 +81,7 @@ export default function FyvSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#27AE60]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Frutas y Verduras</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-3">Acciones sugeridas por producto · Semana del 9 Mar 2026</p>
+      <p className="text-gray-500 text-xs mb-3">Acciones sugeridas por producto · Semana del 10 Mar 2026</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">

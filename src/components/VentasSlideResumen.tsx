@@ -6,16 +6,16 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 
 /* ── Donut data: Top 6 + Otros ── */
 const donutData = [
-  { name: "Tostada Roja 70PZ", value: 3173016, color: "#E74C3C" },
-  { name: "Durito Teja 20PZ", value: 234713, color: "#F97316" },
-  { name: "Tostada Amarilla 200g", value: 186269, color: "#F59E0B" },
-  { name: "Tostada Roja 200g", value: 186129, color: "#EF4444" },
-  { name: "Papa Natural 45g", value: 125668, color: "#3B82F6" },
-  { name: "Cacahuate Mixto 1KG", value: 111235, color: "#8B5CF6" },
-  { name: "Otros (26)", value: 955035, color: "#D1D5DB" },
+  { name: "Tostada Roja 70PZ", value: 4882944, color: "#E74C3C" },
+  { name: "Tostada Amarilla 200g", value: 249893, color: "#F59E0B" },
+  { name: "Tostada Roja 200g", value: 240371, color: "#EF4444" },
+  { name: "Durito Teja 20PZ", value: 236187, color: "#F97316" },
+  { name: "Papa Natural 45g", value: 211949, color: "#3B82F6" },
+  { name: "Papa Fuego 45g", value: 163043, color: "#8B5CF6" },
+  { name: "Otros (26)", value: 1510018, color: "#D1D5DB" },
 ];
 
-const TOTAL = 4972065;
+const TOTAL = 7494405;
 
 /* ── Top 10 tiendas con sus productos ── */
 interface TiendaRow {
@@ -26,16 +26,16 @@ interface TiendaRow {
 }
 
 const tiendas: TiendaRow[] = [
-  { nombre: "Garcia", venta: 216128, nProductos: 31, top5: ["Tostada 70PZ", "Durito Teja", "Papa Sal 45g", "Tostada A 200g", "Papa Fuego 45g"] },
-  { nombre: "Los Pilares", venta: 195722, nProductos: 30, top5: ["Tostada 70PZ", "Tostada R 200g", "Durito Teja", "Tostada A 200g", "Papa Sal 45g"] },
-  { nombre: "Girasoles", venta: 189485, nProductos: 31, top5: ["Tostada 70PZ", "Durito Teja", "Tostada A 200g", "Papa Sal 45g", "Tostada R 200g"] },
-  { nombre: "Mixcoac", venta: 188879, nProductos: 29, top5: ["Tostada 70PZ", "Durito Teja", "Tostada A 200g", "Papa Fuego 45g", "Papa Fuego 340g"] },
-  { nombre: "Buenavista", venta: 188875, nProductos: 32, top5: ["Tostada 70PZ", "Durito Teja", "Tostada A 200g", "Tostada R 200g", "Cacah Mixto 1kg"] },
-  { nombre: "El Jaral", venta: 184042, nProductos: 30, top5: ["Tostada 70PZ", "Cacah Mixto 1kg", "Tostada A 200g", "Papa Sal 45g", "Tostada R 200g"] },
-  { nombre: "San Roque", venta: 178340, nProductos: 32, top5: ["Tostada 70PZ", "Durito Teja", "Papa Sal 45g", "Tostada A 200g", "Papa Fuego 45g"] },
-  { nombre: "Snd. Sta. Catarina", venta: 171045, nProductos: 32, top5: ["Tostada 70PZ", "Durito Teja", "Papa Sal 45g", "Papa Jal 45g", "Tostada R 200g"] },
-  { nombre: "Solidaridad", venta: 170960, nProductos: 29, top5: ["Tostada 70PZ", "Tostada R 200g", "Durito Teja", "Tostada A 200g", "Papa Sal 45g"] },
-  { nombre: "Ramos Arizpe", venta: 155334, nProductos: 31, top5: ["Tostada 70PZ", "Durito Teja", "Tostada R 200g", "Tostada A 200g", "Cacah Sal 1kg"] },
+  { nombre: "Garcia", venta: 315502, nProductos: 31, top5: ["Tostada 70PZ", "Durito Teja", "Papa Sal 45g", "Papa Fuego 45g", "Tostada A 200g"] },
+  { nombre: "Buenavista", venta: 298651, nProductos: 34, top5: ["Tostada 70PZ", "Durito Teja", "Tostada A 200g", "Tostada R 200g", "Cacah Cantinero"] },
+  { nombre: "Los Pilares", venta: 298517, nProductos: 33, top5: ["Tostada 70PZ", "Tostada R 200g", "Durito Teja", "Totopo 450g", "Papa Jal 45g"] },
+  { nombre: "Girasoles", venta: 286870, nProductos: 33, top5: ["Tostada 70PZ", "Tostada A 200g", "Durito Teja", "Tostada R 200g", "Papa Sal 45g"] },
+  { nombre: "Mixcoac", venta: 278624, nProductos: 30, top5: ["Tostada 70PZ", "Durito Teja", "Papa Fuego 45g", "Papa Sal 45g", "Papa Jal 45g"] },
+  { nombre: "Solidaridad", venta: 275516, nProductos: 32, top5: ["Tostada 70PZ", "Tostada R 200g", "Tostada A 200g", "Papa Sal 45g", "Papa Jal 45g"] },
+  { nombre: "Snd. Sta. Catarina", venta: 271994, nProductos: 35, top5: ["Tostada 70PZ", "Papa Sal 45g", "Durito Teja", "Papa Jal 45g", "Tostada R 200g"] },
+  { nombre: "El Jaral", venta: 260317, nProductos: 33, top5: ["Tostada 70PZ", "Cacah Mixto 1kg", "Papa Sal 45g", "Tostada A 200g", "Papa Jal 45g"] },
+  { nombre: "San Roque", venta: 256282, nProductos: 35, top5: ["Tostada 70PZ", "Papa Sal 45g", "Durito Teja", "Papa Jal 45g", "Papa Fuego 45g"] },
+  { nombre: "Ramos Arizpe", venta: 245710, nProductos: 34, top5: ["Tostada 70PZ", "Durito Teja", "Tostada A 200g", "Tostada R 200g", "Cacah Sal 1kg"] },
 ];
 
 const fmt = (v: number) => {
@@ -62,7 +62,7 @@ export default function VentasSlideResumen() {
       <div className="flex items-center justify-between mb-1">
         <div className="flex items-center gap-2">
           <Award className="w-6 h-6 text-[#3B82F6]" />
-          <h2 className="text-xl font-bold text-gray-800">Ventas MERCO — Ene/Mar 2026</h2>
+          <h2 className="text-xl font-bold text-gray-800">Ventas MERCO — Dic/Mar 2026</h2>
         </div>
         <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-1 border border-gray-200 shadow-sm">
           <TrendingUp className="w-4 h-4 text-[#27AE60]" />
@@ -97,7 +97,7 @@ export default function VentasSlideResumen() {
                 </PieChart>
               </ResponsiveContainer>
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-lg font-bold text-gray-800">63.8%</span>
+                <span className="text-lg font-bold text-gray-800">65.2%</span>
                 <span className="text-[8px] text-gray-400">Tostada 70PZ</span>
               </div>
             </div>
@@ -116,8 +116,8 @@ export default function VentasSlideResumen() {
           <div className="grid grid-cols-2 gap-2 mt-2">
             <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-1.5 text-center">
               <p className="text-[8px] text-gray-400">Tostadas (3 SKU)</p>
-              <p className="text-sm font-bold text-[#E74C3C]">71.3%</p>
-              <p className="text-[8px] text-gray-500">$3.5M</p>
+              <p className="text-sm font-bold text-[#E74C3C]">71.7%</p>
+              <p className="text-[8px] text-gray-500">$5.4M</p>
             </div>
             <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-1.5 text-center">
               <p className="text-[8px] text-gray-400">41 tiendas activas</p>
