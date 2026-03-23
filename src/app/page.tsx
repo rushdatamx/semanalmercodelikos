@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Download } from "lucide-react";
 import AbaSlide1Portada from "@/components/AbaSlide1Portada";
 import AbaSlide4SugeridoCompra from "@/components/AbaSlide4SugeridoCompra";
 import AbaSlide6VentasProducto from "@/components/AbaSlide6VentasProducto";
@@ -70,6 +70,7 @@ function HomeInner() {
 
   const [deptIdx, setDeptIdx] = useState(initialTab >= 0 ? initialTab : 0);
   const [current, setCurrent] = useState(0);
+  const [exporting, setExporting] = useState(false);
 
   useEffect(() => {
     if (tabParam) {
@@ -88,6 +89,56 @@ function HomeInner() {
   const switchDept = (idx: number) => {
     setDeptIdx(idx);
     setCurrent(0);
+  };
+
+  const exportPDF = async () => {
+    setExporting(true);
+    try {
+      const html2canvas = (await import("html2canvas-pro")).default;
+      const { jsPDF } = await import("jspdf");
+
+      const pdf = new jsPDF({ orientation: "landscape", unit: "px", format: [1280, 720] });
+
+      const container = document.createElement("div");
+      container.style.position = "fixed";
+      container.style.left = "-9999px";
+      container.style.top = "0";
+      document.body.appendChild(container);
+
+      for (let i = 0; i < slides.length; i++) {
+        const wrapper = document.createElement("div");
+        container.appendChild(wrapper);
+
+        const { createRoot } = await import("react-dom/client");
+        const SlideComp = slides[i];
+        const root = createRoot(wrapper);
+        root.render(<SlideComp />);
+
+        await new Promise((r) => setTimeout(r, 300));
+
+        const slideEl = wrapper.querySelector("div");
+        if (!slideEl) continue;
+
+        const canvas = await html2canvas(slideEl, {
+          width: 1280,
+          height: 720,
+          scale: 2,
+          useCORS: true,
+          backgroundColor: "#F5F5F5",
+        });
+
+        if (i > 0) pdf.addPage();
+        pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 1280, 720);
+        root.unmount();
+      }
+
+      document.body.removeChild(container);
+      pdf.save(`${dept.label}_MERCO_2026-03-23.pdf`);
+    } catch (err) {
+      console.error("Error exporting PDF:", err);
+    } finally {
+      setExporting(false);
+    }
   };
 
   return (
@@ -146,9 +197,19 @@ function HomeInner() {
           </button>
         </div>
 
-        <p className="text-center text-gray-500 text-xs mt-3">
-          {dept.label} · Slide {current + 1} / {slides.length}
-        </p>
+        <div className="flex items-center justify-center gap-3 mt-3">
+          <p className="text-gray-500 text-xs">
+            {dept.label} · Slide {current + 1} / {slides.length}
+          </p>
+          <button
+            onClick={exportPDF}
+            disabled={exporting}
+            className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-sm transition-colors disabled:opacity-50"
+          >
+            <Download className="w-3.5 h-3.5" />
+            {exporting ? "Exportando..." : `PDF ${dept.label}`}
+          </button>
+        </div>
       </div>
     </div>
   );
