@@ -14,85 +14,146 @@ interface Sugerido {
   udsEnviar: number;
 }
 
-const data: Sugerido[] = [
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Rosita", tipo: "GRANDE", ddi: 0.1, invActual: 1, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Castaños", tipo: "CHICA", ddi: 0.2, invActual: 2, pallets: 0, cajas: 4, udsEnviar: 96 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Aramberri", tipo: "CHICA", ddi: 0.3, invActual: 2, pallets: 0, cajas: 4, udsEnviar: 96 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 1.4, invActual: 13, pallets: 0, cajas: 4, udsEnviar: 96 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Saltillo Centro", tipo: "GRANDE", ddi: 2.8, invActual: 4, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Garcia", tipo: "GRANDE", ddi: 3.2, invActual: 135, pallets: 1, cajas: 0, udsEnviar: 240 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO La Sierrita", tipo: "GRANDE", ddi: 3.2, invActual: 23, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Paraje San José", tipo: "GRANDE", ddi: 3.7, invActual: 28, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Frontera Centro", tipo: "GRANDE", ddi: 4.3, invActual: 31, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Nuevo Repueblo", tipo: "CHICA", ddi: 5.6, invActual: 37, pallets: 0, cajas: 2, udsEnviar: 48 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Garcia", tipo: "GRANDE", ddi: 6.1, invActual: 27, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Buenavista", tipo: "GRANDE", ddi: 6.2, invActual: 57, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Los Pilares", tipo: "GRANDE", ddi: 6.4, invActual: 233, pallets: 1, cajas: 0, udsEnviar: 240 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Solidaridad", tipo: "GRANDE", ddi: 6.6, invActual: 59, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Montemorelos", tipo: "GRANDE", ddi: 7.3, invActual: 39, pallets: 0, cajas: 6, udsEnviar: 144 },
+const dataTostadas: Sugerido[] = [
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Garcia", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Castaños", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 4, udsEnviar: 96 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Nuevo Repueblo", tipo: "CHICA", ddi: 0.2, invActual: 1, pallets: 0, cajas: 4, udsEnviar: 96 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Hidalgo", tipo: "GRANDE", ddi: 0.2, invActual: 1, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "Urdiñola", tipo: "GRANDE", ddi: 0.2, invActual: 1, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Solidaridad", tipo: "GRANDE", ddi: 0.3, invActual: 2, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Apodaca Centro", tipo: "CHICA", ddi: 0.3, invActual: 1, pallets: 0, cajas: 2, udsEnviar: 48 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO San Buena", tipo: "CHICA", ddi: 0.9, invActual: 6, pallets: 0, cajas: 4, udsEnviar: 96 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO La Sierrita", tipo: "GRANDE", ddi: 1.0, invActual: 6, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Parras", tipo: "CHICA", ddi: 1.3, invActual: 3, pallets: 0, cajas: 2, udsEnviar: 48 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 4.2, invActual: 35, pallets: 0, cajas: 4, udsEnviar: 96 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Frontera Centro", tipo: "GRANDE", ddi: 4.8, invActual: 30, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Rosita", tipo: "GRANDE", ddi: 5.2, invActual: 32, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Girasoles", tipo: "GRANDE", ddi: 7.2, invActual: 35, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Buenavista", tipo: "GRANDE", ddi: 9.5, invActual: 71, pallets: 0, cajas: 6, udsEnviar: 144 },
 ];
 
-const TOTAL_LINEAS = 36;
-const TOTAL_UDS = 5256;
+const TOST_LINEAS = 53;
+const TOST_UDS = 7992;
+
+const dataPapas: Sugerido[] = [
+  { producto: "Papa Fuego 45g", tienda: "MERCO Montemorelos", tipo: "GRANDE", ddi: 0, invActual: 90, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Castaños", tipo: "CHICA", ddi: 1.1, invActual: 1, pallets: 0, cajas: 1, udsEnviar: 45 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Cadereyta", tipo: "GRANDE", ddi: 1.4, invActual: 5, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Garcia", tipo: "GRANDE", ddi: 4.8, invActual: 48, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Nuevo Repueblo", tipo: "CHICA", ddi: 8.9, invActual: 5, pallets: 0, cajas: 1, udsEnviar: 45 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 9.7, invActual: 68, pallets: 0, cajas: 1, udsEnviar: 45 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO San Buena", tipo: "CHICA", ddi: 12.0, invActual: 9, pallets: 0, cajas: 1, udsEnviar: 45 },
+  { producto: "Papa Jalapeño 45g", tienda: "MERCO Cadereyta", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Jalapeño 45g", tienda: "MERCO Montemorelos", tipo: "GRANDE", ddi: 0, invActual: 90, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Jalapeño 45g", tienda: "MERCO Castaños", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 1, udsEnviar: 45 },
+];
+
+const PAPAS_LINEAS = 22;
+const PAPAS_UDS = 5670;
 
 export default function AbaSlide4SugeridoCompra() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-8">
       <div className="flex items-center gap-3 mb-1">
         <ShoppingCart className="w-6 h-6 text-[#F5A623]" />
-        <h2 className="text-2xl font-bold text-gray-800">Sugerido de Compra — Tostadas</h2>
+        <h2 className="text-2xl font-bold text-gray-800">Sugerido de Compra — Abarrotes</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-3">3 SKUs de tostada con DDI &lt; 15 días · Cobertura objetivo: 15 días · Top 15 de {TOTAL_LINEAS} líneas</p>
+      <p className="text-gray-500 text-xs mb-2">Tostadas (3 SKUs) + Papa 45g (3 SKUs) con DDI &lt; 15 dias · Cobertura objetivo: 15 dias</p>
 
-      <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
-        <table className="w-full text-[11px]">
-          <thead>
-            <tr className="bg-gray-100 text-gray-500 text-[10px] uppercase sticky top-0">
-              <th className="text-left py-1.5 px-3">Producto</th>
-              <th className="text-left py-1.5 px-2">Tienda</th>
-              <th className="text-center py-1.5 px-2 w-16">Tamaño</th>
-              <th className="text-right py-1.5 px-2 w-12">DDI</th>
-              <th className="text-right py-1.5 px-2 w-16">Inv Act</th>
-              <th className="text-right py-1.5 px-2 w-14">Pallets</th>
-              <th className="text-right py-1.5 px-2 w-14">Cajas</th>
-              <th className="text-right py-1.5 px-2 w-20">Uds a Enviar</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((r, i) => (
-              <tr key={i} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
-                <td className="py-1 px-3 text-gray-800 font-medium">{r.producto}</td>
-                <td className="py-1 px-2 text-gray-600">{r.tienda}</td>
-                <td className="py-1 px-2 text-center">
-                  <span className={`text-[9px] px-1.5 py-0.5 rounded font-semibold ${r.tipo === "GRANDE" ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-600"}`}>
-                    {r.tipo}
-                  </span>
-                </td>
-                <td className="py-1 px-2 text-right">
-                  <span className={`font-bold ${r.ddi === 0 ? "text-red-600" : "text-yellow-600"}`}>
-                    {r.ddi === 0 ? "AGT" : r.ddi.toFixed(1)}
-                  </span>
-                </td>
-                <td className="py-1 px-2 text-right text-gray-700">{r.invActual.toLocaleString()}</td>
-                <td className="py-1 px-2 text-right text-gray-500">{r.pallets === 0 ? "-" : r.pallets}</td>
-                <td className="py-1 px-2 text-right text-gray-500">{r.cajas === 0 ? "-" : r.cajas}</td>
-                <td className="py-1 px-2 text-right text-gray-800 font-bold">{r.udsEnviar.toLocaleString()}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="flex gap-4 flex-1 overflow-hidden">
+        {/* Tostadas */}
+        <div className="flex-1 flex flex-col">
+          <p className="text-[10px] font-bold text-gray-600 mb-1">TOSTADAS · Top 15 de {TOST_LINEAS} lineas · {TOST_UDS.toLocaleString()} uds</p>
+          <div className="flex-1 overflow-auto rounded-lg border border-gray-200 bg-white shadow-sm">
+            <table className="w-full text-[10px]">
+              <thead>
+                <tr className="bg-gray-100 text-gray-500 text-[9px] uppercase sticky top-0">
+                  <th className="text-left py-1 px-2">Producto</th>
+                  <th className="text-left py-1 px-1">Tienda</th>
+                  <th className="text-center py-1 px-1 w-10">Tipo</th>
+                  <th className="text-right py-1 px-1 w-8">DDI</th>
+                  <th className="text-right py-1 px-1 w-8">Pal</th>
+                  <th className="text-right py-1 px-1 w-8">Caj</th>
+                  <th className="text-right py-1 px-1 w-12">Uds</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dataTostadas.map((r, i) => (
+                  <tr key={i} className="border-b border-gray-50 hover:bg-gray-50">
+                    <td className="py-0.5 px-2 text-gray-800 font-medium">{r.producto}</td>
+                    <td className="py-0.5 px-1 text-gray-600">{r.tienda}</td>
+                    <td className="py-0.5 px-1 text-center">
+                      <span className={`text-[8px] px-1 py-0.5 rounded font-semibold ${r.tipo === "GRANDE" ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-600"}`}>
+                        {r.tipo === "GRANDE" ? "G" : "CH"}
+                      </span>
+                    </td>
+                    <td className="py-0.5 px-1 text-right">
+                      <span className={`font-bold ${r.ddi === 0 ? "text-red-600" : "text-yellow-600"}`}>
+                        {r.ddi === 0 ? "AGT" : r.ddi.toFixed(1)}
+                      </span>
+                    </td>
+                    <td className="py-0.5 px-1 text-right text-gray-500">{r.pallets === 0 ? "-" : r.pallets}</td>
+                    <td className="py-0.5 px-1 text-right text-gray-500">{r.cajas === 0 ? "-" : r.cajas}</td>
+                    <td className="py-0.5 px-1 text-right text-gray-800 font-bold">{r.udsEnviar.toLocaleString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Papas 45g */}
+        <div className="w-[380px] flex flex-col">
+          <p className="text-[10px] font-bold text-gray-600 mb-1">PAPA 45g · Top 10 de {PAPAS_LINEAS} lineas · {PAPAS_UDS.toLocaleString()} uds</p>
+          <div className="flex-1 overflow-auto rounded-lg border border-gray-200 bg-white shadow-sm">
+            <table className="w-full text-[10px]">
+              <thead>
+                <tr className="bg-gray-100 text-gray-500 text-[9px] uppercase sticky top-0">
+                  <th className="text-left py-1 px-2">Producto</th>
+                  <th className="text-left py-1 px-1">Tienda</th>
+                  <th className="text-center py-1 px-1 w-10">Tipo</th>
+                  <th className="text-right py-1 px-1 w-8">DDI</th>
+                  <th className="text-right py-1 px-1 w-12">Uds</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dataPapas.map((r, i) => (
+                  <tr key={i} className="border-b border-gray-50 hover:bg-gray-50">
+                    <td className="py-0.5 px-2 text-gray-800 font-medium">{r.producto}</td>
+                    <td className="py-0.5 px-1 text-gray-600">{r.tienda}</td>
+                    <td className="py-0.5 px-1 text-center">
+                      <span className={`text-[8px] px-1 py-0.5 rounded font-semibold ${r.tipo === "GRANDE" ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-600"}`}>
+                        {r.tipo === "GRANDE" ? "G" : "CH"}
+                      </span>
+                    </td>
+                    <td className="py-0.5 px-1 text-right">
+                      <span className={`font-bold ${r.ddi === 0 ? "text-red-600" : "text-yellow-600"}`}>
+                        {r.ddi === 0 ? "AGT" : r.ddi.toFixed(1)}
+                      </span>
+                    </td>
+                    <td className="py-0.5 px-1 text-right text-gray-800 font-bold">{r.udsEnviar.toLocaleString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
 
       <div className="mt-2 flex justify-between items-center">
-        <p className="text-[10px] text-gray-400">3 SKUs tostada · Top 15 de {TOTAL_LINEAS} combinaciones</p>
+        <p className="text-[10px] text-gray-400">Tostadas + Papa 45g · Inventario al 22-Mar-2026</p>
         <div className="flex gap-6">
           <div className="text-right">
-            <p className="text-gray-500 text-[10px]">Total líneas</p>
-            <p className="text-xl font-bold text-gray-800">{TOTAL_LINEAS}</p>
+            <p className="text-gray-500 text-[10px]">Tostadas</p>
+            <p className="text-lg font-bold text-[#E74C3C]">{TOST_UDS.toLocaleString()} uds</p>
           </div>
           <div className="text-right">
-            <p className="text-gray-500 text-[10px]">Total uds sugeridas</p>
-            <p className="text-xl font-bold text-[#F5A623]">{TOTAL_UDS.toLocaleString()}</p>
+            <p className="text-gray-500 text-[10px]">Papa 45g</p>
+            <p className="text-lg font-bold text-[#3B82F6]">{PAPAS_UDS.toLocaleString()} uds</p>
+          </div>
+          <div className="text-right">
+            <p className="text-gray-500 text-[10px]">Total sugerido</p>
+            <p className="text-lg font-bold text-[#F5A623]">{(TOST_UDS + PAPAS_UDS).toLocaleString()} uds</p>
           </div>
         </div>
       </div>
