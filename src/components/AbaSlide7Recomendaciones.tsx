@@ -93,28 +93,28 @@ export default function AbaSlide7Recomendaciones() {
       <div className="mt-2 grid grid-cols-2 gap-3">
         {/* OC Tostadas */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
-          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Tostadas (19-Mar)</p>
+          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Tostadas (26-Mar)</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
             <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">2 pallets</span> (480 uds)</span><span className="text-green-600 font-bold">OC CUBRE (+2700%)</span></div>
-            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">74 cajas</span> (1,776 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 59 cajas</span></div>
-            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">53 cajas</span> (1,272 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 28 cajas</span></div>
+            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">74 cajas</span> (1,776 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 33 cajas</span></div>
+            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">53 cajas</span> (1,272 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 5 cajas</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 3,528 uds · OC 19-Mar cubre Roja 70PZ · Adicional 200g: 87 cajas</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total: 3,528 uds · OC 26-Mar cubre Roja 70PZ · Adicional 200g: 38 cajas</p>
         </div>
 
         {/* OC Papas 45g */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
-          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Papa 45g (19-Mar)</p>
+          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Papa 45g (26-Mar)</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Natural 45g: <span className="font-semibold text-gray-800">7 PDQs + 5 cajas</span></span><span className="text-orange-600 font-bold">ADICIONAL: 53 cajas</span></div>
-            <div className="flex justify-between"><span>Fuego 45g: <span className="font-semibold text-gray-800">7 PDQs + 3 cajas</span></span><span className="text-orange-600 font-bold">ADICIONAL: 60 cajas</span></div>
-            <div className="flex justify-between"><span>Jalapeño 45g: <span className="font-semibold text-gray-800">7 PDQs + 1 cajas</span></span><span className="text-orange-600 font-bold">ADICIONAL: 59 cajas</span></div>
+            <div className="flex justify-between"><span>Natural 45g: <span className="font-semibold text-gray-800">7 PDQs + 5 cajas</span></span><span className="text-orange-600 font-bold">ADICIONAL: 9 cajas</span></div>
+            <div className="flex justify-between"><span>Fuego 45g: <span className="font-semibold text-gray-800">7 PDQs + 3 cajas</span></span><span className="text-orange-600 font-bold">ADICIONAL: 18 cajas</span></div>
+            <div className="flex justify-between"><span>Jalapeño 45g: <span className="font-semibold text-gray-800">7 PDQs + 1 cajas</span></span><span className="text-orange-600 font-bold">ADICIONAL: 10 cajas</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 9,225 uds · OC insuficiente — sugerido adicional: 172 cajas</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total: 9,225 uds · OC cubre ~83% — sugerido adicional: 37 cajas</p>
         </div>
       </div>
 
-      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 19-Mar se esta distribuyendo a tiendas. Algunas necesidades pueden quedar cubiertas conforme se complete la distribucion.</p>
+      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 26-Mar se esta distribuyendo a tiendas. Algunas necesidades pueden quedar cubiertas conforme se complete la distribucion.</p>
     </SlideWrapper>
   );
 }
