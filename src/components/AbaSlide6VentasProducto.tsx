@@ -10,26 +10,26 @@ interface Producto {
 }
 
 const productos: Producto[] = [
-  { nombre: "Tostada Roja 70PZ", venta: 4882944, grupo: "Tostadas" },
-  { nombre: "Tostada Amarilla 200g", venta: 249893, grupo: "Tostadas" },
-  { nombre: "Tostada Roja 200g", venta: 240371, grupo: "Tostadas" },
-  { nombre: "Durito Teja 20PZ", venta: 236187, grupo: "Otros" },
-  { nombre: "Papa Natural 45g", venta: 211949, grupo: "Papa 45g" },
-  { nombre: "Papa Fuego 45g", venta: 163043, grupo: "Papa 45g" },
-  { nombre: "Cacahuate Mixto 1KG", venta: 162466, grupo: "Cacahuates" },
-  { nombre: "Papa Jalapeño 45g", venta: 159461, grupo: "Papa 45g" },
-  { nombre: "Cacahuate Cantinero 1KG", venta: 93327, grupo: "Cacahuates" },
-  { nombre: "Papa Fuego 340g", venta: 69167, grupo: "Papa 340g" },
-  { nombre: "Papa Natural 340g", venta: 61281, grupo: "Papa 340g" },
-  { nombre: "Papa Jalapeño 340g", venta: 59861, grupo: "Papa 340g" },
-  { nombre: "Cheto Mix 400g", venta: 38346, grupo: "Otros" },
-  { nombre: "Rueda Natural 400g", venta: 34674, grupo: "Otros" },
-  { nombre: "Minicuadro Natural 400g", venta: 27351, grupo: "Otros" },
-  { nombre: "Cacahuate Salado 1KG", venta: 21431, grupo: "Cacahuates" },
-  { nombre: "Rodajitas de Papa 30g", venta: 7037, grupo: "4Buddies" },
-  { nombre: "Palomitas Street Elote 25g", venta: 4906, grupo: "4Buddies" },
-  { nombre: "Palomitas Classic White 25g", venta: 4853, grupo: "4Buddies" },
-  { nombre: "Palomitas W.Cheddar 25g", venta: 4741, grupo: "4Buddies" },
+  { nombre: "Tostada Roja 70PZ", venta: 4151253, grupo: "Tostadas" },
+  { nombre: "Durito Teja 20PZ", venta: 305813, grupo: "Otros" },
+  { nombre: "Tostada Roja 200g", venta: 240332, grupo: "Tostadas" },
+  { nombre: "Tostada Amarilla 200g", venta: 236229, grupo: "Tostadas" },
+  { nombre: "Papa Natural 45g", venta: 173501, grupo: "Papa 45g" },
+  { nombre: "Cacahuate Mixto 1KG", venta: 160267, grupo: "Cacahuates" },
+  { nombre: "Papa Fuego 45g", venta: 127434, grupo: "Papa 45g" },
+  { nombre: "Papa Jalapeño 45g", venta: 117629, grupo: "Papa 45g" },
+  { nombre: "Cacahuate Cantinero 1KG", venta: 93015, grupo: "Cacahuates" },
+  { nombre: "Papa Fuego 340g", venta: 88168, grupo: "Papa 340g" },
+  { nombre: "Papa Natural 340g", venta: 87568, grupo: "Papa 340g" },
+  { nombre: "Papa Jalapeño 340g", venta: 86874, grupo: "Papa 340g" },
+  { nombre: "Cheto Mix 400g", venta: 35401, grupo: "Otros" },
+  { nombre: "Rueda Natural 400g", venta: 33901, grupo: "Otros" },
+  { nombre: "Minicuadro Natural 400g", venta: 28464, grupo: "Otros" },
+  { nombre: "Cacahuate Salado 1KG", venta: 23938, grupo: "Cacahuates" },
+  { nombre: "Rodajitas de Papa 30g", venta: 9010, grupo: "4Buddies" },
+  { nombre: "Palomitas W.Cheddar 25g", venta: 5727, grupo: "4Buddies" },
+  { nombre: "Palomitas Classic White 25g", venta: 5639, grupo: "4Buddies" },
+  { nombre: "Palomitas Street Elote 25g", venta: 5246, grupo: "4Buddies" },
 ];
 
 const maxVenta = productos[0].venta;
@@ -51,6 +51,11 @@ const fmt = (v: number) => {
 
 const totalVenta = productos.reduce((s, p) => s + p.venta, 0);
 
+const tostTotal = 4151253 + 240332 + 236229;
+const papa45Total = 173501 + 127434 + 117629;
+const papa340Total = 88168 + 87568 + 86874;
+const cacahTotal = 160267 + 93015 + 23938;
+
 export default function AbaSlide6VentasProducto() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-8">
@@ -58,7 +63,7 @@ export default function AbaSlide6VentasProducto() {
         <Award className="w-6 h-6 text-[#F5A623]" />
         <h2 className="text-2xl font-bold text-gray-800">Ventas por Producto — Abarrotes</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-2">Dic 25–Mar 2026 · 20 productos · Total: {fmt(totalVenta)}</p>
+      <p className="text-gray-500 text-xs mb-2">Ene–Mar 2026 · 20 productos · Total: {fmt(totalVenta)}</p>
 
       <div className="flex gap-5 flex-1">
         {/* Left column: 1-10 */}
@@ -129,23 +134,23 @@ export default function AbaSlide6VentasProducto() {
       <div className="mt-2 grid grid-cols-4 gap-3">
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
           <p className="text-[9px] text-gray-400">Tostadas (3)</p>
-          <p className="text-base font-bold text-[#E74C3C]">{fmt(4882944 + 240371 + 249893)}</p>
-          <p className="text-[9px] text-gray-500">79.8% del total</p>
+          <p className="text-base font-bold text-[#E74C3C]">{fmt(tostTotal)}</p>
+          <p className="text-[9px] text-gray-500">{((tostTotal / totalVenta) * 100).toFixed(1)}% del total</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
           <p className="text-[9px] text-gray-400">Papa 45g (3)</p>
-          <p className="text-base font-bold text-[#3B82F6]">{fmt(211949 + 163043 + 159461)}</p>
-          <p className="text-[9px] text-gray-500">7.9% del total</p>
+          <p className="text-base font-bold text-[#3B82F6]">{fmt(papa45Total)}</p>
+          <p className="text-[9px] text-gray-500">{((papa45Total / totalVenta) * 100).toFixed(1)}% del total</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
           <p className="text-[9px] text-gray-400">Papa 340g (3)</p>
-          <p className="text-base font-bold text-[#F5A623]">{fmt(69167 + 61281 + 59861)}</p>
-          <p className="text-[9px] text-gray-500">2.8% del total</p>
+          <p className="text-base font-bold text-[#F5A623]">{fmt(papa340Total)}</p>
+          <p className="text-[9px] text-gray-500">{((papa340Total / totalVenta) * 100).toFixed(1)}% del total</p>
         </div>
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
           <p className="text-[9px] text-gray-400">Cacahuates (3)</p>
-          <p className="text-base font-bold text-[#8B5CF6]">{fmt(162466 + 93327 + 21431)}</p>
-          <p className="text-[9px] text-gray-500">4.1% del total</p>
+          <p className="text-base font-bold text-[#8B5CF6]">{fmt(cacahTotal)}</p>
+          <p className="text-[9px] text-gray-500">{((cacahTotal / totalVenta) * 100).toFixed(1)}% del total</p>
         </div>
       </div>
     </SlideWrapper>
