@@ -12,6 +12,11 @@ import FyvSlide4SugeridoCompra from "@/components/FyvSlide4SugeridoCompra";
 import FyvSlide6VentasProducto from "@/components/FyvSlide6VentasProducto";
 import FyvSlide7Recomendaciones from "@/components/FyvSlide7Recomendaciones";
 import VentasSlideResumen from "@/components/VentasSlideResumen";
+import CrecSlide1Portada from "@/components/CrecSlide1Portada";
+import CrecSlide2Velocidad from "@/components/CrecSlide2Velocidad";
+import CrecSlide3Inventario from "@/components/CrecSlide3Inventario";
+import CrecSlide4Tostada from "@/components/CrecSlide4Tostada";
+import CrecSlide5Oportunidad from "@/components/CrecSlide5Oportunidad";
 import NegSlide1KPIs from "@/components/NegSlide1KPIs";
 import NegSlide2TopTiendas from "@/components/NegSlide2TopTiendas";
 import NegSlide3Promociones from "@/components/NegSlide3Promociones";
@@ -47,6 +52,18 @@ const departments = [
     color: "#3B82F6",
     slides: [
       VentasSlideResumen,
+    ],
+  },
+  {
+    id: "crecimiento",
+    label: "Crecimiento",
+    color: "#10B981",
+    slides: [
+      CrecSlide1Portada,
+      CrecSlide2Velocidad,
+      CrecSlide3Inventario,
+      CrecSlide4Tostada,
+      CrecSlide5Oportunidad,
     ],
   },
   {
