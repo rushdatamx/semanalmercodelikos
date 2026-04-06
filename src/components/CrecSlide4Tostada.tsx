@@ -21,21 +21,21 @@ import {
 
 /* ── Monthly sales Roja 70PZ (15 months) ── */
 const rojaMensual = [
-  { mes: "Ene 25", venta: 698473 },
-  { mes: "Feb 25", venta: 928648 },
-  { mes: "Mar 25", venta: 1180865 },
-  { mes: "Abr 25", venta: 998040 },
-  { mes: "May 25", venta: 1262404 },
-  { mes: "Jun 25", venta: 972202 },
-  { mes: "Jul 25", venta: 1005888 },
-  { mes: "Ago 25", venta: 1280425 },
-  { mes: "Sep 25", venta: 1092867 },
-  { mes: "Oct 25", venta: 1342189 },
-  { mes: "Nov 25", venta: 1754577 },
-  { mes: "Dic 25", venta: 1709928 },
-  { mes: "Ene 26", venta: 1309462 },
-  { mes: "Feb 26", venta: 1311962 },
-  { mes: "Mar 26", venta: 1708159 },
+  { mes: "2025-01", venta: 698473 },
+  { mes: "2025-02", venta: 928648 },
+  { mes: "2025-03", venta: 1180865 },
+  { mes: "2025-04", venta: 998040 },
+  { mes: "2025-05", venta: 1262404 },
+  { mes: "2025-06", venta: 972202 },
+  { mes: "2025-07", venta: 1005888 },
+  { mes: "2025-08", venta: 1280425 },
+  { mes: "2025-09", venta: 1092867 },
+  { mes: "2025-10", venta: 1342189 },
+  { mes: "2025-11", venta: 1754577 },
+  { mes: "2025-12", venta: 1709928 },
+  { mes: "2026-01", venta: 1309462 },
+  { mes: "2026-02", venta: 1311962 },
+  { mes: "2026-03", venta: 1708159 },
 ];
 
 const fmt = (n: number) => {
@@ -47,8 +47,8 @@ const fmt = (n: number) => {
 const bullets = [
   {
     icon: Award,
-    text: "Record Mar 2026: $1.71M",
-    sub: "Mejor mes en la historia del producto",
+    text: "Record P03-2026: $1.71M",
+    sub: "Mejor periodo en la historia del producto",
   },
   {
     icon: TrendingUp,
@@ -146,7 +146,7 @@ export default function CrecSlide4Tostada() {
         {/* Line Chart */}
         <div className="flex-1 flex flex-col min-w-0">
           <p className="text-[10px] text-gray-500 font-semibold uppercase mb-1">
-            Tendencia de venta mensual — Tostada Roja 70PZ
+            Tendencia de venta por periodo — Tostada Roja 70PZ
           </p>
           <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-3">
             <ResponsiveContainer width="100%" height="100%">
@@ -181,7 +181,7 @@ export default function CrecSlide4Tostada() {
                   dot={(props) => {
                     const { cx, cy, payload, index } = props as { cx: number; cy: number; payload: { mes: string; venta: number }; index: number };
                     const isRecord =
-                      payload.mes === "Mar 26" || payload.mes === "Nov 25";
+                      payload.mes === "2026-03" || payload.mes === "2025-11";
                     return (
                       <g key={index}>
                         <circle
@@ -192,7 +192,7 @@ export default function CrecSlide4Tostada() {
                           stroke={isRecord ? "white" : "none"}
                           strokeWidth={isRecord ? 2 : 0}
                         />
-                        {payload.mes === "Mar 26" && (
+                        {payload.mes === "2026-03" && (
                           <text
                             x={cx}
                             y={cy - 12}
@@ -242,13 +242,7 @@ export default function CrecSlide4Tostada() {
             })}
           </div>
 
-          {/* Callout */}
-          <div className="bg-red-50 rounded-lg p-2.5 border border-red-200 mt-2">
-            <p className="text-[10px] text-red-700 font-bold">
-              La Tostada Roja no tiene problema de inventario. Tiene problema de
-              velocidad de reabasto.
-            </p>
-          </div>
+{/* Callout removed */}
         </div>
       </div>
     </SlideWrapper>
