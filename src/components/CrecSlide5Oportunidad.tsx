@@ -88,7 +88,7 @@ export default function CrecSlide5Oportunidad() {
             Oportunidad de Crecimiento
           </h2>
           <p className="text-[10px] text-gray-500">
-            Ordenar mas = vender mas. El mercado lo pide.
+            Datos Q1 2026 y oportunidades identificadas
           </p>
         </div>
       </div>
@@ -189,7 +189,7 @@ export default function CrecSlide5Oportunidad() {
         {/* Right: Resumen del Argumento */}
         <div className="flex-1 flex flex-col min-w-0">
           <p className="text-[10px] text-gray-500 font-semibold uppercase mb-1">
-            Resumen del argumento
+            Indicadores clave
           </p>
           <div className="space-y-2 flex-1">
             {argumentos.map((a, i) => {
@@ -218,17 +218,7 @@ export default function CrecSlide5Oportunidad() {
             })}
           </div>
 
-          {/* Bottom insight */}
-          <div className="bg-gray-800 rounded-xl p-3 mt-2">
-            <p className="text-[11px] text-white font-bold mb-1">
-              Conclusion para el comprador
-            </p>
-            <p className="text-[10px] text-gray-300 leading-relaxed">
-              DELIKOS crece +62% en Q1. La velocidad de venta se duplico.
-              Las Tostadas 200g explotan (+472% y +871%) pero tienen tiendas
-              sin stock. Cada dia sin producto es venta perdida.
-            </p>
-          </div>
+{/* Bottom insight removed */}
         </div>
       </div>
     </SlideWrapper>
