@@ -44,9 +44,9 @@ const kpis = [
 ];
 
 const barData = [
-  { mes: "Ene", v2025: 1136570, v2026: 1948127 },
-  { mes: "Feb", v2025: 1451856, v2026: 2150031 },
-  { mes: "Mar", v2025: 1797487, v2026: 3014379 },
+  { mes: "P01", v2025: 1136570, v2026: 1948127 },
+  { mes: "P02", v2025: 1451856, v2026: 2150031 },
+  { mes: "P03", v2025: 1797487, v2026: 3014379 },
 ];
 
 const fmt = (n: number) => {
@@ -90,7 +90,7 @@ export default function CrecSlide1Portada() {
             Record de Crecimiento Q1 2026
           </h2>
           <p className="text-[10px] text-gray-500">
-            DELIKOS en MERCO — Enero a Marzo 2026 vs 2025
+            DELIKOS en MERCO — Periodos 01-03 2026 vs 2025
           </p>
         </div>
       </div>
@@ -129,7 +129,7 @@ export default function CrecSlide1Portada() {
       <div className="flex-1 flex flex-col min-h-0">
         <div className="flex items-center justify-between mb-1">
           <p className="text-[10px] text-gray-500 font-semibold uppercase">
-            Venta mensual Q1 — 2025 vs 2026
+            Venta por periodo Q1 — 2025 vs 2026
           </p>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1">

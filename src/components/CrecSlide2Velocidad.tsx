@@ -14,21 +14,21 @@ import {
 
 /* ── Monthly velocity (uds/day) — 15 months ── */
 const velocityData = [
-  { mes: "Ene 25", vel: 897 },
-  { mes: "Feb 25", vel: 1488 },
-  { mes: "Mar 25", vel: 1715 },
-  { mes: "Abr 25", vel: 1376 },
-  { mes: "May 25", vel: 1820 },
-  { mes: "Jun 25", vel: 1439 },
-  { mes: "Jul 25", vel: 1360 },
-  { mes: "Ago 25", vel: 2338 },
-  { mes: "Sep 25", vel: 2055 },
-  { mes: "Oct 25", vel: 2299 },
-  { mes: "Nov 25", vel: 2567 },
-  { mes: "Dic 25", vel: 2681 },
-  { mes: "Ene 26", vel: 2046 },
-  { mes: "Feb 26", vel: 2513 },
-  { mes: "Mar 26", vel: 2957 },
+  { mes: "2025-01", vel: 897 },
+  { mes: "2025-02", vel: 1488 },
+  { mes: "2025-03", vel: 1715 },
+  { mes: "2025-04", vel: 1376 },
+  { mes: "2025-05", vel: 1820 },
+  { mes: "2025-06", vel: 1439 },
+  { mes: "2025-07", vel: 1360 },
+  { mes: "2025-08", vel: 2338 },
+  { mes: "2025-09", vel: 2055 },
+  { mes: "2025-10", vel: 2299 },
+  { mes: "2025-11", vel: 2567 },
+  { mes: "2025-12", vel: 2681 },
+  { mes: "2026-01", vel: 2046 },
+  { mes: "2026-02", vel: 2513 },
+  { mes: "2026-03", vel: 2957 },
 ];
 
 /* ── Velocity by category (Q1 2026, uds/day) ── */
@@ -95,7 +95,7 @@ export default function CrecSlide2Velocidad() {
               Velocidad de Venta Diaria
             </h2>
             <p className="text-[10px] text-gray-500">
-              Unidades vendidas por dia — tendencia 15 meses
+              Unidades vendidas por dia — tendencia 15 periodos
             </p>
           </div>
         </div>
@@ -126,7 +126,7 @@ export default function CrecSlide2Velocidad() {
         {/* Area Chart */}
         <div className="flex-1 flex flex-col min-w-0">
           <p className="text-[10px] text-gray-500 font-semibold uppercase mb-1">
-            Tendencia de velocidad de venta (unidades/dia)
+            Tendencia de velocidad de venta por periodo (unidades/dia)
           </p>
           <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-3">
             <ResponsiveContainer width="100%" height="100%">
@@ -231,8 +231,8 @@ export default function CrecSlide2Velocidad() {
               El producto VUELA del anaquel
             </p>
             <p className="text-[9px] text-emerald-600 mt-0.5">
-              Velocidad casi duplicada en 12 meses. Marzo 2026 alcanza 2,957
-              uds/dia — el mejor registro historico.
+              Velocidad casi duplicada en 12 periodos. Periodo 2026-03 alcanza
+              2,957 uds/dia — el mejor registro historico.
             </p>
           </div>
         </div>
