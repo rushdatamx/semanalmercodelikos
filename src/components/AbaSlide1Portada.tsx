@@ -20,7 +20,7 @@ export default function AbaSlide1Portada() {
         <div className="flex items-center justify-center gap-3">
           <img src="/merco-logo.jpg" alt="MERCO" className="h-16 object-contain" />
         </div>
-        <p className="text-xl text-gray-500">Semana del 30 de marzo 2026</p>
+        <p className="text-xl text-gray-500">Semana del 6 de abril 2026</p>
         <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#F5A623]/50 text-[#F5A623] text-sm font-semibold">
           3 SKUs Tostada + 3 SKUs Papa 45g · Depto. Abarrotes
         </div>
