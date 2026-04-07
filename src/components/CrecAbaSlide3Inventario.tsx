@@ -273,7 +273,7 @@ export default function CrecAbaSlide3Inventario() {
           {/* Callout */}
           <div className="bg-emerald-50 rounded-lg p-2.5 border border-emerald-200 mt-2">
             <p className="text-[10px] text-emerald-700 font-bold">
-              Patron de consumo continuo con reposicion quincenal
+              Patron de consumo continuo con reposicion semanal
             </p>
             <p className="text-[9px] text-emerald-600 mt-0.5">
               Inventario Abarrotes baja ~2,500 uds/dia. Tostadas 200g con 34

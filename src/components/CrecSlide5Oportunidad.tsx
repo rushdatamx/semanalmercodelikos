@@ -179,7 +179,7 @@ export default function CrecSlide5Oportunidad() {
               <p className="text-sm font-bold">Recomendacion</p>
             </div>
             <p className="text-[11px] leading-relaxed opacity-95">
-              Mantener OC quincenal de Tostada Roja 70PZ y surtir Tostadas 200g
+              Mantener OC semanal de Tostada Roja 70PZ y surtir Tostadas 200g
               a las {tostadas200g.reduce((s, t) => s + t.below15, 0)} tiendas
               bajo umbral. El crecimiento lo respalda.
             </p>

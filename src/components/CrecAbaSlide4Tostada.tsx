@@ -57,7 +57,7 @@ const bullets = [
   {
     icon: Repeat,
     text: "Ciclo de restock: ~2 semanas",
-    sub: "Entrega quincenal OC MERCO",
+    sub: "Entrega semanal OC MERCO",
   },
   {
     icon: Clock,
