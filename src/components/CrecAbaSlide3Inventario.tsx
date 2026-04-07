@@ -81,7 +81,7 @@ const CycleTooltip = ({
 
 export default function CrecAbaSlide3Inventario() {
   return (
-    <SlideWrapper className="bg-[#F5F5F5] p-5">
+    <SlideWrapper className="bg-[#F5F5F5] p-5 pb-10">
       {/* Header */}
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-3">
@@ -112,7 +112,8 @@ export default function CrecAbaSlide3Inventario() {
           <p className="text-[10px] text-gray-500 font-semibold uppercase mb-1">
             Dias de inventario (DDI) mediana — 10 productos clave
           </p>
-          <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-3">
+          <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-3 flex flex-col">
+            <div className="flex-1 min-h-0">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={ddiData}
@@ -169,22 +170,23 @@ export default function CrecAbaSlide3Inventario() {
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
-          </div>
-          {/* Legend */}
-          <div className="flex items-center gap-3 mt-1.5">
-            {[
-              { label: "Critico (<15)", color: "#EF4444" },
-              { label: "Vigilar (15-25)", color: "#F59E0B" },
-              { label: "OK (>25)", color: "#10B981" },
-            ].map((l) => (
-              <div key={l.label} className="flex items-center gap-1">
-                <div
-                  className="w-2.5 h-2.5 rounded"
-                  style={{ backgroundColor: l.color }}
-                />
-                <span className="text-[9px] text-gray-500">{l.label}</span>
-              </div>
-            ))}
+            </div>
+            {/* Legend */}
+            <div className="flex items-center gap-3 mt-1">
+              {[
+                { label: "Critico (<15)", color: "#EF4444" },
+                { label: "Vigilar (15-25)", color: "#F59E0B" },
+                { label: "OK (>25)", color: "#10B981" },
+              ].map((l) => (
+                <div key={l.label} className="flex items-center gap-1">
+                  <div
+                    className="w-2.5 h-2.5 rounded"
+                    style={{ backgroundColor: l.color }}
+                  />
+                  <span className="text-[9px] text-gray-500">{l.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
