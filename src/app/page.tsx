@@ -17,6 +17,11 @@ import CrecSlide2Velocidad from "@/components/CrecSlide2Velocidad";
 import CrecSlide3Inventario from "@/components/CrecSlide3Inventario";
 import CrecSlide4Tostada from "@/components/CrecSlide4Tostada";
 import CrecSlide5Oportunidad from "@/components/CrecSlide5Oportunidad";
+import CrecAbaSlide1Portada from "@/components/CrecAbaSlide1Portada";
+import CrecAbaSlide2Velocidad from "@/components/CrecAbaSlide2Velocidad";
+import CrecAbaSlide3Inventario from "@/components/CrecAbaSlide3Inventario";
+import CrecAbaSlide4Tostada from "@/components/CrecAbaSlide4Tostada";
+import CrecAbaSlide5Oportunidad from "@/components/CrecAbaSlide5Oportunidad";
 import NegSlide1KPIs from "@/components/NegSlide1KPIs";
 import NegSlide2TopTiendas from "@/components/NegSlide2TopTiendas";
 import NegSlide3Promociones from "@/components/NegSlide3Promociones";
@@ -64,6 +69,18 @@ const departments = [
       CrecSlide3Inventario,
       CrecSlide4Tostada,
       CrecSlide5Oportunidad,
+    ],
+  },
+  {
+    id: "crec-abarrotes",
+    label: "Crec. Abarrotes",
+    color: "#059669",
+    slides: [
+      CrecAbaSlide1Portada,
+      CrecAbaSlide2Velocidad,
+      CrecAbaSlide3Inventario,
+      CrecAbaSlide4Tostada,
+      CrecAbaSlide5Oportunidad,
     ],
   },
   {
