@@ -13,20 +13,27 @@ import {
   BarChart,
   Bar,
   Cell,
+  LabelList,
 } from "recharts";
 
-/* ── DDI by product (median, April 5 snapshot) — 10 key Abarrotes products ── */
-const ddiData = [
-  { name: "Roja 70PZ", ddi: 28, color: "#10B981", below15: 5, tiendas: 43 },
-  { name: "Roja 200g", ddi: 17, color: "#F59E0B", below15: 18, tiendas: 39 },
-  { name: "Amarilla 200g", ddi: 20, color: "#F59E0B", below15: 16, tiendas: 37 },
-  { name: "Papa Nat 45g", ddi: 39, color: "#10B981", below15: 8, tiendas: 36 },
-  { name: "Papa Fuego 45g", ddi: 52, color: "#10B981", below15: 7, tiendas: 39 },
-  { name: "Papa Jal 45g", ddi: 82, color: "#10B981", below15: 7, tiendas: 38 },
-  { name: "Papa Sal 340g", ddi: 62, color: "#10B981", below15: 7, tiendas: 39 },
-  { name: "Papa Jal 340g", ddi: 58, color: "#10B981", below15: 7, tiendas: 40 },
-  { name: "Durito Teja", ddi: 64, color: "#10B981", below15: 6, tiendas: 30 },
+/* ── DDI by product (median, April 5 snapshot) — 9 key Abarrotes products ── */
+const DDI_CAP = 70;
+const ddiRaw = [
+  { name: "Roja 70PZ", ddi: 28, below15: 5, tiendas: 43 },
+  { name: "Roja 200g", ddi: 17, below15: 18, tiendas: 39 },
+  { name: "Amarilla 200g", ddi: 20, below15: 16, tiendas: 37 },
+  { name: "Papa Nat 45g", ddi: 39, below15: 8, tiendas: 36 },
+  { name: "Papa Fuego 45g", ddi: 52, below15: 7, tiendas: 39 },
+  { name: "Papa Jal 45g", ddi: 82, below15: 7, tiendas: 38 },
+  { name: "Papa Sal 340g", ddi: 62, below15: 7, tiendas: 39 },
+  { name: "Papa Jal 340g", ddi: 58, below15: 7, tiendas: 40 },
+  { name: "Durito Teja", ddi: 64, below15: 6, tiendas: 30 },
 ];
+const ddiData = ddiRaw.map((d) => ({
+  ...d,
+  ddiBar: Math.min(d.ddi, DDI_CAP),
+  capped: d.ddi > DDI_CAP,
+}));
 
 /* ── Inventory cycle (total units, 20 Abarrotes products, 18 snapshots) ── */
 const cycleData = [
@@ -124,7 +131,7 @@ export default function CrecAbaSlide3Inventario() {
                   tick={{ fontSize: 9, fill: "#9CA3AF" }}
                   axisLine={false}
                   tickLine={false}
-                  domain={[0, 100]}
+                  domain={[0, 75]}
                 />
                 <YAxis
                   type="category"
@@ -162,10 +169,15 @@ export default function CrecAbaSlide3Inventario() {
                     );
                   }}
                 />
-                <Bar dataKey="ddi" radius={[0, 4, 4, 0]} barSize={18}>
+                <Bar dataKey="ddiBar" radius={[0, 4, 4, 0]} barSize={18}>
                   {ddiData.map((d, i) => (
                     <Cell key={i} fill={getDdiColor(d.ddi)} />
                   ))}
+                  <LabelList
+                    dataKey="ddi"
+                    position="right"
+                    style={{ fontSize: 9, fill: "#6B7280", fontWeight: 600 }}
+                  />
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
