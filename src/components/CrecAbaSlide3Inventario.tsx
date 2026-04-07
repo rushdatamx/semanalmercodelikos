@@ -24,7 +24,6 @@ const ddiData = [
   { name: "Papa Fuego 45g", ddi: 52, color: "#10B981", below15: 7, tiendas: 39 },
   { name: "Papa Jal 45g", ddi: 82, color: "#10B981", below15: 7, tiendas: 38 },
   { name: "Papa Sal 340g", ddi: 62, color: "#10B981", below15: 7, tiendas: 39 },
-  { name: "Papa Fuego 340g", ddi: 120, color: "#10B981", below15: 1, tiendas: 39 },
   { name: "Papa Jal 340g", ddi: 58, color: "#10B981", below15: 7, tiendas: 40 },
   { name: "Durito Teja", ddi: 64, color: "#10B981", below15: 6, tiendas: 30 },
 ];
@@ -110,7 +109,7 @@ export default function CrecAbaSlide3Inventario() {
         {/* Left: Horizontal bar chart DDI */}
         <div className="w-[480px] flex flex-col">
           <p className="text-[10px] text-gray-500 font-semibold uppercase mb-1">
-            Dias de inventario (DDI) mediana — 10 productos clave
+            Dias de inventario (DDI) mediana — 9 productos clave
           </p>
           <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-3 flex flex-col">
             <div className="flex-1 min-h-0">
@@ -125,7 +124,7 @@ export default function CrecAbaSlide3Inventario() {
                   tick={{ fontSize: 9, fill: "#9CA3AF" }}
                   axisLine={false}
                   tickLine={false}
-                  domain={[0, 130]}
+                  domain={[0, 100]}
                 />
                 <YAxis
                   type="category"
