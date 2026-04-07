@@ -1,7 +1,7 @@
 "use client";
 
 import SlideWrapper from "./SlideWrapper";
-import { TrendingUp, CalendarDays, Package, Store } from "lucide-react";
+import { TrendingUp, CalendarDays, Package } from "lucide-react";
 import {
   BarChart,
   Bar,
@@ -32,13 +32,6 @@ const kpis = [
     badge: "10 nuevos desde Q1 2025",
     badgeColor: "bg-blue-100 text-blue-700",
     icon: Package,
-  },
-  {
-    label: "Tiendas activas",
-    value: "43",
-    badge: "100% cobertura",
-    badgeColor: "bg-purple-100 text-purple-700",
-    icon: Store,
   },
 ];
 
@@ -96,7 +89,7 @@ export default function CrecAbaSlide1Portada() {
       </div>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-4 gap-2.5 mb-3">
+      <div className="grid grid-cols-3 gap-2.5 mb-3">
         {kpis.map((kpi, i) => {
           const Icon = kpi.icon;
           return (
