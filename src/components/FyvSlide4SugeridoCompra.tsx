@@ -13,26 +13,26 @@ interface Sugerido {
 }
 
 const data: Sugerido[] = [
-  { producto: "Minic. s/Chile 300g", tienda: "MERCO El Jaral", ddi: 0, invActual: 0, vtaDiaria: 1.5, udsSugeridas: 22 },
-  { producto: "Minic. s/Chile 300g", tienda: "MERCO Girasoles", ddi: 0, invActual: 0, vtaDiaria: 1.2, udsSugeridas: 19 },
-  { producto: "Rotini s/Chile 300g", tienda: "MERCO Sdo. Sta. Catarina", ddi: 0, invActual: 0, vtaDiaria: 0.9, udsSugeridas: 15 },
-  { producto: "Minic. c/Chile 300g", tienda: "MERCO Apodaca Centro", ddi: 0, invActual: 0, vtaDiaria: 0.7, udsSugeridas: 11 },
-  { producto: "Cacah. Virginia 454g", tienda: "MERCO Mixcoac", ddi: 0, invActual: 52, vtaDiaria: 0.4, udsSugeridas: 7 },
-  { producto: "Minic. s/Chile 300g", tienda: "MERCO San Buena", ddi: 0, invActual: 0, vtaDiaria: 0.3, udsSugeridas: 5 },
-  { producto: "Cacah. Virginia 454g", tienda: "MERCO Nuevo Repueblo", ddi: 0, invActual: 78, vtaDiaria: 0.3, udsSugeridas: 5 },
-  { producto: "Cacah. Virginia 454g", tienda: "MERCO Lindavista", ddi: 0, invActual: 10, vtaDiaria: 0.3, udsSugeridas: 5 },
-  { producto: "Conchitas 454g", tienda: "MERCO Buenavista", ddi: 0, invActual: 38, vtaDiaria: 0.3, udsSugeridas: 4 },
-  { producto: "Cacah. Cantinero 454g", tienda: "MERCO Los Pilares", ddi: 0, invActual: 59, vtaDiaria: 0.2, udsSugeridas: 3 },
-  { producto: "Papa Desh. Natural 170g", tienda: "MERCO Israel Cavazos", ddi: 0, invActual: 0, vtaDiaria: 0.1, udsSugeridas: 2 },
-  { producto: "Cacah. Japonés 454g", tienda: "MERCO Saltillo Madero", ddi: 0, invActual: 34, vtaDiaria: 0.1, udsSugeridas: 2 },
-  { producto: "Minic. s/Chile 300g", tienda: "MERCO Sdo. Sta. Catarina", ddi: 0.6, invActual: 1, vtaDiaria: 1.4, udsSugeridas: 20 },
-  { producto: "Rotini s/Chile 300g", tienda: "MERCO Sta. Elena Zuazua", ddi: 0.8, invActual: 1, vtaDiaria: 1.0, udsSugeridas: 15 },
-  { producto: "Cacah. Botanero 454g", tienda: "MERCO Apodaca Centro", ddi: 1.5, invActual: 1, vtaDiaria: 0.7, udsSugeridas: 11 },
+  { producto: "Minic. s/Chile 300g", tienda: "MERCO El Jaral", ddi: 0, invActual: 0, vtaDiaria: 1.9, udsSugeridas: 32 },
+  { producto: "Minic. s/Chile 300g", tienda: "MERCO Girasoles", ddi: 0, invActual: 0, vtaDiaria: 1.6, udsSugeridas: 24 },
+  { producto: "Rotini s/Chile 300g", tienda: "MERCO Sdo. Sta. Catarina", ddi: 0, invActual: 0, vtaDiaria: 1.3, udsSugeridas: 24 },
+  { producto: "Minic. c/Chile 300g", tienda: "MERCO Apodaca Centro", ddi: 0, invActual: 0, vtaDiaria: 1.1, udsSugeridas: 20 },
+  { producto: "Cacah. Virginia 454g", tienda: "MERCO Mixcoac", ddi: 0, invActual: 52, vtaDiaria: 0.4, udsSugeridas: 26 },
+  { producto: "Cacah. Virginia 454g", tienda: "MERCO Nuevo Repueblo", ddi: 0, invActual: 78, vtaDiaria: 0.3, udsSugeridas: 26 },
+  { producto: "Cacah. Virginia 454g", tienda: "MERCO Lindavista", ddi: 0, invActual: 10, vtaDiaria: 0.4, udsSugeridas: 26 },
+  { producto: "Cacah. Japonés 454g", tienda: "MERCO Saltillo Madero", ddi: 0, invActual: 34, vtaDiaria: 0.1, udsSugeridas: 26 },
+  { producto: "Cacah. Cantinero 454g", tienda: "MERCO Los Pilares", ddi: 0, invActual: 59, vtaDiaria: 0.3, udsSugeridas: 18 },
+  { producto: "Conchitas 454g", tienda: "MERCO Buenavista", ddi: 0, invActual: 38, vtaDiaria: 0.2, udsSugeridas: 10 },
+  { producto: "Papa Desh. Natural 170g", tienda: "MERCO Israel Cavazos", ddi: 0, invActual: 0, vtaDiaria: 0.2, udsSugeridas: 10 },
+  { producto: "Minic. s/Chile 300g", tienda: "MERCO San Buena", ddi: 0, invActual: 0, vtaDiaria: 0.5, udsSugeridas: 8 },
+  { producto: "Minic. s/Chile 300g", tienda: "MERCO Sdo. Sta. Catarina", ddi: 0.6, invActual: 1, vtaDiaria: 2.0, udsSugeridas: 32 },
+  { producto: "Rotini s/Chile 300g", tienda: "MERCO Sta. Elena Zuazua", ddi: 0.8, invActual: 1, vtaDiaria: 1.5, udsSugeridas: 24 },
+  { producto: "Cacah. Botanero 454g", tienda: "MERCO Apodaca Centro", ddi: 1.5, invActual: 1, vtaDiaria: 1.1, udsSugeridas: 18 },
 ];
 
-const TOTAL_LINEAS = 40;
-const TOTAL_UDS = 620;
-const TOTAL_CAJAS = 52;
+const TOTAL_LINEAS = 41;
+const TOTAL_UDS = 720;
+const TOTAL_CAJAS = 62;
 
 export default function FyvSlide4SugeridoCompra() {
   return (
@@ -41,7 +41,7 @@ export default function FyvSlide4SugeridoCompra() {
         <ShoppingCart className="w-6 h-6 text-[#27AE60]" />
         <h2 className="text-2xl font-bold text-gray-800">Sugerido de Compra — Frutas y Verduras</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-3">Inventario al 07-Abr · DDI &lt; 15 días · Venta diaria por tienda · Top 15 de {TOTAL_LINEAS} líneas</p>
+      <p className="text-gray-500 text-xs mb-3">Inventario al 08-Abr · DDI &lt; 15 días · Venta diaria por tienda · Top 15 de {TOTAL_LINEAS} líneas</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">

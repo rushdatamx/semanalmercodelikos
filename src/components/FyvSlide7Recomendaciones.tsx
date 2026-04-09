@@ -15,13 +15,13 @@ const recomendaciones: Recomendacion[] = [
     accion: "Surtir urgente",
     producto: "Minicuadro s/Chile 300g",
     tiendas: "San Buena, Girasoles, El Jaral (agotadas) + 8 bajo umbral",
-    nota: "3 agotadas + 8 bajo umbral — 18 cj (144 uds). #1 en ventas FyV ($106K)",
+    nota: "3 agotadas + 8 bajo umbral — 22 cj (176 uds). #1 en ventas FyV ($106K)",
   },
   {
     accion: "Surtir urgente",
     producto: "Minicuadro c/Chile 300g",
     tiendas: "Apodaca Centro (agotada) + 6 bajo umbral",
-    nota: "1 agotada + 6 bajo umbral — 10 cj (100 uds). #5 en ventas ($76K)",
+    nota: "1 agotada + 6 bajo umbral — 13 cj (130 uds). #5 en ventas ($76K)",
   },
   {
     accion: "Surtir urgente",
@@ -33,13 +33,19 @@ const recomendaciones: Recomendacion[] = [
     accion: "Surtir urgente",
     producto: "Papa Desh. Natural 170g",
     tiendas: "Israel Cavazos (agotada) + 3 bajo umbral",
-    nota: "1 agotada + 3 bajo umbral — 4 cj (40 uds). #2 en ventas ($102K)",
+    nota: "1 agotada + 3 bajo umbral — 6 cj (60 uds). #2 en ventas ($102K)",
   },
   {
     accion: "Reabastecer",
     producto: "Cacah. Cantinero 454g",
-    tiendas: "Piedras Negras, Pueblo Nuevo",
-    nota: "2 bajo umbral — 3 cj (54 uds)",
+    tiendas: "Piedras Negras, Solidaridad, Pueblo Nuevo",
+    nota: "3 bajo umbral — 4 cj (72 uds)",
+  },
+  {
+    accion: "Reabastecer",
+    producto: "Cacah. Virginia 454g",
+    tiendas: "Mixcoac, Nuevo Repueblo, Lindavista",
+    nota: "3 tiendas sin venta con inv — 3 cj (78 uds)",
   },
   {
     accion: "Reabastecer",
@@ -50,7 +56,7 @@ const recomendaciones: Recomendacion[] = [
   {
     accion: "Reabastecer",
     producto: "Cacah. Japonés 454g",
-    tiendas: "Apodaca Centro",
+    tiendas: "Apodaca Centro, Saltillo Madero",
     nota: "1 bajo umbral — 2 cj (52 uds)",
   },
   {
@@ -65,6 +71,12 @@ const recomendaciones: Recomendacion[] = [
     tiendas: "Libramiento",
     nota: "1 bajo umbral — 1 cj (10 uds)",
   },
+  {
+    accion: "Reabastecer",
+    producto: "Conchitas 454g",
+    tiendas: "Buenavista",
+    nota: "1 sin venta con inv — 1 cj (10 uds)",
+  },
 ];
 
 const accionColor: Record<string, string> = {
@@ -75,11 +87,12 @@ const accionColor: Record<string, string> = {
 };
 
 const invTrend = [
-  { fecha: "22-Mar", uds: 14578 },
-  { fecha: "29-Mar", uds: 12795 },
-  { fecha: "01-Abr", uds: 13597 },
-  { fecha: "05-Abr", uds: 12554 },
+  { fecha: "30-Mar", uds: 12611 },
+  { fecha: "31-Mar", uds: 12385 },
+  { fecha: "01-Abr", uds: 14153 },
+  { fecha: "05-Abr", uds: 12592 },
   { fecha: "07-Abr", uds: 12122 },
+  { fecha: "08-Abr", uds: 11960 },
 ];
 
 export default function FyvSlide7Recomendaciones() {
@@ -89,7 +102,7 @@ export default function FyvSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#27AE60]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Frutas y Verduras</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas por producto · Inventario al 07-Abr 2026 · 52 cajas / 620 uds total</p>
+      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas por producto · Inventario al 08-Abr 2026 · 62 cajas / 720 uds total</p>
 
       <div className="flex gap-4 flex-1">
         <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
@@ -126,7 +139,7 @@ export default function FyvSlide7Recomendaciones() {
               <TrendingDown className="w-3.5 h-3.5 text-[#27AE60]" />
               <p className="text-[10px] font-bold text-gray-600">Inventario FyV</p>
             </div>
-            <p className="text-[9px] text-gray-400 mb-2">Tendencia 16 días</p>
+            <p className="text-[9px] text-gray-400 mb-2">Tendencia 10 días</p>
             {invTrend.map((t, i) => {
               const prev = i > 0 ? invTrend[i - 1].uds : t.uds;
               const delta = t.uds - prev;
@@ -147,8 +160,8 @@ export default function FyvSlide7Recomendaciones() {
             })}
             <div className="mt-2 pt-2 border-t border-gray-100">
               <p className="text-[9px] text-gray-400">Entrega detectada</p>
-              <p className="text-[10px] font-bold text-green-600">01-Abr: +1,464 uds</p>
-              <p className="text-[9px] text-gray-400 mt-1">OC 26-Mar distribuida</p>
+              <p className="text-[10px] font-bold text-green-600">01-Abr: +1,768 uds</p>
+              <p className="text-[9px] text-gray-400 mt-1">OC distribuida a tiendas</p>
             </div>
           </div>
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-3">
