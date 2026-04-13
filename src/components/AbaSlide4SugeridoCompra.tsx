@@ -15,41 +15,41 @@ interface Sugerido {
 }
 
 const dataTostadas: Sugerido[] = [
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Hidalgo", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO La Sierrita", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 5, udsEnviar: 120 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO San Antonio", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO San Roque", tipo: "GRANDE", ddi: 0, invActual: 187, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "Urdiñola", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Amarilla 200g", tienda: "MERCO Republica", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 5, udsEnviar: 120 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Buenavista", tipo: "GRANDE", ddi: 0.4, invActual: 2, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Hidalgo", tipo: "GRANDE", ddi: 1.0, invActual: 6, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Colinas", tipo: "GRANDE", ddi: 1.5, invActual: 7, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Lindavista", tipo: "GRANDE", ddi: 1.6, invActual: 7, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Piedras Negras", tipo: "GRANDE", ddi: 2.0, invActual: 5, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO El Jaral", tipo: "GRANDE", ddi: 2.0, invActual: 8, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Solidaridad", tipo: "GRANDE", ddi: 2.1, invActual: 18, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Castaños", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 5, udsEnviar: 120 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Aramberri", tipo: "CHICA", ddi: 2.1, invActual: 18, pallets: 0, cajas: 5, udsEnviar: 120 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 3.2, invActual: 17, pallets: 0, cajas: 4, udsEnviar: 96 },
+  { producto: "Tostada Amarilla 200g", tienda: "Sta Elena Zuazua", tipo: "GRANDE", ddi: 3.5, invActual: 17, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO San Antonio", tipo: "GRANDE", ddi: 4.2, invActual: 21, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Nvo Repueblo", tipo: "CHICA", ddi: 4.3, invActual: 23, pallets: 0, cajas: 3, udsEnviar: 72 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Frontera Centro", tipo: "GRANDE", ddi: 4.6, invActual: 21, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Ramos Arizpe", tipo: "GRANDE", ddi: 5.0, invActual: 14, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO La Sierrita", tipo: "GRANDE", ddi: 5.2, invActual: 24, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Parras", tipo: "CHICA", ddi: 5.3, invActual: 11, pallets: 0, cajas: 2, udsEnviar: 48 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Garcia", tipo: "GRANDE", ddi: 7.6, invActual: 58, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Rosita", tipo: "GRANDE", ddi: 12.3, invActual: 71, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "Manantiales", tipo: "CHICA", ddi: 12.9, invActual: 51, pallets: 0, cajas: 1, udsEnviar: 24 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Piedras Negras", tipo: "GRANDE", ddi: 13.9, invActual: 43, pallets: 0, cajas: 6, udsEnviar: 144 },
 ];
 
-const TOST_LINEAS = 47;
-const TOST_UDS = 6648;
+const TOST_LINEAS = 36;
+const TOST_UDS = 5256;
 
 const dataPapas: Sugerido[] = [
-  { producto: "Papa Fuego 45g", tienda: "MERCO Saltillo Centro", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 0, udsEnviar: 420 },
-  { producto: "Papa Fuego 45g", tienda: "MERCO Nuevo Repueblo", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 1, udsEnviar: 45 },
-  { producto: "Papa Natural 45g", tienda: "MERCO San Antonio", tipo: "GRANDE", ddi: 0, invActual: 45, pallets: 0, cajas: 0, udsEnviar: 420 },
-  { producto: "Papa Natural 45g", tienda: "MERCO Pueblo Nuevo", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 0, udsEnviar: 420 },
-  { producto: "Papa Natural 45g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 3, udsEnviar: 135 },
-  { producto: "Papa Jalapeño 45g", tienda: "MERCO Pueblo Nuevo", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 0, udsEnviar: 420 },
-  { producto: "Papa Jalapeño 45g", tienda: "MERCO Paseo Monclova", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 0, udsEnviar: 420 },
-  { producto: "Papa Natural 45g", tienda: "MERCO Nuevo Repueblo", tipo: "CHICA", ddi: 0.3, invActual: 1, pallets: 0, cajas: 2, udsEnviar: 90 },
-  { producto: "Papa Natural 45g", tienda: "MERCO Garcia", tipo: "GRANDE", ddi: 0.5, invActual: 6, pallets: 0, cajas: 0, udsEnviar: 420 },
-  { producto: "Papa Jalapeño 45g", tienda: "MERCO Saltillo Centro", tipo: "GRANDE", ddi: 0.5, invActual: 1, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Israel Cavazos", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Paraje San Jose", tipo: "GRANDE", ddi: 0, invActual: 197, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO San Antonio", tipo: "GRANDE", ddi: 0.4, invActual: 1, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 0.6, invActual: 4, pallets: 0, cajas: 3, udsEnviar: 135 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Republica", tipo: "GRANDE", ddi: 1.0, invActual: 2, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Pueblo Nuevo", tipo: "GRANDE", ddi: 1.6, invActual: 3, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Hidalgo", tipo: "GRANDE", ddi: 2.3, invActual: 2, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Parras", tipo: "CHICA", ddi: 3.0, invActual: 3, pallets: 0, cajas: 1, udsEnviar: 45 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Acuña", tipo: "GRANDE", ddi: 5.8, invActual: 45, pallets: 0, cajas: 0, udsEnviar: 420 },
+  { producto: "Papa Fuego 45g", tienda: "MERCO Colinas", tipo: "GRANDE", ddi: 8.4, invActual: 39, pallets: 0, cajas: 0, udsEnviar: 420 },
 ];
 
-const PAPAS_LINEAS = 28;
-const PAPAS_UDS = 10110;
+const PAPAS_LINEAS = 27;
+const PAPAS_UDS = 9645;
 
 export default function AbaSlide4SugeridoCompra() {
   return (
@@ -141,7 +141,7 @@ export default function AbaSlide4SugeridoCompra() {
       </div>
 
       <div className="mt-2 flex justify-between items-center">
-        <p className="text-[10px] text-gray-400">Tostadas + Papa 45g · Inventario al 05-Abr-2026</p>
+        <p className="text-[10px] text-gray-400">Tostadas + Papa 45g · Inventario al 12-Abr-2026</p>
         <div className="flex gap-6">
           <div className="text-right">
             <p className="text-gray-500 text-[10px]">Tostadas</p>
