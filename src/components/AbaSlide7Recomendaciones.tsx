@@ -93,28 +93,28 @@ export default function AbaSlide7Recomendaciones() {
       <div className="mt-2 grid grid-cols-2 gap-3">
         {/* OC Tostadas */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
-          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Tostadas (26-Mar)</p>
+          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Tostadas (09-Abr)</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">5 pallets</span> (1,200 uds)</span><span className="text-green-600 font-bold">OC CUBRE (+1020%)</span></div>
-            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">95 cajas</span> (2,280 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 54 cajas</span></div>
-            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">74 cajas</span> (1,776 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 26 cajas</span></div>
+            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">5 pallets</span> (1,200 uds)</span><span className="text-red-600 font-bold">SIN OC</span></div>
+            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">95 cajas</span> (2,280 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 52 cajas</span></div>
+            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">74 cajas</span> (1,776 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 43 cajas</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 5,256 uds · OC 26-Mar cubre Roja 70PZ · Adicional 200g: 80 cajas</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total: 5,256 uds · Roja 70PZ SIN OC · OC cubre parcial 200g · Adicional: 95 cajas</p>
         </div>
 
         {/* OC Papas 45g */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
-          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Papa 45g (26-Mar)</p>
+          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Papa 45g (09-Abr)</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Natural 45g: <span className="font-semibold text-gray-800">8 PDQs + 4 cajas</span></span><span className="text-orange-600 font-bold">ADICIONAL: 17 cajas</span></div>
-            <div className="flex justify-between"><span>Fuego 45g: <span className="font-semibold text-gray-800">8 PDQs + 4 cajas</span></span><span className="text-orange-600 font-bold">ADICIONAL: 28 cajas</span></div>
-            <div className="flex justify-between"><span>Jalapeño 45g: <span className="font-semibold text-gray-800">6 PDQs + 1 cajas</span></span><span className="text-green-600 font-bold">OC CUBRE EXACTO</span></div>
+            <div className="flex justify-between"><span>Natural 45g: <span className="font-semibold text-gray-800">8 PDQs + 4 cajas</span></span><span className="text-green-600 font-bold">OC CUBRE (+9%)</span></div>
+            <div className="flex justify-between"><span>Fuego 45g: <span className="font-semibold text-gray-800">8 PDQs + 4 cajas</span></span><span className="text-orange-600 font-bold">ADICIONAL: 1 caja</span></div>
+            <div className="flex justify-between"><span>Jalapeño 45g: <span className="font-semibold text-gray-800">6 PDQs + 1 cajas</span></span><span className="text-green-600 font-bold">OC CUBRE (+7%)</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 9,645 uds · OC cubre Jalapeño · Adicional: 45 cajas Natural + Fuego</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total: 9,645 uds · OC cubre Natural y Jalapeño · Adicional: 1 caja Fuego</p>
         </div>
       </div>
 
-      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 26-Mar se esta distribuyendo a tiendas. Algunas necesidades pueden quedar cubiertas conforme se complete la distribucion. Total sugerido: 14,901 uds.</p>
+      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 09-Abr se esta distribuyendo a tiendas. Algunas necesidades pueden quedar cubiertas conforme se complete la distribucion. Total sugerido: 14,901 uds.</p>
     </SlideWrapper>
   );
 }
