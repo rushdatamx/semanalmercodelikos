@@ -27,6 +27,10 @@ import NegSlide2TopTiendas from "@/components/NegSlide2TopTiendas";
 import NegSlide3Promociones from "@/components/NegSlide3Promociones";
 import NegSlide4Papas from "@/components/NegSlide4Papas";
 import NegSlide5TopTiendasUds from "@/components/NegSlide5TopTiendasUds";
+import EjecSlide1Portada from "@/components/EjecSlide1Portada";
+import EjecSlide2KPIs from "@/components/EjecSlide2KPIs";
+import EjecSlide3TopVentas from "@/components/EjecSlide3TopVentas";
+import EjecSlide4Oportunidades from "@/components/EjecSlide4Oportunidades";
 
 const departments = [
   {
@@ -93,6 +97,17 @@ const departments = [
       NegSlide5TopTiendasUds,
       NegSlide3Promociones,
       NegSlide4Papas,
+    ],
+  },
+  {
+    id: "ejecutiva",
+    label: "Ejecutiva",
+    color: "#8B5CF6",
+    slides: [
+      EjecSlide1Portada,
+      EjecSlide2KPIs,
+      EjecSlide3TopVentas,
+      EjecSlide4Oportunidades,
     ],
   },
 ];
