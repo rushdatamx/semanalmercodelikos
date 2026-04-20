@@ -18,13 +18,13 @@ const growthTiendas: OpTienda[] = [
   { nombre: "MERCO Rosita", growth: "+152%", v25: "$73K", v26: "$183K" },
 ];
 
-export default function EjecSlide4Oportunidades() {
+export default function EjecSlide5Oportunidades() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-5">
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-8 h-8 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center">
-          <Target className="w-5 h-5 text-[#8B5CF6]" />
+        <div className="w-8 h-8 rounded-lg bg-[#F5A623]/10 flex items-center justify-center">
+          <Target className="w-5 h-5 text-[#F5A623]" />
         </div>
         <div>
           <h2 className="text-xl font-bold text-gray-800">Oportunidades y Proyección</h2>
@@ -46,7 +46,7 @@ export default function EjecSlide4Oportunidades() {
                   cy="60"
                   r="50"
                   fill="none"
-                  stroke="#8B5CF6"
+                  stroke="#F5A623"
                   strokeWidth="12"
                   strokeDasharray={`${94.9 * 3.14} ${100 * 3.14}`}
                   strokeLinecap="round"
@@ -103,7 +103,7 @@ export default function EjecSlide4Oportunidades() {
             <div className="mt-3 pt-2 border-t border-gray-100">
               <div className="flex items-center justify-between">
                 <p className="text-[9px] text-gray-500">Tienda nueva en 2026:</p>
-                <p className="text-[10px] font-bold text-[#8B5CF6]">MERCO República ($137K)</p>
+                <p className="text-[10px] font-bold text-[#F5A623]">MERCO República ($137K)</p>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function EjecSlide4Oportunidades() {
           <p className="text-[10px] text-gray-500 font-semibold uppercase mb-2">Proyección Abril 2026</p>
           <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex flex-col">
             <div className="flex items-center gap-2 mb-3">
-              <BarChart3 className="w-4 h-4 text-[#8B5CF6]" />
+              <BarChart3 className="w-4 h-4 text-[#F5A623]" />
               <p className="text-[10px] text-gray-600 font-semibold">Cierre estimado del mes</p>
             </div>
 
@@ -124,9 +124,9 @@ export default function EjecSlide4Oportunidades() {
                 <p className="text-2xl font-bold text-gray-800">$1.62M</p>
               </div>
               <div className="w-16 h-px bg-gray-200" />
-              <div className="text-center bg-[#8B5CF6]/5 rounded-lg px-4 py-3 border border-[#8B5CF6]/15">
-                <p className="text-[9px] text-[#8B5CF6] uppercase font-semibold">Proyección 30 días</p>
-                <p className="text-3xl font-bold text-[#8B5CF6]">$2.56M</p>
+              <div className="text-center bg-[#F5A623]/5 rounded-lg px-4 py-3 border border-[#F5A623]/15">
+                <p className="text-[9px] text-[#F5A623] uppercase font-semibold">Proyección 30 días</p>
+                <p className="text-3xl font-bold text-[#F5A623]">$2.56M</p>
               </div>
               <div className="w-16 h-px bg-gray-200" />
               <div className="text-center">
@@ -138,8 +138,8 @@ export default function EjecSlide4Oportunidades() {
               </div>
             </div>
 
-            <div className="mt-3 bg-purple-50 rounded-lg px-3 py-1.5 border border-purple-200 text-center">
-              <p className="text-[9px] text-purple-700 font-semibold">
+            <div className="mt-3 bg-orange-50 rounded-lg px-3 py-1.5 border border-orange-200 text-center">
+              <p className="text-[9px] text-orange-700 font-semibold">
                 Tendencia de crecimiento se mantiene en Q2
               </p>
             </div>
