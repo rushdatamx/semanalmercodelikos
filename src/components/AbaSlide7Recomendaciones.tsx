@@ -12,40 +12,40 @@ interface Recomendacion {
 
 const recomendaciones: Recomendacion[] = [
   {
-    accion: "Reabastecer",
+    accion: "Surtir urgente",
     producto: "Tostada Roja 70PZ",
-    tiendas: "5 tiendas bajo umbral (Garcia, Solidaridad +3)",
-    sugerido: "5 pallets (1,200 uds)",
+    tiendas: "21 tiendas bajo umbral (Solidaridad, Buenavista, El Jaral +18)",
+    sugerido: "21 pallets (5,040 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Roja 200g",
-    tiendas: "2 agotadas + 13 bajo umbral (Piedras Negras, La Sierrita +13)",
-    sugerido: "95 cajas (2,280 uds)",
+    tiendas: "2 agotadas + 13 bajo umbral (Lindavista, Libramiento +13)",
+    sugerido: "82 cajas (1,968 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Amarilla 200g",
-    tiendas: "1 agotada + 13 bajo umbral (Castaños, Republica +12)",
-    sugerido: "74 cajas (1,776 uds)",
+    tiendas: "11 tiendas bajo umbral (San Buena, Frontera Centro +9)",
+    sugerido: "56 cajas (1,344 uds)",
   },
   {
-    accion: "Surtir urgente",
+    accion: "Reabastecer",
     producto: "Papa Natural 45g",
-    tiendas: "3 agotadas + 8 bajo umbral (Ramos Arizpe, Israel Cavazos +9)",
-    sugerido: "8 PDQs + 4 cajas (3,540 uds)",
+    tiendas: "1 agotada + 1 bajo umbral (Republica, Solidaridad)",
+    sugerido: "2 PDQs (840 uds)",
   },
   {
-    accion: "Surtir urgente",
+    accion: "Reabastecer",
     producto: "Papa Fuego 45g",
-    tiendas: "1 agotada + 10 bajo umbral (Israel Cavazos, Paraje San Jose +9)",
-    sugerido: "8 PDQs + 4 cajas (3,540 uds)",
+    tiendas: "2 tiendas bajo umbral (Solidaridad, Republica)",
+    sugerido: "2 PDQs (840 uds)",
   },
   {
     accion: "Reabastecer",
     producto: "Papa Jalapeño 45g",
-    tiendas: "1 agotada + 4 bajo umbral (Saltillo Centro, Israel Cavazos +3)",
-    sugerido: "6 PDQs + 1 cajas (2,565 uds)",
+    tiendas: "2 tiendas bajo umbral (Republica, Solidaridad)",
+    sugerido: "2 PDQs (840 uds)",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function AbaSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#F5A623]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Abarrotes</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas · 3 SKUs Tostada + 3 SKUs Papa 45g · Semana del 13 Abr 2026</p>
+      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas · 3 SKUs Tostada + 3 SKUs Papa 45g · Semana del 20 Abr 2026</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">
@@ -95,26 +95,26 @@ export default function AbaSlide7Recomendaciones() {
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
           <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Tostadas (09-Abr)</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">5 pallets</span> (1,200 uds)</span><span className="text-red-600 font-bold">SIN OC</span></div>
-            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">95 cajas</span> (2,280 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 52 cajas</span></div>
-            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">74 cajas</span> (1,776 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 43 cajas</span></div>
+            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">21 pallets</span> (5,040 uds)</span><span className="text-red-600 font-bold">SIN OC</span></div>
+            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">82 cajas</span> (1,968 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 39 cajas</span></div>
+            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">56 cajas</span> (1,344 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 25 cajas</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 5,256 uds · Roja 70PZ SIN OC · OC cubre parcial 200g · Adicional: 95 cajas</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total: 8,352 uds · Roja 70PZ SIN OC · OC cubre parcial 200g · Adicional: 64 cajas</p>
         </div>
 
         {/* OC Papas 45g */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
           <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Papa 45g (09-Abr)</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Natural 45g: <span className="font-semibold text-gray-800">8 PDQs + 4 cajas</span></span><span className="text-green-600 font-bold">OC CUBRE (+9%)</span></div>
-            <div className="flex justify-between"><span>Fuego 45g: <span className="font-semibold text-gray-800">8 PDQs + 4 cajas</span></span><span className="text-orange-600 font-bold">ADICIONAL: 1 caja</span></div>
-            <div className="flex justify-between"><span>Jalapeño 45g: <span className="font-semibold text-gray-800">6 PDQs + 1 cajas</span></span><span className="text-green-600 font-bold">OC CUBRE (+7%)</span></div>
+            <div className="flex justify-between"><span>Natural 45g: <span className="font-semibold text-gray-800">2 PDQs</span> (840 uds)</span><span className="text-green-600 font-bold">OC CUBRE (+361%)</span></div>
+            <div className="flex justify-between"><span>Fuego 45g: <span className="font-semibold text-gray-800">2 PDQs</span> (840 uds)</span><span className="text-green-600 font-bold">OC CUBRE (+318%)</span></div>
+            <div className="flex justify-between"><span>Jalapeño 45g: <span className="font-semibold text-gray-800">2 PDQs</span> (840 uds)</span><span className="text-green-600 font-bold">OC CUBRE (+227%)</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 9,645 uds · OC cubre Natural y Jalapeño · Adicional: 1 caja Fuego</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total: 2,520 uds · OC cubre los 3 sabores ampliamente</p>
         </div>
       </div>
 
-      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 09-Abr se esta distribuyendo a tiendas. Algunas necesidades pueden quedar cubiertas conforme se complete la distribucion. Total sugerido: 14,901 uds.</p>
+      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 09-Abr se esta distribuyendo a tiendas. Algunas necesidades pueden quedar cubiertas conforme se complete la distribucion. Total sugerido: 10,872 uds.</p>
     </SlideWrapper>
   );
 }
