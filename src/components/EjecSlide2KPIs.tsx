@@ -2,6 +2,14 @@
 
 import SlideWrapper from "./SlideWrapper";
 import { TrendingUp, Trophy, Package, Layers } from "lucide-react";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  ResponsiveContainer,
+  ReferenceLine,
+} from "recharts";
 
 const kpis = [
   {
@@ -41,6 +49,24 @@ const pivotData = [
 ];
 
 const totals = { v2025: "$4.39M", v2026: "$7.09M", delta: "+62%", deltaVal: 2.71 };
+
+const trendData = [
+  { mes: "2025-01", venta: 1.14 },
+  { mes: "2025-02", venta: 1.45 },
+  { mes: "2025-03", venta: 1.80 },
+  { mes: "2025-04", venta: 1.53 },
+  { mes: "2025-05", venta: 1.87 },
+  { mes: "2025-06", venta: 1.50 },
+  { mes: "2025-07", venta: 1.51 },
+  { mes: "2025-08", venta: 2.21 },
+  { mes: "2025-09", venta: 1.98 },
+  { mes: "2025-10", venta: 2.04 },
+  { mes: "2025-11", venta: 2.51 },
+  { mes: "2025-12", venta: 2.44 },
+  { mes: "2026-01", venta: 1.93 },
+  { mes: "2026-02", venta: 2.15 },
+  { mes: "2026-03", venta: 3.01 },
+];
 
 export default function EjecSlide2KPIs() {
   const maxDelta = Math.max(...pivotData.map((d) => d.deltaVal));
@@ -151,12 +177,55 @@ export default function EjecSlide2KPIs() {
               </tfoot>
             </table>
 
-            {/* Insight box */}
-            <div className="mt-auto mx-3 mb-3 bg-[#F5A623]/8 rounded-lg px-4 py-2.5 border border-[#F5A623]/20">
-              <p className="text-[11px] text-gray-700">
-                <span className="font-bold text-[#F5A623]">Marzo 2026 = $3.01M</span>
-                {" — "}récord histórico de sell-out. Crecimiento sostenido los 3 meses del trimestre.
+            {/* Trend chart */}
+            <div className="flex-1 min-h-0 px-3 pb-2 flex flex-col">
+              <p className="text-[9px] text-gray-400 uppercase font-semibold mb-1">
+                Tendencia mensual Ene 2025 → Mar 2026 (Millones MXN)
               </p>
+              <div className="flex-1 min-h-0">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={trendData} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
+                    <defs>
+                      <linearGradient id="trendGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#F5A623" stopOpacity={0.25} />
+                        <stop offset="95%" stopColor="#F5A623" stopOpacity={0.02} />
+                      </linearGradient>
+                    </defs>
+                    <XAxis
+                      dataKey="mes"
+                      tick={{ fontSize: 8, fill: "#9CA3AF" }}
+                      axisLine={false}
+                      tickLine={false}
+                      interval={0}
+                      angle={-35}
+                      textAnchor="end"
+                      height={30}
+                    />
+                    <YAxis
+                      tick={{ fontSize: 8, fill: "#9CA3AF" }}
+                      axisLine={false}
+                      tickLine={false}
+                      width={30}
+                      tickFormatter={(v) => `$${v}M`}
+                      domain={[0.8, 3.2]}
+                    />
+                    <ReferenceLine
+                      y={1.46}
+                      stroke="#D1D5DB"
+                      strokeDasharray="4 4"
+                      label={{ value: "Prom Q1 2025: $1.46M", position: "insideTopLeft", fontSize: 8, fill: "#9CA3AF" }}
+                    />
+                    <Area
+                      type="monotone"
+                      dataKey="venta"
+                      stroke="#F5A623"
+                      strokeWidth={2}
+                      fill="url(#trendGrad)"
+                      dot={{ r: 2.5, fill: "#F5A623", strokeWidth: 0 }}
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </div>
         </div>
