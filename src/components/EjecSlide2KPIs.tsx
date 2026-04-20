@@ -2,15 +2,6 @@
 
 import SlideWrapper from "./SlideWrapper";
 import { TrendingUp, Trophy, Package, Layers } from "lucide-react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  Legend,
-} from "recharts";
 
 const kpis = [
   {
@@ -24,7 +15,7 @@ const kpis = [
     label: "Mejor Mes",
     value: "2026-03: $3.01M",
     badge: "Récord histórico",
-    badgeColor: "bg-purple-100 text-purple-700",
+    badgeColor: "bg-orange-100 text-orange-700",
     icon: Trophy,
   },
   {
@@ -38,49 +29,39 @@ const kpis = [
     label: "SKUs Activos",
     value: "44",
     badge: "vs 21 en Ene 2025",
-    badgeColor: "bg-orange-100 text-orange-700",
+    badgeColor: "bg-amber-100 text-amber-700",
     icon: Layers,
   },
 ];
 
-const barData = [
-  { mes: "2025-01", "2025": 1.14, "2026": 1.93 },
-  { mes: "2025-02", "2025": 1.45, "2026": 2.15 },
-  { mes: "2025-03", "2025": 1.80, "2026": 3.01 },
+const pivotData = [
+  { mes: "Enero", v2025: "$1.14M", v2026: "$1.93M", delta: "+70%", deltaVal: 0.80 },
+  { mes: "Febrero", v2025: "$1.45M", v2026: "$2.15M", delta: "+48%", deltaVal: 0.70 },
+  { mes: "Marzo", v2025: "$1.80M", v2026: "$3.01M", delta: "+68%", deltaVal: 1.21 },
 ];
 
-const CustomTooltip = ({ active, payload, label }: any) => {
-  if (!active || !payload?.length) return null;
-  return (
-    <div className="bg-white border border-gray-200 shadow-lg rounded-lg px-3 py-2 text-xs">
-      <p className="font-bold text-gray-800 mb-1">{label}</p>
-      {payload.map((p: any) => (
-        <p key={p.name} style={{ color: p.color }} className="font-semibold">
-          {p.name}: ${p.value.toFixed(2)}M
-        </p>
-      ))}
-    </div>
-  );
-};
+const totals = { v2025: "$4.39M", v2026: "$7.09M", delta: "+62%", deltaVal: 2.71 };
 
 export default function EjecSlide2KPIs() {
+  const maxDelta = Math.max(...pivotData.map((d) => d.deltaVal));
+
   return (
-    <SlideWrapper className="bg-[#F5F5F5] p-6">
+    <SlideWrapper className="bg-[#F5F5F5] p-5">
       {/* Header */}
       <div className="flex items-center gap-3 mb-3">
-        <div className="w-8 h-8 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center">
-          <TrendingUp className="w-5 h-5 text-[#8B5CF6]" />
+        <div className="w-8 h-8 rounded-lg bg-[#F5A623]/10 flex items-center justify-center">
+          <TrendingUp className="w-5 h-5 text-[#F5A623]" />
         </div>
         <div>
           <h2 className="text-xl font-bold text-gray-800">Crecimiento Q1 2026 vs Q1 2025</h2>
-          <p className="text-[10px] text-gray-500">Sell-out acumulado Enero–Marzo</p>
+          <p className="text-[10px] text-gray-500">Sell-out acumulado Enero–Marzo · MERCO</p>
         </div>
       </div>
 
-      {/* Main layout: KPIs left + Chart right */}
+      {/* Main layout: KPIs left + Pivot table right */}
       <div className="flex gap-4 flex-1 min-h-0">
         {/* Left: KPI Cards */}
-        <div className="w-[380px] grid grid-cols-1 gap-2.5">
+        <div className="w-[340px] grid grid-cols-1 gap-2">
           {kpis.map((kpi, i) => {
             const Icon = kpi.icon;
             return (
@@ -88,8 +69,8 @@ export default function EjecSlide2KPIs() {
                 key={i}
                 className="bg-white rounded-xl border border-gray-200 shadow-sm p-3 flex items-center gap-3"
               >
-                <div className="w-9 h-9 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-4.5 h-4.5 text-[#8B5CF6]" />
+                <div className="w-9 h-9 rounded-lg bg-[#F5A623]/10 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-4.5 h-4.5 text-[#F5A623]" />
                 </div>
                 <div>
                   <p className="text-[9px] text-gray-400 uppercase font-semibold">{kpi.label}</p>
@@ -103,67 +84,81 @@ export default function EjecSlide2KPIs() {
           })}
         </div>
 
-        {/* Right: Bar Chart */}
+        {/* Right: Pivot Table */}
         <div className="flex-1 flex flex-col min-w-0">
-          <p className="text-[10px] text-gray-500 font-semibold uppercase mb-1">
+          <p className="text-[10px] text-gray-500 font-semibold uppercase mb-1.5">
             Comparativo mensual (Millones MXN)
           </p>
-          <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-4">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={barData} margin={{ top: 10, right: 10, left: 0, bottom: 5 }}>
-                <XAxis
-                  dataKey="mes"
-                  tick={{ fontSize: 11, fill: "#6B7280" }}
-                  axisLine={false}
-                  tickLine={false}
-                  tickFormatter={(v) => v.replace("2025-", "")}
-                />
-                <YAxis
-                  tick={{ fontSize: 10, fill: "#9CA3AF" }}
-                  axisLine={false}
-                  tickLine={false}
-                  width={35}
-                  tickFormatter={(v) => `$${v}M`}
-                  domain={[0, 3.5]}
-                />
-                <Tooltip content={<CustomTooltip />} />
-                <Legend
-                  wrapperStyle={{ fontSize: 11, paddingTop: 8 }}
-                  iconType="circle"
-                  iconSize={8}
-                />
-                <Bar dataKey="2025" fill="#D1D5DB" radius={[4, 4, 0, 0]} barSize={40} />
-                <Bar dataKey="2026" fill="#8B5CF6" radius={[4, 4, 0, 0]} barSize={40} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </div>
+          <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-gray-50 border-b border-gray-200">
+                  <th className="text-left py-3 px-4 text-[11px] text-gray-500 uppercase font-semibold w-[100px]">Mes</th>
+                  <th className="text-right py-3 px-4 text-[11px] text-gray-400 uppercase font-semibold">2025</th>
+                  <th className="text-right py-3 px-4 text-[11px] text-[#F5A623] uppercase font-semibold">2026</th>
+                  <th className="text-right py-3 px-4 text-[11px] text-gray-500 uppercase font-semibold">Crecimiento</th>
+                  <th className="py-3 px-4 text-[11px] text-gray-500 uppercase font-semibold w-[180px]">Incremento</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pivotData.map((row, i) => (
+                  <tr key={i} className="border-b border-gray-100">
+                    <td className="py-3.5 px-4 font-semibold text-gray-800 text-[13px]">{row.mes}</td>
+                    <td className="py-3.5 px-4 text-right text-gray-400 font-medium text-[13px]">{row.v2025}</td>
+                    <td className="py-3.5 px-4 text-right text-gray-800 font-bold text-[13px]">{row.v2026}</td>
+                    <td className="py-3.5 px-4 text-right">
+                      <span className="text-green-600 font-bold text-[13px] bg-green-50 px-2 py-0.5 rounded">
+                        {row.delta}
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-2">
+                        <div className="flex-1 bg-gray-100 rounded-full h-3 overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-[#F5A623]"
+                            style={{ width: `${(row.deltaVal / maxDelta) * 100}%` }}
+                          />
+                        </div>
+                        <span className="text-[10px] text-gray-500 font-medium w-[45px] text-right">
+                          +${row.deltaVal.toFixed(1)}M
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr className="bg-[#F5A623]/5 border-t-2 border-[#F5A623]/30">
+                  <td className="py-3.5 px-4 font-bold text-gray-800 text-[14px]">Q1 Total</td>
+                  <td className="py-3.5 px-4 text-right text-gray-400 font-bold text-[14px]">{totals.v2025}</td>
+                  <td className="py-3.5 px-4 text-right text-[#F5A623] font-bold text-[15px]">{totals.v2026}</td>
+                  <td className="py-3.5 px-4 text-right">
+                    <span className="text-green-700 font-bold text-[14px] bg-green-100 px-2.5 py-1 rounded">
+                      {totals.delta}
+                    </span>
+                  </td>
+                  <td className="py-3.5 px-4">
+                    <div className="flex items-center gap-2">
+                      <div className="flex-1 bg-gray-100 rounded-full h-3 overflow-hidden">
+                        <div className="h-full rounded-full bg-[#F5A623]" style={{ width: "100%" }} />
+                      </div>
+                      <span className="text-[10px] text-[#F5A623] font-bold w-[45px] text-right">
+                        +${totals.deltaVal.toFixed(1)}M
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
 
-      {/* Footer: Monthly breakdown */}
-      <div className="mt-3 flex items-center justify-between bg-white rounded-lg border border-gray-200 shadow-sm px-5 py-2.5">
-        <div className="text-center">
-          <p className="text-[9px] text-gray-400 uppercase font-semibold">Ene 2026</p>
-          <p className="text-sm font-bold text-gray-800">$1.93M</p>
-          <p className="text-[9px] text-green-600 font-bold">+70%</p>
-        </div>
-        <div className="w-px h-8 bg-gray-200" />
-        <div className="text-center">
-          <p className="text-[9px] text-gray-400 uppercase font-semibold">Feb 2026</p>
-          <p className="text-sm font-bold text-gray-800">$2.15M</p>
-          <p className="text-[9px] text-green-600 font-bold">+48%</p>
-        </div>
-        <div className="w-px h-8 bg-gray-200" />
-        <div className="text-center">
-          <p className="text-[9px] text-gray-400 uppercase font-semibold">Mar 2026</p>
-          <p className="text-sm font-bold text-gray-800">$3.01M</p>
-          <p className="text-[9px] text-green-600 font-bold">+68%</p>
-        </div>
-        <div className="w-px h-8 bg-gray-200" />
-        <div className="text-center">
-          <p className="text-[9px] text-gray-400 uppercase font-semibold">Q1 Total</p>
-          <p className="text-sm font-bold text-[#8B5CF6]">$7.09M</p>
-          <p className="text-[9px] text-green-600 font-bold">+62% YoY</p>
+            {/* Insight box */}
+            <div className="mt-auto mx-3 mb-3 bg-[#F5A623]/8 rounded-lg px-4 py-2.5 border border-[#F5A623]/20">
+              <p className="text-[11px] text-gray-700">
+                <span className="font-bold text-[#F5A623]">Marzo 2026 = $3.01M</span>
+                {" — "}récord histórico de sell-out. Crecimiento sostenido los 3 meses del trimestre.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </SlideWrapper>
