@@ -8,118 +8,118 @@ interface TiendaTop3 {
   venta: number;
   pct: number;
   growth: string;
-  top3: { producto: string; venta: number; pct: number }[];
+  top3: { producto: string; pct: number }[];
 }
 
 const topTiendas: TiendaTop3[] = [
   {
     nombre: "MERCO García",
-    venta: 297195,
-    pct: 4.2,
-    growth: "+59%",
+    venta: 283711,
+    pct: 4.5,
+    growth: "+75%",
     top3: [
-      { producto: "Tostada Roja 70PZ", venta: 189260, pct: 64 },
-      { producto: "Durito Teja 20PZ", venta: 23001, pct: 8 },
-      { producto: "Papa Natural 45g", venta: 14393, pct: 5 },
+      { producto: "Tostada Roja 70PZ", pct: 67 },
+      { producto: "Durito Teja 20PZ", pct: 8 },
+      { producto: "Papa Natural 45g", pct: 5 },
     ],
   },
   {
     nombre: "MERCO Los Pilares",
-    venta: 283281,
-    pct: 4.0,
-    growth: "+31%",
+    venta: 245655,
+    pct: 3.9,
+    growth: "+30%",
     top3: [
-      { producto: "Tostada Roja 70PZ", venta: 200150, pct: 71 },
-      { producto: "Durito Teja 20PZ", venta: 11779, pct: 4 },
-      { producto: "Tostada Roja 200g", venta: 10073, pct: 4 },
-    ],
-  },
-  {
-    nombre: "MERCO Girasoles",
-    venta: 268894,
-    pct: 3.8,
-    growth: "+44%",
-    top3: [
-      { producto: "Tostada Roja 70PZ", venta: 180289, pct: 67 },
-      { producto: "Durito Teja 20PZ", venta: 10440, pct: 4 },
-      { producto: "Tostada Amarilla 200g", venta: 7722, pct: 3 },
-    ],
-  },
-  {
-    nombre: "MERCO Sdo. Sta. Catarina",
-    venta: 268664,
-    pct: 3.8,
-    growth: "+33%",
-    top3: [
-      { producto: "Tostada Roja 70PZ", venta: 138599, pct: 52 },
-      { producto: "Durito Teja 20PZ", venta: 17787, pct: 7 },
-      { producto: "Papa Natural 45g", venta: 11612, pct: 4 },
-    ],
-  },
-  {
-    nombre: "MERCO El Jaral",
-    venta: 265356,
-    pct: 3.7,
-    growth: "+79%",
-    top3: [
-      { producto: "Tostada Roja 70PZ", venta: 158776, pct: 60 },
-      { producto: "Cacah. Mixto Granel", venta: 12510, pct: 5 },
-      { producto: "Papa Natural 45g", venta: 9204, pct: 3 },
+      { producto: "Tostada Roja 70PZ", pct: 81 },
+      { producto: "Durito Teja 20PZ", pct: 5 },
+      { producto: "Tostada Roja 200g", pct: 4 },
     ],
   },
   {
     nombre: "MERCO Buenavista",
-    venta: 263087,
-    pct: 3.7,
-    growth: "+31%",
+    venta: 241468,
+    pct: 3.9,
+    growth: "+32%",
     top3: [
-      { producto: "Tostada Roja 70PZ", venta: 181258, pct: 69 },
-      { producto: "Durito Teja 20PZ", venta: 22740, pct: 9 },
-      { producto: "Tostada Amarilla 200g", venta: 11182, pct: 4 },
-    ],
-  },
-  {
-    nombre: "MERCO Solidaridad",
-    venta: 251937,
-    pct: 3.6,
-    growth: "+57%",
-    top3: [
-      { producto: "Tostada Roja 70PZ", venta: 172748, pct: 69 },
-      { producto: "Tostada Roja 200g", venta: 14510, pct: 6 },
-      { producto: "Tostada Amarilla 200g", venta: 11654, pct: 5 },
+      { producto: "Tostada Roja 70PZ", pct: 75 },
+      { producto: "Durito Teja 20PZ", pct: 9 },
+      { producto: "Tostada Amarilla 200g", pct: 5 },
     ],
   },
   {
     nombre: "MERCO Mixcoac",
-    venta: 251411,
-    pct: 3.5,
-    growth: "+111%",
+    venta: 238802,
+    pct: 3.8,
+    growth: "+128%",
     top3: [
-      { producto: "Tostada Roja 70PZ", venta: 201856, pct: 80 },
-      { producto: "Durito Teja 20PZ", venta: 10037, pct: 4 },
-      { producto: "Papa Fuego 45g", venta: 5152, pct: 2 },
+      { producto: "Tostada Roja 70PZ", pct: 85 },
+      { producto: "Durito Teja 20PZ", pct: 4 },
+      { producto: "Papa Fuego 45g", pct: 2 },
+    ],
+  },
+  {
+    nombre: "MERCO Solidaridad",
+    venta: 231732,
+    pct: 3.7,
+    growth: "+77%",
+    top3: [
+      { producto: "Tostada Roja 70PZ", pct: 75 },
+      { producto: "Tostada Roja 200g", pct: 6 },
+      { producto: "Tostada Amarilla 200g", pct: 5 },
+    ],
+  },
+  {
+    nombre: "MERCO Girasoles",
+    venta: 229907,
+    pct: 3.7,
+    growth: "+40%",
+    top3: [
+      { producto: "Tostada Roja 70PZ", pct: 78 },
+      { producto: "Durito Teja 20PZ", pct: 5 },
+      { producto: "Tostada Amarilla 200g", pct: 3 },
+    ],
+  },
+  {
+    nombre: "MERCO El Jaral",
+    venta: 228623,
+    pct: 3.7,
+    growth: "+85%",
+    top3: [
+      { producto: "Tostada Roja 70PZ", pct: 69 },
+      { producto: "Cacah. Mixto Granel", pct: 5 },
+      { producto: "Papa Natural 45g", pct: 4 },
     ],
   },
   {
     nombre: "MERCO San Roque",
-    venta: 248583,
-    pct: 3.5,
-    growth: "+84%",
+    venta: 225521,
+    pct: 3.6,
+    growth: "+86%",
     top3: [
-      { producto: "Tostada Roja 70PZ", venta: 186081, pct: 75 },
-      { producto: "Durito Teja 20PZ", venta: 8342, pct: 3 },
-      { producto: "Papa Natural 45g", venta: 7280, pct: 3 },
+      { producto: "Tostada Roja 70PZ", pct: 83 },
+      { producto: "Durito Teja 20PZ", pct: 4 },
+      { producto: "Papa Natural 45g", pct: 3 },
     ],
   },
   {
-    nombre: "MERCO Montemorelos",
-    venta: 226434,
-    pct: 3.2,
-    growth: "+72%",
+    nombre: "MERCO Sdo. Sta. Catarina",
+    venta: 224626,
+    pct: 3.6,
+    growth: "+28%",
     top3: [
-      { producto: "Tostada Roja 70PZ", venta: 125646, pct: 55 },
-      { producto: "Durito Teja 20PZ", venta: 13604, pct: 6 },
-      { producto: "Tostada Amarilla 200g", venta: 8730, pct: 4 },
+      { producto: "Tostada Roja 70PZ", pct: 62 },
+      { producto: "Durito Teja 20PZ", pct: 8 },
+      { producto: "Papa Natural 45g", pct: 5 },
+    ],
+  },
+  {
+    nombre: "MERCO Colinas",
+    venta: 212946,
+    pct: 3.4,
+    growth: "+64%",
+    top3: [
+      { producto: "Tostada Roja 70PZ", pct: 76 },
+      { producto: "Durito Teja 20PZ", pct: 4 },
+      { producto: "Tostada Amarilla 200g", pct: 3 },
     ],
   },
 ];
@@ -127,9 +127,9 @@ const topTiendas: TiendaTop3[] = [
 const maxVenta = topTiendas[0].venta;
 
 const insights = [
-  "Las 10 tiendas top crecieron vs Q1 2025 — promedio +60%",
-  "MERCO Mixcoac destaca con +111% de crecimiento YoY",
-  "Tostada Roja 70PZ es #1 en las 10 tiendas (52–80% de la venta)",
+  "Las 10 tiendas top crecieron vs Q1 2025 — promedio +65%",
+  "MERCO Mixcoac destaca con +128% de crecimiento YoY",
+  "Tostada Roja 70PZ es #1 en las 10 tiendas (62–85% de la venta)",
   "Durito Teja se posiciona como #2 en 7 de las 10 tiendas principales",
 ];
 
@@ -145,13 +145,13 @@ export default function EjecSlide3TopVentas() {
           <div>
             <h2 className="text-xl font-bold text-gray-800">Top 10 Tiendas — Q1 2026</h2>
             <p className="text-[10px] text-gray-500">
-              Sell-out acumulado Ene–Mar · Top 3 productos por tienda
+              Sell-out acumulado Ene–Mar · Abarrotes · Top 3 productos por tienda
             </p>
           </div>
         </div>
         <div className="bg-[#F5A623]/10 rounded-lg px-3 py-1.5 border border-[#F5A623]/20">
-          <p className="text-[9px] text-[#F5A623] uppercase font-semibold">Top 10 = 37% total</p>
-          <p className="text-lg font-bold text-[#F5A623]">$2.62M</p>
+          <p className="text-[9px] text-[#F5A623] uppercase font-semibold">Top 10 = 38% total</p>
+          <p className="text-lg font-bold text-[#F5A623]">$2.36M</p>
         </div>
       </div>
 

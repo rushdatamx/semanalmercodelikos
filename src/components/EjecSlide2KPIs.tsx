@@ -14,58 +14,58 @@ import {
 const kpis = [
   {
     label: "Venta Q1 2026",
-    value: "$7.09M",
-    badge: "+62% vs Q1 2025",
+    value: "$6.25M",
+    badge: "+65% vs Q1 2025",
     badgeColor: "bg-green-100 text-green-700",
     icon: TrendingUp,
   },
   {
     label: "Mejor Mes",
-    value: "2026-03: $3.01M",
+    value: "2026-03: $2.54M",
     badge: "Récord histórico",
     badgeColor: "bg-orange-100 text-orange-700",
     icon: Trophy,
   },
   {
     label: "Unidades Q1 2026",
-    value: "223,444",
-    badge: "+83% vs Q1 2025",
+    value: "203,136",
+    badge: "+128% vs Q1 2025",
     badgeColor: "bg-blue-100 text-blue-700",
     icon: Package,
   },
   {
     label: "SKUs Activos",
-    value: "44",
-    badge: "vs 21 en Ene 2025",
+    value: "20",
+    badge: "vs 8 en Ene 2025",
     badgeColor: "bg-amber-100 text-amber-700",
     icon: Layers,
   },
 ];
 
 const pivotData = [
-  { mes: "Enero", v2025: "$1.14M", v2026: "$1.93M", delta: "+70%", deltaVal: 0.80 },
-  { mes: "Febrero", v2025: "$1.45M", v2026: "$2.15M", delta: "+48%", deltaVal: 0.70 },
-  { mes: "Marzo", v2025: "$1.80M", v2026: "$3.01M", delta: "+68%", deltaVal: 1.21 },
+  { mes: "Enero", v2025: "$1.01M", v2026: "$1.79M", delta: "+77%", deltaVal: 0.78 },
+  { mes: "Febrero", v2025: "$1.22M", v2026: "$1.92M", delta: "+58%", deltaVal: 0.71 },
+  { mes: "Marzo", v2025: "$1.56M", v2026: "$2.54M", delta: "+63%", deltaVal: 0.98 },
 ];
 
-const totals = { v2025: "$4.39M", v2026: "$7.09M", delta: "+62%", deltaVal: 2.71 };
+const totals = { v2025: "$3.79M", v2026: "$6.25M", delta: "+65%", deltaVal: 2.46 };
 
 const trendData = [
-  { mes: "2025-01", venta: 1.14 },
-  { mes: "2025-02", venta: 1.45 },
-  { mes: "2025-03", venta: 1.80 },
-  { mes: "2025-04", venta: 1.53 },
-  { mes: "2025-05", venta: 1.87 },
-  { mes: "2025-06", venta: 1.50 },
-  { mes: "2025-07", venta: 1.51 },
-  { mes: "2025-08", venta: 2.21 },
-  { mes: "2025-09", venta: 1.98 },
-  { mes: "2025-10", venta: 2.04 },
-  { mes: "2025-11", venta: 2.51 },
-  { mes: "2025-12", venta: 2.44 },
-  { mes: "2026-01", venta: 1.93 },
-  { mes: "2026-02", venta: 2.15 },
-  { mes: "2026-03", venta: 3.01 },
+  { mes: "2025-01", venta: 1.01 },
+  { mes: "2025-02", venta: 1.22 },
+  { mes: "2025-03", venta: 1.56 },
+  { mes: "2025-04", venta: 1.40 },
+  { mes: "2025-05", venta: 1.66 },
+  { mes: "2025-06", venta: 1.34 },
+  { mes: "2025-07", venta: 1.39 },
+  { mes: "2025-08", venta: 1.92 },
+  { mes: "2025-09", venta: 1.64 },
+  { mes: "2025-10", venta: 1.83 },
+  { mes: "2025-11", venta: 2.12 },
+  { mes: "2025-12", venta: 2.17 },
+  { mes: "2026-01", venta: 1.79 },
+  { mes: "2026-02", venta: 1.92 },
+  { mes: "2026-03", venta: 2.54 },
 ];
 
 export default function EjecSlide2KPIs() {
@@ -80,7 +80,7 @@ export default function EjecSlide2KPIs() {
         </div>
         <div>
           <h2 className="text-xl font-bold text-gray-800">Crecimiento Q1 2026 vs Q1 2025</h2>
-          <p className="text-[10px] text-gray-500">Sell-out acumulado Enero–Marzo · MERCO</p>
+          <p className="text-[10px] text-gray-500">Sell-out acumulado Enero–Marzo · Abarrotes</p>
         </div>
       </div>
 
@@ -110,7 +110,7 @@ export default function EjecSlide2KPIs() {
           })}
         </div>
 
-        {/* Right: Pivot Table */}
+        {/* Right: Pivot Table + Trend */}
         <div className="flex-1 flex flex-col min-w-0">
           <p className="text-[10px] text-gray-500 font-semibold uppercase mb-1.5">
             Comparativo mensual (Millones MXN)
@@ -180,7 +180,7 @@ export default function EjecSlide2KPIs() {
             {/* Trend chart */}
             <div className="flex-1 min-h-0 px-3 pb-2 flex flex-col">
               <p className="text-[9px] text-gray-400 uppercase font-semibold mb-1">
-                Tendencia mensual Ene 2025 → Mar 2026 (Millones MXN)
+                Tendencia mensual Ene 2025 → Mar 2026 · Abarrotes (Millones MXN)
               </p>
               <div className="flex-1 min-h-0">
                 <ResponsiveContainer width="100%" height="100%">
@@ -207,13 +207,13 @@ export default function EjecSlide2KPIs() {
                       tickLine={false}
                       width={30}
                       tickFormatter={(v) => `$${v}M`}
-                      domain={[0.8, 3.2]}
+                      domain={[0.8, 2.8]}
                     />
                     <ReferenceLine
-                      y={1.46}
+                      y={1.26}
                       stroke="#D1D5DB"
                       strokeDasharray="4 4"
-                      label={{ value: "Prom Q1 2025: $1.46M", position: "insideTopLeft", fontSize: 8, fill: "#9CA3AF" }}
+                      label={{ value: "Prom Q1 2025: $1.26M", position: "insideTopLeft", fontSize: 8, fill: "#9CA3AF" }}
                     />
                     <Area
                       type="monotone"
