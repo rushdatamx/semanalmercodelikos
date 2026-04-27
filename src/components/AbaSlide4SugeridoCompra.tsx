@@ -15,25 +15,25 @@ interface Sugerido {
 }
 
 const dataTostadas: Sugerido[] = [
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO San Roque", tipo: "GRANDE", ddi: 0, invActual: 143, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Roja 200g", tienda: "MERCO Nuevo Repueblo", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 4, udsEnviar: 96 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Castaños", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 5, udsEnviar: 120 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO San Roque", tipo: "GRANDE", ddi: 0, invActual: 143, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Amarilla 200g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 5, udsEnviar: 120 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Castaños", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 5, udsEnviar: 120 },
   { producto: "Tostada Amarilla 200g", tienda: "Urdiñola", tipo: "GRANDE", ddi: 0.3, invActual: 1, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Roja 200g", tienda: "MERCO La Sierrita", tipo: "GRANDE", ddi: 0.3, invActual: 1, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Roja 200g", tienda: "MERCO Los Pilares", tipo: "GRANDE", ddi: 0.5, invActual: 2, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Amarilla 200g", tienda: "MERCO Frontera Centro", tipo: "GRANDE", ddi: 1.0, invActual: 5, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Amarilla 200g", tienda: "MERCO San Buena", tipo: "CHICA", ddi: 1.0, invActual: 6, pallets: 0, cajas: 4, udsEnviar: 96 },
   { producto: "Tostada Roja 200g", tienda: "MERCO Girasoles", tipo: "GRANDE", ddi: 1.1, invActual: 5, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Rosita", tipo: "GRANDE", ddi: 1.3, invActual: 7, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Montemorelos", tipo: "GRANDE", ddi: 1.5, invActual: 4, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Ramos Arizpe", tipo: "GRANDE", ddi: 1.6, invActual: 5, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Buenavista", tipo: "GRANDE", ddi: 2.4, invActual: 7, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 3.3, invActual: 25, pallets: 0, cajas: 5, udsEnviar: 120 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Buenavista", tipo: "GRANDE", ddi: 5.6, invActual: 288, pallets: 5, cajas: 0, udsEnviar: 1200 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO San Antonio", tipo: "GRANDE", ddi: 6.4, invActual: 100, pallets: 2, cajas: 0, udsEnviar: 480 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Los Pilares", tipo: "GRANDE", ddi: 6.6, invActual: 277, pallets: 5, cajas: 0, udsEnviar: 1200 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO San Roque", tipo: "GRANDE", ddi: 7.3, invActual: 293, pallets: 4, cajas: 0, udsEnviar: 960 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Garcia", tipo: "GRANDE", ddi: 7.4, invActual: 273, pallets: 4, cajas: 0, udsEnviar: 960 },
 ];
 
-const TOST_LINEAS = 55;
-const TOST_UDS = 9120;
+const TOST_LINEAS = 61;
+const TOST_UDS = 20400;
 
 const dataPapas: Sugerido[] = [
   { producto: "Papa Fuego 45g", tienda: "MERCO Santa Elena Zuazua", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 0, udsEnviar: 420 },
@@ -58,7 +58,7 @@ export default function AbaSlide4SugeridoCompra() {
         <ShoppingCart className="w-6 h-6 text-[#F5A623]" />
         <h2 className="text-2xl font-bold text-gray-800">Sugerido de Compra — Abarrotes</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-2">Tostadas (3 SKUs) + Papa 45g (3 SKUs) con DDI &lt; 15 dias · Cobertura objetivo: 15 dias</p>
+      <p className="text-gray-500 text-xs mb-2">Tostadas (3 SKUs) + Papa 45g (3 SKUs) · Roja 70PZ: objetivo 25 dias · 200g + Papa 45g: objetivo 15 dias</p>
 
       <div className="flex gap-4 flex-1 overflow-hidden">
         {/* Tostadas */}

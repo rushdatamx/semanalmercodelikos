@@ -14,8 +14,8 @@ const recomendaciones: Recomendacion[] = [
   {
     accion: "Surtir urgente",
     producto: "Tostada Roja 70PZ",
-    tiendas: "1 agotada + 18 bajo umbral (Buenavista, San Antonio +17)",
-    sugerido: "18 pallets (4,320 uds)",
+    tiendas: "24 tiendas bajo 25 DDI (Buenavista, San Antonio, Los Pilares +21)",
+    sugerido: "65 pallets (15,600 uds)",
   },
   {
     accion: "Surtir urgente",
@@ -95,11 +95,11 @@ export default function AbaSlide7Recomendaciones() {
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
           <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Tostadas (24-Abr)</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">18 pallets</span> (4,320 uds)</span><span className="text-green-600 font-bold">OC CUBRE (+56%)</span></div>
+            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">65 pallets</span> (15,600 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 37 pallets</span></div>
             <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">102 cajas</span> (2,448 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 69 cajas</span></div>
             <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">98 cajas</span> (2,352 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 45 cajas</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 9,120 uds · Roja 70PZ cubierta · 200g necesitan 114 cajas adicionales</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total: 20,400 uds · OC cubre 28 pallets 70PZ · Solicitamos 28 adicionales (cobertura 25 DDI)</p>
         </div>
 
         {/* OC Papas 45g */}
@@ -114,7 +114,7 @@ export default function AbaSlide7Recomendaciones() {
         </div>
       </div>
 
-      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 24-Abr se esta distribuyendo a tiendas. Algunas necesidades pueden quedar cubiertas conforme se complete la distribucion. Total sugerido: 16,005 uds.</p>
+      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 24-Abr se esta distribuyendo a tiendas. Roja 70PZ: solicitamos 28 tarimas adicionales para cobertura de 25 dias. Total sugerido: 27,285 uds.</p>
     </SlideWrapper>
   );
 }
