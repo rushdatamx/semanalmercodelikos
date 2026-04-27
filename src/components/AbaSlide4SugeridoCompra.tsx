@@ -25,15 +25,15 @@ const dataTostadas: Sugerido[] = [
   { producto: "Tostada Amarilla 200g", tienda: "MERCO Frontera Centro", tipo: "GRANDE", ddi: 1.0, invActual: 5, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Amarilla 200g", tienda: "MERCO San Buena", tipo: "CHICA", ddi: 1.0, invActual: 6, pallets: 0, cajas: 4, udsEnviar: 96 },
   { producto: "Tostada Roja 200g", tienda: "MERCO Girasoles", tipo: "GRANDE", ddi: 1.1, invActual: 5, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Buenavista", tipo: "GRANDE", ddi: 5.6, invActual: 288, pallets: 5, cajas: 0, udsEnviar: 1200 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Buenavista", tipo: "GRANDE", ddi: 5.6, invActual: 288, pallets: 2, cajas: 0, udsEnviar: 480 },
   { producto: "Tostada Roja 70PZ", tienda: "MERCO San Antonio", tipo: "GRANDE", ddi: 6.4, invActual: 100, pallets: 2, cajas: 0, udsEnviar: 480 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Los Pilares", tipo: "GRANDE", ddi: 6.6, invActual: 277, pallets: 5, cajas: 0, udsEnviar: 1200 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO San Roque", tipo: "GRANDE", ddi: 7.3, invActual: 293, pallets: 4, cajas: 0, udsEnviar: 960 },
-  { producto: "Tostada Roja 70PZ", tienda: "MERCO Garcia", tipo: "GRANDE", ddi: 7.4, invActual: 273, pallets: 4, cajas: 0, udsEnviar: 960 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Los Pilares", tipo: "GRANDE", ddi: 6.6, invActual: 277, pallets: 2, cajas: 0, udsEnviar: 480 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO San Roque", tipo: "GRANDE", ddi: 7.3, invActual: 293, pallets: 2, cajas: 0, udsEnviar: 480 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Garcia", tipo: "GRANDE", ddi: 7.4, invActual: 273, pallets: 1, cajas: 0, udsEnviar: 240 },
 ];
 
 const TOST_LINEAS = 61;
-const TOST_UDS = 20400;
+const TOST_UDS = 11520;
 
 const dataPapas: Sugerido[] = [
   { producto: "Papa Fuego 45g", tienda: "MERCO Santa Elena Zuazua", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 0, udsEnviar: 420 },
