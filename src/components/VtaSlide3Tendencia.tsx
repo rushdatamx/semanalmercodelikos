@@ -59,8 +59,8 @@ export default function VtaSlide3Tendencia() {
           <span className="text-gray-500 font-semibold">2025</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <div className="w-6 h-2.5 rounded bg-[#1A1A1A]" />
-          <span className="text-gray-800 font-semibold">2026</span>
+          <div className="w-6 h-2.5 rounded bg-[#F5A623]" />
+          <span className="text-[#B8860B] font-semibold">2026</span>
         </div>
         <div className="ml-auto">
           <span className="px-2 py-0.5 rounded-full text-[9px] font-bold bg-[#27AE60]/15 text-[#27AE60] border border-[#27AE60]/30">
@@ -79,7 +79,7 @@ export default function VtaSlide3Tendencia() {
             <Bar dataKey="v25" name="2025" fill="#D1D5DB" radius={[3, 3, 0, 0]} barSize={32} />
             <Bar dataKey="v26" name="2026" radius={[3, 3, 0, 0]} barSize={32}>
               {data.map((entry, i) => (
-                <Cell key={i} fill={entry.v26 ? "#1A1A1A" : "transparent"} />
+                <Cell key={i} fill={entry.v26 ? "#F5A623" : "transparent"} />
               ))}
             </Bar>
           </BarChart>

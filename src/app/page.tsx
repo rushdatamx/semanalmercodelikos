@@ -40,7 +40,6 @@ import VtaSlide5Categorias from "@/components/VtaSlide5Categorias";
 import VtaSlide6TopProductos from "@/components/VtaSlide6TopProductos";
 import VtaSlide7Penetracion from "@/components/VtaSlide7Penetracion";
 import VtaSlide8TopTiendas from "@/components/VtaSlide8TopTiendas";
-import VtaSlide9Conclusiones from "@/components/VtaSlide9Conclusiones";
 
 const departments = [
   {
@@ -124,7 +123,7 @@ const departments = [
   {
     id: "reporte-venta",
     label: "Reporte Venta",
-    color: "#1A1A1A",
+    color: "#F5A623",
     slides: [
       VtaSlide1Portada,
       VtaSlide2KPIs,
@@ -134,7 +133,6 @@ const departments = [
       VtaSlide6TopProductos,
       VtaSlide7Penetracion,
       VtaSlide8TopTiendas,
-      VtaSlide9Conclusiones,
     ],
   },
 ];

@@ -28,7 +28,7 @@ export default function VtaSlide6TopProductos() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <div className="flex items-center gap-3 mb-1">
-        <Award className="w-7 h-7 text-[#F7B500]" />
+        <Award className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Top 10 Productos</h2>
       </div>
       <p className="text-gray-500 text-sm mb-4">Ene-Abr 2026 · Top 10 concentra {topConcentra.toFixed(1)}% del sell-out</p>
@@ -42,7 +42,7 @@ export default function VtaSlide6TopProductos() {
 
           return (
             <div key={i} className="flex items-center gap-3 animate-count-up" style={{ animationDelay: `${i * 60}ms` }}>
-              <span className={`w-6 text-right text-sm font-bold ${isFirst ? "text-[#F7B500]" : "text-gray-400"}`}>
+              <span className={`w-6 text-right text-sm font-bold ${isFirst ? "text-[#F5A623]" : "text-gray-400"}`}>
                 {i + 1}
               </span>
               <div className="flex-1">
@@ -68,7 +68,7 @@ export default function VtaSlide6TopProductos() {
                     className="h-2.5 rounded-full animate-bar-grow"
                     style={{
                       width: `${barPct}%`,
-                      backgroundColor: isFirst ? "#F7B500" : "#1A1A1A",
+                      backgroundColor: isFirst ? "#F5A623" : "#F7B500",
                       animationDelay: `${i * 60}ms`,
                     }}
                   />
@@ -81,7 +81,7 @@ export default function VtaSlide6TopProductos() {
 
       <div className="mt-3 flex justify-between items-center bg-[#FDF8F0] rounded-lg px-5 py-3 border border-[#E8DCC8]">
         <span className="text-gray-500 text-sm">Tostada Roja 70PZ = 60% de toda la venta · Alta concentracion en 1 SKU</span>
-        <span className="text-[#F7B500] font-bold text-lg">$9.4M</span>
+        <span className="text-[#F5A623] font-bold text-lg">$9.4M</span>
       </div>
     </SlideWrapper>
   );

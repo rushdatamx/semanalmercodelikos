@@ -19,7 +19,7 @@ export default function VtaSlide2KPIs() {
       <div className="flex items-center gap-8 mb-5">
         <div className="animate-count-up">
           <p className="text-gray-500 text-sm mb-1">Venta acumulada</p>
-          <p className="text-6xl font-bold text-[#1A1A1A] tracking-tight">$9.4M</p>
+          <p className="text-6xl font-bold text-[#F5A623] tracking-tight">$9.4M</p>
           <p className="text-gray-400 text-xs mt-1">Ene — Abr 2026</p>
         </div>
         <div className="flex items-center gap-2 bg-[#27AE60]/10 border border-[#27AE60]/20 rounded-xl px-5 py-3 animate-count-up" style={{ animationDelay: "150ms" }}>
@@ -49,22 +49,22 @@ export default function VtaSlide2KPIs() {
           <div className="grid grid-cols-4 gap-4">
             <div className="text-center">
               <p className="text-gray-400 text-[10px] mb-1">Tiendas activas</p>
-              <p className="text-3xl font-bold text-gray-800">40</p>
+              <p className="text-3xl font-bold text-[#F5A623]">40</p>
               <p className="text-gray-400 text-[9px]">Mismas que 2025</p>
             </div>
             <div className="text-center">
               <p className="text-gray-400 text-[10px] mb-1">SKUs con venta</p>
-              <p className="text-3xl font-bold text-gray-800">51</p>
+              <p className="text-3xl font-bold text-[#F5A623]">51</p>
               <p className="text-gray-400 text-[9px]">46 existentes + 5 nuevos</p>
             </div>
             <div className="text-center">
               <p className="text-gray-400 text-[10px] mb-1">Unidades vendidas</p>
-              <p className="text-3xl font-bold text-gray-800">296.8K</p>
+              <p className="text-3xl font-bold text-[#F5A623]">296.8K</p>
               <p className="text-gray-400 text-[9px]">Ene — Abr 2026</p>
             </div>
             <div className="text-center">
               <p className="text-gray-400 text-[10px] mb-1">Precio prom/ud</p>
-              <p className="text-3xl font-bold text-gray-800">$31.7</p>
+              <p className="text-3xl font-bold text-[#F5A623]">$31.7</p>
               <p className="text-gray-400 text-[9px]">Sell-out promedio</p>
             </div>
           </div>

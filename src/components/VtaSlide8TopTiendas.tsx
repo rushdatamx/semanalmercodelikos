@@ -30,7 +30,7 @@ export default function VtaSlide8TopTiendas() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <div className="flex items-center gap-3 mb-1">
-        <MapPin className="w-7 h-7 text-[#1A1A1A]" />
+        <MapPin className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Top 10 Tiendas</h2>
       </div>
       <p className="text-gray-500 text-sm mb-4">Ene-Abr 2026 · Venta bien distribuida (ninguna &gt; 4%)</p>
@@ -41,7 +41,7 @@ export default function VtaSlide8TopTiendas() {
             const barPct = (t.venta / maxVenta) * 100;
             return (
               <div key={i} className="flex items-center gap-3 animate-count-up" style={{ animationDelay: `${i * 50}ms` }}>
-                <span className={`w-6 text-right text-sm font-bold ${i === 0 ? "text-[#F7B500]" : "text-gray-400"}`}>
+                <span className={`w-6 text-right text-sm font-bold ${i === 0 ? "text-[#F5A623]" : "text-gray-400"}`}>
                   {i + 1}
                 </span>
                 <div className="flex-1">
@@ -58,7 +58,7 @@ export default function VtaSlide8TopTiendas() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="h-2 rounded-full animate-bar-grow bg-[#1A1A1A]"
+                      className="h-2 rounded-full animate-bar-grow bg-[#F5A623]"
                       style={{ width: `${barPct}%`, animationDelay: `${i * 50}ms` }}
                     />
                   </div>
@@ -74,7 +74,7 @@ export default function VtaSlide8TopTiendas() {
             <div className="grid grid-cols-2 gap-3">
               <div className="text-center">
                 <p className="text-gray-400 text-[9px]">Top 10</p>
-                <p className="text-[#1A1A1A] text-2xl font-bold">36.8%</p>
+                <p className="text-[#F5A623] text-2xl font-bold">36.8%</p>
               </div>
               <div className="text-center">
                 <p className="text-gray-400 text-[9px]">Resto (30)</p>
@@ -85,7 +85,7 @@ export default function VtaSlide8TopTiendas() {
           </div>
 
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex-1">
-            <p className="text-gray-500 text-xs mb-2">Bottom 5 (oportunidad)</p>
+            <p className="text-gray-500 text-xs mb-2">Bottom 5</p>
             <div className="space-y-2">
               {bottomTiendas.map((t, i) => (
                 <div key={i} className="flex justify-between items-center">
