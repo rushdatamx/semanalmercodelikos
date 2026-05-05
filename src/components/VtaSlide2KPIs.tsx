@@ -1,0 +1,81 @@
+"use client";
+
+import SlideWrapper from "./SlideWrapper";
+import { TrendingUp } from "lucide-react";
+
+const months = [
+  { mes: "Enero", v26: 1.93, v25: 1.14, var: "+70.2%" },
+  { mes: "Febrero", v26: 2.15, v25: 1.45, var: "+47.8%" },
+  { mes: "Marzo", v26: 3.01, v25: 1.80, var: "+67.6%" },
+  { mes: "Abril", v26: 2.32, v25: 1.53, var: "+51.7%" },
+];
+
+export default function VtaSlide2KPIs() {
+  return (
+    <SlideWrapper className="bg-[#F5F5F5] p-10">
+      <h2 className="text-3xl font-bold text-gray-800 mb-1">KPIs Sell-Out 2026</h2>
+      <p className="text-gray-500 text-sm mb-5">Venta en piso MERCO · Enero - Abril 2026</p>
+
+      <div className="flex items-center gap-8 mb-5">
+        <div className="animate-count-up">
+          <p className="text-gray-500 text-sm mb-1">Venta acumulada</p>
+          <p className="text-6xl font-bold text-[#1A1A1A] tracking-tight">$9.4M</p>
+          <p className="text-gray-400 text-xs mt-1">Ene — Abr 2026</p>
+        </div>
+        <div className="flex items-center gap-2 bg-[#27AE60]/10 border border-[#27AE60]/20 rounded-xl px-5 py-3 animate-count-up" style={{ animationDelay: "150ms" }}>
+          <TrendingUp className="w-5 h-5 text-[#27AE60]" />
+          <div>
+            <p className="text-[#27AE60] text-2xl font-bold">+59.1%</p>
+            <p className="text-gray-500 text-[10px]">vs Ene-Abr 2025 ($5.9M)</p>
+          </div>
+        </div>
+        <div className="flex-1" />
+        {months.map((m, i) => (
+          <div key={i} className="text-right animate-count-up" style={{ animationDelay: `${300 + i * 120}ms` }}>
+            <p className="text-gray-500 text-xs mb-1">{m.mes}</p>
+            <p className="text-2xl font-bold text-gray-800">${m.v26}M</p>
+            <div className="flex items-center justify-end gap-1 mt-1">
+              <TrendingUp className="w-3 h-3 text-[#27AE60]" />
+              <span className="text-sm font-bold text-[#27AE60]">{m.var}</span>
+              <span className="text-gray-400 text-[10px]">vs ${m.v25}M</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex gap-4 flex-1">
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex-1">
+          <p className="text-gray-500 text-xs mb-3">KPIs clave</p>
+          <div className="grid grid-cols-4 gap-4">
+            <div className="text-center">
+              <p className="text-gray-400 text-[10px] mb-1">Tiendas activas</p>
+              <p className="text-3xl font-bold text-gray-800">40</p>
+              <p className="text-gray-400 text-[9px]">Mismas que 2025</p>
+            </div>
+            <div className="text-center">
+              <p className="text-gray-400 text-[10px] mb-1">SKUs con venta</p>
+              <p className="text-3xl font-bold text-gray-800">51</p>
+              <p className="text-gray-400 text-[9px]">46 existentes + 5 nuevos</p>
+            </div>
+            <div className="text-center">
+              <p className="text-gray-400 text-[10px] mb-1">Unidades vendidas</p>
+              <p className="text-3xl font-bold text-gray-800">296.8K</p>
+              <p className="text-gray-400 text-[9px]">Ene — Abr 2026</p>
+            </div>
+            <div className="text-center">
+              <p className="text-gray-400 text-[10px] mb-1">Precio prom/ud</p>
+              <p className="text-3xl font-bold text-gray-800">$31.7</p>
+              <p className="text-gray-400 text-[9px]">Sell-out promedio</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-3 bg-[#27AE60]/5 border border-[#27AE60]/20 rounded-xl px-5 py-2">
+        <p className="text-[#27AE60] text-[11px] font-semibold">
+          &#9989; Crecimiento 100% organico: mismos 40 puntos de venta, sin tiendas nuevas. El incremento viene de mayor rotacion y nuevas categorias listadas.
+        </p>
+      </div>
+    </SlideWrapper>
+  );
+}

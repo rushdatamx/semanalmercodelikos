@@ -32,6 +32,15 @@ import EjecSlide2KPIs from "@/components/EjecSlide2KPIs";
 import EjecSlide3TopVentas from "@/components/EjecSlide3TopVentas";
 import EjecSlide4TopProductos from "@/components/EjecSlide4TopProductos";
 import EjecSlide5Oportunidades from "@/components/EjecSlide5Oportunidades";
+import VtaSlide1Portada from "@/components/VtaSlide1Portada";
+import VtaSlide2KPIs from "@/components/VtaSlide2KPIs";
+import VtaSlide3Tendencia from "@/components/VtaSlide3Tendencia";
+import VtaSlide4Departamentos from "@/components/VtaSlide4Departamentos";
+import VtaSlide5Categorias from "@/components/VtaSlide5Categorias";
+import VtaSlide6TopProductos from "@/components/VtaSlide6TopProductos";
+import VtaSlide7Penetracion from "@/components/VtaSlide7Penetracion";
+import VtaSlide8TopTiendas from "@/components/VtaSlide8TopTiendas";
+import VtaSlide9Conclusiones from "@/components/VtaSlide9Conclusiones";
 
 const departments = [
   {
@@ -110,6 +119,22 @@ const departments = [
       EjecSlide3TopVentas,
       EjecSlide4TopProductos,
       EjecSlide5Oportunidades,
+    ],
+  },
+  {
+    id: "reporte-venta",
+    label: "Reporte Venta",
+    color: "#1A1A1A",
+    slides: [
+      VtaSlide1Portada,
+      VtaSlide2KPIs,
+      VtaSlide3Tendencia,
+      VtaSlide4Departamentos,
+      VtaSlide5Categorias,
+      VtaSlide6TopProductos,
+      VtaSlide7Penetracion,
+      VtaSlide8TopTiendas,
+      VtaSlide9Conclusiones,
     ],
   },
 ];
