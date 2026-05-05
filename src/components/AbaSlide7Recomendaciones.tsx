@@ -14,20 +14,20 @@ const recomendaciones: Recomendacion[] = [
   {
     accion: "Surtir urgente",
     producto: "Tostada Roja 70PZ",
-    tiendas: "21 tiendas bajo 25 DDI (todas bajo umbral, 0 agotadas)",
+    tiendas: "21 tiendas bajo 25 DDI (0 agotadas, todas bajo umbral)",
     sugerido: "21 pallets (5,040 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Roja 200g",
-    tiendas: "4 agotadas + 19 bajo umbral (Buenavista, La Sierrita +21)",
-    sugerido: "127 cajas (3,048 uds)",
+    tiendas: "4 agotadas + 17 bajo umbral (Hidalgo, La Sierrita, Buenavista +18)",
+    sugerido: "115 cajas (2,760 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Amarilla 200g",
-    tiendas: "9 agotadas + 12 bajo umbral (Rosita, Republica, Garcia +18)",
-    sugerido: "104 cajas (2,496 uds)",
+    tiendas: "7 agotadas + 15 bajo umbral (Rosita, Republica, San Roque +19)",
+    sugerido: "111 cajas (2,664 uds)",
   },
   {
     accion: "Reabastecer",
@@ -61,7 +61,7 @@ export default function AbaSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#F5A623]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Abarrotes</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas · 3 SKUs Tostada + 3 SKUs Papa 45g · Semana del 04 May 2026</p>
+      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas · 3 SKUs Tostada + 3 SKUs Papa 45g · Semana del 05 May 2026</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">
@@ -96,10 +96,10 @@ export default function AbaSlide7Recomendaciones() {
           <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Tostadas (30-Abr)</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
             <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">21 pallets</span> (5,040 uds)</span><span className="text-red-600 font-bold">SIN OC</span></div>
-            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">127 cajas</span> (3,048 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 94 cajas</span></div>
-            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">104 cajas</span> (2,496 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 80 cajas</span></div>
+            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">115 cajas</span> (2,760 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 82 cajas</span></div>
+            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">111 cajas</span> (2,664 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 87 cajas</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 10,584 uds · OC C784397 solo cubre 200g parcialmente · Sin OC para 70PZ</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total: 10,464 uds · OC C784397 solo cubre 200g parcialmente · Sin OC para 70PZ</p>
         </div>
 
         {/* OC Papas 45g */}
@@ -114,7 +114,7 @@ export default function AbaSlide7Recomendaciones() {
         </div>
       </div>
 
-      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 30-Abr se esta distribuyendo a tiendas. Total sugerido Abarrotes: 21,024 uds (tostadas + papas 45g).</p>
+      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 30-Abr se esta distribuyendo a tiendas. Total sugerido Abarrotes: 20,904 uds (tostadas + papas 45g).</p>
     </SlideWrapper>
   );
 }

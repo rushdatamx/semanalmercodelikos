@@ -16,24 +16,24 @@ interface Sugerido {
 
 const dataTostadas: Sugerido[] = [
   { producto: "Tostada Amarilla 200g", tienda: "MERCO Rosita", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Republica", tipo: "GRANDE", ddi: 0, invActual: 24, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 5, udsEnviar: 120 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Parras", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 2, udsEnviar: 48 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Garcia", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Castaños", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 4, udsEnviar: 96 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO La Sierrita", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "Urdiñola", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO San Roque", tipo: "GRANDE", ddi: 0, invActual: 143, pallets: 0, cajas: 6, udsEnviar: 144 },
-  { producto: "Tostada Roja 200g", tienda: "MERCO Buenavista", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Roja 200g", tienda: "MERCO La Sierrita", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Roja 200g", tienda: "MERCO Buenavista", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Roja 200g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 5, udsEnviar: 120 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO San Roque", tipo: "GRANDE", ddi: 0, invActual: 143, pallets: 0, cajas: 6, udsEnviar: 144 },
   { producto: "Tostada Roja 200g", tienda: "MERCO Hidalgo", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO La Sierrita", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Castaños", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 4, udsEnviar: 96 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Republica", tipo: "GRANDE", ddi: 0, invActual: 24, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "Urdiñola", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Libramiento", tipo: "CHICA", ddi: 0, invActual: 0, pallets: 0, cajas: 5, udsEnviar: 120 },
   { producto: "Tostada Roja 200g", tienda: "MERCO Nuevo Repueblo", tipo: "CHICA", ddi: 0.3, invActual: 1, pallets: 0, cajas: 4, udsEnviar: 96 },
-  { producto: "Tostada Amarilla 200g", tienda: "MERCO Apodaca Centro", tipo: "CHICA", ddi: 0.5, invActual: 1, pallets: 0, cajas: 2, udsEnviar: 48 },
+  { producto: "Tostada Roja 200g", tienda: "MERCO Rosita", tipo: "GRANDE", ddi: 0.5, invActual: 2, pallets: 0, cajas: 6, udsEnviar: 144 },
+  { producto: "Tostada Amarilla 200g", tienda: "MERCO Apodaca Centro", tipo: "CHICA", ddi: 0.6, invActual: 1, pallets: 0, cajas: 2, udsEnviar: 48 },
+  { producto: "Tostada Roja 70PZ", tienda: "MERCO Buenavista", tipo: "GRANDE", ddi: 0.7, invActual: 29, pallets: 1, cajas: 0, udsEnviar: 240 },
 ];
 
-const TOST_LINEAS = 65;
-const TOST_UDS = 10584;
+const TOST_LINEAS = 64;
+const TOST_UDS = 10464;
 
 const dataPapas: Sugerido[] = [
   { producto: "Papa Fuego 45g", tienda: "MERCO Piedras Negras", tipo: "GRANDE", ddi: 0, invActual: 0, pallets: 0, cajas: 0, udsEnviar: 420 },
@@ -141,7 +141,7 @@ export default function AbaSlide4SugeridoCompra() {
       </div>
 
       <div className="mt-2 flex justify-between items-center">
-        <p className="text-[10px] text-gray-400">Tostadas + Papa 45g · Inventario al 03-May-2026</p>
+        <p className="text-[10px] text-gray-400">Tostadas + Papa 45g · Inventario al 04-May-2026</p>
         <div className="flex gap-6">
           <div className="text-right">
             <p className="text-gray-500 text-[10px]">Tostadas</p>
