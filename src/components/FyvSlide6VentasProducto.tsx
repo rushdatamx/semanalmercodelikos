@@ -14,14 +14,14 @@ const productos: Producto[] = [
   { nombre: "Papa Desh. Natural 170g", venta: 102131, grupo: "Papas Desh" },
   { nombre: "Rotini s/Chile 300g", venta: 81409, grupo: "Rotinis" },
   { nombre: "Cacah. Botanero 454g", venta: 76198, grupo: "Cacah MM" },
-  { nombre: "Minicuadro c/Chile 300g", venta: 75507, grupo: "Minicuadros" },
+  { nombre: "Minicuadro c/Chile 300g", venta: 75508, grupo: "Minicuadros" },
   { nombre: "Cacah. Cantinero 454g", venta: 53512, grupo: "Cacah MM" },
-  { nombre: "Cacah. Virginia 454g", venta: 53014, grupo: "Cacah MM" },
+  { nombre: "Cacah. Virginia 454g", venta: 53015, grupo: "Cacah MM" },
   { nombre: "Papa Desh. Fuego 170g", venta: 52118, grupo: "Papas Desh" },
-  { nombre: "Churrito Rojo 454g", venta: 46151, grupo: "Fritos" },
-  { nombre: "Rotini c/Chile 300g", venta: 44710, grupo: "Rotinis" },
-  { nombre: "Conchitas 454g", venta: 36647, grupo: "Fritos" },
-  { nombre: "Cacah. Japonés 454g", venta: 32236, grupo: "Cacah MM" },
+  { nombre: "Churrito Rojo 454g", venta: 46152, grupo: "Fritos" },
+  { nombre: "Rotini c/Chile 300g", venta: 44711, grupo: "Rotinis" },
+  { nombre: "Conchitas 454g", venta: 36648, grupo: "Fritos" },
+  { nombre: "Cacah. Japonés 454g", venta: 32237, grupo: "Cacah MM" },
 ];
 
 const maxVenta = productos[0].venta;
@@ -119,11 +119,11 @@ export default function FyvSlide6VentasProducto() {
 
       <div className="mt-3 grid grid-cols-5 gap-2">
         {[
-          { label: "Cacah MM", value: 214961, color: "#8B5CF6" },
+          { label: "Cacah MM", value: 214962, color: "#8B5CF6" },
           { label: "Minicuadros", value: 181608, color: "#3B82F6" },
           { label: "Papas Desh", value: 154249, color: "#EC4899" },
           { label: "Rotinis", value: 126120, color: "#F5A623" },
-          { label: "Fritos", value: 82799, color: "#E74C3C" },
+          { label: "Fritos", value: 82800, color: "#E74C3C" },
         ].map((g) => (
           <div key={g.label} className="bg-white rounded-lg border border-gray-200 shadow-sm p-2 text-center">
             <p className="text-[9px] text-gray-400">{g.label}</p>

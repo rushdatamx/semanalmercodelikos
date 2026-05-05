@@ -13,69 +13,69 @@ interface Recomendacion {
 const recomendaciones: Recomendacion[] = [
   {
     accion: "Surtir urgente",
-    producto: "Minicuadro s/Chile 300g",
-    tiendas: "San Buena, Girasoles, El Jaral (agotadas) + 8 bajo umbral",
-    nota: "3 agotadas + 8 bajo umbral — 22 cj (176 uds). #1 en ventas FyV ($106K)",
-  },
-  {
-    accion: "Surtir urgente",
-    producto: "Minicuadro c/Chile 300g",
-    tiendas: "Apodaca Centro (agotada) + 6 bajo umbral",
-    nota: "1 agotada + 6 bajo umbral — 13 cj (130 uds). #5 en ventas ($76K)",
-  },
-  {
-    accion: "Surtir urgente",
     producto: "Rotini s/Chile 300g",
-    tiendas: "Sdo. Sta. Catarina (agotada) + 4 bajo umbral",
-    nota: "1 agotada + 4 bajo umbral — 7 cj (84 uds). #3 en ventas ($81K)",
+    tiendas: "Cadereyta (agotada) + 4 bajo umbral",
+    nota: "1 agotada + 4 bajo umbral — 8 cj (96 uds). #3 en ventas ($81K)",
+  },
+  {
+    accion: "Surtir urgente",
+    producto: "Cacah. Botanero 454g",
+    tiendas: "Sdo. Sta. Catarina (agotada) + 3 bajo umbral",
+    nota: "1 agotada + 3 bajo umbral — 5 cj (90 uds). #4 en ventas ($76K)",
   },
   {
     accion: "Surtir urgente",
     producto: "Papa Desh. Natural 170g",
-    tiendas: "Israel Cavazos (agotada) + 3 bajo umbral",
-    nota: "1 agotada + 3 bajo umbral — 6 cj (60 uds). #2 en ventas ($102K)",
+    tiendas: "Saltillo Centro (agotada) + 3 bajo umbral",
+    nota: "1 agotada + 3 bajo umbral — 5 cj (50 uds). #2 en ventas ($102K)",
   },
   {
     accion: "Reabastecer",
-    producto: "Cacah. Cantinero 454g",
-    tiendas: "Piedras Negras, Solidaridad, Pueblo Nuevo",
-    nota: "3 bajo umbral — 4 cj (72 uds)",
-  },
-  {
-    accion: "Reabastecer",
-    producto: "Cacah. Virginia 454g",
-    tiendas: "Mixcoac, Nuevo Repueblo, Lindavista",
-    nota: "3 tiendas sin venta con inv — 3 cj (78 uds)",
-  },
-  {
-    accion: "Reabastecer",
-    producto: "Cacah. Botanero 454g",
-    tiendas: "Piedras Negras, Apodaca Centro",
-    nota: "2 bajo umbral — 2 cj (36 uds)",
-  },
-  {
-    accion: "Reabastecer",
-    producto: "Cacah. Japonés 454g",
-    tiendas: "Apodaca Centro, Saltillo Madero",
-    nota: "1 bajo umbral — 2 cj (52 uds)",
+    producto: "Minic. c/Chile 300g",
+    tiendas: "Piedras Negras, San Nicolas, Cadereyta",
+    nota: "3 bajo umbral — 5 cj (50 uds). #5 en ventas ($76K)",
   },
   {
     accion: "Reabastecer",
     producto: "Rotini c/Chile 300g",
-    tiendas: "Girasoles",
-    nota: "1 bajo umbral — 1 cj (12 uds)",
+    tiendas: "San Nicolas, Montemorelos, Piedras Negras, Garcia",
+    nota: "4 bajo umbral — 4 cj (48 uds)",
+  },
+  {
+    accion: "Reabastecer",
+    producto: "Minic. s/Chile 300g",
+    tiendas: "Montemorelos, Piedras Negras",
+    nota: "2 bajo umbral — 4 cj (32 uds). #1 en ventas ($106K)",
+  },
+  {
+    accion: "Reabastecer",
+    producto: "Cacah. Japonés 454g",
+    tiendas: "Urdiñola, Manantiales, Sta. Elena Zuazua",
+    nota: "3 sin venta con inv — 3 cj (78 uds)",
   },
   {
     accion: "Reabastecer",
     producto: "Churrito Rojo 454g",
-    tiendas: "Libramiento",
-    nota: "1 bajo umbral — 1 cj (10 uds)",
+    tiendas: "Otilio, San Nicolas, Piedras Negras",
+    nota: "3 bajo umbral — 3 cj (30 uds)",
+  },
+  {
+    accion: "Reabastecer",
+    producto: "Papa Desh. Fuego 170g",
+    tiendas: "Hidalgo, Mixcoac + 1 bajo umbral",
+    nota: "1 bajo umbral — 3 cj (30 uds)",
+  },
+  {
+    accion: "Reabastecer",
+    producto: "Cacah. Cantinero 454g",
+    tiendas: "Los Pilares",
+    nota: "1 bajo umbral — 2 cj (36 uds)",
   },
   {
     accion: "Reabastecer",
     producto: "Conchitas 454g",
-    tiendas: "Buenavista",
-    nota: "1 sin venta con inv — 1 cj (10 uds)",
+    tiendas: "Solidaridad",
+    nota: "1 bajo umbral — 1 cj (10 uds)",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function FyvSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#27AE60]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Frutas y Verduras</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas por producto · Inventario al 08-Abr 2026 · 62 cajas / 720 uds total</p>
+      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas por producto · Inventario al 04-May 2026 · 44 cajas / 576 uds total</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">
