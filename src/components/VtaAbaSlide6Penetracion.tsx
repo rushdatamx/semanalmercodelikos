@@ -5,28 +5,31 @@ import { Target } from "lucide-react";
 
 const skuPenetracion = [
   { nombre: "Tostada Roja 70PZ", tiendas: 40, pct: 100, venta: 5650991 },
-  { nombre: "Tostada Amarilla 200g", tiendas: 40, pct: 100, venta: 302006 },
   { nombre: "Tostada Roja 200g", tiendas: 40, pct: 100, venta: 299854 },
-  { nombre: "Papa Fuego 45g", tiendas: 40, pct: 100, venta: 181093 },
-  { nombre: "Papa Natural 45g", tiendas: 39, pct: 98, venta: 254807 },
-  { nombre: "Papa Jalapeno 45g", tiendas: 39, pct: 98, venta: 169994 },
-  { nombre: "Rueda Natural", tiendas: 39, pct: 98, venta: 85000 },
-  { nombre: "Mini Cuadro", tiendas: 38, pct: 95, venta: 78000 },
-  { nombre: "Palomitas 4Buddies", tiendas: 38, pct: 95, venta: 98000 },
-  { nombre: "Cheto Mix 240g", tiendas: 37, pct: 93, venta: 120000 },
-  { nombre: "Rodajitas 4Buddies", tiendas: 37, pct: 93, venta: 72000 },
-  { nombre: "Nacho Maiz 450g", tiendas: 36, pct: 90, venta: 38000 },
-  { nombre: "Totopo Maiz 450g", tiendas: 35, pct: 88, venta: 32000 },
-  { nombre: "Tirita Maiz 450g", tiendas: 35, pct: 88, venta: 28000 },
+  { nombre: "Tostada Amarilla 200g", tiendas: 40, pct: 100, venta: 302006 },
+  { nombre: "Papa Fuego 45g", tiendas: 40, pct: 100, venta: 187355 },
+  { nombre: "Papa Fuego 340g", tiendas: 40, pct: 100, venta: 121301 },
+  { nombre: "Palomitas W. Cheddar", tiendas: 40, pct: 100, venta: 9106 },
+  { nombre: "Rodajitas 4Buddies", tiendas: 37, pct: 93, venta: 11003 },
+  { nombre: "Papa Natural 45g", tiendas: 39, pct: 98, venta: 260361 },
+  { nombre: "Papa Jalapeno 45g", tiendas: 39, pct: 98, venta: 175890 },
+  { nombre: "Papa Natural 340g", tiendas: 39, pct: 98, venta: 127607 },
+  { nombre: "Papa Jalapeno 340g", tiendas: 39, pct: 98, venta: 125062 },
+  { nombre: "Cheto Mix 400g", tiendas: 39, pct: 98, venta: 51680 },
+  { nombre: "Rueda Natural 400g", tiendas: 39, pct: 98, venta: 48959 },
+  { nombre: "Palomitas Classic White", tiendas: 39, pct: 98, venta: 8378 },
+  { nombre: "Mini Cuadro 400g", tiendas: 38, pct: 95, venta: 41832 },
+  { nombre: "Palomitas Street Elote", tiendas: 36, pct: 90, venta: 7536 },
   { nombre: "Cacahuate Mixto Granel", tiendas: 31, pct: 78, venta: 231112 },
+  { nombre: "Cacahuate Cantinero Granel", tiendas: 31, pct: 78, venta: 136225 },
   { nombre: "Durito Teja 20PZ", tiendas: 30, pct: 75, venta: 453197 },
-  { nombre: "Cacahuate Salado Granel", tiendas: 23, pct: 58, venta: 148000 },
+  { nombre: "Cacahuate Salado Granel", tiendas: 23, pct: 58, venta: 39782 },
 ];
 
 const oportunidades = [
   { nombre: "Durito Teja 20PZ", tiendas: 30, oportunidad: 10, potencial: "$151K" },
-  { nombre: "Cacahuate Salado Granel", tiendas: 23, oportunidad: 17, potencial: "$109K" },
-  { nombre: "Cacahuate Mixto Granel", tiendas: 31, oportunidad: 9, potencial: "$67K" },
+  { nombre: "Cacahuate Cantinero Granel", tiendas: 31, oportunidad: 9, potencial: "$40K" },
+  { nombre: "Cacahuate Salado Granel", tiendas: 23, oportunidad: 17, potencial: "$29K" },
 ];
 
 export default function VtaAbaSlide6Penetracion() {
@@ -41,7 +44,7 @@ export default function VtaAbaSlide6Penetracion() {
       <div className="flex gap-5 flex-1">
         {/* SKU penetration table */}
         <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-4 overflow-hidden">
-          <p className="text-gray-500 text-xs mb-2">20 SKUs Abarrotes — penetracion por tienda</p>
+          <p className="text-gray-500 text-xs mb-2">20 SKUs Abarrotes — penetracion en 40 tiendas</p>
           <div className="overflow-auto max-h-[350px]">
             <table className="w-full text-[11px]">
               <thead className="sticky top-0 bg-gray-50">
@@ -109,7 +112,7 @@ export default function VtaAbaSlide6Penetracion() {
             </div>
             <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-3 text-center">
               <p className="text-gray-400 text-[9px]">SKUs al 100%</p>
-              <p className="text-[#27AE60] text-2xl font-bold">4</p>
+              <p className="text-[#27AE60] text-2xl font-bold">6</p>
             </div>
           </div>
 

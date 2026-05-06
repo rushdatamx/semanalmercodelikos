@@ -8,12 +8,12 @@ const productos = [
   { nombre: "Durito Teja 20PZ", venta: 453197, pct: 5.5, crec: "oportunidad de impulso", pos: true, isNew: false },
   { nombre: "Tostada Amarilla 200g", venta: 302006, pct: 3.6, crec: "+440.5%", pos: true, isNew: false },
   { nombre: "Tostada Roja 200g", venta: 299854, pct: 3.6, crec: "+293.7%", pos: true, isNew: false },
-  { nombre: "Papa Natural 45g", venta: 254807, pct: 3.1, crec: "NUEVO", pos: true, isNew: true },
+  { nombre: "Papa Natural 45g", venta: 260361, pct: 3.1, crec: "NUEVO", pos: true, isNew: true },
   { nombre: "Cacahuate Mixto Granel", venta: 231112, pct: 2.8, crec: "oportunidad de impulso", pos: true, isNew: false },
-  { nombre: "Papa Fuego 45g", venta: 181093, pct: 2.2, crec: "NUEVO", pos: true, isNew: true },
-  { nombre: "Papa Jalapeno 45g", venta: 169994, pct: 2.1, crec: "NUEVO", pos: true, isNew: true },
-  { nombre: "Cacahuate Salado Granel", venta: 148000, pct: 1.8, crec: "oportunidad de impulso", pos: true, isNew: false },
-  { nombre: "Cheto Mix 240g", venta: 120000, pct: 1.4, crec: "NUEVO", pos: true, isNew: true },
+  { nombre: "Papa Fuego 45g", venta: 187355, pct: 2.3, crec: "NUEVO", pos: true, isNew: true },
+  { nombre: "Papa Jalapeno 45g", venta: 175890, pct: 2.1, crec: "NUEVO", pos: true, isNew: true },
+  { nombre: "Cacahuate Cantinero Granel", venta: 136225, pct: 1.6, crec: "oportunidad de impulso", pos: true, isNew: false },
+  { nombre: "Papa Natural 340g", venta: 127607, pct: 1.5, crec: "NUEVO", pos: true, isNew: true },
 ];
 
 const maxVenta = productos[0].venta;
@@ -79,7 +79,7 @@ export default function VtaAbaSlide5TopProductos() {
       </div>
 
       <div className="mt-3 flex justify-between items-center bg-[#FDF8F0] rounded-lg px-5 py-3 border border-[#E8DCC8]">
-        <span className="text-gray-500 text-sm">4 de 10 productos top son lanzamientos del ano — gran dinamismo de nuevos productos</span>
+        <span className="text-gray-500 text-sm">5 de 10 productos top son lanzamientos del ano — gran dinamismo de nuevos productos</span>
         <span className="text-[#F7B500] font-bold text-lg">$8.3M</span>
       </div>
     </SlideWrapper>

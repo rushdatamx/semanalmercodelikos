@@ -5,16 +5,15 @@ import { Layers } from "lucide-react";
 
 const categorias = [
   { nombre: "Tostada Roja 70PZ", venta: 5650991, pct: 68.3, crec: "+48.5%", pos: true, isNew: false },
-  { nombre: "Papa 45g", venta: 605894, pct: 7.3, crec: "NUEVO", pos: true, isNew: true },
+  { nombre: "Papa 45g", venta: 623606, pct: 7.5, crec: "NUEVO", pos: true, isNew: true },
   { nombre: "Tostadas 200g", venta: 601860, pct: 7.3, crec: "+355.8%", pos: true, isNew: false },
   { nombre: "Duritos", venta: 453197, pct: 5.5, crec: "oportunidad de impulso", pos: true, isNew: false },
-  { nombre: "Cacahuate Granel", venta: 407567, pct: 4.9, crec: "oportunidad de crecimiento", pos: true, isNew: false },
-  { nombre: "Cheto Mix", venta: 120000, pct: 1.4, crec: "NUEVO", pos: true, isNew: true },
-  { nombre: "Palomitas 4Buddies", venta: 98000, pct: 1.2, crec: "NUEVO", pos: true, isNew: true },
-  { nombre: "Panaderia", venta: 97850, pct: 1.2, crec: "oportunidad de crecimiento", pos: true, isNew: false },
-  { nombre: "Rueda Natural", venta: 85000, pct: 1.0, crec: "+12.3%", pos: true, isNew: false },
-  { nombre: "Rodajitas 4Buddies", venta: 72000, pct: 0.9, crec: "NUEVO", pos: true, isNew: true },
-  { nombre: "Mini Cuadro", venta: 78000, pct: 0.9, crec: "+8.5%", pos: true, isNew: false },
+  { nombre: "Cacahuate Granel", venta: 407119, pct: 4.9, crec: "oportunidad de crecimiento", pos: true, isNew: false },
+  { nombre: "Papa 340g", venta: 373970, pct: 4.5, crec: "NUEVO", pos: true, isNew: true },
+  { nombre: "Cheto Mix", venta: 51680, pct: 0.6, crec: "oportunidad de impulso", pos: true, isNew: false },
+  { nombre: "Rueda Natural", venta: 48959, pct: 0.6, crec: "oportunidad de impulso", pos: true, isNew: false },
+  { nombre: "Mini Cuadro", venta: 41832, pct: 0.5, crec: "+15.2%", pos: true, isNew: false },
+  { nombre: "Palomitas 4Buddies", venta: 25020, pct: 0.3, crec: "NUEVO", pos: true, isNew: true },
 ];
 
 const maxVenta = categorias[0].venta;
@@ -42,7 +41,7 @@ function DonutSegment({ start, end, color, radius = 80, cx = 100, cy = 100, stro
   );
 }
 
-const donutColors = ["#1A1A1A", "#3B82F6", "#F7B500", "#9CA3AF", "#E31837", "#8B5CF6", "#27AE60", "#F59E0B", "#06B6D4", "#EC4899", "#D1D5DB"];
+const donutColors = ["#1A1A1A", "#3B82F6", "#F7B500", "#9CA3AF", "#E31837", "#8B5CF6", "#27AE60", "#F59E0B", "#06B6D4", "#EC4899"];
 
 export default function VtaAbaSlide4Categorias() {
   let offset = 0;
@@ -58,7 +57,7 @@ export default function VtaAbaSlide4Categorias() {
         <Layers className="w-7 h-7 text-[#1A1A1A]" />
         <h2 className="text-3xl font-bold text-gray-800">Sub-categorias Abarrotes</h2>
       </div>
-      <p className="text-gray-500 text-sm mb-4">Ene-Abr 2026 · 11 sub-categorias · 20 SKUs</p>
+      <p className="text-gray-500 text-sm mb-4">Ene-Abr 2026 · 10 sub-categorias · 20 SKUs</p>
 
       <div className="flex gap-5 flex-1">
         {/* Donut */}
@@ -98,7 +97,7 @@ export default function VtaAbaSlide4Categorias() {
 
       <div className="mt-2 flex gap-3">
         <div className="flex-1 bg-[#27AE60]/5 border border-[#27AE60]/20 rounded-lg px-4 py-2">
-          <p className="text-[#27AE60] text-[10px] font-semibold">&#9989; 4 categorias nuevas incorporadas exitosamente en 2026</p>
+          <p className="text-[#27AE60] text-[10px] font-semibold">&#9989; 3 categorias nuevas (Papa 45g, Papa 340g, Palomitas) incorporadas en 2026</p>
         </div>
         <div className="flex-1 bg-[#2E75B6]/5 border border-[#2E75B6]/20 rounded-lg px-4 py-2">
           <p className="text-[#2E75B6] text-[10px] font-semibold">&#128200; Tostadas 200g crecen +356% — excelente dinamica de crecimiento</p>

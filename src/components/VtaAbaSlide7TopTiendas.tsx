@@ -4,24 +4,24 @@ import SlideWrapper from "./SlideWrapper";
 import { MapPin, TrendingUp } from "lucide-react";
 
 const topTiendas = [
-  { nombre: "Garcia", codigo: 525, venta: 340000, pct: 4.1, crec: "+52.3%" },
-  { nombre: "Los Pilares", codigo: 589, venta: 332000, pct: 4.0, crec: "+28.7%" },
-  { nombre: "Buenavista", codigo: 582, venta: 325000, pct: 3.9, crec: "+34.5%" },
-  { nombre: "Girasoles", codigo: 565, venta: 322000, pct: 3.9, crec: "+46.8%" },
-  { nombre: "El Jaral", codigo: 598, venta: 318000, pct: 3.8, crec: "+81.2%" },
-  { nombre: "Sendero Sta. Catarina", codigo: 584, venta: 310000, pct: 3.7, crec: "+39.1%" },
-  { nombre: "Solidaridad", codigo: 574, venta: 301000, pct: 3.6, crec: "+58.4%" },
-  { nombre: "San Roque", codigo: 585, venta: 290000, pct: 3.5, crec: "+82.1%" },
-  { nombre: "Mixcoac", codigo: 573, venta: 285000, pct: 3.4, crec: "+97.3%" },
-  { nombre: "Montemorelos", codigo: 522, venta: 278000, pct: 3.4, crec: "+79.6%" },
+  { nombre: "Garcia", codigo: 525, venta: 363845, pct: 4.4, crec: "+40.7%" },
+  { nombre: "Buenavista", codigo: 582, venta: 334651, pct: 4.0, crec: "+20.3%" },
+  { nombre: "Los Pilares", codigo: 589, venta: 321479, pct: 3.9, crec: "+12.1%" },
+  { nombre: "Solidaridad", codigo: 574, venta: 309933, pct: 3.7, crec: "+47.2%" },
+  { nombre: "El Jaral", codigo: 598, venta: 307864, pct: 3.7, crec: "+56.2%" },
+  { nombre: "Mixcoac", codigo: 573, venta: 307384, pct: 3.7, crec: "+89.8%" },
+  { nombre: "Girasoles", codigo: 565, venta: 307190, pct: 3.7, crec: "+22.4%" },
+  { nombre: "Colinas", codigo: 578, venta: 296566, pct: 3.6, crec: "+54.2%" },
+  { nombre: "San Roque", codigo: 585, venta: 295235, pct: 3.6, crec: "+67.5%" },
+  { nombre: "Sendero Sta. Catarina", codigo: 584, venta: 290740, pct: 3.5, crec: "+15.3%" },
 ];
 
 const bottomTiendas = [
-  { nombre: "Israel Cavazos", venta: 108000 },
-  { nombre: "Parras", venta: 100000 },
-  { nombre: "San Buena", venta: 96000 },
-  { nombre: "Manantiales", venta: 93000 },
-  { nombre: "Castanos", venta: 67000 },
+  { nombre: "Hidalgo", venta: 116696 },
+  { nombre: "San Buena", venta: 110839 },
+  { nombre: "Manantiales", venta: 108818 },
+  { nombre: "Paseo Monclova", venta: 95279 },
+  { nombre: "Castanos", venta: 78644 },
 ];
 
 const maxVenta = topTiendas[0].venta;
@@ -76,11 +76,11 @@ export default function VtaAbaSlide7TopTiendas() {
             <div className="grid grid-cols-2 gap-3">
               <div className="text-center">
                 <p className="text-gray-400 text-[9px]">Top 10</p>
-                <p className="text-[#1A1A1A] text-2xl font-bold">37.9%</p>
+                <p className="text-[#1A1A1A] text-2xl font-bold">37.8%</p>
               </div>
               <div className="text-center">
                 <p className="text-gray-400 text-[9px]">Resto (30)</p>
-                <p className="text-gray-600 text-2xl font-bold">62.1%</p>
+                <p className="text-gray-600 text-2xl font-bold">62.2%</p>
               </div>
             </div>
             <p className="text-gray-400 text-[10px] mt-2 text-center">Distribucion saludable — sin dependencia de pocas tiendas</p>

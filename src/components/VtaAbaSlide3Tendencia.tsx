@@ -13,18 +13,18 @@ import {
 } from "recharts";
 
 const data = [
-  { mes: "Ene", v25: 1010000, v26: 1790000, crec: "+77.1%" },
-  { mes: "Feb", v25: 1220000, v26: 1920000, crec: "+57.9%" },
-  { mes: "Mar", v25: 1560000, v26: 2540000, crec: "+62.9%" },
-  { mes: "Abr", v25: 1400000, v26: 2020000, crec: "+44.0%" },
-  { mes: "May", v25: 1580000, v26: null, crec: "" },
-  { mes: "Jun", v25: 1260000, v26: null, crec: "" },
-  { mes: "Jul", v25: 1280000, v26: null, crec: "" },
-  { mes: "Ago", v25: 1870000, v26: null, crec: "" },
-  { mes: "Sep", v25: 1670000, v26: null, crec: "" },
-  { mes: "Oct", v25: 1720000, v26: null, crec: "" },
-  { mes: "Nov", v25: 2120000, v26: null, crec: "" },
-  { mes: "Dic", v25: 2170000, v26: null, crec: "" },
+  { mes: "Ene", v25: 1074781, v26: 1792601, crec: "+66.8%" },
+  { mes: "Feb", v25: 1401506, v26: 1923070, crec: "+37.2%" },
+  { mes: "Mar", v25: 1744792, v26: 2538064, crec: "+45.5%" },
+  { mes: "Abr", v25: 1490240, v26: 2021840, crec: "+35.7%" },
+  { mes: "May", v25: 1833137, v26: null, crec: "" },
+  { mes: "Jun", v25: 1474950, v26: null, crec: "" },
+  { mes: "Jul", v25: 1491089, v26: null, crec: "" },
+  { mes: "Ago", v25: 2001380, v26: null, crec: "" },
+  { mes: "Sep", v25: 1685191, v26: null, crec: "" },
+  { mes: "Oct", v25: 1856453, v26: null, crec: "" },
+  { mes: "Nov", v25: 2132247, v26: null, crec: "" },
+  { mes: "Dic", v25: 2176802, v26: null, crec: "" },
 ];
 
 const formatPesos = (v: number) => `$${(v / 1_000_000).toFixed(1)}M`;
@@ -88,7 +88,7 @@ export default function VtaAbaSlide3Tendencia() {
 
       <div className="flex justify-between mt-2 text-[10px] text-gray-500">
         <span>Mejor mes 2026: Marzo ($2.5M) · Promedio mensual 2026: $2.07M</span>
-        <span>Promedio mensual 2025: $1.57M · Crecimiento acumulado: +59.4%</span>
+        <span>Promedio mensual 2025: $1.70M · Crecimiento acumulado: +44.9%</span>
       </div>
     </SlideWrapper>
   );

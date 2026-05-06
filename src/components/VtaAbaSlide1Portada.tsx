@@ -21,7 +21,7 @@ export default function VtaAbaSlide1Portada() {
         </h1>
         <p className="text-2xl text-gray-500 font-light">MERCO · Enero — Abril 2026</p>
         <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#1A1A1A]/30 text-[#1A1A1A] text-sm font-semibold bg-white/50">
-          40 tiendas · $8.3M sell-out · +59.4% vs 2025
+          40 tiendas · $8.3M sell-out · +44.9% vs 2025
         </div>
       </div>
     </SlideWrapper>
