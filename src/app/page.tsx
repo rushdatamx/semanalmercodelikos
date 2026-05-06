@@ -145,7 +145,7 @@ const departments = [
   {
     id: "sellout-abarrotes",
     label: "Sell-Out Abarrotes",
-    color: "#1A1A1A",
+    color: "#F5A623",
     slides: [
       VtaAbaSlide1Portada,
       VtaAbaSlide2KPIs,

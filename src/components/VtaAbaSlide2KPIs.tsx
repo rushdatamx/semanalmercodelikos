@@ -19,7 +19,7 @@ export default function VtaAbaSlide2KPIs() {
       <div className="flex items-center gap-8 mb-5">
         <div className="animate-count-up">
           <p className="text-gray-500 text-sm mb-1">Venta acumulada</p>
-          <p className="text-6xl font-bold text-[#1A1A1A] tracking-tight">$8.3M</p>
+          <p className="text-6xl font-bold text-[#F5A623] tracking-tight">$8.3M</p>
           <p className="text-gray-400 text-xs mt-1">Ene — Abr 2026</p>
         </div>
         <div className="flex items-center gap-2 bg-[#27AE60]/10 border border-[#27AE60]/20 rounded-xl px-5 py-3 animate-count-up" style={{ animationDelay: "150ms" }}>

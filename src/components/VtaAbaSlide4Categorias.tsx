@@ -7,11 +7,11 @@ const categorias = [
   { nombre: "Tostada Roja 70PZ", venta: 5650991, pct: 68.3, crec: "+48.5%", pos: true, isNew: false },
   { nombre: "Papa 45g", venta: 623606, pct: 7.5, crec: "NUEVO", pos: true, isNew: true },
   { nombre: "Tostadas 200g", venta: 601860, pct: 7.3, crec: "+355.8%", pos: true, isNew: false },
-  { nombre: "Duritos", venta: 453197, pct: 5.5, crec: "oportunidad de impulso", pos: true, isNew: false },
-  { nombre: "Cacahuate Granel", venta: 407119, pct: 4.9, crec: "oportunidad de crecimiento", pos: true, isNew: false },
+  { nombre: "Duritos", venta: 453197, pct: 5.5, crec: "-7.2%", pos: false, isNew: false },
+  { nombre: "Cacahuate Granel", venta: 407119, pct: 4.9, crec: "-33.2%", pos: false, isNew: false },
   { nombre: "Papa 340g", venta: 373970, pct: 4.5, crec: "NUEVO", pos: true, isNew: true },
-  { nombre: "Cheto Mix", venta: 51680, pct: 0.6, crec: "oportunidad de impulso", pos: true, isNew: false },
-  { nombre: "Rueda Natural", venta: 48959, pct: 0.6, crec: "oportunidad de impulso", pos: true, isNew: false },
+  { nombre: "Cheto Mix", venta: 51680, pct: 0.6, crec: "-10.7%", pos: false, isNew: false },
+  { nombre: "Rueda Natural", venta: 48959, pct: 0.6, crec: "-18.4%", pos: false, isNew: false },
   { nombre: "Mini Cuadro", venta: 41832, pct: 0.5, crec: "+15.2%", pos: true, isNew: false },
   { nombre: "Palomitas 4Buddies", venta: 25020, pct: 0.3, crec: "NUEVO", pos: true, isNew: true },
 ];
@@ -41,7 +41,7 @@ function DonutSegment({ start, end, color, radius = 80, cx = 100, cy = 100, stro
   );
 }
 
-const donutColors = ["#1A1A1A", "#3B82F6", "#F7B500", "#9CA3AF", "#E31837", "#8B5CF6", "#27AE60", "#F59E0B", "#06B6D4", "#EC4899"];
+const donutColors = ["#F5A623", "#3B82F6", "#F7B500", "#9CA3AF", "#E31837", "#8B5CF6", "#27AE60", "#F59E0B", "#06B6D4", "#EC4899"];
 
 export default function VtaAbaSlide4Categorias() {
   let offset = 0;
@@ -54,7 +54,7 @@ export default function VtaAbaSlide4Categorias() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <div className="flex items-center gap-3 mb-1">
-        <Layers className="w-7 h-7 text-[#1A1A1A]" />
+        <Layers className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Sub-categorias Abarrotes</h2>
       </div>
       <p className="text-gray-500 text-sm mb-4">Ene-Abr 2026 · 10 sub-categorias · 20 SKUs</p>
@@ -66,7 +66,7 @@ export default function VtaAbaSlide4Categorias() {
             {segments.map((s, i) => (
               <DonutSegment key={i} start={s.start} end={s.end} color={s.color} />
             ))}
-            <text x="100" y="92" textAnchor="middle" className="text-xl font-bold" fill="#1A1A1A">$8.3M</text>
+            <text x="100" y="92" textAnchor="middle" className="text-xl font-bold" fill="#F5A623">$8.3M</text>
             <text x="100" y="112" textAnchor="middle" className="text-[10px]" fill="#9CA3AF">Abarrotes</text>
           </svg>
         </div>
@@ -75,7 +75,7 @@ export default function VtaAbaSlide4Categorias() {
         <div className="flex-1 space-y-1">
           {segments.map((c, i) => {
             const barPct = (c.venta / maxVenta) * 100;
-            const crecColor = c.isNew ? "#2E75B6" : "#27AE60";
+            const crecColor = c.isNew ? "#2E75B6" : c.pos ? "#27AE60" : "#E31837";
             return (
               <div key={i} className="flex items-center gap-3 animate-count-up" style={{ animationDelay: `${i * 50}ms` }}>
                 <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: c.color }} />

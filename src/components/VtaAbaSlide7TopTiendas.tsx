@@ -30,7 +30,7 @@ export default function VtaAbaSlide7TopTiendas() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <div className="flex items-center gap-3 mb-1">
-        <MapPin className="w-7 h-7 text-[#1A1A1A]" />
+        <MapPin className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Top 10 Tiendas Abarrotes</h2>
       </div>
       <p className="text-gray-500 text-sm mb-4">Ene-Abr 2026 · Distribucion saludable, sin dependencia de pocas tiendas</p>
@@ -59,7 +59,7 @@ export default function VtaAbaSlide7TopTiendas() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="h-2 rounded-full animate-bar-grow bg-[#1A1A1A]"
+                      className="h-2 rounded-full animate-bar-grow bg-[#F5A623]"
                       style={{ width: `${barPct}%`, animationDelay: `${i * 50}ms` }}
                     />
                   </div>
@@ -76,7 +76,7 @@ export default function VtaAbaSlide7TopTiendas() {
             <div className="grid grid-cols-2 gap-3">
               <div className="text-center">
                 <p className="text-gray-400 text-[9px]">Top 10</p>
-                <p className="text-[#1A1A1A] text-2xl font-bold">37.8%</p>
+                <p className="text-[#F5A623] text-2xl font-bold">37.8%</p>
               </div>
               <div className="text-center">
                 <p className="text-gray-400 text-[9px]">Resto (30)</p>

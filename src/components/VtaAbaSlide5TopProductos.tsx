@@ -5,14 +5,14 @@ import { Award } from "lucide-react";
 
 const productos = [
   { nombre: "Tostada Roja 70PZ", venta: 5650991, pct: 68.3, crec: "+48.5%", pos: true, isNew: false },
-  { nombre: "Durito Teja 20PZ", venta: 453197, pct: 5.5, crec: "oportunidad de impulso", pos: true, isNew: false },
+  { nombre: "Durito Teja 20PZ", venta: 453197, pct: 5.5, crec: "-7.2%", pos: false, isNew: false },
   { nombre: "Tostada Amarilla 200g", venta: 302006, pct: 3.6, crec: "+440.5%", pos: true, isNew: false },
   { nombre: "Tostada Roja 200g", venta: 299854, pct: 3.6, crec: "+293.7%", pos: true, isNew: false },
   { nombre: "Papa Natural 45g", venta: 260361, pct: 3.1, crec: "NUEVO", pos: true, isNew: true },
-  { nombre: "Cacahuate Mixto Granel", venta: 231112, pct: 2.8, crec: "oportunidad de impulso", pos: true, isNew: false },
+  { nombre: "Cacahuate Mixto Granel", venta: 231112, pct: 2.8, crec: "-23.3%", pos: false, isNew: false },
   { nombre: "Papa Fuego 45g", venta: 187355, pct: 2.3, crec: "NUEVO", pos: true, isNew: true },
   { nombre: "Papa Jalapeno 45g", venta: 175890, pct: 2.1, crec: "NUEVO", pos: true, isNew: true },
-  { nombre: "Cacahuate Cantinero Granel", venta: 136225, pct: 1.6, crec: "oportunidad de impulso", pos: true, isNew: false },
+  { nombre: "Cacahuate Cantinero Granel", venta: 136225, pct: 1.6, crec: "-42.8%", pos: false, isNew: false },
   { nombre: "Papa Natural 340g", venta: 127607, pct: 1.5, crec: "NUEVO", pos: true, isNew: true },
 ];
 
@@ -37,7 +37,7 @@ export default function VtaAbaSlide5TopProductos() {
         {productos.map((p, i) => {
           const barPct = (p.venta / maxVenta) * 100;
           const isFirst = i === 0;
-          const crecColor = p.isNew ? "#2E75B6" : "#27AE60";
+          const crecColor = p.isNew ? "#2E75B6" : p.pos ? "#27AE60" : "#E31837";
 
           return (
             <div key={i} className="flex items-center gap-3 animate-count-up" style={{ animationDelay: `${i * 60}ms` }}>
@@ -67,7 +67,7 @@ export default function VtaAbaSlide5TopProductos() {
                     className="h-2.5 rounded-full animate-bar-grow"
                     style={{
                       width: `${barPct}%`,
-                      backgroundColor: isFirst ? "#F7B500" : "#1A1A1A",
+                      backgroundColor: isFirst ? "#F7B500" : "#F5A623",
                       animationDelay: `${i * 60}ms`,
                     }}
                   />

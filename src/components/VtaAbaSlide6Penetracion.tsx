@@ -36,7 +36,7 @@ export default function VtaAbaSlide6Penetracion() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <div className="flex items-center gap-3 mb-1">
-        <Target className="w-7 h-7 text-[#2E75B6]" />
+        <Target className="w-7 h-7 text-[#F5A623]" />
         <h2 className="text-3xl font-bold text-gray-800">Penetracion Abarrotes</h2>
       </div>
       <p className="text-gray-500 text-sm mb-4">Ene-Abr 2026 · Fill rate: 92.4% (739 de 800 combinaciones) — distribucion sobresaliente</p>
