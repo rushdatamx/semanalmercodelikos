@@ -40,6 +40,13 @@ import VtaSlide5Categorias from "@/components/VtaSlide5Categorias";
 import VtaSlide6TopProductos from "@/components/VtaSlide6TopProductos";
 import VtaSlide7Penetracion from "@/components/VtaSlide7Penetracion";
 import VtaSlide8TopTiendas from "@/components/VtaSlide8TopTiendas";
+import VtaAbaSlide1Portada from "@/components/VtaAbaSlide1Portada";
+import VtaAbaSlide2KPIs from "@/components/VtaAbaSlide2KPIs";
+import VtaAbaSlide3Tendencia from "@/components/VtaAbaSlide3Tendencia";
+import VtaAbaSlide4Categorias from "@/components/VtaAbaSlide4Categorias";
+import VtaAbaSlide5TopProductos from "@/components/VtaAbaSlide5TopProductos";
+import VtaAbaSlide6Penetracion from "@/components/VtaAbaSlide6Penetracion";
+import VtaAbaSlide7TopTiendas from "@/components/VtaAbaSlide7TopTiendas";
 
 const departments = [
   {
@@ -133,6 +140,20 @@ const departments = [
       VtaSlide6TopProductos,
       VtaSlide7Penetracion,
       VtaSlide8TopTiendas,
+    ],
+  },
+  {
+    id: "sellout-abarrotes",
+    label: "Sell-Out Abarrotes",
+    color: "#1A1A1A",
+    slides: [
+      VtaAbaSlide1Portada,
+      VtaAbaSlide2KPIs,
+      VtaAbaSlide3Tendencia,
+      VtaAbaSlide4Categorias,
+      VtaAbaSlide5TopProductos,
+      VtaAbaSlide6Penetracion,
+      VtaAbaSlide7TopTiendas,
     ],
   },
 ];
