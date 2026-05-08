@@ -47,6 +47,12 @@ import VtaAbaSlide4Categorias from "@/components/VtaAbaSlide4Categorias";
 import VtaAbaSlide5TopProductos from "@/components/VtaAbaSlide5TopProductos";
 import VtaAbaSlide6Penetracion from "@/components/VtaAbaSlide6Penetracion";
 import VtaAbaSlide7TopTiendas from "@/components/VtaAbaSlide7TopTiendas";
+import DiagFyvSlide1Portada from "@/components/DiagFyvSlide1Portada";
+import DiagFyvSlide2Panorama from "@/components/DiagFyvSlide2Panorama";
+import DiagFyvSlide3OCs from "@/components/DiagFyvSlide3OCs";
+import DiagFyvSlide4Cobertura from "@/components/DiagFyvSlide4Cobertura";
+import DiagFyvSlide5Distribucion from "@/components/DiagFyvSlide5Distribucion";
+import DiagFyvSlide6PlanAccion from "@/components/DiagFyvSlide6PlanAccion";
 
 const departments = [
   {
@@ -69,6 +75,19 @@ const departments = [
       FyvSlide4SugeridoCompra,
       FyvSlide6VentasProducto,
       FyvSlide7Recomendaciones,
+    ],
+  },
+  {
+    id: "diag-fyv",
+    label: "Diag. FyV",
+    color: "#16A085",
+    slides: [
+      DiagFyvSlide1Portada,
+      DiagFyvSlide2Panorama,
+      DiagFyvSlide3OCs,
+      DiagFyvSlide4Cobertura,
+      DiagFyvSlide5Distribucion,
+      DiagFyvSlide6PlanAccion,
     ],
   },
   {

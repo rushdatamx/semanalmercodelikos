@@ -1,0 +1,30 @@
+"use client";
+
+import SlideWrapper from "./SlideWrapper";
+
+export default function DiagFyvSlide1Portada() {
+  return (
+    <SlideWrapper className="bg-[#F5F5F5] justify-center items-center text-center relative" hideFooter>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#16A085]/15 blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#E74C3C]/10 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-white/60 blur-3xl" />
+      </div>
+      <div className="relative z-10 space-y-6">
+        <div className="flex justify-center">
+          <img src="/delikos-logo.jpeg" alt="Botanas Delikos" className="h-44 object-contain" />
+        </div>
+        <h1 className="text-5xl font-bold text-gray-800 tracking-tight">
+          Diagnóstico FyV — MERCO
+        </h1>
+        <div className="flex items-center justify-center gap-3">
+          <img src="/merco-logo.jpg" alt="MERCO" className="h-16 object-contain" />
+        </div>
+        <p className="text-xl text-gray-500">Mayo 2026</p>
+        <div className="inline-block mt-4 px-6 py-2 rounded-full border border-[#16A085]/50 text-[#16A085] text-sm font-semibold">
+          ¿Por qué no suben los pedidos?
+        </div>
+      </div>
+    </SlideWrapper>
+  );
+}
