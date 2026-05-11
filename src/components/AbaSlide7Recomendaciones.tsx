@@ -14,38 +14,38 @@ const recomendaciones: Recomendacion[] = [
   {
     accion: "Surtir urgente",
     producto: "Tostada Roja 70PZ",
-    tiendas: "21 tiendas bajo 25 DDI (0 agotadas, todas bajo umbral)",
-    sugerido: "21 pallets (5,040 uds)",
+    tiendas: "1 agotada + 23 bajo 25 DDI (Girasoles agotada, 23 bajo umbral)",
+    sugerido: "24 pallets (5,760 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Roja 200g",
-    tiendas: "4 agotadas + 17 bajo umbral (Hidalgo, La Sierrita, Buenavista +18)",
-    sugerido: "115 cajas (2,760 uds)",
+    tiendas: "4 agotadas + 26 bajo umbral (Buenavista, La Sierrita, Hidalgo +27)",
+    sugerido: "162 cajas (3,888 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Amarilla 200g",
-    tiendas: "7 agotadas + 15 bajo umbral (Rosita, Republica, San Roque +19)",
-    sugerido: "111 cajas (2,664 uds)",
+    tiendas: "1 agotada + 20 bajo umbral (Israel Cavazos, Montemorelos +19)",
+    sugerido: "112 cajas (2,688 uds)",
   },
   {
     accion: "Reabastecer",
     producto: "Papa Natural 45g",
-    tiendas: "3 agotadas + 8 bajo umbral (Otilio, Mixcoac, Saltillo Madero +8)",
-    sugerido: "8 PDQs + 4 cajas (3,540 uds)",
+    tiendas: "Pendiente: ejecutar weekly-papas45",
+    sugerido: "Pendiente",
   },
   {
     accion: "Reabastecer",
     producto: "Papa Fuego 45g",
-    tiendas: "3 agotadas + 7 bajo umbral (Piedras Negras, Otilio, Ramos Arizpe +7)",
-    sugerido: "8 PDQs + 2 cajas (3,450 uds)",
+    tiendas: "Pendiente: ejecutar weekly-papas45",
+    sugerido: "Pendiente",
   },
   {
     accion: "Reabastecer",
     producto: "Papa Jalapeño 45g",
-    tiendas: "1 agotada + 9 bajo umbral (Otilio, Montemorelos, Piedras Negras +7)",
-    sugerido: "8 PDQs + 2 cajas (3,450 uds)",
+    tiendas: "Pendiente: ejecutar weekly-papas45",
+    sugerido: "Pendiente",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function AbaSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#F5A623]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Abarrotes</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas · 3 SKUs Tostada + 3 SKUs Papa 45g · Semana del 05 May 2026</p>
+      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas · 3 SKUs Tostada + 3 SKUs Papa 45g · Semana del 11 May 2026</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">
@@ -93,28 +93,28 @@ export default function AbaSlide7Recomendaciones() {
       <div className="mt-2 grid grid-cols-2 gap-3">
         {/* OC Tostadas */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
-          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Tostadas (30-Abr)</p>
+          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Tostadas (30-Abr) · Umbral 25 DDI</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">21 pallets</span> (5,040 uds)</span><span className="text-red-600 font-bold">SIN OC</span></div>
-            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">115 cajas</span> (2,760 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 82 cajas</span></div>
-            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">111 cajas</span> (2,664 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 87 cajas</span></div>
+            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">24 pallets</span> (5,760 uds)</span><span className="text-red-600 font-bold">SIN OC</span></div>
+            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">162 cajas</span> (3,888 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 129 cajas</span></div>
+            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">112 cajas</span> (2,688 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 88 cajas</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 10,464 uds · OC C784397 solo cubre 200g parcialmente · Sin OC para 70PZ</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total: 12,336 uds · OC C784397 solo cubre 200g parcialmente · Sin OC para 70PZ</p>
         </div>
 
         {/* OC Papas 45g */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
           <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Papa 45g (30-Abr)</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Natural 45g: <span className="font-semibold text-gray-800">8 PDQs + 4 caj</span> (3,540 uds)</span><span className="text-green-600 font-bold">OC CUBRE EXACTO</span></div>
-            <div className="flex justify-between"><span>Fuego 45g: <span className="font-semibold text-gray-800">8 PDQs + 2 caj</span> (3,450 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 20 cajas</span></div>
-            <div className="flex justify-between"><span>Jalapeño 45g: <span className="font-semibold text-gray-800">8 PDQs + 2 caj</span> (3,450 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 15 cajas</span></div>
+            <div className="flex justify-between"><span>Natural 45g: pendiente weekly-papas45</span><span className="text-gray-400 font-bold">PENDIENTE</span></div>
+            <div className="flex justify-between"><span>Fuego 45g: pendiente weekly-papas45</span><span className="text-gray-400 font-bold">PENDIENTE</span></div>
+            <div className="flex justify-between"><span>Jalapeño 45g: pendiente weekly-papas45</span><span className="text-gray-400 font-bold">PENDIENTE</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 10,440 uds · OC C784400 cubre Natural · Adicional: 35 cajas (Fuego + Jalapeño)</p>
+          <p className="text-[9px] text-gray-400 mt-1">Ejecutar weekly-papas45 para completar datos de Papa 45g</p>
         </div>
       </div>
 
-      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 30-Abr se esta distribuyendo a tiendas. Total sugerido Abarrotes: 20,904 uds (tostadas + papas 45g).</p>
+      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 30-Abr se esta distribuyendo a tiendas. Total sugerido tostadas: 12,336 uds. Papas 45g pendiente.</p>
     </SlideWrapper>
   );
 }
