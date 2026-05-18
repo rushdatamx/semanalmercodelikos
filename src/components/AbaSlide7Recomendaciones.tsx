@@ -12,40 +12,46 @@ interface Recomendacion {
 
 const recomendaciones: Recomendacion[] = [
   {
-    accion: "Surtir urgente",
+    accion: "Reabastecer",
     producto: "Tostada Roja 70PZ",
-    tiendas: "1 agotada + 23 bajo 25 DDI (Girasoles agotada, 23 bajo umbral)",
-    sugerido: "24 pallets (5,760 uds)",
+    tiendas: "21 tiendas bajo 25 DDI (19 GRANDE + 2 CHICA)",
+    sugerido: "21 pallets (5,040 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Roja 200g",
-    tiendas: "4 agotadas + 26 bajo umbral (Buenavista, La Sierrita, Hidalgo +27)",
+    tiendas: "8 agotadas + 19 bajo umbral (Republica, La Sierrita, Saltillo Centro +24)",
     sugerido: "162 cajas (3,888 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Amarilla 200g",
-    tiendas: "1 agotada + 20 bajo umbral (Israel Cavazos, Montemorelos +19)",
-    sugerido: "112 cajas (2,688 uds)",
+    tiendas: "5 agotadas + 21 bajo umbral (Montemorelos, Israel Cavazos, Solidaridad +24)",
+    sugerido: "146 cajas (3,504 uds)",
   },
   {
-    accion: "Reabastecer",
+    accion: "Surtir urgente",
+    producto: "Durito Teja 20PZ",
+    tiendas: "11 agotadas + 7 bajo umbral",
+    sugerido: "Tarima 150 pzs por tienda",
+  },
+  {
+    accion: "Surtir urgente",
     producto: "Papa Natural 45g",
-    tiendas: "Pendiente: ejecutar weekly-papas45",
-    sugerido: "Pendiente",
+    tiendas: "3 agotadas + 11 bajo umbral",
+    sugerido: "11 PDQs GRANDE + 7 cajas CHICA (4,935 uds)",
   },
   {
-    accion: "Reabastecer",
+    accion: "Surtir urgente",
     producto: "Papa Fuego 45g",
-    tiendas: "Pendiente: ejecutar weekly-papas45",
-    sugerido: "Pendiente",
+    tiendas: "4 agotadas + 9 bajo umbral",
+    sugerido: "11 PDQs GRANDE + 5 cajas CHICA (4,845 uds)",
   },
   {
-    accion: "Reabastecer",
+    accion: "Surtir urgente",
     producto: "Papa Jalapeño 45g",
-    tiendas: "Pendiente: ejecutar weekly-papas45",
-    sugerido: "Pendiente",
+    tiendas: "6 agotadas + 10 bajo umbral",
+    sugerido: "11 PDQs GRANDE + 3 cajas CHICA (4,755 uds)",
   },
 ];
 
@@ -61,7 +67,7 @@ export default function AbaSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#F5A623]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Abarrotes</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas · 3 SKUs Tostada + 3 SKUs Papa 45g · Semana del 11 May 2026</p>
+      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas · 3 SKUs Tostada + Durito Teja + 3 SKUs Papa 45g · Semana del 18 May 2026</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">
@@ -91,30 +97,30 @@ export default function AbaSlide7Recomendaciones() {
       </div>
 
       <div className="mt-2 grid grid-cols-2 gap-3">
-        {/* OC Tostadas */}
+        {/* Resumen Tostadas */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
-          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Tostadas (30-Abr) · Umbral 25 DDI</p>
+          <p className="text-[10px] font-bold text-gray-700 mb-1">Sugerido Tostadas · Umbral 25 DDI</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">24 pallets</span> (5,760 uds)</span><span className="text-red-600 font-bold">SIN OC</span></div>
-            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">162 cajas</span> (3,888 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 129 cajas</span></div>
-            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">112 cajas</span> (2,688 uds)</span><span className="text-orange-600 font-bold">ADICIONAL: 88 cajas</span></div>
+            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">21 pallets</span></span><span className="text-gray-800 font-bold">5,040 uds</span></div>
+            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">162 cajas</span></span><span className="text-gray-800 font-bold">3,888 uds</span></div>
+            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">146 cajas</span></span><span className="text-gray-800 font-bold">3,504 uds</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total: 12,336 uds · OC C784397 solo cubre 200g parcialmente · Sin OC para 70PZ</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total tostadas: 12,432 uds (77 lineas tienda-producto)</p>
         </div>
 
-        {/* OC Papas 45g */}
+        {/* Resumen Papa 45g */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
-          <p className="text-[10px] font-bold text-gray-700 mb-1">Cruce OC Papa 45g (30-Abr)</p>
+          <p className="text-[10px] font-bold text-gray-700 mb-1">Sugerido Papa 45g · Umbral 15 DDI</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Natural 45g: pendiente weekly-papas45</span><span className="text-gray-400 font-bold">PENDIENTE</span></div>
-            <div className="flex justify-between"><span>Fuego 45g: pendiente weekly-papas45</span><span className="text-gray-400 font-bold">PENDIENTE</span></div>
-            <div className="flex justify-between"><span>Jalapeño 45g: pendiente weekly-papas45</span><span className="text-gray-400 font-bold">PENDIENTE</span></div>
+            <div className="flex justify-between"><span>Natural 45g: <span className="font-semibold text-gray-800">11 PDQs + 7 cajas</span></span><span className="text-gray-800 font-bold">4,935 uds</span></div>
+            <div className="flex justify-between"><span>Fuego 45g: <span className="font-semibold text-gray-800">11 PDQs + 5 cajas</span></span><span className="text-gray-800 font-bold">4,845 uds</span></div>
+            <div className="flex justify-between"><span>Jalapeño 45g: <span className="font-semibold text-gray-800">11 PDQs + 3 cajas</span></span><span className="text-gray-800 font-bold">4,755 uds</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Ejecutar weekly-papas45 para completar datos de Papa 45g</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total papa 45g: 14,535 uds (45 lineas tienda-producto)</p>
         </div>
       </div>
 
-      <p className="text-[9px] text-gray-400 mt-1 text-center">Nota: La OC del 30-Abr se esta distribuyendo a tiendas. Total sugerido tostadas: 12,336 uds. Papas 45g pendiente.</p>
+      <p className="text-[9px] text-gray-400 mt-1 text-center">Inventario al 17-May-2026 · Total sugerido: 26,967 uds (12,432 tostadas + 14,535 papas)</p>
     </SlideWrapper>
   );
 }
