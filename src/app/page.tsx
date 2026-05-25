@@ -24,7 +24,6 @@ import CrecAbaSlide4Tostada from "@/components/CrecAbaSlide4Tostada";
 import CrecAbaSlide5Oportunidad from "@/components/CrecAbaSlide5Oportunidad";
 import NegSlide1KPIs from "@/components/NegSlide1KPIs";
 import NegSlide2TopTiendas from "@/components/NegSlide2TopTiendas";
-import NegSlide3Promociones from "@/components/NegSlide3Promociones";
 import NegSlide4Papas from "@/components/NegSlide4Papas";
 import NegSlide5TopTiendasUds from "@/components/NegSlide5TopTiendasUds";
 import EjecSlide1Portada from "@/components/EjecSlide1Portada";
@@ -130,7 +129,6 @@ const departments = [
       NegSlide1KPIs,
       NegSlide2TopTiendas,
       NegSlide5TopTiendasUds,
-      NegSlide3Promociones,
       NegSlide4Papas,
     ],
   },
