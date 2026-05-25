@@ -146,7 +146,7 @@ export default function NegSlide1KPIs() {
                       </td>
                       <td className="py-1 px-2 text-right">
                         {has2026 && !isPartial ? (
-                          <span className={`text-[9px] font-bold ${row.v2026! >= row.v2025 ? "text-green-600" : "text-red-500"}`}>
+                          <span className={`text-[9px] font-bold ${row.v2026! >= row.v2025 ? "text-green-600" : "text-gray-500"}`}>
                             {pctChange(row.v2026!, row.v2025)}
                           </span>
                         ) : has2026 && isPartial ? (

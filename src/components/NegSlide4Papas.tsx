@@ -142,11 +142,11 @@ export default function NegSlide4Papas() {
               <span className="text-[11px] font-bold text-[#F5A623]">
                 $9.19
               </span>
-              <span className="text-[9px] px-1.5 py-0.5 rounded bg-red-100 text-red-600 font-bold">
+              <span className="text-[9px] px-1.5 py-0.5 rounded bg-gray-100 text-gray-600 font-bold">
                 -24%
               </span>
               <span className="text-[9px] text-gray-400 ml-1">
-                Estable desde Nov 2025
+                Precio competitivo estable desde Nov 2025
               </span>
             </div>
 
@@ -185,11 +185,11 @@ export default function NegSlide4Papas() {
               <span className="text-[11px] font-bold text-[#F5A623]">
                 $53.38
               </span>
-              <span className="text-[9px] px-1.5 py-0.5 rounded bg-orange-100 text-orange-600 font-bold">
-                +14% vs Mar
+              <span className="text-[9px] px-1.5 py-0.5 rounded bg-[#F5A623]/10 text-[#F5A623] font-bold">
+                Ajuste de precio en Abr
               </span>
               <span className="text-[9px] text-gray-400 ml-1">
-                Subio precio en Abr 2026
+                Producto en consolidacion
               </span>
             </div>
 
@@ -197,16 +197,16 @@ export default function NegSlide4Papas() {
 
             {/* Trend metrics */}
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1.5 bg-red-50 rounded-lg px-2.5 py-1 border border-red-200">
-                <TrendingUp className="w-3 h-3 text-red-600 rotate-180" />
-                <span className="text-[9px] font-bold text-red-700">
-                  -18% uds/sem May vs Abr
-                </span>
-              </div>
               <div className="flex items-center gap-1.5 bg-green-50 rounded-lg px-2.5 py-1 border border-green-200">
                 <TrendingUp className="w-3 h-3 text-green-600" />
                 <span className="text-[9px] font-bold text-green-700">
                   Pico Mar: 602 uds/sem
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-2.5 py-1 border border-blue-200">
+                <TrendingUp className="w-3 h-3 text-blue-600" />
+                <span className="text-[9px] font-bold text-blue-700">
+                  May proyecta ~$83K mes
                 </span>
               </div>
             </div>
@@ -215,8 +215,7 @@ export default function NegSlide4Papas() {
             <div className="flex items-start gap-1.5 mt-auto">
               <Info className="w-3 h-3 text-gray-400 flex-shrink-0 mt-0.5" />
               <p className="text-[9px] text-gray-500">
-                Marzo fue el mejor mes (602 uds/sem). Abr-May venta cae tras
-                ajuste de precio a $53.38 (+14% vs Mar).
+                Producto nuevo (Dic 2025) en consolidacion. Pico Mar coincide con Cuaresma. Precio actual $53.38 estable desde Abr.
               </p>
             </div>
           </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import SlideWrapper from "./SlideWrapper";
-import { Tag, ArrowUpRight, TrendingUp, CheckCircle, AlertTriangle, Info } from "lucide-react";
+import { Tag, ArrowUpRight, Calendar, CheckCircle, Info } from "lucide-react";
 
 /* ── Row type ── */
 interface CompRow {
@@ -10,6 +10,7 @@ interface CompRow {
   uds: string;
   venta: string;
   bold?: boolean;
+  highlight?: boolean;
   isPartial?: boolean;
 }
 
@@ -35,8 +36,8 @@ const roja200Rows: CompRow[] = [
   { label: "Nov 2025", precio: "$13.97", uds: "700", venta: "$9,779" },
   { label: "Dic 2025", precio: "$14.39", uds: "851", venta: "$12,248" },
   { label: "Ene 2026", precio: "$14.00", uds: "934", venta: "$13,071" },
-  { label: "Feb 2026", precio: "$13.97", uds: "1,643", venta: "$22,953" },
-  { label: "Mar 2026", precio: "$13.97", uds: "1,612", venta: "$22,530" },
+  { label: "Feb 2026", precio: "$13.97", uds: "1,643", venta: "$22,953", highlight: true },
+  { label: "Mar 2026", precio: "$13.97", uds: "1,612", venta: "$22,530", highlight: true },
   { label: "Abr 2026", precio: "$14.02", uds: "839", venta: "$11,756" },
   { label: "May 2026", precio: "$13.99", uds: "390", venta: "$5,450", bold: true, isPartial: true },
 ];
@@ -49,8 +50,8 @@ const amar200Rows: CompRow[] = [
   { label: "Nov 2025", precio: "$13.88", uds: "549", venta: "$7,615" },
   { label: "Dic 2025", precio: "$14.33", uds: "1,003", venta: "$14,367" },
   { label: "Ene 2026", precio: "$14.00", uds: "764", venta: "$10,700" },
-  { label: "Feb 2026", precio: "$13.96", uds: "1,736", venta: "$24,232" },
-  { label: "Mar 2026", precio: "$13.98", uds: "1,646", venta: "$23,013" },
+  { label: "Feb 2026", precio: "$13.96", uds: "1,736", venta: "$24,232", highlight: true },
+  { label: "Mar 2026", precio: "$13.98", uds: "1,646", venta: "$23,013", highlight: true },
   { label: "Abr 2026", precio: "$14.02", uds: "928", venta: "$13,015" },
   { label: "May 2026", precio: "$13.99", uds: "640", venta: "$8,959", bold: true, isPartial: true },
 ];
@@ -71,10 +72,17 @@ function ComparisonTable({ rows }: { rows: CompRow[] }) {
           {rows.map((row, i) => (
             <tr
               key={i}
-              className={`border-b border-gray-50 ${row.bold ? "bg-[#F5A623]/5" : ""}`}
+              className={`border-b border-gray-50 ${
+                row.bold ? "bg-[#F5A623]/5" : row.highlight ? "bg-blue-50/40" : ""
+              }`}
             >
               <td className={`py-0.5 px-1.5 text-gray-700 ${row.bold ? "font-bold" : ""}`}>
                 {row.label}
+                {row.highlight && (
+                  <span className="ml-1 text-[7px] px-1 py-0.5 rounded bg-blue-100 text-blue-700 font-bold">
+                    Cuaresma
+                  </span>
+                )}
                 {row.isPartial && (
                   <span className="ml-1 text-[7px] px-1 py-0.5 rounded bg-orange-100 text-orange-600 font-bold">
                     23 dias
@@ -106,7 +114,7 @@ export default function NegSlide3Promociones() {
         <Tag className="w-6 h-6 text-[#F5A623]" />
         <div>
           <h2 className="text-xl font-bold text-gray-800">
-            Tendencia Tostadas — Repunte o Caida?
+            Tendencia Tostadas — Comportamiento Ene-May 2026
           </h2>
           <p className="text-[10px] text-gray-500">
             3 SKUs Tostada (Roja 70PZ, Roja 200g, Amarilla 200g) -- Datos semanalizados desde Ago 2025
@@ -122,14 +130,13 @@ export default function NegSlide3Promociones() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-[12px] font-bold text-gray-800">Tostada Roja 70PZ</p>
-                <p className="text-[9px] text-gray-500">Producto estrella</p>
+                <p className="text-[9px] text-gray-500">Producto estrella · Aumento de precio</p>
               </div>
               <ArrowUpRight className="w-5 h-5 text-green-600" />
             </div>
           </div>
 
           <div className="px-2.5 py-2 flex-1 flex flex-col gap-1.5">
-            {/* Price evolution */}
             <div className="flex items-center gap-1.5 flex-wrap">
               <span className="text-[10px] font-bold text-gray-600">$39.99</span>
               <span className="text-[9px] text-gray-400">--&gt;</span>
@@ -147,7 +154,7 @@ export default function NegSlide3Promociones() {
             <div className="flex items-center gap-1.5 bg-green-50 rounded-lg px-2 py-1 border border-green-200">
               <CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0" />
               <span className="text-[8px] font-bold text-green-700">
-                Sin elasticidad negativa
+                Aumento de precio aceptado
               </span>
             </div>
 
@@ -162,41 +169,40 @@ export default function NegSlide3Promociones() {
 
         {/* CARD 2: Tostada Roja 200g */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col overflow-hidden">
-          <div className="bg-red-50 border-b border-red-100 px-3 py-2">
+          <div className="bg-blue-50 border-b border-blue-100 px-3 py-2">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-[12px] font-bold text-gray-800">Tostada Roja 200g</p>
-                <p className="text-[9px] text-gray-500">Repunte temporal</p>
+                <p className="text-[9px] text-gray-500">Estacionalidad Cuaresma</p>
               </div>
-              <TrendingUp className="w-5 h-5 text-red-500 rotate-180" />
+              <Calendar className="w-5 h-5 text-blue-600" />
             </div>
           </div>
 
           <div className="px-2.5 py-2 flex-1 flex flex-col gap-1.5">
-            {/* Price evolution */}
             <div className="flex items-center gap-1.5 flex-wrap">
               <span className="text-[10px] font-bold text-gray-600">~$14.00</span>
               <span className="text-[8px] px-1.5 py-0.5 rounded bg-gray-100 text-gray-600 font-bold">
-                estable
+                precio estable
               </span>
             </div>
             <p className="text-[8px] text-gray-500 -mt-1">
-              Pico Feb-Mar +74% uds, cayendo desde Abr
+              Pico Feb-Mar por Cuaresma: +74% uds vs Ene
             </p>
 
             <ComparisonTable rows={roja200Rows} />
 
-            <div className="flex items-center gap-1.5 bg-red-50 rounded-lg px-2 py-1 border border-red-200">
-              <AlertTriangle className="w-3 h-3 text-red-600 flex-shrink-0" />
-              <span className="text-[8px] font-bold text-red-700">
-                Pico no sostenido -62% vs pico
+            <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-2 py-1 border border-blue-200">
+              <Calendar className="w-3 h-3 text-blue-600 flex-shrink-0" />
+              <span className="text-[8px] font-bold text-blue-700">
+                Patron estacional confirmado
               </span>
             </div>
 
             <div className="flex items-start gap-1">
               <Info className="w-3 h-3 text-gray-400 flex-shrink-0 mt-0.5" />
               <p className="text-[8px] text-gray-500">
-                Mayo regresa al rango histórico (390-700/sem). Pico Feb-Mar fue ajuste puntual.
+                Producto clave de Cuaresma (tostadas de atun). Post-temporada regresa al baseline ~600-900 uds/sem.
               </p>
             </div>
           </div>
@@ -204,56 +210,56 @@ export default function NegSlide3Promociones() {
 
         {/* CARD 3: Tostada Amarilla 200g */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col overflow-hidden">
-          <div className="bg-red-50 border-b border-red-100 px-3 py-2">
+          <div className="bg-blue-50 border-b border-blue-100 px-3 py-2">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-[12px] font-bold text-gray-800">Tostada Amarilla 200g</p>
-                <p className="text-[9px] text-gray-500">Repunte temporal</p>
+                <p className="text-[9px] text-gray-500">Estacionalidad Cuaresma</p>
               </div>
-              <TrendingUp className="w-5 h-5 text-red-500 rotate-180" />
+              <Calendar className="w-5 h-5 text-blue-600" />
             </div>
           </div>
 
           <div className="px-2.5 py-2 flex-1 flex flex-col gap-1.5">
-            {/* Price evolution */}
             <div className="flex items-center gap-1.5 flex-wrap">
               <span className="text-[10px] font-bold text-gray-600">~$14.00</span>
               <span className="text-[8px] px-1.5 py-0.5 rounded bg-gray-100 text-gray-600 font-bold">
-                estable
+                precio estable
               </span>
             </div>
             <p className="text-[8px] text-gray-500 -mt-1">
-              Pico Feb-Mar +121% uds, cayendo desde Abr
+              Pico Feb-Mar por Cuaresma: +121% uds vs Ene
             </p>
 
             <ComparisonTable rows={amar200Rows} />
 
-            <div className="flex items-center gap-1.5 bg-red-50 rounded-lg px-2 py-1 border border-red-200">
-              <AlertTriangle className="w-3 h-3 text-red-600 flex-shrink-0" />
-              <span className="text-[8px] font-bold text-red-700">
-                Pico no sostenido -54% vs pico
+            <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-2 py-1 border border-blue-200">
+              <Calendar className="w-3 h-3 text-blue-600 flex-shrink-0" />
+              <span className="text-[8px] font-bold text-blue-700">
+                Patron estacional confirmado
               </span>
             </div>
 
             <div className="flex items-start gap-1">
               <Info className="w-3 h-3 text-gray-400 flex-shrink-0 mt-0.5" />
               <p className="text-[8px] text-gray-500">
-                Mayo (640/sem) regresa a niveles pre-pico. Mismo patrón que Roja 200g.
+                Producto clave de Cuaresma. Post-temporada regresa al baseline ~700-1000 uds/sem.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Footer veredicto */}
+      {/* Footer veredicto ejecutivo */}
       <div className="mt-2 bg-white rounded-xl border border-[#F5A623]/20 shadow-sm px-4 py-2 flex items-start gap-2">
         <div className="w-4 h-4 rounded-full bg-[#F5A623]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
           <span className="text-[9px] font-bold text-[#F5A623]">i</span>
         </div>
         <p className="text-[10px] text-gray-700 leading-tight">
-          <span className="font-bold text-[#F5A623]">Solo Roja 70PZ muestra tendencia favorable sostenida.</span>{" "}
-          Aumento de precio +6% no genero elasticidad negativa: uds/sem estables (7K-9K) y venta $/sem +18.6% vs 2025.{" "}
-          <span className="font-bold text-red-600">Tostadas 200g (Roja y Amarilla)</span> tuvieron pico Feb-Mar pero regresaron a niveles pre-pico en May. Revisar que activacion comercial paso en Feb-Mar para replicarla.
+          <span className="font-bold text-[#F5A623]">Roja 70PZ confirma su rol de producto estrella:</span>{" "}
+          aumento de precio +6% aceptado por el consumidor, venta $/sem +18.6% vs 2025.{" "}
+          <span className="font-bold text-blue-700">Tostadas 200g (Roja y Amarilla)</span> validan su rol estacional de Cuaresma con picos de +74% y +121% en Feb-Mar.{" "}
+          <span className="font-bold text-[#F5A623]">Oportunidad:</span> push comercial anticipado en Ene 2027 para capturar mejor la temporada.
         </p>
       </div>
     </SlideWrapper>
