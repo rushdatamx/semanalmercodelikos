@@ -14,48 +14,60 @@ interface StoreRow {
   nombre: string;
   uds: string;
   udsNum: number;
+  uds2025: string;
+  varYoY: string;
   top3: ProductInfo[];
 }
 
 const stores: StoreRow[] = [
   {
     rank: 1, nombre: "MERCO GARCIA", uds: "15,371", udsNum: 15371,
+    uds2025: "7,404", varYoY: "+108%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "44%" }, { name: "Papa Natural 45g", pct: "15%" }, { name: "Papa Jalapeño 45g", pct: "11%" }],
   },
   {
     rank: 2, nombre: "MERCO SOLIDARIDAD", uds: "12,745", udsNum: 12745,
+    uds2025: "6,592", varYoY: "+93%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "54%" }, { name: "Papa Natural 45g", pct: "12%" }, { name: "Tost. Roja 200g", pct: "10%" }],
   },
   {
     rank: 3, nombre: "MERCO EL JARAL", uds: "11,895", udsNum: 11895,
+    uds2025: "5,799", varYoY: "+105%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "50%" }, { name: "Papa Natural 45g", pct: "13%" }, { name: "Papa Jalapeño 45g", pct: "10%" }],
   },
   {
     rank: 4, nombre: "MERCO SENDERO STA. CATARINA", uds: "10,829", udsNum: 10829,
+    uds2025: "6,737", varYoY: "+61%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "48%" }, { name: "Papa Natural 45g", pct: "13%" }, { name: "Papa Jalapeño 45g", pct: "10%" }],
   },
   {
     rank: 5, nombre: "MERCO MIXCOAC", uds: "10,802", udsNum: 10802,
+    uds2025: "5,221", varYoY: "+107%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "64%" }, { name: "Papa Fuego 45g", pct: "12%" }, { name: "Papa Natural 45g", pct: "9%" }],
   },
   {
     rank: 6, nombre: "MERCO COLINAS", uds: "10,656", udsNum: 10656,
+    uds2025: "4,909", varYoY: "+117%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "57%" }, { name: "Papa Natural 45g", pct: "9%" }, { name: "Papa Fuego 45g", pct: "9%" }],
   },
   {
     rank: 7, nombre: "MERCO PARAJE SAN JOSE", uds: "10,585", udsNum: 10585,
+    uds2025: "6,247", varYoY: "+69%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "49%" }, { name: "Papa Natural 45g", pct: "16%" }, { name: "Papa Jalapeño 45g", pct: "9%" }],
   },
   {
     rank: 8, nombre: "MERCO GIRASOLES", uds: "10,499", udsNum: 10499,
+    uds2025: "7,630", varYoY: "+38%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "65%" }, { name: "Tost. Roja 200g", pct: "7%" }, { name: "Tost. Amar. 200g", pct: "7%" }],
   },
   {
     rank: 9, nombre: "MERCO SAN ROQUE", uds: "10,481", udsNum: 10481,
+    uds2025: "5,255", varYoY: "+99%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "66%" }, { name: "Papa Natural 45g", pct: "10%" }, { name: "Papa Fuego 45g", pct: "7%" }],
   },
   {
     rank: 10, nombre: "MERCO LOS PILARES", uds: "10,324", udsNum: 10324,
+    uds2025: "8,258", varYoY: "+25%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "72%" }, { name: "Tost. Roja 200g", pct: "9%" }, { name: "Tost. Amar. 200g", pct: "4%" }],
   },
 ];
@@ -82,13 +94,18 @@ function StoreCard({ store }: { store: StoreRow }) {
             <p className="text-[12px] font-bold text-gray-800 truncate">
               {store.nombre}
             </p>
-            <span
-              className={`text-[12px] font-bold flex-shrink-0 ${
-                store.rank <= 3 ? "text-[#F5A623]" : "text-gray-600"
-              }`}
-            >
-              {store.uds} uds
-            </span>
+            <div className="flex items-center gap-1.5 flex-shrink-0">
+              <span
+                className={`text-[12px] font-bold ${
+                  store.rank <= 3 ? "text-[#F5A623]" : "text-gray-600"
+                }`}
+              >
+                {store.uds} uds
+              </span>
+              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-green-100 text-green-700">
+                {store.varYoY}
+              </span>
+            </div>
           </div>
           <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mt-1">
             <div
@@ -99,6 +116,9 @@ function StoreCard({ store }: { store: StoreRow }) {
               }}
             />
           </div>
+          <p className="text-[8px] text-gray-400 mt-0.5">
+            Ene-May 2025: {store.uds2025} uds
+          </p>
         </div>
       </div>
       <div className="flex items-center gap-1 ml-9">
@@ -142,10 +162,10 @@ export default function NegSlide5TopTiendasUds() {
           <span className="text-[9px] font-bold text-[#F5A623]">i</span>
         </div>
         <p className="text-[11px] text-gray-700">
-          <span className="font-bold text-[#F5A623]">
-            El ranking por unidades cambia vs MXN.
+          <span className="font-bold text-green-700">
+            Crecimiento de volumen muy fuerte: 7 de 10 tiendas duplicaron o casi duplicaron sus unidades vs 2025 (+61% a +117%).
           </span>{" "}
-          Solidaridad, El Jaral y Sendero Sta. Catarina suben al top 4. Paraje San Jose entra al top 10 por alto volumen de papas 45g.
+          Colinas (+117%), Garcia (+108%), Mixcoac (+107%) y El Jaral (+105%) lideran. Paraje San Jose entra al top 10 por alto volumen de papas 45g.
         </p>
       </div>
     </SlideWrapper>

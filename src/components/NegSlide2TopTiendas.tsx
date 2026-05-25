@@ -14,48 +14,60 @@ interface StoreRow {
   nombre: string;
   venta: string;
   ventaNum: number;
+  venta2025: string;
+  varYoY: string;
   top3: ProductInfo[];
 }
 
 const stores: StoreRow[] = [
   {
     rank: 1, nombre: "MERCO GARCIA", venta: "$417,683", ventaNum: 417683,
+    venta2025: "$315,687", varYoY: "+32%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "67%" }, { name: "Durito Teja", pct: "6%" }, { name: "Papa Natural 45g", pct: "5%" }],
   },
   {
     rank: 2, nombre: "MERCO BUENAVISTA", venta: "$382,748", ventaNum: 382748,
+    venta2025: "$347,261", varYoY: "+10%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "78%" }, { name: "Durito Teja", pct: "9%" }, { name: "Tost. Amar. 200g", pct: "4%" }],
   },
   {
     rank: 3, nombre: "MERCO LOS PILARES", venta: "$377,662", ventaNum: 377662,
+    venta2025: "$351,379", varYoY: "+7%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "82%" }, { name: "Durito Teja", pct: "6%" }, { name: "Tost. Roja 200g", pct: "3%" }],
   },
   {
     rank: 4, nombre: "MERCO SOLIDARIDAD", venta: "$365,734", ventaNum: 365734,
+    venta2025: "$253,179", varYoY: "+44%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "78%" }, { name: "Tost. Roja 200g", pct: "5%" }, { name: "Papa Natural 45g", pct: "4%" }],
   },
   {
     rank: 5, nombre: "MERCO MIXCOAC", venta: "$358,005", ventaNum: 358005,
+    venta2025: "$206,148", varYoY: "+74%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "80%" }, { name: "Durito Teja", pct: "4%" }, { name: "Papa Fuego 45g", pct: "3%" }],
   },
   {
     rank: 6, nombre: "MERCO GIRASOLES", venta: "$356,219", ventaNum: 356219,
+    venta2025: "$306,962", varYoY: "+16%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "79%" }, { name: "Durito Teja", pct: "5%" }, { name: "Tost. Roja 200g", pct: "3%" }],
   },
   {
     rank: 7, nombre: "MERCO EL JARAL", venta: "$354,718", ventaNum: 354718,
+    venta2025: "$240,492", varYoY: "+47%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "70%" }, { name: "Cacah. Mixto 1kg", pct: "5%" }, { name: "Papa Natural 45g", pct: "4%" }],
   },
   {
     rank: 8, nombre: "MERCO SAN ROQUE", venta: "$346,110", ventaNum: 346110,
+    venta2025: "$218,400", varYoY: "+58%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "83%" }, { name: "Durito Teja", pct: "4%" }, { name: "Papa Natural 45g", pct: "3%" }],
   },
   {
     rank: 9, nombre: "MERCO COLINAS", venta: "$344,906", ventaNum: 344906,
+    venta2025: "$207,022", varYoY: "+67%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "73%" }, { name: "Durito Teja", pct: "5%" }, { name: "Papa Natural 45g", pct: "3%" }],
   },
   {
     rank: 10, nombre: "MERCO SENDERO STA. CATARINA", venta: "$333,808", ventaNum: 333808,
+    venta2025: "$290,458", varYoY: "+15%",
     top3: [{ name: "Tost. Roja 70PZ", pct: "65%" }, { name: "Durito Teja", pct: "6%" }, { name: "Papa Natural 45g", pct: "4%" }],
   },
 ];
@@ -83,13 +95,18 @@ function StoreCard({ store }: { store: StoreRow }) {
             <p className="text-[12px] font-bold text-gray-800 truncate">
               {store.nombre}
             </p>
-            <span
-              className={`text-[12px] font-bold flex-shrink-0 ${
-                store.rank <= 3 ? "text-[#F5A623]" : "text-gray-600"
-              }`}
-            >
-              {store.venta}
-            </span>
+            <div className="flex items-center gap-1.5 flex-shrink-0">
+              <span
+                className={`text-[12px] font-bold ${
+                  store.rank <= 3 ? "text-[#F5A623]" : "text-gray-600"
+                }`}
+              >
+                {store.venta}
+              </span>
+              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-green-100 text-green-700">
+                {store.varYoY}
+              </span>
+            </div>
           </div>
           {/* Progress bar */}
           <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mt-1">
@@ -101,6 +118,9 @@ function StoreCard({ store }: { store: StoreRow }) {
               }}
             />
           </div>
+          <p className="text-[8px] text-gray-400 mt-0.5">
+            Ene-May 2025: {store.venta2025}
+          </p>
         </div>
       </div>
       {/* Top 3 products as small badges */}
@@ -148,10 +168,10 @@ export default function NegSlide2TopTiendas() {
           <span className="text-[9px] font-bold text-[#F5A623]">i</span>
         </div>
         <p className="text-[11px] text-gray-700">
-          <span className="font-bold text-[#F5A623]">
-            Tostada Roja 70PZ domina en las 10 tiendas (65-83% de la venta).
+          <span className="font-bold text-green-700">
+            Las 10 tiendas crecen YoY (rango +7% a +74%).
           </span>{" "}
-          Rango: $334K - $418K. San Roque destaca con 83% de concentracion en un solo producto.
+          Mixcoac, Colinas, San Roque, El Jaral y Solidaridad lideran con +44% a +74% vs Ene-May 2025. Tostada Roja 70PZ domina en las 10 tiendas (65-83% de la venta).
         </p>
       </div>
     </SlideWrapper>
