@@ -19,44 +19,44 @@ interface StoreRow {
 
 const stores: StoreRow[] = [
   {
-    rank: 1, nombre: "MERCO GARCIA", venta: "$207,105", ventaNum: 207105,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "68%" }, { name: "Durito Teja", pct: "7%" }, { name: "Papa Natural 45g", pct: "5%" }],
+    rank: 1, nombre: "MERCO GARCIA", venta: "$417,683", ventaNum: 417683,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "67%" }, { name: "Durito Teja", pct: "6%" }, { name: "Papa Natural 45g", pct: "5%" }],
   },
   {
-    rank: 2, nombre: "MERCO LOS PILARES", venta: "$180,248", ventaNum: 180248,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "82%" }, { name: "Tost. Roja 200g", pct: "5%" }, { name: "Durito Teja", pct: "4%" }],
+    rank: 2, nombre: "MERCO BUENAVISTA", venta: "$382,748", ventaNum: 382748,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "78%" }, { name: "Durito Teja", pct: "9%" }, { name: "Tost. Amar. 200g", pct: "4%" }],
   },
   {
-    rank: 3, nombre: "MERCO MIXCOAC", venta: "$179,894", ventaNum: 179894,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "84%" }, { name: "Durito Teja", pct: "5%" }, { name: "Tost. Amar. 200g", pct: "2%" }],
+    rank: 3, nombre: "MERCO LOS PILARES", venta: "$377,662", ventaNum: 377662,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "82%" }, { name: "Durito Teja", pct: "6%" }, { name: "Tost. Roja 200g", pct: "3%" }],
   },
   {
-    rank: 4, nombre: "MERCO BUENAVISTA", venta: "$173,427", ventaNum: 173427,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "74%" }, { name: "Durito Teja", pct: "10%" }, { name: "Tost. Amar. 200g", pct: "5%" }],
+    rank: 4, nombre: "MERCO SOLIDARIDAD", venta: "$365,734", ventaNum: 365734,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "78%" }, { name: "Tost. Roja 200g", pct: "5%" }, { name: "Papa Natural 45g", pct: "4%" }],
   },
   {
-    rank: 5, nombre: "MERCO GIRASOLES", venta: "$166,632", ventaNum: 166632,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "76%" }, { name: "Durito Teja", pct: "5%" }, { name: "Tost. Amar. 200g", pct: "4%" }],
+    rank: 5, nombre: "MERCO MIXCOAC", venta: "$358,005", ventaNum: 358005,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "80%" }, { name: "Durito Teja", pct: "4%" }, { name: "Papa Fuego 45g", pct: "3%" }],
   },
   {
-    rank: 6, nombre: "MERCO SAN ROQUE", venta: "$166,433", ventaNum: 166433,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "80%" }, { name: "Durito Teja", pct: "5%" }, { name: "Papa Natural 45g", pct: "4%" }],
+    rank: 6, nombre: "MERCO GIRASOLES", venta: "$356,219", ventaNum: 356219,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "79%" }, { name: "Durito Teja", pct: "5%" }, { name: "Tost. Roja 200g", pct: "3%" }],
   },
   {
-    rank: 7, nombre: "MERCO EL JARAL", venta: "$163,395", ventaNum: 163395,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "71%" }, { name: "Cacah. Mixto 1kg", pct: "6%" }, { name: "Tost. Amar. 200g", pct: "4%" }],
+    rank: 7, nombre: "MERCO EL JARAL", venta: "$354,718", ventaNum: 354718,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "70%" }, { name: "Cacah. Mixto 1kg", pct: "5%" }, { name: "Papa Natural 45g", pct: "4%" }],
   },
   {
-    rank: 8, nombre: "MERCO SOLIDARIDAD", venta: "$161,098", ventaNum: 161098,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "74%" }, { name: "Tost. Roja 200g", pct: "6%" }, { name: "Tost. Amar. 200g", pct: "5%" }],
+    rank: 8, nombre: "MERCO SAN ROQUE", venta: "$346,110", ventaNum: 346110,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "83%" }, { name: "Durito Teja", pct: "4%" }, { name: "Papa Natural 45g", pct: "3%" }],
   },
   {
-    rank: 9, nombre: "MERCO SENDERO STA. CATARINA", venta: "$150,692", ventaNum: 150692,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "64%" }, { name: "Durito Teja", pct: "7%" }, { name: "Papa Natural 45g", pct: "5%" }],
+    rank: 9, nombre: "MERCO COLINAS", venta: "$344,906", ventaNum: 344906,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "73%" }, { name: "Durito Teja", pct: "5%" }, { name: "Papa Natural 45g", pct: "3%" }],
   },
   {
-    rank: 10, nombre: "MERCO COLINAS", venta: "$149,965", ventaNum: 149965,
-    top3: [{ name: "Tost. Roja 70PZ", pct: "77%" }, { name: "Durito Teja", pct: "5%" }, { name: "Tost. Amar. 200g", pct: "3%" }],
+    rank: 10, nombre: "MERCO SENDERO STA. CATARINA", venta: "$333,808", ventaNum: 333808,
+    top3: [{ name: "Tost. Roja 70PZ", pct: "65%" }, { name: "Durito Teja", pct: "6%" }, { name: "Papa Natural 45g", pct: "4%" }],
   },
 ];
 
@@ -129,7 +129,7 @@ export default function NegSlide2TopTiendas() {
             Top 10 Tiendas por Venta
           </h2>
           <p className="text-[10px] text-gray-500">
-            Venta acumulada Ene-Mar 2026 -- 20 SKUs Abarrotes -- Top 3
+            Venta acumulada Ene-May 2026 -- 20 SKUs Abarrotes -- Top 3
             productos por tienda
           </p>
         </div>
@@ -149,9 +149,9 @@ export default function NegSlide2TopTiendas() {
         </div>
         <p className="text-[11px] text-gray-700">
           <span className="font-bold text-[#F5A623]">
-            Tostada Roja 70PZ domina en las 10 tiendas (64-84% de la venta).
+            Tostada Roja 70PZ domina en las 10 tiendas (65-83% de la venta).
           </span>{" "}
-          Rango: $150K - $207K. Mixcoac destaca con 84% de concentracion en un solo producto.
+          Rango: $334K - $418K. San Roque destaca con 83% de concentracion en un solo producto.
         </p>
       </div>
     </SlideWrapper>

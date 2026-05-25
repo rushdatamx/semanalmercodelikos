@@ -6,9 +6,9 @@ import { BarChart3, Store, TrendingUp, Trophy, MapPin } from "lucide-react";
 /* ── KPI Cards ── */
 const kpis = [
   {
-    label: "Venta Ene-Feb 2026",
-    value: "$3,713,285",
-    badge: "+66.6% vs Ene-Feb 2025",
+    label: "Venta Ene-May 2026",
+    value: "$9,646,385",
+    badge: "+40.7% vs Ene-May 2025",
     badgeColor: "bg-green-100 text-green-700",
     icon: BarChart3,
   },
@@ -32,9 +32,9 @@ interface MonthPivot {
 const ventaPivot: MonthPivot[] = [
   { mes: "Ene", v2025: 1011279, v2026: 1790595 },
   { mes: "Feb", v2025: 1217578, v2026: 1922690 },
-  { mes: "Mar", v2025: 1557837, v2026: 818599, note2026: "8 dias" },
-  { mes: "Abr", v2025: 1403335, v2026: null },
-  { mes: "May", v2025: 1664232, v2026: null },
+  { mes: "Mar", v2025: 1557837, v2026: 2537111 },
+  { mes: "Abr", v2025: 1403335, v2026: 2021130 },
+  { mes: "May", v2025: 1664232, v2026: 1374859, note2026: "23 dias" },
   { mes: "Jun", v2025: 1339041, v2026: null },
   { mes: "Jul", v2025: 1393720, v2026: null },
   { mes: "Ago", v2025: 1924156, v2026: null },
@@ -54,20 +54,20 @@ const pctChange = (v26: number, v25: number) => {
 
 /* ── Top 5 products ── */
 const top5Productos = [
-  { rank: 1, nombre: "Tostada Roja 70PZ", venta: "$3,173,016", share: "70.0%" },
-  { rank: 2, nombre: "Durito Teja 20pzs", venta: "$234,713", share: "5.2%" },
-  { rank: 3, nombre: "Tostada Amarilla 200g", venta: "$186,269", share: "4.1%" },
-  { rank: 4, nombre: "Tostada Roja 200g", venta: "$186,129", share: "4.1%" },
-  { rank: 5, nombre: "Papa Natural 45g", venta: "$125,668", share: "2.8%" },
+  { rank: 1, nombre: "Tostada Roja 70PZ", venta: "$6,630,989", share: "68.7%" },
+  { rank: 2, nombre: "Durito Teja 20pzs", venta: "$486,969", share: "5.0%" },
+  { rank: 3, nombre: "Tostada Amarilla 200g", venta: "$331,443", share: "3.4%" },
+  { rank: 4, nombre: "Tostada Roja 200g", venta: "$317,761", share: "3.3%" },
+  { rank: 5, nombre: "Papa Natural 45g", venta: "$311,628", share: "3.2%" },
 ];
 
 /* ── Top 5 tiendas ── */
 const top5Tiendas = [
-  { rank: 1, nombre: "MERCO Garcia", venta: "$207,105" },
-  { rank: 2, nombre: "MERCO Los Pilares", venta: "$180,248" },
-  { rank: 3, nombre: "MERCO Mixcoac", venta: "$179,894" },
-  { rank: 4, nombre: "MERCO Buenavista", venta: "$173,427" },
-  { rank: 5, nombre: "MERCO Girasoles", venta: "$166,632" },
+  { rank: 1, nombre: "MERCO Garcia", venta: "$417,683" },
+  { rank: 2, nombre: "MERCO Buenavista", venta: "$382,748" },
+  { rank: 3, nombre: "MERCO Los Pilares", venta: "$377,662" },
+  { rank: 4, nombre: "MERCO Solidaridad", venta: "$365,734" },
+  { rank: 5, nombre: "MERCO Mixcoac", venta: "$358,005" },
 ];
 
 export default function NegSlide1KPIs() {
@@ -78,7 +78,7 @@ export default function NegSlide1KPIs() {
         <TrendingUp className="w-6 h-6 text-[#F5A623]" />
         <div>
           <h2 className="text-xl font-bold text-gray-800">Salud del Negocio DELIKOS en MERCO</h2>
-          <p className="text-[10px] text-gray-500">Ene-Mar 2026 -- 20 productos Abarrotes -- Reporte para Direccion</p>
+          <p className="text-[10px] text-gray-500">Ene-May 2026 -- 20 productos Abarrotes -- Reporte para Direccion</p>
         </div>
       </div>
 

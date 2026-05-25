@@ -17,12 +17,14 @@ interface CompRow {
 const papa45Rows: CompRow[] = [
   { label: "Ago 2025", precio: "$12.03", uds: "4,336", venta: "$52,154" },
   { label: "Sep 2025", precio: "$11.13", uds: "2,496", venta: "$27,788" },
-  { label: "Oct 2025", precio: "$9.98", uds: "5,187", venta: "$51,769" },
-  { label: "Nov 2025", precio: "$9.50", uds: "3,418", venta: "$32,477" },
-  { label: "Dic 2025", precio: "$9.38", uds: "5,178", venta: "$48,581" },
-  { label: "Ene 2026", precio: "$9.34", uds: "3,629", venta: "$33,899" },
-  { label: "Feb 2026", precio: "$9.18", uds: "3,145", venta: "$28,865" },
-  { label: "Mar 2026", precio: "$9.25", uds: "5,085", venta: "$47,011", bold: true, isPartial: true },
+  { label: "Oct 2025", precio: "$9.82", uds: "5,040", venta: "$49,476" },
+  { label: "Nov 2025", precio: "$9.19", uds: "3,255", venta: "$29,925" },
+  { label: "Dic 2025", precio: "$9.25", uds: "5,067", venta: "$46,846" },
+  { label: "Ene 2026", precio: "$9.28", uds: "3,326", venta: "$30,850" },
+  { label: "Feb 2026", precio: "$9.25", uds: "3,006", venta: "$27,812" },
+  { label: "Mar 2026", precio: "$9.20", uds: "4,009", venta: "$36,877" },
+  { label: "Abr 2026", precio: "$9.55", uds: "4,760", venta: "$45,432" },
+  { label: "May 2026", precio: "$9.19", uds: "5,129", venta: "$47,152", bold: true, isPartial: true },
 ];
 
 /* ── Papa 340g — combined 3 flavors ── */
@@ -30,7 +32,9 @@ const papa340Rows: CompRow[] = [
   { label: "Dic 2025", precio: "$35.18", uds: "88", venta: "$3,090" },
   { label: "Ene 2026", precio: "$46.68", uds: "360", venta: "$16,813" },
   { label: "Feb 2026", precio: "$45.76", uds: "387", venta: "$17,722" },
-  { label: "Mar 2026", precio: "$46.34", uds: "591", venta: "$27,371", bold: true, isPartial: true },
+  { label: "Mar 2026", precio: "$47.98", uds: "602", venta: "$28,860" },
+  { label: "Abr 2026", precio: "$53.34", uds: "441", venta: "$23,524" },
+  { label: "May 2026", precio: "$53.38", uds: "361", venta: "$19,269", bold: true, isPartial: true },
 ];
 
 function ComparisonTable({ rows }: { rows: CompRow[] }) {
@@ -61,7 +65,7 @@ function ComparisonTable({ rows }: { rows: CompRow[] }) {
                 {row.label}
                 {row.isPartial && (
                   <span className="ml-1 text-[8px] px-1 py-0.5 rounded bg-orange-100 text-orange-600 font-bold">
-                    8 dias
+                    23 dias
                   </span>
                 )}
               </td>
@@ -136,10 +140,10 @@ export default function NegSlide4Papas() {
               </span>
               <span className="text-[10px] text-gray-400">--&gt;</span>
               <span className="text-[11px] font-bold text-[#F5A623]">
-                $9.25
+                $9.19
               </span>
               <span className="text-[9px] px-1.5 py-0.5 rounded bg-red-100 text-red-600 font-bold">
-                -23%
+                -24%
               </span>
               <span className="text-[9px] text-gray-400 ml-1">
                 Estable desde Nov 2025
@@ -152,8 +156,8 @@ export default function NegSlide4Papas() {
             <div className="flex items-start gap-1.5">
               <Info className="w-3 h-3 text-gray-400 flex-shrink-0 mt-0.5" />
               <p className="text-[9px] text-gray-500">
-                Precio estabilizado en ~$9.25. Unidades fluctúan pero marzo
-                muestra repunte (5,085/sem vs 3,145 en feb).
+                Precio estabilizado en ~$9.20. Mayo proyecta ser el mejor mes
+                desde agosto 2025 (5,129/sem vs 5,067 en dic).
               </p>
             </div>
           </div>
@@ -179,30 +183,30 @@ export default function NegSlide4Papas() {
             {/* Price note */}
             <div className="flex items-center gap-2">
               <span className="text-[11px] font-bold text-[#F5A623]">
-                $46.34
+                $53.38
               </span>
-              <span className="text-[9px] px-1.5 py-0.5 rounded bg-blue-100 text-blue-600 font-bold">
-                Nuevo
+              <span className="text-[9px] px-1.5 py-0.5 rounded bg-orange-100 text-orange-600 font-bold">
+                +14% vs Mar
               </span>
               <span className="text-[9px] text-gray-400 ml-1">
-                Precio estable desde enero 2026
+                Subio precio en Abr 2026
               </span>
             </div>
 
             <ComparisonTable rows={papa340Rows} />
 
-            {/* Growth metrics */}
+            {/* Trend metrics */}
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1.5 bg-green-50 rounded-lg px-2.5 py-1 border border-green-200">
-                <TrendingUp className="w-3 h-3 text-green-600" />
-                <span className="text-[9px] font-bold text-green-700">
-                  +64% uds/sem Mar vs Feb
+              <div className="flex items-center gap-1.5 bg-red-50 rounded-lg px-2.5 py-1 border border-red-200">
+                <TrendingUp className="w-3 h-3 text-red-600 rotate-180" />
+                <span className="text-[9px] font-bold text-red-700">
+                  -18% uds/sem May vs Abr
                 </span>
               </div>
               <div className="flex items-center gap-1.5 bg-green-50 rounded-lg px-2.5 py-1 border border-green-200">
                 <TrendingUp className="w-3 h-3 text-green-600" />
                 <span className="text-[9px] font-bold text-green-700">
-                  +54% venta $/sem
+                  Pico Mar: 602 uds/sem
                 </span>
               </div>
             </div>
@@ -211,8 +215,8 @@ export default function NegSlide4Papas() {
             <div className="flex items-start gap-1.5 mt-auto">
               <Info className="w-3 h-3 text-gray-400 flex-shrink-0 mt-0.5" />
               <p className="text-[9px] text-gray-500">
-                Crecimiento sostenido mes a mes desde su entrada. Marzo
-                proyecta ser el mejor mes en unidades y venta.
+                Marzo fue el mejor mes (602 uds/sem). Abr-May venta cae tras
+                ajuste de precio a $53.38 (+14% vs Mar).
               </p>
             </div>
           </div>
