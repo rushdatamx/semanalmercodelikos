@@ -14,44 +14,44 @@ const recomendaciones: Recomendacion[] = [
   {
     accion: "Reabastecer",
     producto: "Tostada Roja 70PZ",
-    tiendas: "27 tiendas bajo 25 DDI (21 GRANDE + 6 CHICA)",
-    sugerido: "27 tarimas (6,480 uds)",
+    tiendas: "34 tiendas bajo 30 DDI (28 GRANDE + 6 CHICA)",
+    sugerido: "34 tarimas (8,160 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Roja 200g",
-    tiendas: "5 agotadas + 8 bajo umbral (Republica, San Buena, La Sierrita +10)",
-    sugerido: "74 cajas (1,776 uds)",
+    tiendas: "4 agotadas + 25 bajo umbral (Otilio, Nuevo Repueblo, Rosita +26)",
+    sugerido: "156 cajas (3,744 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Tostada Amarilla 200g",
-    tiendas: "4 agotadas + 13 bajo umbral (Apodaca Centro, Paraje San Jose, Solidaridad +14)",
-    sugerido: "92 cajas (2,208 uds)",
+    tiendas: "5 agotadas + 23 bajo umbral (Pueblo Nuevo, Solidaridad, Urdiñola +25)",
+    sugerido: "148 cajas (3,552 uds)",
   },
   {
     accion: "Surtir urgente",
     producto: "Durito Teja 20PZ",
-    tiendas: "21 agotadas + 5 bajo umbral",
-    sugerido: "26 tarimas (3,900 uds)",
+    tiendas: "8 agotadas + 4 bajo umbral (Hidalgo, Garcia, Los Pilares +9)",
+    sugerido: "12 tarimas (1,800 uds)",
   },
   {
-    accion: "Surtir urgente",
+    accion: "Reabastecer",
     producto: "Papa Natural 45g",
-    tiendas: "2 agotadas + 1 bajo umbral (Aramberri, Manantiales, Castaños)",
-    sugerido: "7 cajas CHICA (315 uds)",
+    tiendas: "1 bajo umbral (Castaños)",
+    sugerido: "1 caja CHICA (45 uds)",
   },
   {
-    accion: "Surtir urgente",
+    accion: "Reabastecer",
     producto: "Papa Fuego 45g",
-    tiendas: "2 agotadas (Aramberri, Manantiales)",
-    sugerido: "4 cajas CHICA (180 uds)",
+    tiendas: "1 bajo umbral (Castaños)",
+    sugerido: "3 cajas CHICA (135 uds)",
   },
   {
     accion: "Reabastecer",
     producto: "Papa Jalapeño 45g",
     tiendas: "1 bajo umbral (Castaños)",
-    sugerido: "3 cajas CHICA (135 uds)",
+    sugerido: "2 cajas CHICA (90 uds)",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function AbaSlide7Recomendaciones() {
         <ClipboardList className="w-6 h-6 text-[#F5A623]" />
         <h2 className="text-2xl font-bold text-gray-800">Recomendaciones — Abarrotes</h2>
       </div>
-      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas · 3 SKUs Tostada + Durito Teja + 3 SKUs Papa 45g · Semana del 01 Jun 2026</p>
+      <p className="text-gray-500 text-xs mb-2">Acciones sugeridas · 3 SKUs Tostada + Durito Teja + 3 SKUs Papa 45g · Semana del 09 Jun 2026</p>
 
       <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
         <table className="w-full text-[11px]">
@@ -99,29 +99,29 @@ export default function AbaSlide7Recomendaciones() {
       <div className="mt-2 grid grid-cols-2 gap-3">
         {/* Resumen Tostadas + Durito */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
-          <p className="text-[10px] font-bold text-gray-700 mb-1">Sugerido Tostadas + Durito · Umbral 25 DDI</p>
+          <p className="text-[10px] font-bold text-gray-700 mb-1">Sugerido Tostadas + Durito · Umbral 30 DDI</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">27 tarimas</span></span><span className="text-gray-800 font-bold">6,480 uds</span></div>
-            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">74 cajas</span></span><span className="text-gray-800 font-bold">1,776 uds</span></div>
-            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">92 cajas</span></span><span className="text-gray-800 font-bold">2,208 uds</span></div>
-            <div className="flex justify-between"><span>Durito Teja 20PZ: <span className="font-semibold text-gray-800">26 tarimas</span></span><span className="text-gray-800 font-bold">3,900 uds</span></div>
+            <div className="flex justify-between"><span>Roja 70PZ: <span className="font-semibold text-gray-800">34 tarimas</span></span><span className="text-gray-800 font-bold">8,160 uds</span></div>
+            <div className="flex justify-between"><span>Roja 200g: <span className="font-semibold text-gray-800">156 cajas</span></span><span className="text-gray-800 font-bold">3,744 uds</span></div>
+            <div className="flex justify-between"><span>Amarilla 200g: <span className="font-semibold text-gray-800">148 cajas</span></span><span className="text-gray-800 font-bold">3,552 uds</span></div>
+            <div className="flex justify-between"><span>Durito Teja 20PZ: <span className="font-semibold text-gray-800">12 tarimas</span></span><span className="text-gray-800 font-bold">1,800 uds</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total tostadas + durito: 14,364 uds (83 lineas tienda-producto)</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total tostadas + durito: 17,256 uds (103 lineas tienda-producto)</p>
         </div>
 
         {/* Resumen Papa 45g */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
-          <p className="text-[10px] font-bold text-gray-700 mb-1">Sugerido Papa 45g · Umbral 15 DDI</p>
+          <p className="text-[10px] font-bold text-gray-700 mb-1">Sugerido Papa 45g · Umbral 20 DDI</p>
           <div className="space-y-0.5 text-[10px] text-gray-600">
-            <div className="flex justify-between"><span>Natural 45g: <span className="font-semibold text-gray-800">7 cajas CHICA</span></span><span className="text-gray-800 font-bold">315 uds</span></div>
-            <div className="flex justify-between"><span>Fuego 45g: <span className="font-semibold text-gray-800">4 cajas CHICA</span></span><span className="text-gray-800 font-bold">180 uds</span></div>
-            <div className="flex justify-between"><span>Jalapeño 45g: <span className="font-semibold text-gray-800">3 cajas CHICA</span></span><span className="text-gray-800 font-bold">135 uds</span></div>
+            <div className="flex justify-between"><span>Natural 45g: <span className="font-semibold text-gray-800">1 caja CHICA</span></span><span className="text-gray-800 font-bold">45 uds</span></div>
+            <div className="flex justify-between"><span>Fuego 45g: <span className="font-semibold text-gray-800">3 cajas CHICA</span></span><span className="text-gray-800 font-bold">135 uds</span></div>
+            <div className="flex justify-between"><span>Jalapeño 45g: <span className="font-semibold text-gray-800">2 cajas CHICA</span></span><span className="text-gray-800 font-bold">90 uds</span></div>
           </div>
-          <p className="text-[9px] text-gray-400 mt-1">Total papa 45g: 630 uds (6 lineas · solo 3 tiendas CHICA califican)</p>
+          <p className="text-[9px] text-gray-400 mt-1">Total papa 45g: 270 uds (3 lineas · solo 1 tienda CHICA califica)</p>
         </div>
       </div>
 
-      <p className="text-[9px] text-gray-400 mt-1 text-center">Inventario al 31-May-2026 · Total sugerido: 14,994 uds (14,364 tostadas + durito + 630 papas)</p>
+      <p className="text-[9px] text-gray-400 mt-1 text-center">Inventario al 09-Jun-2026 · Total sugerido: 17,526 uds (17,256 tostadas + durito + 270 papas)</p>
     </SlideWrapper>
   );
 }
