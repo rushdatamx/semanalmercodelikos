@@ -54,6 +54,9 @@ import DiagFyvSlide4Cobertura from "@/components/DiagFyvSlide4Cobertura";
 import DiagFyvSlide5Distribucion from "@/components/DiagFyvSlide5Distribucion";
 import DiagFyvSlide6PlanAccion from "@/components/DiagFyvSlide6PlanAccion";
 import PropSlide1Portada from "@/components/PropSlide1Portada";
+import PropSlide2Abarrotes from "@/components/PropSlide2Abarrotes";
+import PropSlide3TostadasVenta from "@/components/PropSlide3TostadasVenta";
+import PropSlide4PapasVenta from "@/components/PropSlide4PapasVenta";
 import PropSlide2Tostadas from "@/components/PropSlide2Tostadas";
 import PropSlide3Papa45 from "@/components/PropSlide3Papa45";
 import PropSlide4Papa340 from "@/components/PropSlide4Papa340";
@@ -186,6 +189,9 @@ const departments = [
     color: "#E31837",
     slides: [
       PropSlide1Portada,
+      PropSlide2Abarrotes,
+      PropSlide3TostadasVenta,
+      PropSlide4PapasVenta,
       PropSlide2Tostadas,
       PropSlide3Papa45,
       PropSlide4Papa340,

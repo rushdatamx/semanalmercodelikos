@@ -1,0 +1,104 @@
+"use client";
+
+import SlideWrapper from "./SlideWrapper";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Cell,
+} from "recharts";
+
+// Sell-out 2026 en pesos. Junio = corte al dia 21 (parcial).
+const papa45 = [
+  { mes: "Ene", venta: 136622, parcial: false },
+  { mes: "Feb", venta: 111249, parcial: false },
+  { mes: "Mar", venta: 163314, parcial: false },
+  { mes: "Abr", venta: 194710, parcial: false },
+  { mes: "May", venta: 325884, parcial: false },
+  { mes: "Jun", venta: 399975, parcial: true },
+];
+const papa340 = [
+  { mes: "Ene", venta: 74458, parcial: false },
+  { mes: "Feb", venta: 70888, parcial: false },
+  { mes: "Mar", venta: 127809, parcial: false },
+  { mes: "Abr", venta: 100816, parcial: false },
+  { mes: "May", venta: 129013, parcial: false },
+  { mes: "Jun", venta: 133478, parcial: true },
+];
+
+const fmt = (v: number) => `$${(v / 1000).toFixed(0)}k`;
+
+function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number; payload: { parcial: boolean } }>; label?: string }) {
+  if (!active || !payload || !payload.length) return null;
+  const p = payload[0];
+  return (
+    <div className="bg-white border border-gray-200 rounded-lg p-2.5 shadow-lg min-w-[140px]">
+      <p className="text-gray-500 text-xs mb-1 font-semibold">{label}</p>
+      <p className="text-gray-800 font-bold text-sm">${p.value.toLocaleString("es-MX")}</p>
+      {p.payload.parcial && <p className="text-[10px] text-[#E31837] mt-1">Corte al 21 de junio (parcial)</p>}
+    </div>
+  );
+}
+
+function MiniChart({ data, max }: { data: typeof papa45; max: number }) {
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart data={data} margin={{ top: 8, right: 15, left: 5, bottom: 0 }} barGap={3}>
+        <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+        <XAxis dataKey="mes" stroke="#9CA3AF" fontSize={10} />
+        <YAxis stroke="#9CA3AF" fontSize={9} tickFormatter={fmt} domain={[0, max]} />
+        <Tooltip content={<CustomTooltip />} />
+        <Bar dataKey="venta" radius={[3, 3, 0, 0]} barSize={34}>
+          {data.map((e, i) => (
+            <Cell key={i} fill={e.parcial ? "rgba(245,166,35,0.45)" : "#F5A623"} />
+          ))}
+        </Bar>
+      </BarChart>
+    </ResponsiveContainer>
+  );
+}
+
+export default function PropSlide4PapasVenta() {
+  return (
+    <SlideWrapper className="bg-[#F5F5F5] p-10">
+      <h2 className="text-3xl font-bold text-gray-800 mb-1">Papa Casera · La categoría que más acelera</h2>
+      <p className="text-gray-500 text-sm mb-3">Sell-out 2026 · ambas presentaciones en máximos del año (Junio aún parcial, al día 21)</p>
+
+      <div className="flex-1 flex flex-col gap-3 min-h-0">
+        {/* Papa 45g */}
+        <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-3 flex flex-col min-h-0">
+          <div className="flex items-center justify-between mb-1">
+            <p className="text-sm font-bold text-gray-700">Papa Casera 45g <span className="text-gray-400 font-normal">· 3 sabores</span></p>
+            <span className="px-2 py-0.5 rounded-full text-[9px] font-bold bg-[#27AE60]/15 text-[#27AE60] border border-[#27AE60]/30">
+              5 meses al alza · récord en Junio
+            </span>
+          </div>
+          <div className="flex-1 min-h-0">
+            <MiniChart data={papa45} max={450000} />
+          </div>
+        </div>
+
+        {/* Papa 340g */}
+        <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-3 flex flex-col min-h-0">
+          <div className="flex items-center justify-between mb-1">
+            <p className="text-sm font-bold text-gray-700">Papa Casera 340g <span className="text-gray-400 font-normal">· 3 sabores</span></p>
+            <span className="px-2 py-0.5 rounded-full text-[9px] font-bold bg-[#2E75B6]/15 text-[#2E75B6] border border-[#2E75B6]/30">
+              Tendencia firme al alza
+            </span>
+          </div>
+          <div className="flex-1 min-h-0">
+            <MiniChart data={papa340} max={150000} />
+          </div>
+        </div>
+      </div>
+
+      <p className="text-[11px] text-gray-500 mt-2 text-center">
+        Junio va en <b>$400k</b> (45g) y <b>$133k</b> (340g) al día 21 — ambas presentaciones proyectan superar a Mayo a mes completo.
+      </p>
+    </SlideWrapper>
+  );
+}
