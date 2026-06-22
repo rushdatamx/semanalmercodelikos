@@ -11,6 +11,7 @@ import {
   ResponsiveContainer,
   Cell,
   ReferenceLine,
+  LabelList,
 } from "recharts";
 
 // Sell-out 2026 en pesos, TODOS los Abarrotes. Junio = corte al dia 21 (parcial).
@@ -25,6 +26,20 @@ const data = [
 ];
 
 const fmt = (v: number) => `$${(v / 1_000_000).toFixed(1)}M`;
+
+// Etiqueta del total (real + proyectado) encima de cada barra. Para junio muestra
+// ambos: real al dia 21 (dentro) y total proyectado (arriba). Legible sin hover.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TotalLabel = (props: any) => {
+  const { x = 0, y = 0, width = 0, index = 0 } = props;
+  const d = data[index];
+  const total = d.venta + d.proy;
+  return (
+    <text x={x + width / 2} y={y - 6} textAnchor="middle" fontSize={11} fontWeight={700} fill={d.parcial ? "#B8860B" : "#374151"}>
+      {fmt(total)}
+    </text>
+  );
+};
 
 function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number; payload: { parcial: boolean; venta: number; proy: number } }>; label?: string }) {
   if (!active || !payload || !payload.length) return null;
@@ -83,7 +98,9 @@ export default function PropSlide2Abarrotes() {
                 <Cell key={i} fill={e.parcial ? "rgba(245,166,35,0.45)" : "#F5A623"} radius={e.parcial ? 0 : 4} />
               ))}
             </Bar>
-            <Bar dataKey="proy" stackId="a" barSize={48} radius={[4, 4, 0, 0]} fill="rgba(245,166,35,0.18)" stroke="#B8860B" strokeWidth={1.2} strokeDasharray="4 3" />
+            <Bar dataKey="proy" stackId="a" barSize={48} radius={[4, 4, 0, 0]} fill="rgba(245,166,35,0.18)" stroke="#B8860B" strokeWidth={1.2} strokeDasharray="4 3">
+              <LabelList content={TotalLabel} />
+            </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>

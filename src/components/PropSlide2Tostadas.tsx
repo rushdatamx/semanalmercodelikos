@@ -11,6 +11,7 @@ import {
   Tooltip,
   ResponsiveContainer,
   ReferenceLine,
+  LabelList,
 } from "recharts";
 
 // Sell-in (ERP, CT0325) vs Sell-out (venta_merco), unidades. Cuadra con tabla del correo.
@@ -25,6 +26,7 @@ const data = [
 ];
 
 const fmt = (v: number) => `${(v / 1000).toFixed(0)}k`;
+const fmtLbl = (v: unknown) => `${(Number(v) / 1000).toFixed(0)}k`;
 
 function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number; name: string; color: string; dataKey: string }>; label?: string }) {
   if (!active || !payload) return null;
@@ -72,6 +74,19 @@ export default function PropSlide2Tostadas() {
         </div>
       </div>
 
+      <div className="flex items-center mb-1 pl-[52px] pr-[52px]">
+        <span className="text-[9px] font-bold text-[#E31837] mr-1 shrink-0">In/Out%</span>
+        <div className="grid flex-1" style={{ gridTemplateColumns: `repeat(${data.length}, 1fr)` }}>
+          {data.map((d) => (
+            <div key={d.mes} className="text-center">
+              <span className={`inline-block px-1.5 py-0.5 rounded text-[9px] font-bold border ${d.inOut < 100 ? "bg-[#E31837]/12 text-[#E31837] border-[#E31837]/30" : "bg-[#27AE60]/12 text-[#27AE60] border-[#27AE60]/30"}`}>
+                {d.inOut}%
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-4">
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart data={data} margin={{ top: 15, right: 45, left: 10, bottom: 5 }} barGap={4}>
@@ -81,8 +96,12 @@ export default function PropSlide2Tostadas() {
             <YAxis yAxisId="pct" orientation="right" stroke="#E31837" fontSize={10} tickFormatter={(v) => `${v}%`} domain={[0, 160]} />
             <Tooltip content={<CustomTooltip />} />
             <ReferenceLine yAxisId="pct" y={100} stroke="#E31837" strokeDasharray="4 4" strokeOpacity={0.5} />
-            <Bar yAxisId="uds" dataKey="sellIn" name="Sell-in" fill="#2E75B6" radius={[3, 3, 0, 0]} barSize={22} />
-            <Bar yAxisId="uds" dataKey="sellOut" name="Sell-out" fill="#F5A623" radius={[3, 3, 0, 0]} barSize={22} />
+            <Bar yAxisId="uds" dataKey="sellIn" name="Sell-in" fill="#2E75B6" radius={[3, 3, 0, 0]} barSize={22}>
+              <LabelList dataKey="sellIn" position="top" formatter={fmtLbl} fontSize={9} fill="#2E75B6" fontWeight={700} />
+            </Bar>
+            <Bar yAxisId="uds" dataKey="sellOut" name="Sell-out" fill="#F5A623" radius={[3, 3, 0, 0]} barSize={22}>
+              <LabelList dataKey="sellOut" position="top" formatter={fmtLbl} fontSize={9} fill="#B8860B" fontWeight={700} />
+            </Bar>
             <Line yAxisId="pct" type="monotone" dataKey="inOut" name="In/Out %" stroke="#E31837" strokeWidth={2.5} dot={{ r: 3, fill: "#E31837" }} />
           </ComposedChart>
         </ResponsiveContainer>
