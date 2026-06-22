@@ -53,6 +53,11 @@ import DiagFyvSlide3OCs from "@/components/DiagFyvSlide3OCs";
 import DiagFyvSlide4Cobertura from "@/components/DiagFyvSlide4Cobertura";
 import DiagFyvSlide5Distribucion from "@/components/DiagFyvSlide5Distribucion";
 import DiagFyvSlide6PlanAccion from "@/components/DiagFyvSlide6PlanAccion";
+import PropSlide1Portada from "@/components/PropSlide1Portada";
+import PropSlide2Tostadas from "@/components/PropSlide2Tostadas";
+import PropSlide3Papa45 from "@/components/PropSlide3Papa45";
+import PropSlide4Papa340 from "@/components/PropSlide4Papa340";
+import PropSlide5Propuesta from "@/components/PropSlide5Propuesta";
 
 const departments = [
   {
@@ -173,6 +178,18 @@ const departments = [
       VtaAbaSlide5TopProductos,
       VtaAbaSlide6Penetracion,
       VtaAbaSlide7TopTiendas,
+    ],
+  },
+  {
+    id: "propuesta",
+    label: "Propuesta +25%",
+    color: "#E31837",
+    slides: [
+      PropSlide1Portada,
+      PropSlide2Tostadas,
+      PropSlide3Papa45,
+      PropSlide4Papa340,
+      PropSlide5Propuesta,
     ],
   },
 ];
