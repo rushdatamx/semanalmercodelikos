@@ -13,33 +13,40 @@ import {
 } from "recharts";
 
 // Sell-out 2026 en pesos. Junio = corte al dia 21 (parcial).
+// `proy` = remanente proyectado de junio a mes completo (real x 30/21).
 const papa45 = [
-  { mes: "Ene", venta: 136622, parcial: false },
-  { mes: "Feb", venta: 111249, parcial: false },
-  { mes: "Mar", venta: 163314, parcial: false },
-  { mes: "Abr", venta: 194710, parcial: false },
-  { mes: "May", venta: 325884, parcial: false },
-  { mes: "Jun", venta: 399975, parcial: true },
+  { mes: "Ene", venta: 136622, proy: 0, parcial: false },
+  { mes: "Feb", venta: 111249, proy: 0, parcial: false },
+  { mes: "Mar", venta: 163314, proy: 0, parcial: false },
+  { mes: "Abr", venta: 194710, proy: 0, parcial: false },
+  { mes: "May", venta: 325884, proy: 0, parcial: false },
+  { mes: "Jun", venta: 399975, proy: 171418, parcial: true },
 ];
 const papa340 = [
-  { mes: "Ene", venta: 74458, parcial: false },
-  { mes: "Feb", venta: 70888, parcial: false },
-  { mes: "Mar", venta: 127809, parcial: false },
-  { mes: "Abr", venta: 100816, parcial: false },
-  { mes: "May", venta: 129013, parcial: false },
-  { mes: "Jun", venta: 133478, parcial: true },
+  { mes: "Ene", venta: 74458, proy: 0, parcial: false },
+  { mes: "Feb", venta: 70888, proy: 0, parcial: false },
+  { mes: "Mar", venta: 127809, proy: 0, parcial: false },
+  { mes: "Abr", venta: 100816, proy: 0, parcial: false },
+  { mes: "May", venta: 129013, proy: 0, parcial: false },
+  { mes: "Jun", venta: 133478, proy: 57205, parcial: true },
 ];
 
 const fmt = (v: number) => `$${(v / 1000).toFixed(0)}k`;
 
-function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number; payload: { parcial: boolean } }>; label?: string }) {
+function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number; payload: { parcial: boolean; venta: number; proy: number } }>; label?: string }) {
   if (!active || !payload || !payload.length) return null;
-  const p = payload[0];
+  const d = payload[0].payload;
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-2.5 shadow-lg min-w-[140px]">
+    <div className="bg-white border border-gray-200 rounded-lg p-2.5 shadow-lg min-w-[150px]">
       <p className="text-gray-500 text-xs mb-1 font-semibold">{label}</p>
-      <p className="text-gray-800 font-bold text-sm">${p.value.toLocaleString("es-MX")}</p>
-      {p.payload.parcial && <p className="text-[10px] text-[#E31837] mt-1">Corte al 21 de junio (parcial)</p>}
+      {d.parcial ? (
+        <>
+          <p className="text-gray-800 font-bold text-sm">${d.venta.toLocaleString("es-MX")} <span className="text-[10px] font-normal text-gray-400">al día 21</span></p>
+          <p className="text-[#B8860B] font-bold text-sm">${(d.venta + d.proy).toLocaleString("es-MX")} <span className="text-[10px] font-normal text-gray-400">proyectado</span></p>
+        </>
+      ) : (
+        <p className="text-gray-800 font-bold text-sm">${d.venta.toLocaleString("es-MX")}</p>
+      )}
     </div>
   );
 }
@@ -52,11 +59,12 @@ function MiniChart({ data, max }: { data: typeof papa45; max: number }) {
         <XAxis dataKey="mes" stroke="#9CA3AF" fontSize={10} />
         <YAxis stroke="#9CA3AF" fontSize={9} tickFormatter={fmt} domain={[0, max]} />
         <Tooltip content={<CustomTooltip />} />
-        <Bar dataKey="venta" radius={[3, 3, 0, 0]} barSize={34}>
+        <Bar dataKey="venta" stackId="a" barSize={34}>
           {data.map((e, i) => (
             <Cell key={i} fill={e.parcial ? "rgba(245,166,35,0.45)" : "#F5A623"} />
           ))}
         </Bar>
+        <Bar dataKey="proy" stackId="a" barSize={34} radius={[3, 3, 0, 0]} fill="rgba(245,166,35,0.18)" stroke="#B8860B" strokeWidth={1} strokeDasharray="4 3" />
       </BarChart>
     </ResponsiveContainer>
   );
@@ -97,7 +105,7 @@ export default function PropSlide4PapasVenta() {
       </div>
 
       <p className="text-[11px] text-gray-500 mt-2 text-center">
-        Junio va en <b>$400k</b> (45g) y <b>$133k</b> (340g) al día 21 — ambas presentaciones proyectan superar a Mayo a mes completo.
+        Junio (barra punteada = proyección a mes completo): <b>$400k → ~$571k</b> en 45g y <b>$133k → ~$191k</b> en 340g — ambas superarían a Mayo.
       </p>
     </SlideWrapper>
   );
