@@ -18,8 +18,7 @@ const garantias = [
 export default function PropSlide5Propuesta() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
-      <h2 className="text-3xl font-bold text-gray-800 mb-1">La propuesta · Ganamos los dos</h2>
-      <p className="text-gray-500 text-sm mb-4">
+      <p className="text-gray-500 text-sm mb-4 mt-1">
         Prueba de 3 meses: <b className="text-[#B8860B]">+25%</b> en requerimientos por tienda en las 3 categorías · cierre después de Fiestas Patrias
       </p>
 
