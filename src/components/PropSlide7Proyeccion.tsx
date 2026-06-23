@@ -13,10 +13,10 @@ import {
   LabelList,
 } from "recharts";
 
-// Proyeccion +25% con narrativa "ya lo hicimos, esto paso".
-// Base de proyeccion = nivel ACTUAL ya alcanzado (junio, que ya refleja el inventario
-// extra pedido en may) + 25% sostenido. Papas en rampa -> base junio. Tostadas frenadas
-// -> base = ritmo sano historico (Nov-Mar) que el +25% busca recuperar.
+// Proyeccion con narrativa "ya lo hicimos, esto paso". Niveles Jul-Sep sostenidos:
+//  - Tostadas: ritmo de MARZO (54,682) = el techo que recuperamos al destrabar inventario.
+//  - Papa 45g: cierre de junio (~57,939) +10% = ~63,700/mes (seguir la rampa que ya prendio).
+//  - Papa 340g: base junio +25% = ~4,291/mes.
 type Punto = { mes: string; uds: number; proy: boolean };
 
 const tostadas: Punto[] = [
@@ -26,9 +26,9 @@ const tostadas: Punto[] = [
   { mes: "Abr", uds: 39593, proy: false },
   { mes: "May", uds: 38997, proy: false },
   { mes: "Jun", uds: 27360, proy: false },
-  { mes: "Jul", uds: 60143, proy: true },
-  { mes: "Ago", uds: 60143, proy: true },
-  { mes: "Sep", uds: 60143, proy: true },
+  { mes: "Jul", uds: 54682, proy: true },
+  { mes: "Ago", uds: 54682, proy: true },
+  { mes: "Sep", uds: 54682, proy: true },
 ];
 const papa45: Punto[] = [
   { mes: "Ene", uds: 14730, proy: false },
@@ -37,9 +37,9 @@ const papa45: Punto[] = [
   { mes: "Abr", uds: 20399, proy: false },
   { mes: "May", uds: 35351, proy: false },
   { mes: "Jun", uds: 57939, proy: false },
-  { mes: "Jul", uds: 72424, proy: true },
-  { mes: "Ago", uds: 72424, proy: true },
-  { mes: "Sep", uds: 72424, proy: true },
+  { mes: "Jul", uds: 63733, proy: true },
+  { mes: "Ago", uds: 63733, proy: true },
+  { mes: "Sep", uds: 63733, proy: true },
 ];
 const papa340: Punto[] = [
   { mes: "Ene", uds: 1595, proy: false },
@@ -105,9 +105,9 @@ function MiniChart({ data, max, color }: { data: Punto[]; max: number; color: st
 }
 
 const paneles = [
-  { titulo: "Tostadas", sub: "3 SKUs", data: tostadas, max: 75000, color: "#F5A623", lift: "~60k uds/mes" },
-  { titulo: "Papa Casera 45g", sub: "3 sabores", data: papa45, max: 80000, color: "#F5A623", lift: "~72k uds/mes" },
-  { titulo: "Papa Casera 340g", sub: "3 sabores", data: papa340, max: 5000, color: "#2E75B6", lift: "~4.3k uds/mes" },
+  { titulo: "Tostadas", sub: "3 SKUs", data: tostadas, max: 65000, color: "#F5A623", lift: "ritmo de marzo · ~55k uds/mes" },
+  { titulo: "Papa Casera 45g", sub: "3 sabores", data: papa45, max: 72000, color: "#F5A623", lift: "junio +10% · ~64k uds/mes" },
+  { titulo: "Papa Casera 340g", sub: "3 sabores", data: papa340, max: 5000, color: "#2E75B6", lift: "+25% · ~4.3k uds/mes" },
 ];
 
 export default function PropSlide7Proyeccion() {
@@ -115,7 +115,7 @@ export default function PropSlide7Proyeccion() {
     <SlideWrapper className="bg-[#F5F5F5] p-10">
       <h2 className="text-3xl font-bold text-gray-800 mb-1">Cuando pedimos más inventario, la venta responde</h2>
       <p className="text-gray-500 text-sm mb-3">
-        No es teoría: en mayo subimos el pedido de <b>Papa 45g</b> y la venta de junio fue récord. El <b className="text-[#27AE60]">+25%</b> es sostener ese mismo ritmo (Jul–Sep, barras punteadas) · en unidades
+        No es teoría: en mayo subimos el pedido de <b>Papa 45g</b> y la venta de junio fue récord. Sostener ese ritmo en el trimestre <b>Jul–Sep</b> (barras punteadas) · en unidades
       </p>
 
       <div className="flex-1 flex flex-col gap-3 min-h-0">
@@ -137,17 +137,17 @@ export default function PropSlide7Proyeccion() {
           <span className="text-3xl">🚀</span>
           <p className="text-sm text-gray-700 leading-snug flex-1">
             La <b>Papa 45g</b> ya lo demostró: más inventario en mayo → <b className="text-[#1E7E45]">venta x3</b> (de 17k en marzo a ~58k en junio), sin sobre-stock.
-            Sosteniendo ese ritmo con el <b>+25%</b> en las 3 categorías, el trimestre Jul–Sep suma cerca de <b className="text-[#1E7E45]">+82,000 unidades</b>.
+            Sosteniendo ese ritmo y recuperando el nivel de marzo en tostadas, el trimestre Jul–Sep suma cerca de <b className="text-[#1E7E45]">+78,000 unidades</b>.
           </p>
           <div className="text-center px-4 border-l border-[#27AE60]/30">
             <p className="text-[10px] text-gray-500 uppercase tracking-wide">Incremental 3 meses</p>
-            <p className="text-3xl font-bold text-[#1E7E45]">~82k <span className="text-sm font-normal text-gray-400">uds</span></p>
+            <p className="text-3xl font-bold text-[#1E7E45]">~78k <span className="text-sm font-normal text-gray-400">uds</span></p>
           </div>
         </div>
       </div>
 
       <p className="text-[11px] text-gray-500 mt-2 text-center">
-        Base de proyección = nivel de venta ya alcanzado (junio, que refleja el inventario pedido en mayo) · Tostadas recuperando su ritmo sano · cada panel en su propia escala.
+        Proyección Jul–Sep: Papa 45g = cierre de junio +10% · Tostadas = ritmo de marzo (su pico) · Papa 340g = +25% · cada panel en su propia escala.
       </p>
     </SlideWrapper>
   );

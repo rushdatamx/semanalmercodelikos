@@ -2,13 +2,15 @@
 
 import SlideWrapper from "./SlideWrapper";
 
-// Proyeccion +25% (base = nivel de venta ya alcanzado x 3 meses de prueba).
-// Papas: base junio (ya refleja el inventario extra pedido en mayo). Tostadas:
-// ritmo sano historico que el +25% busca recuperar.
+// Niveles objetivo Jul-Sep sostenidos (x3 meses de prueba):
+//  - Tostadas: ritmo de marzo 54,682/mes (recuperar el pico que el freno nos quito).
+//  - Papa 45g: cierre junio 57,939 +10% = 63,733/mes (seguir la rampa).
+//  - Papa 340g: +25% = 4,291/mes.
+// "tres" = incremental vs ritmo actual sin propuesta, x3 meses.
 const proyeccion = [
-  { cat: "Tostadas", base: "48,100", mes: "+12,000", tres: "+36,100" },
-  { cat: "Papa Casera 45g", base: "57,900", mes: "+14,500", tres: "+43,500" },
-  { cat: "Papa Casera 340g", base: "3,400", mes: "+860", tres: "+2,600" },
+  { cat: "Tostadas", base: "~55,000", mes: "+19,400", tres: "+58,100" },
+  { cat: "Papa Casera 45g", base: "~63,700", mes: "+5,800", tres: "+17,400" },
+  { cat: "Papa Casera 340g", base: "~4,300", mes: "+860", tres: "+2,600" },
 ];
 
 const garantias = [
@@ -32,9 +34,9 @@ export default function PropSlide5Propuesta() {
             <thead>
               <tr className="text-[10px] text-gray-400 uppercase border-b border-gray-200">
                 <th className="text-left pb-2 font-semibold">Categoría</th>
-                <th className="text-right pb-2 font-semibold">Base/mes</th>
-                <th className="text-right pb-2 font-semibold">+25%/mes</th>
-                <th className="text-right pb-2 font-semibold">3 meses</th>
+                <th className="text-right pb-2 font-semibold">Objetivo/mes</th>
+                <th className="text-right pb-2 font-semibold">+venta/mes</th>
+                <th className="text-right pb-2 font-semibold">+3 meses</th>
               </tr>
             </thead>
             <tbody>
@@ -51,7 +53,7 @@ export default function PropSlide5Propuesta() {
           <div className="mt-auto pt-4">
             <div className="bg-[#F5A623]/10 border border-[#F5A623]/40 rounded-xl p-4 text-center">
               <p className="text-[11px] text-gray-500 uppercase tracking-wide">Total incremental en 3 meses</p>
-              <p className="text-4xl font-bold text-[#B8860B]">~82,000 <span className="text-lg font-normal text-gray-400">uds</span></p>
+              <p className="text-4xl font-bold text-[#B8860B]">~78,000 <span className="text-lg font-normal text-gray-400">uds</span></p>
               <p className="text-[11px] text-gray-500 mt-1">venta adicional para MERCO y para Delikos</p>
             </div>
           </div>
