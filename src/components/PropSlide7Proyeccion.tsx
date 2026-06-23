@@ -13,9 +13,10 @@ import {
   LabelList,
 } from "recharts";
 
-// Proyeccion +25%. Sell-out real 2026 (Ene-Jun, junio a mes completo proy. x30/21)
-// + 3 meses proyectados (Jul-Ago-Sep) al ritmo actual + lift de +25%.
-// Base proyeccion = prom sell-out ult. 3 meses completos (Abr, May, Jun-proy).
+// Proyeccion +25% con narrativa "ya lo hicimos, esto paso".
+// Base de proyeccion = nivel ACTUAL ya alcanzado (junio, que ya refleja el inventario
+// extra pedido en may) + 25% sostenido. Papas en rampa -> base junio. Tostadas frenadas
+// -> base = ritmo sano historico (Nov-Mar) que el +25% busca recuperar.
 type Punto = { mes: string; uds: number; proy: boolean };
 
 const tostadas: Punto[] = [
@@ -25,9 +26,9 @@ const tostadas: Punto[] = [
   { mes: "Abr", uds: 39593, proy: false },
   { mes: "May", uds: 38997, proy: false },
   { mes: "Jun", uds: 27360, proy: false },
-  { mes: "Jul", uds: 44146, proy: true },
-  { mes: "Ago", uds: 44146, proy: true },
-  { mes: "Sep", uds: 44146, proy: true },
+  { mes: "Jul", uds: 60143, proy: true },
+  { mes: "Ago", uds: 60143, proy: true },
+  { mes: "Sep", uds: 60143, proy: true },
 ];
 const papa45: Punto[] = [
   { mes: "Ene", uds: 14730, proy: false },
@@ -36,9 +37,9 @@ const papa45: Punto[] = [
   { mes: "Abr", uds: 20399, proy: false },
   { mes: "May", uds: 35351, proy: false },
   { mes: "Jun", uds: 57939, proy: false },
-  { mes: "Jul", uds: 47370, proy: true },
-  { mes: "Ago", uds: 47370, proy: true },
-  { mes: "Sep", uds: 47370, proy: true },
+  { mes: "Jul", uds: 72424, proy: true },
+  { mes: "Ago", uds: 72424, proy: true },
+  { mes: "Sep", uds: 72424, proy: true },
 ];
 const papa340: Punto[] = [
   { mes: "Ene", uds: 1595, proy: false },
@@ -47,9 +48,9 @@ const papa340: Punto[] = [
   { mes: "Abr", uds: 1890, proy: false },
   { mes: "May", uds: 2370, proy: false },
   { mes: "Jun", uds: 3433, proy: false },
-  { mes: "Jul", uds: 3205, proy: true },
-  { mes: "Ago", uds: 3205, proy: true },
-  { mes: "Sep", uds: 3205, proy: true },
+  { mes: "Jul", uds: 4291, proy: true },
+  { mes: "Ago", uds: 4291, proy: true },
+  { mes: "Sep", uds: 4291, proy: true },
 ];
 
 const fmtK = (v: number) => (v >= 1000 ? `${(v / 1000).toFixed(0)}k` : `${v}`);
@@ -104,17 +105,17 @@ function MiniChart({ data, max, color }: { data: Punto[]; max: number; color: st
 }
 
 const paneles = [
-  { titulo: "Tostadas", sub: "3 SKUs", data: tostadas, max: 60000, color: "#F5A623", lift: "~44k uds/mes" },
-  { titulo: "Papa Casera 45g", sub: "3 sabores", data: papa45, max: 65000, color: "#F5A623", lift: "~47k uds/mes" },
-  { titulo: "Papa Casera 340g", sub: "3 sabores", data: papa340, max: 4000, color: "#2E75B6", lift: "~3.2k uds/mes" },
+  { titulo: "Tostadas", sub: "3 SKUs", data: tostadas, max: 75000, color: "#F5A623", lift: "~60k uds/mes" },
+  { titulo: "Papa Casera 45g", sub: "3 sabores", data: papa45, max: 80000, color: "#F5A623", lift: "~72k uds/mes" },
+  { titulo: "Papa Casera 340g", sub: "3 sabores", data: papa340, max: 5000, color: "#2E75B6", lift: "~4.3k uds/mes" },
 ];
 
 export default function PropSlide7Proyeccion() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
-      <h2 className="text-3xl font-bold text-gray-800 mb-1">Lo que crece la venta con el +25%</h2>
+      <h2 className="text-3xl font-bold text-gray-800 mb-1">Cuando pedimos más inventario, la venta responde</h2>
       <p className="text-gray-500 text-sm mb-3">
-        Sell-out 2026 real (Ene–Jun) + proyección con el lift de <b className="text-[#27AE60]">+25%</b> (Jul–Sep, barras punteadas) · en unidades
+        No es teoría: en mayo subimos el pedido de <b>Papa 45g</b> y la venta de junio fue récord. El <b className="text-[#27AE60]">+25%</b> es sostener ese mismo ritmo (Jul–Sep, barras punteadas) · en unidades
       </p>
 
       <div className="flex-1 flex flex-col gap-3 min-h-0">
@@ -127,7 +128,7 @@ export default function PropSlide7Proyeccion() {
               <div className="flex-1 min-h-0">
                 <MiniChart data={p.data} max={p.max} color={p.color} />
               </div>
-              <p className="text-[10px] text-center text-[#1E7E45] font-semibold mt-1">Con +25%: {p.lift}</p>
+              <p className="text-[10px] text-center text-[#1E7E45] font-semibold mt-1">Sostener +25%: {p.lift}</p>
             </div>
           ))}
         </div>
@@ -135,18 +136,18 @@ export default function PropSlide7Proyeccion() {
         <div className="bg-[#27AE60]/8 border border-[#27AE60]/25 rounded-xl p-3 flex items-center gap-4">
           <span className="text-3xl">🚀</span>
           <p className="text-sm text-gray-700 leading-snug flex-1">
-            Manteniendo el ritmo de venta actual y sumando el <b>+25%</b>, en el trimestre Jul–Sep movemos cerca de
-            <b className="text-[#1E7E45]"> +53,000 unidades adicionales</b> entre las 3 categorías — venta extra para MERCO y para Delikos.
+            La <b>Papa 45g</b> ya lo demostró: más inventario en mayo → <b className="text-[#1E7E45]">venta x3</b> (de 17k en marzo a ~58k en junio), sin sobre-stock.
+            Sosteniendo ese ritmo con el <b>+25%</b> en las 3 categorías, el trimestre Jul–Sep suma cerca de <b className="text-[#1E7E45]">+82,000 unidades</b>.
           </p>
           <div className="text-center px-4 border-l border-[#27AE60]/30">
             <p className="text-[10px] text-gray-500 uppercase tracking-wide">Incremental 3 meses</p>
-            <p className="text-3xl font-bold text-[#1E7E45]">~53k <span className="text-sm font-normal text-gray-400">uds</span></p>
+            <p className="text-3xl font-bold text-[#1E7E45]">~82k <span className="text-sm font-normal text-gray-400">uds</span></p>
           </div>
         </div>
       </div>
 
       <p className="text-[11px] text-gray-500 mt-2 text-center">
-        Base de proyección = promedio de sell-out de los últimos 3 meses (Abr–Jun) · Junio a mes completo · cada panel en su propia escala.
+        Base de proyección = nivel de venta ya alcanzado (junio, que refleja el inventario pedido en mayo) · Tostadas recuperando su ritmo sano · cada panel en su propia escala.
       </p>
     </SlideWrapper>
   );

@@ -2,11 +2,13 @@
 
 import SlideWrapper from "./SlideWrapper";
 
-// Proyeccion +25% (base = prom sell-out ult. 3 meses x 3 meses de prueba).
+// Proyeccion +25% (base = nivel de venta ya alcanzado x 3 meses de prueba).
+// Papas: base junio (ya refleja el inventario extra pedido en mayo). Tostadas:
+// ritmo sano historico que el +25% busca recuperar.
 const proyeccion = [
-  { cat: "Tostadas", base: "44,400", mes: "+11,100", tres: "+33,300" },
-  { cat: "Papa Casera 45g", base: "24,500", mes: "+6,100", tres: "+18,400" },
-  { cat: "Papa Casera 340g", base: "2,300", mes: "+580", tres: "+1,700" },
+  { cat: "Tostadas", base: "48,100", mes: "+12,000", tres: "+36,100" },
+  { cat: "Papa Casera 45g", base: "57,900", mes: "+14,500", tres: "+43,500" },
+  { cat: "Papa Casera 340g", base: "3,400", mes: "+860", tres: "+2,600" },
 ];
 
 const garantias = [
@@ -49,7 +51,7 @@ export default function PropSlide5Propuesta() {
           <div className="mt-auto pt-4">
             <div className="bg-[#F5A623]/10 border border-[#F5A623]/40 rounded-xl p-4 text-center">
               <p className="text-[11px] text-gray-500 uppercase tracking-wide">Total incremental en 3 meses</p>
-              <p className="text-4xl font-bold text-[#B8860B]">~53,000 <span className="text-lg font-normal text-gray-400">uds</span></p>
+              <p className="text-4xl font-bold text-[#B8860B]">~82,000 <span className="text-lg font-normal text-gray-400">uds</span></p>
               <p className="text-[11px] text-gray-500 mt-1">venta adicional para MERCO y para Delikos</p>
             </div>
           </div>
