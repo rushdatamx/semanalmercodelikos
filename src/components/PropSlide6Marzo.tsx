@@ -16,7 +16,7 @@ import {
 
 // Sell-out 2026 TOTAL Abarrotes en UNIDADES. Junio = corte al dia 21 (parcial).
 // `proy` = remanente proyectado de junio a mes completo (real x 30/21).
-// Marzo es el mes mas alto del anio en la categoria -> techo a recuperar en H2.
+// Marzo es el punto mas alto del anio hasta ahora -> indica que podemos crecer mas en H2.
 const data = [
   { mes: "Ene", uds: 58290, proy: 0, parcial: false },
   { mes: "Feb", uds: 64045, proy: 0, parcial: false },
@@ -62,8 +62,8 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
 export default function PropSlide6Marzo() {
   return (
     <SlideWrapper className="bg-[#F5F5F5] p-10">
-      <h2 className="text-3xl font-bold text-gray-800 mb-1">Marzo marcó el techo de la categoría</h2>
-      <p className="text-gray-500 text-sm mb-3">Sell-out total Abarrotes 2026 en <b className="text-[#B8860B]">unidades</b> · marzo fue el mes más alto del año — la referencia a recuperar en la segunda mitad</p>
+      <h2 className="text-3xl font-bold text-gray-800 mb-1">Marzo: nuestro punto más alto hasta ahora</h2>
+      <p className="text-gray-500 text-sm mb-3">Sell-out total Abarrotes 2026 en <b className="text-[#B8860B]">unidades</b> · el mejor mes del año nos marca el piso de lo que podemos crecer</p>
 
       <div className="flex gap-5 flex-1 min-h-0">
         {/* Grafica */}
@@ -112,10 +112,10 @@ export default function PropSlide6Marzo() {
           </div>
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex-1 flex flex-col justify-center gap-3">
             <p className="text-sm text-gray-700 leading-snug">
-              📈 <b>Marzo demostró el techo real</b> de la categoría: cuando hay producto en piso, la venta se va a <b>~81k unidades</b>/mes.
+              📈 Marzo es <b>hasta ahora el punto más alto</b> y nos indica que <b>podemos crecer más</b>: cuando hay producto en piso, la venta se va a <b>~81k unidades</b>/mes.
             </p>
             <p className="text-sm text-gray-700 leading-snug">
-              🎯 El objetivo de la segunda mitad del año es <b>volver a ese nivel y sostenerlo</b> — para eso necesitamos el inventario que lo respalde.
+              🎯 El objetivo de la segunda mitad del año es <b>superar ese nivel y sostenerlo</b> — para eso necesitamos el inventario que lo respalde.
             </p>
           </div>
         </div>
