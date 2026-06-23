@@ -58,6 +58,8 @@ import PropSlide2Abarrotes from "@/components/PropSlide2Abarrotes";
 import PropSlide3TostadasVenta from "@/components/PropSlide3TostadasVenta";
 import PropSlide4PapasVenta from "@/components/PropSlide4PapasVenta";
 import PropSlide2Tostadas from "@/components/PropSlide2Tostadas";
+import PropSlide6Marzo from "@/components/PropSlide6Marzo";
+import PropSlide7Proyeccion from "@/components/PropSlide7Proyeccion";
 import PropSlide5Propuesta from "@/components/PropSlide5Propuesta";
 
 const departments = [
@@ -188,9 +190,11 @@ const departments = [
     slides: [
       PropSlide1Portada,
       PropSlide2Abarrotes,
+      PropSlide6Marzo,
       PropSlide3TostadasVenta,
       PropSlide4PapasVenta,
       PropSlide2Tostadas,
+      PropSlide7Proyeccion,
       PropSlide5Propuesta,
     ],
   },
