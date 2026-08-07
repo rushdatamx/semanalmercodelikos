@@ -27,6 +27,10 @@ import NegSlide2TopTiendas from "@/components/NegSlide2TopTiendas";
 import NegSlide3Promociones from "@/components/NegSlide3Promociones";
 import NegSlide4Papas from "@/components/NegSlide4Papas";
 import NegSlide5TopTiendasUds from "@/components/NegSlide5TopTiendasUds";
+import NegSlide6MatrizTiendas from "@/components/NegSlide6MatrizTiendas";
+import NegSlide7MatrizProductos from "@/components/NegSlide7MatrizProductos";
+import NegSlide8Fortaleza from "@/components/NegSlide8Fortaleza";
+import NegSlide9CasoPapa from "@/components/NegSlide9CasoPapa";
 import EjecSlide1Portada from "@/components/EjecSlide1Portada";
 import EjecSlide2KPIs from "@/components/EjecSlide2KPIs";
 import EjecSlide3TopVentas from "@/components/EjecSlide3TopVentas";
@@ -136,10 +140,14 @@ const departments = [
     color: "#F5A623",
     slides: [
       NegSlide1KPIs,
+      NegSlide3Promociones,
+      NegSlide6MatrizTiendas,
       NegSlide2TopTiendas,
       NegSlide5TopTiendasUds,
-      NegSlide3Promociones,
+      NegSlide7MatrizProductos,
       NegSlide4Papas,
+      NegSlide9CasoPapa,
+      NegSlide8Fortaleza,
     ],
   },
   {

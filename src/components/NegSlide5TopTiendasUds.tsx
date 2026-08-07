@@ -3,7 +3,7 @@
 import SlideWrapper from "./SlideWrapper";
 import { MapPin } from "lucide-react";
 
-/* ── Top 10 tiendas by UNITS with top 3 products (20 SKUs Abarrotes only) ── */
+/* ── Top 10 tiendas by UNITS with top 3 products (25 SKUs Botanas only) ── */
 interface ProductInfo {
   name: string;
   pct: string;
@@ -21,54 +21,54 @@ interface StoreRow {
 
 const stores: StoreRow[] = [
   {
-    rank: 1, nombre: "MERCO GARCIA", uds: "15,371", udsNum: 15371,
-    uds2025: "7,404", varYoY: "+108%",
-    top3: [{ name: "Tost. Roja 70PZ", pct: "44%" }, { name: "Papa Natural 45g", pct: "15%" }, { name: "Papa Jalapeño 45g", pct: "11%" }],
+    rank: 1, nombre: "MERCO GARCIA", uds: "24,447", udsNum: 24447,
+    uds2025: "10,603", varYoY: "+131%",
+    top3: [{ name: "Tost. Roja 70PZ", pct: "41%" }, { name: "Papa Natural 45g", pct: "17%" }, { name: "Papa Fuego 45g", pct: "13%" }],
   },
   {
-    rank: 2, nombre: "MERCO SOLIDARIDAD", uds: "12,745", udsNum: 12745,
-    uds2025: "6,592", varYoY: "+93%",
-    top3: [{ name: "Tost. Roja 70PZ", pct: "54%" }, { name: "Papa Natural 45g", pct: "12%" }, { name: "Tost. Roja 200g", pct: "10%" }],
+    rank: 2, nombre: "MERCO SOLIDARIDAD", uds: "21,353", udsNum: 21353,
+    uds2025: "9,629", varYoY: "+122%",
+    top3: [{ name: "Tost. Roja 70PZ", pct: "48%" }, { name: "Papa Natural 45g", pct: "14%" }, { name: "Papa Jalapeño 45g", pct: "11%" }],
   },
   {
-    rank: 3, nombre: "MERCO EL JARAL", uds: "11,895", udsNum: 11895,
-    uds2025: "5,799", varYoY: "+105%",
-    top3: [{ name: "Tost. Roja 70PZ", pct: "50%" }, { name: "Papa Natural 45g", pct: "13%" }, { name: "Papa Jalapeño 45g", pct: "10%" }],
+    rank: 3, nombre: "MERCO MONTEMORELOS", uds: "18,210", udsNum: 18210,
+    uds2025: "8,119", varYoY: "+124%",
+    top3: [{ name: "Tost. Roja 70PZ", pct: "33%" }, { name: "Papa Natural 45g", pct: "20%" }, { name: "Papa Fuego 45g", pct: "13%" }],
   },
   {
-    rank: 4, nombre: "MERCO SENDERO STA. CATARINA", uds: "10,829", udsNum: 10829,
-    uds2025: "6,737", varYoY: "+61%",
-    top3: [{ name: "Tost. Roja 70PZ", pct: "48%" }, { name: "Papa Natural 45g", pct: "13%" }, { name: "Papa Jalapeño 45g", pct: "10%" }],
+    rank: 4, nombre: "MERCO MIXCOAC", uds: "17,970", udsNum: 17970,
+    uds2025: "6,977", varYoY: "+158%",
+    top3: [{ name: "Tost. Roja 70PZ", pct: "51%" }, { name: "Papa Fuego 45g", pct: "15%" }, { name: "Papa Natural 45g", pct: "14%" }],
   },
   {
-    rank: 5, nombre: "MERCO MIXCOAC", uds: "10,802", udsNum: 10802,
-    uds2025: "5,221", varYoY: "+107%",
-    top3: [{ name: "Tost. Roja 70PZ", pct: "64%" }, { name: "Papa Fuego 45g", pct: "12%" }, { name: "Papa Natural 45g", pct: "9%" }],
+    rank: 5, nombre: "MERCO SENDERO SANTA CATARINA", uds: "17,211", udsNum: 17211,
+    uds2025: "9,187", varYoY: "+87%",
+    top3: [{ name: "Tost. Roja 70PZ", pct: "42%" }, { name: "Papa Natural 45g", pct: "16%" }, { name: "Papa Jalapeño 45g", pct: "12%" }],
   },
   {
-    rank: 6, nombre: "MERCO COLINAS", uds: "10,656", udsNum: 10656,
-    uds2025: "4,909", varYoY: "+117%",
-    top3: [{ name: "Tost. Roja 70PZ", pct: "57%" }, { name: "Papa Natural 45g", pct: "9%" }, { name: "Papa Fuego 45g", pct: "9%" }],
+    rank: 6, nombre: "MERCO EL JARAL", uds: "17,148", udsNum: 17148,
+    uds2025: "8,662", varYoY: "+98%",
+    top3: [{ name: "Tost. Roja 70PZ", pct: "49%" }, { name: "Papa Natural 45g", pct: "14%" }, { name: "Papa Jalapeño 45g", pct: "11%" }],
   },
   {
-    rank: 7, nombre: "MERCO PARAJE SAN JOSE", uds: "10,585", udsNum: 10585,
-    uds2025: "6,247", varYoY: "+69%",
-    top3: [{ name: "Tost. Roja 70PZ", pct: "49%" }, { name: "Papa Natural 45g", pct: "16%" }, { name: "Papa Jalapeño 45g", pct: "9%" }],
+    rank: 7, nombre: "MERCO GIRASOLES", uds: "17,062", udsNum: 17062,
+    uds2025: "10,549", varYoY: "+62%",
+    top3: [{ name: "Tost. Roja 70PZ", pct: "55%" }, { name: "Papa Natural 45g", pct: "11%" }, { name: "Papa Jalapeño 45g", pct: "8%" }],
   },
   {
-    rank: 8, nombre: "MERCO GIRASOLES", uds: "10,499", udsNum: 10499,
-    uds2025: "7,630", varYoY: "+38%",
-    top3: [{ name: "Tost. Roja 70PZ", pct: "65%" }, { name: "Tost. Roja 200g", pct: "7%" }, { name: "Tost. Amar. 200g", pct: "7%" }],
+    rank: 8, nombre: "MERCO BUENAVISTA", uds: "16,932", udsNum: 16932,
+    uds2025: "11,891", varYoY: "+42%",
+    top3: [{ name: "Tost. Roja 70PZ", pct: "62%" }, { name: "Papa Jalapeño 45g", pct: "6%" }, { name: "Durito Teja", pct: "6%" }],
   },
   {
-    rank: 9, nombre: "MERCO SAN ROQUE", uds: "10,481", udsNum: 10481,
-    uds2025: "5,255", varYoY: "+99%",
-    top3: [{ name: "Tost. Roja 70PZ", pct: "66%" }, { name: "Papa Natural 45g", pct: "10%" }, { name: "Papa Fuego 45g", pct: "7%" }],
+    rank: 9, nombre: "MERCO ACUÑA", uds: "16,592", udsNum: 16592,
+    uds2025: "6,155", varYoY: "+170%",
+    top3: [{ name: "Papa Natural 45g", pct: "23%" }, { name: "Papa Fuego 45g", pct: "22%" }, { name: "Tost. Roja 70PZ", pct: "18%" }],
   },
   {
-    rank: 10, nombre: "MERCO LOS PILARES", uds: "10,324", udsNum: 10324,
-    uds2025: "8,258", varYoY: "+25%",
-    top3: [{ name: "Tost. Roja 70PZ", pct: "72%" }, { name: "Tost. Roja 200g", pct: "9%" }, { name: "Tost. Amar. 200g", pct: "4%" }],
+    rank: 10, nombre: "MERCO LOS PILARES", uds: "16,576", udsNum: 16576,
+    uds2025: "11,922", varYoY: "+39%",
+    top3: [{ name: "Tost. Roja 70PZ", pct: "63%" }, { name: "Tost. Roja 200g", pct: "7%" }, { name: "Papa Natural 45g", pct: "6%" }],
   },
 ];
 
@@ -117,7 +117,7 @@ function StoreCard({ store }: { store: StoreRow }) {
             />
           </div>
           <p className="text-[8px] text-gray-400 mt-0.5">
-            Ene-May 2025: {store.uds2025} uds
+            Ene-Jul 2025: {store.uds2025} uds
           </p>
         </div>
       </div>
@@ -145,7 +145,7 @@ export default function NegSlide5TopTiendasUds() {
             Top 10 Tiendas por Unidades
           </h2>
           <p className="text-[10px] text-gray-500">
-            Unidades acumuladas Ene-May 2026 -- 20 SKUs Abarrotes -- Top 3
+            Unidades acumuladas Ene-Jul 2026 -- 25 SKUs Botanas -- Top 3
             productos por tienda
           </p>
         </div>
@@ -163,9 +163,11 @@ export default function NegSlide5TopTiendasUds() {
         </div>
         <p className="text-[11px] text-gray-700">
           <span className="font-bold text-green-700">
-            Crecimiento de volumen muy fuerte: 7 de 10 tiendas duplicaron o casi duplicaron sus unidades vs 2025 (+61% a +117%).
+            Crecimiento de volumen muy fuerte: 6 de 10 tiendas duplicaron sus unidades vs 2025 (+39% a +170%).
           </span>{" "}
-          Colinas (+117%), Garcia (+108%), Mixcoac (+107%) y El Jaral (+105%) lideran. Paraje San Jose entra al top 10 por alto volumen de papas 45g.
+          Acuna (+170%), Mixcoac (+158%), Garcia (+131%) y Montemorelos (+124%) lideran. Montemorelos y
+          Acuna entran al top 10 por unidades pero NO al de venta: venden mucha Papa 45g, que es barata.
+          En Acuna la Papa 45g ya desplazo a la Tostada Roja 70PZ del primer lugar.
         </p>
       </div>
     </SlideWrapper>

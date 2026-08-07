@@ -1,23 +1,43 @@
 "use client";
 
 import SlideWrapper from "./SlideWrapper";
-import { BarChart3, Store, TrendingUp, Trophy, MapPin } from "lucide-react";
+import { BarChart3, TrendingUp, Trophy, MapPin } from "lucide-react";
 
 /* ── KPI Cards ── */
 const kpis = [
   {
-    label: "Venta Ene-May 2026",
-    value: "$9,646,385",
-    badge: "+40.7% vs Ene-May 2025",
+    label: "Venta Ene-Jul 2026",
+    value: "$14,567,480",
+    badge: "+51.9% vs Ene-Jul 2025",
     badgeColor: "bg-green-100 text-green-700",
     icon: BarChart3,
   },
   {
-    label: "Tiendas activas",
-    value: "40",
-    badge: "20 SKUs Abarrotes",
-    badgeColor: "bg-blue-100 text-blue-700",
-    icon: Store,
+    label: "Del año 2025 COMPLETO",
+    value: "76%",
+    badge: "logrado en solo 7 meses",
+    badgeColor: "bg-green-100 text-green-700",
+    icon: Trophy,
+  },
+];
+
+/* ── Proyeccion y consistencia ── */
+const desglose = [
+  {
+    label: "Proyeccion cierre 2026",
+    sub: "al ritmo actual",
+    valor: "~$25M",
+    detalle: "+30% vs 2025",
+    color: "text-[#27AE60]",
+    bg: "bg-green-50 border-green-200",
+  },
+  {
+    label: "Meses ganados",
+    sub: "7 de 7 vs 2025",
+    valor: "100%",
+    detalle: "rango +31% a +77%",
+    color: "text-[#27AE60]",
+    bg: "bg-green-50 border-green-200",
   },
 ];
 
@@ -32,11 +52,11 @@ interface MonthPivot {
 const ventaPivot: MonthPivot[] = [
   { mes: "Ene", v2025: 1011279, v2026: 1790595 },
   { mes: "Feb", v2025: 1217578, v2026: 1922690 },
-  { mes: "Mar", v2025: 1557837, v2026: 2537111 },
+  { mes: "Mar", v2025: 1557837, v2026: 2537134 },
   { mes: "Abr", v2025: 1403335, v2026: 2021130 },
-  { mes: "May", v2025: 1664232, v2026: 1374859, note2026: "23 dias" },
-  { mes: "Jun", v2025: 1339041, v2026: null },
-  { mes: "Jul", v2025: 1393720, v2026: null },
+  { mes: "May", v2025: 1664232, v2026: 2177094 },
+  { mes: "Jun", v2025: 1339041, v2026: 2193042 },
+  { mes: "Jul", v2025: 1393720, v2026: 1925796 },
   { mes: "Ago", v2025: 1924156, v2026: null },
   { mes: "Sep", v2025: 1636879, v2026: null },
   { mes: "Oct", v2025: 1831879, v2026: null },
@@ -54,20 +74,20 @@ const pctChange = (v26: number, v25: number) => {
 
 /* ── Top 5 products ── */
 const top5Productos = [
-  { rank: 1, nombre: "Tostada Roja 70PZ", venta: "$6,630,989", share: "68.7%" },
-  { rank: 2, nombre: "Durito Teja 20pzs", venta: "$486,969", share: "5.0%" },
-  { rank: 3, nombre: "Tostada Amarilla 200g", venta: "$331,443", share: "3.4%" },
-  { rank: 4, nombre: "Tostada Roja 200g", venta: "$317,761", share: "3.3%" },
-  { rank: 5, nombre: "Papa Natural 45g", venta: "$311,628", share: "3.2%" },
+  { rank: 1, nombre: "Tostada Roja 70PZ", venta: "$9,347,549", share: "64.2%" },
+  { rank: 2, nombre: "Durito Teja 20pzs", venta: "$847,974", share: "5.8%" },
+  { rank: 3, nombre: "Papa Natural 45g", venta: "$676,236", share: "4.6%" },
+  { rank: 4, nombre: "Papa Fuego 45g", venta: "$526,367", share: "3.6%" },
+  { rank: 5, nombre: "Papa Jalapeño 45g", venta: "$509,145", share: "3.5%" },
 ];
 
 /* ── Top 5 tiendas ── */
 const top5Tiendas = [
-  { rank: 1, nombre: "MERCO Garcia", venta: "$417,683" },
-  { rank: 2, nombre: "MERCO Buenavista", venta: "$382,748" },
-  { rank: 3, nombre: "MERCO Los Pilares", venta: "$377,662" },
-  { rank: 4, nombre: "MERCO Solidaridad", venta: "$365,734" },
-  { rank: 5, nombre: "MERCO Mixcoac", venta: "$358,005" },
+  { rank: 1, nombre: "MERCO Garcia", venta: "$638,558" },
+  { rank: 2, nombre: "MERCO Buenavista", venta: "$588,222" },
+  { rank: 3, nombre: "MERCO Los Pilares", venta: "$583,649" },
+  { rank: 4, nombre: "MERCO Solidaridad", venta: "$568,181" },
+  { rank: 5, nombre: "MERCO Girasoles", venta: "$527,824" },
 ];
 
 export default function NegSlide1KPIs() {
@@ -78,29 +98,37 @@ export default function NegSlide1KPIs() {
         <TrendingUp className="w-6 h-6 text-[#F5A623]" />
         <div>
           <h2 className="text-xl font-bold text-gray-800">Salud del Negocio DELIKOS en MERCO</h2>
-          <p className="text-[10px] text-gray-500">Ene-May 2026 -- 20 productos Abarrotes -- Reporte para Direccion</p>
+          <p className="text-[10px] text-gray-500">Ene-Jul 2026 -- 25 SKUs Botanas -- 40 tiendas -- Reporte para Direccion</p>
         </div>
       </div>
 
-      {/* KPI Cards */}
-      <div className="grid grid-cols-2 gap-3 mb-3">
+      {/* KPI Cards + desglose */}
+      <div className="grid grid-cols-4 gap-2 mb-3">
         {kpis.map((kpi, i) => {
           const Icon = kpi.icon;
           return (
-            <div key={i} className="bg-white rounded-xl border border-gray-200 shadow-sm p-3 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#F5A623]/10 flex items-center justify-center flex-shrink-0">
-                <Icon className="w-5 h-5 text-[#F5A623]" />
+            <div key={i} className="bg-white rounded-xl border border-gray-200 shadow-sm p-3 flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-lg bg-[#F5A623]/10 flex items-center justify-center flex-shrink-0">
+                <Icon className="w-4.5 h-4.5 text-[#F5A623]" />
               </div>
               <div className="min-w-0">
-                <p className="text-[10px] text-gray-500 uppercase font-semibold">{kpi.label}</p>
-                <p className="text-lg font-bold text-gray-800 leading-tight">{kpi.value}</p>
-                <span className={`text-[9px] px-1.5 py-0.5 rounded font-bold ${kpi.badgeColor}`}>
+                <p className="text-[9px] text-gray-500 uppercase font-semibold">{kpi.label}</p>
+                <p className="text-base font-bold text-gray-800 leading-tight">{kpi.value}</p>
+                <span className={`text-[8px] px-1.5 py-0.5 rounded font-bold ${kpi.badgeColor}`}>
                   {kpi.badge}
                 </span>
               </div>
             </div>
           );
         })}
+        {desglose.map((d, i) => (
+          <div key={i} className={`rounded-xl border shadow-sm p-3 flex flex-col justify-center ${d.bg}`}>
+            <p className="text-[9px] text-gray-500 uppercase font-semibold">{d.label}</p>
+            <p className={`text-base font-bold leading-tight ${d.color}`}>{d.valor}</p>
+            <p className="text-[8px] text-gray-500">{d.sub}</p>
+            <p className="text-[8px] text-gray-400">{d.detalle}</p>
+          </div>
+        ))}
       </div>
 
       {/* Main content: Pivot table + Rankings */}
@@ -124,7 +152,6 @@ export default function NegSlide1KPIs() {
                 {ventaPivot.map((row, i) => {
                   const has2026 = row.v2026 !== null && row.v2026 > 0;
                   const isPartial = row.note2026 !== undefined;
-                  const isHighlight = has2026;
                   return (
                     <tr
                       key={i}
@@ -141,12 +168,12 @@ export default function NegSlide1KPIs() {
                         )}
                       </td>
                       <td className="py-1 px-2 text-right text-gray-600">{fmt(row.v2025)}</td>
-                      <td className={`py-1 px-2 text-right ${isHighlight ? "text-gray-800 font-semibold" : "text-gray-300"}`}>
+                      <td className={`py-1 px-2 text-right ${has2026 ? "text-gray-800 font-semibold" : "text-gray-300"}`}>
                         {has2026 ? fmt(row.v2026!) : "—"}
                       </td>
                       <td className="py-1 px-2 text-right">
                         {has2026 && !isPartial ? (
-                          <span className={`text-[9px] font-bold ${row.v2026! >= row.v2025 ? "text-green-600" : "text-gray-500"}`}>
+                          <span className={`text-[9px] font-bold ${row.v2026! >= row.v2025 ? "text-green-600" : "text-red-600"}`}>
                             {pctChange(row.v2026!, row.v2025)}
                           </span>
                         ) : has2026 && isPartial ? (
@@ -179,7 +206,6 @@ export default function NegSlide1KPIs() {
 
         {/* Right side: Top 5 Productos + Top 5 Tiendas */}
         <div className="w-[300px] flex flex-col gap-2">
-          {/* Top 5 Productos */}
           <div className="flex-1 flex flex-col">
             <div className="flex items-center gap-1.5 mb-1">
               <Trophy className="w-3.5 h-3.5 text-[#F5A623]" />
@@ -205,7 +231,6 @@ export default function NegSlide1KPIs() {
             </div>
           </div>
 
-          {/* Top 5 Tiendas */}
           <div className="flex-1 flex flex-col">
             <div className="flex items-center gap-1.5 mb-1">
               <MapPin className="w-3.5 h-3.5 text-[#F5A623]" />
@@ -228,6 +253,19 @@ export default function NegSlide1KPIs() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Insight strip */}
+      <div className="mt-2 bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
+        <p className="text-[10px] text-gray-600 leading-snug">
+          <span className="font-bold text-[#27AE60]">En 7 meses ya vendimos el 76% de TODO 2025.</span>{" "}
+          Ganamos los 7 meses del anio (+31% a +77%) y en <span className="font-bold">septiembre</span> superamos
+          el anio completo pasado, con un trimestre por delante. El crecimiento es solido por los dos lados:
+          <span className="font-bold"> +24.4%</span> de los 10 SKUs que ya vendian en 2025 y{" "}
+          <span className="font-bold">+27.5 pp</span> de los 15 nuevos. Unidades <span className="font-bold">+119.9%</span>{" "}
+          — el precio promedio baja de $41.14 a $28.43 por <span className="font-bold">mix</span> (entro la Papa 45g de ~$9),
+          no por descuento.
+        </p>
       </div>
     </SlideWrapper>
   );

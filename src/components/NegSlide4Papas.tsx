@@ -11,6 +11,7 @@ interface CompRow {
   venta: string;
   bold?: boolean;
   isPartial?: boolean;
+  isHigh?: boolean;
 }
 
 /* ── Papa 45g — combined 3 flavors ── */
@@ -24,7 +25,9 @@ const papa45Rows: CompRow[] = [
   { label: "Feb 2026", precio: "$9.25", uds: "3,006", venta: "$27,812" },
   { label: "Mar 2026", precio: "$9.20", uds: "4,009", venta: "$36,877" },
   { label: "Abr 2026", precio: "$9.55", uds: "4,760", venta: "$45,432" },
-  { label: "May 2026", precio: "$9.19", uds: "5,129", venta: "$47,152", bold: true, isPartial: true },
+  { label: "May 2026", precio: "$9.22", uds: "7,982", venta: "$73,587" },
+  { label: "Jun 2026", precio: "$9.68", uds: "13,341", venta: "$129,193", isHigh: true },
+  { label: "Jul 2026", precio: "$10.03", uds: "5,094", venta: "$51,097", bold: true },
 ];
 
 /* ── Papa 340g — combined 3 flavors ── */
@@ -34,7 +37,9 @@ const papa340Rows: CompRow[] = [
   { label: "Feb 2026", precio: "$45.76", uds: "387", venta: "$17,722" },
   { label: "Mar 2026", precio: "$47.98", uds: "602", venta: "$28,860" },
   { label: "Abr 2026", precio: "$53.34", uds: "441", venta: "$23,524" },
-  { label: "May 2026", precio: "$53.38", uds: "361", venta: "$19,269", bold: true, isPartial: true },
+  { label: "May 2026", precio: "$54.44", uds: "535", venta: "$29,132" },
+  { label: "Jun 2026", precio: "$54.53", uds: "834", venta: "$45,485", isHigh: true },
+  { label: "Jul 2026", precio: "$51.70", uds: "517", venta: "$26,713", bold: true },
 ];
 
 function ComparisonTable({ rows }: { rows: CompRow[] }) {
@@ -109,7 +114,7 @@ export default function NegSlide4Papas() {
             Tendencia Papa Casera — 45g y 340g
           </h2>
           <p className="text-[10px] text-gray-500">
-            3 sabores combinados (Sal, Fuego, Jalapeño) -- Datos semanalizados
+            3 sabores combinados (Sal, Fuego, Jalapeño) -- Datos semanalizados Ago 2025 a Jul 2026
           </p>
         </div>
       </div>
@@ -140,13 +145,13 @@ export default function NegSlide4Papas() {
               </span>
               <span className="text-[10px] text-gray-400">--&gt;</span>
               <span className="text-[11px] font-bold text-[#F5A623]">
-                $9.19
+                $10.03
               </span>
               <span className="text-[9px] px-1.5 py-0.5 rounded bg-gray-100 text-gray-600 font-bold">
-                -24%
+                -17%
               </span>
               <span className="text-[9px] text-gray-400 ml-1">
-                Precio competitivo estable desde Nov 2025
+                Precio estable ~$9.20-10.03 desde Nov 2025
               </span>
             </div>
 
@@ -156,8 +161,8 @@ export default function NegSlide4Papas() {
             <div className="flex items-start gap-1.5">
               <Info className="w-3 h-3 text-gray-400 flex-shrink-0 mt-0.5" />
               <p className="text-[9px] text-gray-500">
-                Precio estabilizado en ~$9.20. Mayo proyecta ser el mejor mes
-                desde agosto 2025 (5,129/sem vs 5,067 en dic).
+                Junio triplico la venta (57,175 uds) tras el surtido de fin de Mayo. Julio baja
+                porque se agoto el piso, no la demanda — ver slide "Caso Papa 45g".
               </p>
             </div>
           </div>
@@ -183,13 +188,13 @@ export default function NegSlide4Papas() {
             {/* Price note */}
             <div className="flex items-center gap-2">
               <span className="text-[11px] font-bold text-[#F5A623]">
-                $53.38
+                $46.68 --&gt; $51.70
               </span>
-              <span className="text-[9px] px-1.5 py-0.5 rounded bg-[#F5A623]/10 text-[#F5A623] font-bold">
-                Ajuste de precio en Abr
+              <span className="text-[9px] px-1.5 py-0.5 rounded bg-green-100 text-green-700 font-bold">
+                +11% sin frenar volumen
               </span>
               <span className="text-[9px] text-gray-400 ml-1">
-                Producto en consolidacion
+                Ya consolidado
               </span>
             </div>
 
@@ -200,13 +205,13 @@ export default function NegSlide4Papas() {
               <div className="flex items-center gap-1.5 bg-green-50 rounded-lg px-2.5 py-1 border border-green-200">
                 <TrendingUp className="w-3 h-3 text-green-600" />
                 <span className="text-[9px] font-bold text-green-700">
-                  Pico Mar: 602 uds/sem
+                  Pico Jun: 834 uds/sem
                 </span>
               </div>
               <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-2.5 py-1 border border-blue-200">
                 <TrendingUp className="w-3 h-3 text-blue-600" />
                 <span className="text-[9px] font-bold text-blue-700">
-                  May proyecta ~$83K mes
+                  De 88 a 517 uds/sem
                 </span>
               </div>
             </div>
@@ -215,7 +220,8 @@ export default function NegSlide4Papas() {
             <div className="flex items-start gap-1.5 mt-auto">
               <Info className="w-3 h-3 text-gray-400 flex-shrink-0 mt-0.5" />
               <p className="text-[9px] text-gray-500">
-                Producto nuevo (Dic 2025) en consolidacion. Pico Mar coincide con Cuaresma. Precio actual $53.38 estable desde Abr.
+                Producto nuevo (Dic 2025) YA CONSOLIDADO: de 88 a 517-834 uds/sem. Subio +11%
+                de precio sin frenar volumen — el caso opuesto a Tostada Roja 70PZ.
               </p>
             </div>
           </div>
