@@ -135,17 +135,17 @@ export default function NegSlide1KPIs() {
       <div className="flex gap-3 flex-1 min-h-0">
         {/* Pivot table */}
         <div className="flex-1 flex flex-col min-w-0">
-          <p className="text-[10px] text-gray-500 font-semibold uppercase mb-1">
+          <p className="text-[11px] text-gray-500 font-semibold uppercase mb-1">
             Venta mensual comparativa 2025 vs 2026
           </p>
           <div className="flex-1 overflow-auto rounded-xl border border-gray-200 bg-white shadow-sm">
-            <table className="w-full text-[10px]">
+            <table className="w-full text-[13px]">
               <thead>
-                <tr className="bg-gray-100 text-gray-500 text-[9px] uppercase sticky top-0">
-                  <th className="text-left py-1.5 px-2">Mes</th>
-                  <th className="text-right py-1.5 px-2">2025</th>
-                  <th className="text-right py-1.5 px-2">2026</th>
-                  <th className="text-right py-1.5 px-2">Var %</th>
+                <tr className="bg-gray-100 text-gray-500 text-[11px] uppercase sticky top-0">
+                  <th className="text-left py-2 px-3">Mes</th>
+                  <th className="text-right py-2 px-3">2025</th>
+                  <th className="text-right py-2 px-3">2026</th>
+                  <th className="text-right py-2 px-3">Var %</th>
                 </tr>
               </thead>
               <tbody>
@@ -159,7 +159,7 @@ export default function NegSlide1KPIs() {
                         isPartial ? "bg-[#F5A623]/5 font-bold" : has2026 ? "bg-white" : "bg-gray-50/50"
                       }`}
                     >
-                      <td className="py-1 px-2 text-gray-700 font-medium">
+                      <td className="py-1.5 px-3 text-gray-700 font-medium">
                         {row.mes}
                         {isPartial && (
                           <span className="ml-1 text-[8px] px-1 py-0.5 rounded bg-orange-100 text-orange-600 font-bold">
@@ -167,13 +167,13 @@ export default function NegSlide1KPIs() {
                           </span>
                         )}
                       </td>
-                      <td className="py-1 px-2 text-right text-gray-600">{fmt(row.v2025)}</td>
-                      <td className={`py-1 px-2 text-right ${has2026 ? "text-gray-800 font-semibold" : "text-gray-300"}`}>
+                      <td className="py-1.5 px-3 text-right text-gray-600">{fmt(row.v2025)}</td>
+                      <td className={`py-1.5 px-3 text-right ${has2026 ? "text-gray-800 font-semibold" : "text-gray-300"}`}>
                         {has2026 ? fmt(row.v2026!) : "—"}
                       </td>
-                      <td className="py-1 px-2 text-right">
+                      <td className="py-1.5 px-3 text-right">
                         {has2026 && !isPartial ? (
-                          <span className={`text-[9px] font-bold ${row.v2026! >= row.v2025 ? "text-green-600" : "text-red-600"}`}>
+                          <span className={`text-[12px] font-bold ${row.v2026! >= row.v2025 ? "text-green-600" : "text-red-600"}`}>
                             {pctChange(row.v2026!, row.v2025)}
                           </span>
                         ) : has2026 && isPartial ? (
@@ -188,15 +188,15 @@ export default function NegSlide1KPIs() {
               </tbody>
               <tfoot>
                 <tr className="bg-gray-100 font-bold border-t border-gray-200">
-                  <td className="py-1.5 px-2 text-gray-800">Total</td>
-                  <td className="py-1.5 px-2 text-right text-gray-800">
+                  <td className="py-2 px-3 text-gray-800">Total</td>
+                  <td className="py-2 px-3 text-right text-gray-800">
                     {fmt(ventaPivot.reduce((s, r) => s + r.v2025, 0))}
                   </td>
-                  <td className="py-1.5 px-2 text-right text-gray-800">
+                  <td className="py-2 px-3 text-right text-gray-800">
                     {fmt(ventaPivot.reduce((s, r) => s + (r.v2026 ?? 0), 0))}
                   </td>
-                  <td className="py-1.5 px-2 text-right">
-                    <span className="text-[9px] text-gray-400">parcial</span>
+                  <td className="py-2 px-3 text-right">
+                    <span className="text-[11px] text-gray-400">parcial</span>
                   </td>
                 </tr>
               </tfoot>
@@ -253,19 +253,6 @@ export default function NegSlide1KPIs() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Insight strip */}
-      <div className="mt-2 bg-white rounded-xl border border-gray-200 shadow-sm px-3 py-2">
-        <p className="text-[10px] text-gray-600 leading-snug">
-          <span className="font-bold text-[#27AE60]">En 7 meses ya vendimos el 76% de TODO 2025.</span>{" "}
-          Ganamos los 7 meses del anio (+31% a +77%) y en <span className="font-bold">septiembre</span> superamos
-          el anio completo pasado, con un trimestre por delante. El crecimiento es solido por los dos lados:
-          <span className="font-bold"> +24.4%</span> de los 10 SKUs que ya vendian en 2025 y{" "}
-          <span className="font-bold">+27.5 pp</span> de los 15 nuevos. Unidades <span className="font-bold">+119.9%</span>{" "}
-          — el precio promedio baja de $41.14 a $28.43 por <span className="font-bold">mix</span> (entro la Papa 45g de ~$9),
-          no por descuento.
-        </p>
       </div>
     </SlideWrapper>
   );

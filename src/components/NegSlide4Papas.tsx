@@ -16,88 +16,81 @@ interface CompRow {
 
 /* ── Papa 45g — combined 3 flavors ── */
 const papa45Rows: CompRow[] = [
-  { label: "Ago 2025", precio: "$12.03", uds: "4,336", venta: "$52,154" },
-  { label: "Sep 2025", precio: "$11.13", uds: "2,496", venta: "$27,788" },
-  { label: "Oct 2025", precio: "$9.82", uds: "5,040", venta: "$49,476" },
-  { label: "Nov 2025", precio: "$9.19", uds: "3,255", venta: "$29,925" },
-  { label: "Dic 2025", precio: "$9.25", uds: "5,067", venta: "$46,846" },
-  { label: "Ene 2026", precio: "$9.28", uds: "3,326", venta: "$30,850" },
-  { label: "Feb 2026", precio: "$9.25", uds: "3,006", venta: "$27,812" },
-  { label: "Mar 2026", precio: "$9.20", uds: "4,009", venta: "$36,877" },
-  { label: "Abr 2026", precio: "$9.55", uds: "4,760", venta: "$45,432" },
-  { label: "May 2026", precio: "$9.22", uds: "7,982", venta: "$73,587" },
-  { label: "Jun 2026", precio: "$9.68", uds: "13,341", venta: "$129,193", isHigh: true },
-  { label: "Jul 2026", precio: "$10.03", uds: "5,094", venta: "$51,097", bold: true },
+  { label: "Ago 2025", precio: "$12.03", uds: "19,203", venta: "$230,969" },
+  { label: "Sep 2025", precio: "$11.13", uds: "10,698", venta: "$119,093" },
+  { label: "Oct 2025", precio: "$9.82", uds: "22,322", venta: "$219,109" },
+  { label: "Nov 2025", precio: "$9.19", uds: "13,948", venta: "$128,250" },
+  { label: "Dic 2025", precio: "$9.25", uds: "22,439", venta: "$207,462" },
+  { label: "Ene 2026", precio: "$9.28", uds: "14,730", venta: "$136,622" },
+  { label: "Feb 2026", precio: "$9.25", uds: "12,023", venta: "$111,249" },
+  { label: "Mar 2026", precio: "$9.20", uds: "17,756", venta: "$163,314" },
+  { label: "Abr 2026", precio: "$9.55", uds: "20,399", venta: "$194,710" },
+  { label: "May 2026", precio: "$9.22", uds: "35,351", venta: "$325,884" },
+  { label: "Jun 2026", precio: "$9.68", uds: "57,175", venta: "$553,683", isHigh: true },
+  { label: "Jul 2026", precio: "$10.03", uds: "22,561", venta: "$226,286" },
 ];
 
 /* ── Papa 340g — combined 3 flavors ── */
 const papa340Rows: CompRow[] = [
-  { label: "Dic 2025", precio: "$35.18", uds: "88", venta: "$3,090" },
-  { label: "Ene 2026", precio: "$46.68", uds: "360", venta: "$16,813" },
-  { label: "Feb 2026", precio: "$45.76", uds: "387", venta: "$17,722" },
-  { label: "Mar 2026", precio: "$47.98", uds: "602", venta: "$28,860" },
-  { label: "Abr 2026", precio: "$53.34", uds: "441", venta: "$23,524" },
-  { label: "May 2026", precio: "$54.44", uds: "535", venta: "$29,132" },
-  { label: "Jun 2026", precio: "$54.53", uds: "834", venta: "$45,485", isHigh: true },
-  { label: "Jul 2026", precio: "$51.70", uds: "517", venta: "$26,713", bold: true },
+  { label: "Dic 2025", precio: "$35.18", uds: "389", venta: "$13,683" },
+  { label: "Ene 2026", precio: "$46.68", uds: "1,595", venta: "$74,458" },
+  { label: "Feb 2026", precio: "$45.76", uds: "1,549", venta: "$70,888" },
+  { label: "Mar 2026", precio: "$47.98", uds: "2,664", venta: "$127,809" },
+  { label: "Abr 2026", precio: "$53.34", uds: "1,890", venta: "$100,816" },
+  { label: "May 2026", precio: "$54.44", uds: "2,370", venta: "$129,013" },
+  { label: "Jun 2026", precio: "$54.53", uds: "3,575", venta: "$194,934", isHigh: true },
+  { label: "Jul 2026", precio: "$51.70", uds: "2,288", venta: "$118,299" },
 ];
 
-function ComparisonTable({ rows }: { rows: CompRow[] }) {
+function ComparisonTable({
+  rows,
+  total,
+}: {
+  rows: CompRow[];
+  total: { uds: string; venta: string; precio: string };
+}) {
   return (
     <div className="overflow-auto rounded-lg border border-gray-200 bg-white flex-1">
-      <table className="w-full text-[10px]">
+      <table className="w-full text-[11px]">
         <thead>
-          <tr className="bg-gray-100 text-gray-500 text-[9px] uppercase">
-            <th className="text-left py-1 px-2"></th>
-            <th className="text-right py-1 px-2">Precio</th>
-            <th className="text-right py-1 px-2">Uds/sem</th>
-            <th className="text-right py-1 px-2">Venta $/sem</th>
+          <tr className="bg-gray-100 text-gray-500 text-[10px] uppercase">
+            <th className="text-left py-1.5 px-3"></th>
+            <th className="text-right py-1.5 px-3">Precio</th>
+            <th className="text-right py-1.5 px-3">Uds/mes</th>
+            <th className="text-right py-1.5 px-3">Venta $/mes</th>
           </tr>
         </thead>
         <tbody>
           {rows.map((row, i) => (
             <tr
               key={i}
-              className={`border-b border-gray-50 ${
-                row.bold ? "bg-[#F5A623]/5" : ""
-              }`}
+              className={`border-b border-gray-50 ${row.isHigh ? "bg-green-50/50" : ""}`}
             >
-              <td
-                className={`py-1 px-2 text-gray-700 ${
-                  row.bold ? "font-bold" : ""
-                }`}
-              >
+              <td className="py-1 px-3 text-gray-700">
                 {row.label}
-                {row.isPartial && (
-                  <span className="ml-1 text-[8px] px-1 py-0.5 rounded bg-orange-100 text-orange-600 font-bold">
-                    23 dias
+                {row.isHigh && (
+                  <span className="ml-1.5 text-[8px] px-1 py-0.5 rounded bg-green-100 text-green-700 font-bold">
+                    pico
                   </span>
                 )}
               </td>
-              <td
-                className={`py-1 px-2 text-right ${
-                  row.bold ? "text-gray-800 font-bold" : "text-gray-600"
-                }`}
-              >
-                {row.precio}
-              </td>
-              <td
-                className={`py-1 px-2 text-right ${
-                  row.bold ? "text-gray-800 font-bold" : "text-gray-600"
-                }`}
-              >
-                {row.uds}
-              </td>
-              <td
-                className={`py-1 px-2 text-right ${
-                  row.bold ? "text-gray-800 font-bold" : "text-gray-600"
-                }`}
-              >
-                {row.venta}
-              </td>
+              <td className="py-1 px-3 text-right text-gray-600">{row.precio}</td>
+              <td className="py-1 px-3 text-right text-gray-600">{row.uds}</td>
+              <td className="py-1 px-3 text-right text-gray-600">{row.venta}</td>
             </tr>
           ))}
         </tbody>
+        <tfoot>
+          <tr className="bg-[#F5A623]/10 font-bold border-t-2 border-[#F5A623]/30">
+            <td className="py-1.5 px-3 text-gray-800 text-[10px]">
+              TOTAL 2026
+              <span className="block text-[8px] font-normal text-gray-500">Ene-Jul</span>
+            </td>
+            <td className="py-1.5 px-3 text-right text-gray-600">{total.precio}</td>
+            <td className="py-1.5 px-3 text-right text-gray-900">{total.uds}</td>
+            <td className="py-1.5 px-3 text-right text-gray-900">{total.venta}</td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   );
@@ -114,7 +107,7 @@ export default function NegSlide4Papas() {
             Tendencia Papa Casera — 45g y 340g
           </h2>
           <p className="text-[10px] text-gray-500">
-            3 sabores combinados (Sal, Fuego, Jalapeño) -- Datos semanalizados Ago 2025 a Jul 2026
+            3 sabores combinados (Sal, Fuego, Jalapeño) -- Datos mensuales Ago 2025 a Jul 2026
           </p>
         </div>
       </div>
@@ -138,24 +131,7 @@ export default function NegSlide4Papas() {
           </div>
 
           <div className="px-3 py-2 flex-1 flex flex-col gap-1.5">
-            {/* Price stabilization note */}
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] font-bold text-gray-600">
-                $12.03
-              </span>
-              <span className="text-[10px] text-gray-400">--&gt;</span>
-              <span className="text-[11px] font-bold text-[#F5A623]">
-                $10.03
-              </span>
-              <span className="text-[9px] px-1.5 py-0.5 rounded bg-gray-100 text-gray-600 font-bold">
-                -17%
-              </span>
-              <span className="text-[9px] text-gray-400 ml-1">
-                Precio estable ~$9.20-10.03 desde Nov 2025
-              </span>
-            </div>
-
-            <ComparisonTable rows={papa45Rows} />
+            <ComparisonTable rows={papa45Rows} total={{ uds: "179,995", venta: "$1,711,748", precio: "$9.51" }} />
 
             {/* Insight */}
             <div className="flex items-start gap-1.5">
@@ -185,33 +161,20 @@ export default function NegSlide4Papas() {
           </div>
 
           <div className="px-3 py-2 flex-1 flex flex-col gap-1.5">
-            {/* Price note */}
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] font-bold text-[#F5A623]">
-                $46.68 --&gt; $51.70
-              </span>
-              <span className="text-[9px] px-1.5 py-0.5 rounded bg-green-100 text-green-700 font-bold">
-                +11% sin frenar volumen
-              </span>
-              <span className="text-[9px] text-gray-400 ml-1">
-                Ya consolidado
-              </span>
-            </div>
-
-            <ComparisonTable rows={papa340Rows} />
+            <ComparisonTable rows={papa340Rows} total={{ uds: "15,931", venta: "$816,217", precio: "$51.23" }} />
 
             {/* Trend metrics */}
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-1.5 bg-green-50 rounded-lg px-2.5 py-1 border border-green-200">
                 <TrendingUp className="w-3 h-3 text-green-600" />
                 <span className="text-[9px] font-bold text-green-700">
-                  Pico Jun: 834 uds/sem
+                  Pico Jun: 3,575 uds
                 </span>
               </div>
               <div className="flex items-center gap-1.5 bg-blue-50 rounded-lg px-2.5 py-1 border border-blue-200">
                 <TrendingUp className="w-3 h-3 text-blue-600" />
                 <span className="text-[9px] font-bold text-blue-700">
-                  De 88 a 517 uds/sem
+                  De 389 a 2,288 uds/mes
                 </span>
               </div>
             </div>
@@ -220,8 +183,8 @@ export default function NegSlide4Papas() {
             <div className="flex items-start gap-1.5 mt-auto">
               <Info className="w-3 h-3 text-gray-400 flex-shrink-0 mt-0.5" />
               <p className="text-[9px] text-gray-500">
-                Producto nuevo (Dic 2025) YA CONSOLIDADO: de 88 a 517-834 uds/sem. Subio +11%
-                de precio sin frenar volumen — el caso opuesto a Tostada Roja 70PZ.
+                Producto nuevo (Dic 2025) YA CONSOLIDADO: de 389 uds en su primer mes a
+                2,288-3,575 uds mensuales.
               </p>
             </div>
           </div>
