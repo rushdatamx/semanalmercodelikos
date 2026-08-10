@@ -42,7 +42,7 @@ const minimos = [
   { tienda: "MERCO Cadereyta", antes: "70", desp: "3,936", vBase: "403", vJun: "2,252" },
 ];
 
-const fmt = (n: number) => n.toLocaleString("en-US");
+const kFmt = (n: number) => (n >= 1000 ? Math.round(n / 1000) + "K" : String(n));
 
 export default function NegSlide9CasoPapa() {
   return (
@@ -78,18 +78,21 @@ export default function NegSlide9CasoPapa() {
         <div className="flex items-end gap-1.5 h-[190px]">
           {semanas.map((s, i) => (
             <div key={i} className="flex-1 flex flex-col items-center justify-end h-full gap-0.5">
+              {/* cifras sobre las barras (visibles en PDF, sin depender del cursor) */}
+              <div className="flex items-end justify-center gap-1 leading-none mb-0.5">
+                <span className="text-[8px] text-gray-400 font-semibold">{kFmt(s.inv)}</span>
+                <span className="text-[9px] text-[#F5A623] font-bold">{kFmt(s.venta)}</span>
+              </div>
               <div className="w-full flex items-end justify-center gap-0.5 flex-1">
                 {/* barra inventario */}
                 <div
                   className="w-1/2 bg-[#C7D2E0] rounded-t"
                   style={{ height: `${(s.inv / maxInv) * 100}%` }}
-                  title={`Inv ${fmt(s.inv)}`}
                 />
                 {/* barra venta */}
                 <div
                   className="w-1/2 rounded-t bg-[#F5A623]"
                   style={{ height: `${(s.venta / maxVta) * 100}%` }}
-                  title={`Venta ${fmt(s.venta)}`}
                 />
               </div>
               <p className="text-[9px] text-gray-500 leading-none">{s.label}</p>

@@ -27,6 +27,9 @@ import NegSlide3Promociones from "@/components/NegSlide3Promociones";
 import NegSlide4Papas from "@/components/NegSlide4Papas";
 import NegSlide6MatrizTiendas from "@/components/NegSlide6MatrizTiendas";
 import NegSlide9CasoPapa from "@/components/NegSlide9CasoPapa";
+import AnualSlide1Combo from "@/components/AnualSlide1Combo";
+import AnualSlide2Cierre from "@/components/AnualSlide2Cierre";
+import AnualSlide3Origen from "@/components/AnualSlide3Origen";
 import EjecSlide1Portada from "@/components/EjecSlide1Portada";
 import EjecSlide2KPIs from "@/components/EjecSlide2KPIs";
 import EjecSlide3TopVentas from "@/components/EjecSlide3TopVentas";
@@ -143,6 +146,16 @@ const departments = [
     ],
   },
   {
+    id: "anual",
+    label: "Sell-Out Anual",
+    color: "#27AE60",
+    slides: [
+      AnualSlide1Combo,
+      AnualSlide2Cierre,
+      AnualSlide3Origen,
+    ],
+  },
+  {
     id: "ejecutiva",
     label: "Ejecutiva",
     color: "#8B5CF6",
@@ -234,7 +247,12 @@ function HomeInner() {
       const html2canvas = (await import("html2canvas-pro")).default;
       const { jsPDF } = await import("jspdf");
 
-      const pdf = new jsPDF({ orientation: "landscape", unit: "px", format: [1280, 720] });
+      const pdf = new jsPDF({
+        orientation: "landscape",
+        unit: "px",
+        format: [1280, 720],
+        compress: false,
+      });
 
       const container = document.createElement("div");
       container.style.position = "fixed";
@@ -251,7 +269,7 @@ function HomeInner() {
         const root = createRoot(wrapper);
         root.render(<SlideComp />);
 
-        await new Promise((r) => setTimeout(r, 300));
+        await new Promise((r) => setTimeout(r, 600));
 
         const slideEl = wrapper.querySelector("div");
         if (!slideEl) continue;
@@ -259,18 +277,18 @@ function HomeInner() {
         const canvas = await html2canvas(slideEl, {
           width: 1280,
           height: 720,
-          scale: 2,
+          scale: 4,
           useCORS: true,
           backgroundColor: "#F5F5F5",
         });
 
         if (i > 0) pdf.addPage();
-        pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 1280, 720);
+        pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 1280, 720, undefined, "NONE");
         root.unmount();
       }
 
       document.body.removeChild(container);
-      pdf.save(`${dept.label}_MERCO_2026-04-09.pdf`);
+      pdf.save(`${dept.label}_MERCO_Ene-Jul-2026.pdf`);
     } catch (err) {
       console.error("Error exporting PDF:", err);
     } finally {

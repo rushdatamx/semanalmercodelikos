@@ -98,7 +98,7 @@ function ComparisonTable({
 
 export default function NegSlide4Papas() {
   return (
-    <SlideWrapper className="bg-[#F5F5F5] p-5">
+    <SlideWrapper className="bg-[#F5F5F5] p-5 pb-12">
       {/* Header */}
       <div className="flex items-center gap-3 mb-1">
         <TrendingUp className="w-6 h-6 text-[#F5A623]" />
