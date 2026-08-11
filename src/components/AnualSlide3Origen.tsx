@@ -23,32 +23,29 @@ const MUERTO = { p25: 53711 };
 const U25 = COMP.u25;
 const U26 = COMP.u26 + NUEVO.u26;
 
-/* Los SKUs comparables, agrupados por familia para que la tabla quepa.
-   El cacahuate granel cae porque migro a las presentaciones nuevas de la
-   misma linea; la papa 70g se descontinuo durante 2026. */
+/* Los SKUs comparables que crecen, agrupados por familia.
+   Decision Mario 2026-08-10: fuera de la tabla el cacahuate granel (migro a las
+   presentaciones nuevas, -42%) y los descontinuados (Papa 70g, Fiesta Mix,
+   Torcidito). Son $669,121 de venta 2026 que NO aparecen aqui pero SI estan en
+   el total de $11,934,628 del bloque de arriba — por eso el encabezado dice
+   "los que crecen" y no "los 17 SKUs". */
 const comparables = [
   { nombre: "Tostada Roja 70PZ", p26: 9347549, vp: 32.7, vu: 28.1 },
   { nombre: "Durito Teja 20pzs", p26: 847974, vp: 1.2, vu: -8.1 },
-  { nombre: "Cacahuate granel", nota: "migro a las 5 presentaciones nuevas", p26: 665350, vp: -42.0, vu: -42.0 },
   { nombre: "Tostada Amarilla 200g", p26: 423824, vp: 152.6, vu: 161.2 },
   { nombre: "Tostada Roja 200g", p26: 389866, vp: 124.0, vu: 133.4 },
   { nombre: "Cheto Mix / Mini Cuadro / Rueda", nota: "400g", p26: 256294, vp: 18.3, vu: 14.3 },
-  {
-    nombre: "Papa 70g / Fiesta Mix / Torcidito",
-    nota: "descontinuados durante 2026 -- vendian $903k en 2025",
-    p26: 3772,
-    vp: -99.6,
-    vu: -99.7,
-  },
 ];
 
+/* Solo los dos motores del portafolio nuevo. El resto de las altas van en un
+   recuadro aparte SIN monto ni piezas (decision Mario 2026-08-10): son lineas
+   recien nacidas y sus cifras todavia no son representativas. */
 const topNuevos = [
   { nombre: "Papa Casera 45g", detalle: "3 sabores", venta: 1711748, uds: 179995 },
   { nombre: "Papa Casera 340g", detalle: "3 sabores", venta: 816217, uds: 15931 },
-  { nombre: "Linea 215/170g", detalle: "5 presentaciones -- alta semana 28", venta: 53885, uds: 1940 },
-  { nombre: "Palomitas 4Buddies", detalle: "3 sabores", venta: 38805, uds: 2871 },
-  { nombre: "Rodajitas 4Buddies", detalle: "30g", venta: 16771, uds: 956 },
 ];
+const TOP_NUEVOS_TOTAL = topNuevos.reduce((s, p) => s + p.venta, 0);
+const TOP_NUEVOS_UDS = topNuevos.reduce((s, p) => s + p.uds, 0);
 
 const mM = (n: number) => "$" + (n / 1_000_000).toFixed(1) + "M";
 const fmt = (n: number) => "$" + n.toLocaleString("en-US", { maximumFractionDigits: 0 });
@@ -140,7 +137,7 @@ export default function AnualSlide3Origen() {
         <div className="flex-1 flex flex-col gap-1.5 min-w-0">
           <p className="text-[11px] text-gray-500 font-semibold uppercase flex items-center gap-1.5">
             <Package className="w-3.5 h-3.5 text-[#F5A623]" />
-            Portafolio actual — 17 SKUs comparables
+            Portafolio actual — los que crecen
           </p>
           <div className="rounded-xl border border-gray-200 bg-white shadow-sm p-3 flex flex-col gap-2.5">
             <div className="flex items-center justify-between">
@@ -217,7 +214,7 @@ export default function AnualSlide3Origen() {
         <div className="flex-1 flex flex-col gap-1.5 min-w-0">
           <p className="text-[11px] text-gray-500 font-semibold uppercase flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-[#27AE60]" />
-            Portafolio nuevo — 15 SKUs desde cero
+            Portafolio nuevo — top productos
           </p>
           <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
             <table className="w-full text-[11px]">
@@ -244,12 +241,38 @@ export default function AnualSlide3Origen() {
               </tbody>
               <tfoot>
                 <tr className="bg-green-50 font-bold border-t border-green-200">
-                  <td className="py-1.5 px-2.5 text-gray-800">Total nuevos</td>
-                  <td className="py-1.5 px-2 text-right text-[#27AE60]">{fmt(NUEVO.p26)}</td>
-                  <td className="py-1.5 px-2.5 text-right text-[#27AE60]">{uFmt(NUEVO.u26)}</td>
+                  <td className="py-1.5 px-2.5 text-gray-800">Total Papa Casera</td>
+                  <td className="py-1.5 px-2 text-right text-[#27AE60]">{fmt(TOP_NUEVOS_TOTAL)}</td>
+                  <td className="py-1.5 px-2.5 text-right text-[#27AE60]">{uFmt(TOP_NUEVOS_UDS)}</td>
                 </tr>
               </tfoot>
             </table>
+          </div>
+
+          {/* Altas recientes — sin cifras: son lineas recien nacidas */}
+          <div className="rounded-xl border border-[#27AE60]/30 bg-green-50/50 px-3 py-2">
+            <p className="text-[10px] text-gray-500 uppercase font-semibold mb-1">
+              Ademas, este ano abrimos lineas nuevas
+            </p>
+            <div className="flex flex-col gap-1">
+              <div className="flex items-start gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#27AE60] mt-1 flex-shrink-0" />
+                <p className="text-[10px] text-gray-700 leading-snug">
+                  <span className="font-bold">Linea 215g</span> — Papa Deshidratada, Rotini y Mini
+                  Cuadro
+                </p>
+              </div>
+              <div className="flex items-start gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#27AE60] mt-1 flex-shrink-0" />
+                <p className="text-[10px] text-gray-700 leading-snug">
+                  <span className="font-bold">Linea 4Buddies</span> — Palomitas y Rodajitas de Papa
+                </p>
+              </div>
+            </div>
+            <p className="text-[9px] text-gray-500 leading-snug mt-1.5">
+              Recien colocadas en anaquel: todavia no acumulan historia suficiente para leer su
+              tendencia, pero ya amplian el espacio de la marca en la categoria.
+            </p>
           </div>
 
           {/* La papa como palanca */}
@@ -258,11 +281,11 @@ export default function AnualSlide3Origen() {
               La papa es el motor del portafolio nuevo
             </p>
             <p className="text-[10px] text-gray-700 leading-snug">
-              Las dos presentaciones suman{" "}
-              <span className="font-bold text-[#27AE60]">{mM(2527965)}</span> — el 96% de todo lo
-              nuevo. Junio fue su mejor mes ({fmt(748617)} entre las dos): si el resto del ano
-              corriera a ese ritmo serian{" "}
-              <span className="font-bold text-[#F5A623]">{mM(4972649)}</span> anuales adicionales.
+              Las dos presentaciones concentran el{" "}
+              <span className="font-bold text-[#27AE60]">96%</span> de la venta del portafolio nuevo.
+              Junio fue su mejor mes ({fmt(748617)} entre las dos): si el resto del ano corriera a
+              ese ritmo serian <span className="font-bold text-[#F5A623]">{mM(4972649)}</span>{" "}
+              anuales adicionales.
             </p>
           </div>
 
@@ -273,8 +296,8 @@ export default function AnualSlide3Origen() {
                 El crecimiento es de volumen, no de precio.
               </span>{" "}
               Vendimos {pct(U26, U25)} mas piezas. El ticket promedio de la categoria baja de $35.29
-              a $28.43 porque sumamos formatos de entrada (Papa 45g a ~$9.50, Palomitas a ~$13.50)
-              que atraen mas compradores; en el portafolio comparable el precio de hecho{" "}
+              a $28.43 porque sumamos formatos de entrada (Papa 45g a ~$9.50) que atraen mas
+              compradores; en el portafolio comparable el precio de hecho{" "}
               <span className="font-bold">subio +8.3%</span>.
             </p>
           </div>
