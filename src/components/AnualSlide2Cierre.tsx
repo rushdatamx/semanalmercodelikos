@@ -4,26 +4,30 @@ import SlideWrapper from "./SlideWrapper";
 import { Target, Activity } from "lucide-react";
 
 /* ── Como cerramos 2026 ──
-   FORECAST = NIVEL x ESTACIONALIDAD.
-     - Nivel: $2.12M/mes desestacionalizado (promedio may-jul). Donde esta el
-       negocio hoy, no donde empezo el ano.
-     - Estacionalidad: indice de los 16 SKUs vivos los 12 meses de 2025,
-       amortiguado 50% porque la curva de 2026 es mas plana (1.42x vs 2.03x).
-   Cada mes proyecta un % distinto (+6% a +22%) porque cada mes tiene su propio
-   peso estacional — no es una regla plana.
-   Backtest abr-jul: 5.6% de error vs 10.2% del metodo anterior.
+   FORECAST POR BLOQUES (bottom-up), no un porcentaje global:
+     - BASE: los SKUs que ya vendian en ago-dic 2025 crecen al ritmo real que
+       llevan en 2026 (+30.9% ene-jul).
+     - NUEVOS: Papa 340g no existia en ago-dic 2025 (cero de ago a nov, $13.7k
+       en dic) y hoy corre a $145k/mes. Se suma como venta nueva contra base
+       cero — no como porcentaje sobre algo que no habia.
+     - PISO +19%: el incremento mas bajo de 2026 (mayo) como suelo defensivo.
+       No se activa en ningun mes; todos salen ~+38%.
+   Sanity check: ago-2026 al dia 9 lleva $757,519 -> ~$2.61M extrapolado
+   (+30.4% vs ago-2025), arriba del piso.
    Universo ampliado: 34 SKUs Abarrotes · 41 tiendas · corte 09-ago-2026. */
 
 const T25 = 20361495;
 const REAL26 = 14572052; // Ene-Jul 2026 real
-const NIVEL = 2116907; // venta mensual desestacionalizada, promedio may-jul
+const CREC_BASE = 30.9; // ritmo real del portafolio comparable, ene-jul
+const APORTE_NUEVOS = 144679; // Papa 340g x3 sabores, $/mes que 2025 no tenia
+const PISO_PCT = 19;
 
 const proyMeses = [
-  { mes: "Ago", v25: 2001305, proy: 2210887, idx: 1.044 },
-  { mes: "Sep", v25: 1685156, proy: 2053165, idx: 0.97 },
-  { mes: "Oct", v25: 1856381, proy: 2119319, idx: 1.001 },
-  { mes: "Nov", v25: 2132189, proy: 2370302, idx: 1.12 },
-  { mes: "Dic", v25: 2176779, proy: 2308573, idx: 1.091 },
+  { mes: "Ago", v25: 2001305, proy: 2764131, base: 2619452 },
+  { mes: "Sep", v25: 1685156, proy: 2350332, base: 2205653 },
+  { mes: "Oct", v25: 1856381, proy: 2574444, base: 2429765 },
+  { mes: "Nov", v25: 2132189, proy: 2935441, base: 2790762 },
+  { mes: "Dic", v25: 2176779, proy: 2993804, base: 2849125 },
 ];
 
 const H2_PROY = proyMeses.reduce((s, r) => s + r.proy, 0);
@@ -32,8 +36,8 @@ const MAXP = Math.max(...proyMeses.map((r) => Math.max(r.proy, r.v25)));
 
 const escenarios = [
   {
-    nombre: "Base — el negocio se sostiene",
-    supuesto: "Ago-Dic al nivel actual ($2.12M/mes) con su estacionalidad",
+    nombre: "Base — al ritmo que ya llevamos",
+    supuesto: "El portafolio crece +30.9% y Papa 340g suma $145k/mes",
     valor: CIERRE,
     color: "text-[#27AE60]",
     bg: "bg-green-50 border-green-300",
@@ -41,9 +45,9 @@ const escenarios = [
     destacado: true,
   },
   {
-    nombre: "Conservador — el negocio deja de crecer",
-    supuesto: "Ago-Dic cae al mes mas flojo de 2026 ($2.02M/mes)",
-    valor: 25067169,
+    nombre: "Conservador — si el ritmo se enfria",
+    supuesto: "Ago-Dic crece solo +19%, el mes mas flojo de 2026 (mayo)",
+    valor: 26295705,
     color: "text-gray-700",
     bg: "bg-white border-gray-200",
     dot: "bg-gray-400",
@@ -65,7 +69,7 @@ export default function AnualSlide2Cierre() {
         <div>
           <h2 className="text-xl font-bold text-gray-800">Como Vamos a Cerrar 2026</h2>
           <p className="text-[10px] text-gray-500">
-            Proyeccion Ago-Dic = nivel actual del negocio x la estacionalidad de cada mes
+            Proyeccion Ago-Dic construida producto por producto, con piso en el mes mas flojo de 2026
           </p>
         </div>
       </div>
@@ -136,48 +140,53 @@ export default function AnualSlide2Cierre() {
               ))}
             </div>
             <p className="text-[9px] text-gray-400 text-center mt-1 leading-snug">
-              El crecimiento vs 2025 varia por mes (+6% a +22%) porque cada mes de 2025 tenia un
-              peso distinto. Diciembre crece poco porque diciembre-2025 ya fue un mes muy alto.
+              Cada mes crece ~+38%: la base al ritmo real de 2026 mas los $145k/mes de Papa 340g que
+              en ago-dic 2025 no existian. Muy por encima del piso de +19%.
             </p>
           </div>
         </div>
 
         {/* Derecha: ritmo mensual + escenarios */}
         <div className="w-[430px] flex flex-col gap-1.5 min-h-0">
-          {/* Como se construye el pronostico */}
+          {/* De donde sale el +38%: los dos bloques */}
           <div className="rounded-xl border border-gray-200 bg-white shadow-sm px-3 py-2">
             <p className="text-[10px] text-gray-500 font-semibold uppercase flex items-center gap-1.5 mb-1.5">
               <Activity className="w-3.5 h-3.5 text-[#F5A623]" />
-              Como se construye el pronostico
+              De donde sale el +38% mensual
             </p>
-            <div className="flex items-center gap-2">
-              <div className="rounded-lg bg-[#F5A623]/10 border border-[#F5A623]/30 px-2 py-1 text-center flex-shrink-0">
-                <p className="text-[8px] text-gray-500 uppercase font-semibold">Nivel hoy</p>
-                <p className="text-[13px] font-bold text-[#F5A623] leading-tight">{mM(NIVEL)}</p>
-                <p className="text-[8px] text-gray-500">al mes</p>
+            <div className="flex flex-col gap-1.5">
+              <div className="flex items-center gap-2 rounded-lg bg-[#F5A623]/10 border border-[#F5A623]/25 px-2.5 py-1.5">
+                <div className="flex-1 min-w-0">
+                  <p className="text-[11px] font-bold text-gray-800 leading-tight">
+                    El portafolio de siempre
+                  </p>
+                  <p className="text-[9px] text-gray-500 leading-snug">
+                    Crece al ritmo que ya lleva en 2026, no a uno inventado
+                  </p>
+                </div>
+                <p className="text-lg font-bold text-[#F5A623] leading-none">+{CREC_BASE}%</p>
               </div>
-              <span className="text-gray-400 font-bold text-sm">x</span>
-              <div className="flex-1 min-w-0">
-                <p className="text-[8px] text-gray-500 uppercase font-semibold mb-0.5">
-                  Estacionalidad de cada mes
-                </p>
-                <div className="flex items-end gap-1 h-[34px]">
-                  {proyMeses.map((r, i) => (
-                    <div key={i} className="flex-1 flex flex-col items-center justify-end h-full">
-                      <div
-                        className="w-full rounded-t bg-[#27AE60]"
-                        style={{ height: `${((r.idx - 0.9) / 0.3) * 100}%` }}
-                      />
-                      <span className="text-[7px] text-gray-400 leading-none mt-0.5">{r.mes}</span>
-                    </div>
-                  ))}
+              <div className="flex items-center gap-2 rounded-lg bg-green-50 border border-green-200 px-2.5 py-1.5">
+                <div className="flex-1 min-w-0">
+                  <p className="text-[11px] font-bold text-gray-800 leading-tight">
+                    Papa 340g: venta contra base CERO
+                  </p>
+                  <p className="text-[9px] text-gray-500 leading-snug">
+                    En ago-nov 2025 no se vendio una sola pieza
+                  </p>
+                </div>
+                <div className="text-right flex-shrink-0">
+                  <p className="text-lg font-bold text-[#27AE60] leading-none">
+                    +${(APORTE_NUEVOS / 1000).toFixed(0)}k
+                  </p>
+                  <p className="text-[8px] text-gray-500">al mes</p>
                 </div>
               </div>
             </div>
             <p className="text-[9px] text-gray-500 leading-snug mt-1.5">
-              El nivel sale de desestacionalizar may-jul: es donde esta el negocio{" "}
-              <span className="font-bold">hoy</span>. Cada mes se multiplica por su propio indice, por
-              eso Nov y Dic proyectan mas alto que Sep.
+              Piso de <span className="font-bold text-[#F5A623]">+{PISO_PCT}%</span> (el mes mas
+              flojo de 2026) por si el ritmo se enfria — <span className="font-bold">no se activa
+              en ningun mes</span>. Agosto ya lleva $758k al dia 9: va en +30%.
             </p>
           </div>
 
@@ -205,10 +214,10 @@ export default function AnualSlide2Cierre() {
 
           <div className="rounded-xl border border-[#F5A623]/40 bg-[#F5A623]/8 px-3 py-2">
             <p className="text-[10px] text-gray-700 leading-snug">
-              <span className="font-bold text-[#F5A623]">Por que es defendible:</span> el pronostico
-              no asume que aceleremos — solo que sostengamos el nivel de may-jul. Los 17 SKUs que ya
-              vendian en 2025 crecen +14% y las Papas suman $2.5M que no existian. Contrastado contra
-              abr-jul reales, el metodo erro <span className="font-bold">5.6%</span>.
+              <span className="font-bold text-[#F5A623]">Por que es defendible:</span> no asume que
+              aceleremos, solo que mantengamos el ritmo de los ultimos 7 meses. Ago-Dic es ademas la
+              temporada mas fuerte (48% de la venta de 2025) y es justo cuando entra Papa 340g, que
+              el año pasado no estaba en anaquel.
             </p>
           </div>
         </div>

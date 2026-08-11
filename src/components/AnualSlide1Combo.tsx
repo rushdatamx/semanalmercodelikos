@@ -13,13 +13,16 @@ import { TrendingUp } from "lucide-react";
    215/170g). Se incluyen porque excluirlos borraria de la base 2025 producto que
    si se vendio ($1.1M) e inflaria el crecimiento de +38.7% a +51.9%.
 
-   Proyeccion Ago-Dic = NIVEL x ESTACIONALIDAD (descomposicion clasica):
-     - Nivel: $2.12M/mes desestacionalizado, promedio de los ultimos 3 meses
-       cerrados (may-jul). Es donde esta el negocio HOY.
-     - Estacionalidad: indice mensual de los 16 SKUs vivos los 12 meses de 2025,
-       amortiguado al 50% porque la curva de 2026 es mas plana (rango 1.42x vs
-       2.03x en 2025). Backtest abr-jul: 5.6% de error vs 10.2% del metodo
-       anterior (aplicar un % plano sobre cada mes de 2025). */
+   Proyeccion Ago-Dic = FORECAST POR BLOQUES (bottom-up):
+     - Base comparable: los SKUs que ya vendian en ago-dic 2025 crecen al ritmo
+       real que llevan en 2026 (+30.9%).
+     - SKUs nuevos: Papa 340g practicamente no existia en ago-dic 2025 (cero de
+       ago a nov, $13.7k en dic) y hoy corre a $145k/mes. Se SUMA como venta
+       nueva, no como porcentaje.
+     - Piso +19%: ningun mes proyecta menos que el incremento mas bajo de 2026
+       (mayo). No se activa en ningun mes — todos salen ~+38%.
+   Sanity check: agosto-2026 al dia 9 lleva $757,519; extrapolado a 31 dias son
+   ~$2.61M = +30.4% vs ago-2025, arriba del piso y en linea con el bloque. */
 interface Mes {
   mes: string;
   v25: number;
@@ -37,11 +40,11 @@ const serie: Mes[] = [
   { mes: "May", v25: 1833137, u25: 55425, v26: 2177216, u26: 80289, proy: null },
   { mes: "Jun", v25: 1474950, u25: 42546, v26: 2193620, u26: 96452, proy: null },
   { mes: "Jul", v25: 1491067, u25: 41546, v26: 1926129, u26: 65529, proy: null },
-  { mes: "Ago", v25: 2001305, u25: 67042, v26: null, u26: null, proy: 2210887 },
-  { mes: "Sep", v25: 1685156, u25: 53868, v26: null, u26: null, proy: 2053165 },
-  { mes: "Oct", v25: 1856381, u25: 65884, v26: null, u26: null, proy: 2119319 },
-  { mes: "Nov", v25: 2132189, u25: 66411, v26: null, u26: null, proy: 2370302 },
-  { mes: "Dic", v25: 2176779, u25: 75807, v26: null, u26: null, proy: 2308573 },
+  { mes: "Ago", v25: 2001305, u25: 67042, v26: null, u26: null, proy: 2764131 },
+  { mes: "Sep", v25: 1685156, u25: 53868, v26: null, u26: null, proy: 2350332 },
+  { mes: "Oct", v25: 1856381, u25: 65884, v26: null, u26: null, proy: 2574444 },
+  { mes: "Nov", v25: 2132189, u25: 66411, v26: null, u26: null, proy: 2935441 },
+  { mes: "Dic", v25: 2176779, u25: 75807, v26: null, u26: null, proy: 2993804 },
 ];
 
 const T25 = serie.reduce((s, r) => s + r.v25, 0);
@@ -55,7 +58,6 @@ const MAXV = Math.max(...serie.map((r) => Math.max(r.v25, r.v26 ?? 0, r.proy ?? 
 const CH = 300; // alto del area de grafico en px
 
 const mM = (n: number) => "$" + (n / 1_000_000).toFixed(1) + "M";
-const fmt = (n: number) => "$" + n.toLocaleString("en-US", { maximumFractionDigits: 0 });
 const uFmt = (n: number) => n.toLocaleString("en-US");
 const pct = (a: number, b: number) => {
   const v = (a / b - 1) * 100;
@@ -197,9 +199,10 @@ export default function AnualSlide1Combo() {
           </div>
         </div>
         <p className="text-[9px] text-gray-400 text-center mt-1 leading-snug">
-          Ago-Dic = nivel actual del negocio (<span className="font-semibold">$2.12M/mes</span>{" "}
-          desestacionalizado, promedio may-jul) x la estacionalidad de cada mes. Por eso Nov y Dic
-          proyectan mas alto que Sep: no es un porcentaje parejo, es el patron real de la categoria.
+          Ago-Dic = la base comparable creciendo a su ritmo real (
+          <span className="font-semibold">+30.9%</span>) mas los SKUs que ago-dic 2025 no tenia
+          (Papa 340g, <span className="font-semibold">+$145k/mes</span>). Piso de +19% por si el
+          ritmo se enfria — no se activa en ningun mes.
         </p>
       </div>
 
@@ -287,17 +290,11 @@ export default function AnualSlide1Combo() {
             </div>
           </div>
           <div className="rounded-xl border border-gray-200 bg-white shadow-sm px-3 py-1.5">
-            <p className="text-[9px] text-gray-500 uppercase font-semibold">
-              Nivel del negocio hoy
-            </p>
-            <div className="flex items-baseline gap-1.5">
-              <p className="text-base font-bold text-gray-800 leading-tight">$2.12M</p>
-              <span className="text-[9px] text-gray-500">al mes, desestacionalizado</span>
-            </div>
-            <p className="text-[8px] text-gray-500 leading-tight mt-0.5">
-              Base del pronostico. En 7 meses ya vendimos{" "}
-              <span className="font-bold text-[#F5A623]">{((REAL26 / T25) * 100).toFixed(0)}%</span>{" "}
-              de todo 2025 ({fmt(REAL26)}).
+            <p className="text-[9px] text-gray-500 uppercase font-semibold">Como se proyecta</p>
+            <p className="text-[9px] text-gray-700 leading-tight">
+              Base <span className="font-bold text-[#F5A623]">+30.9%</span> (ritmo real 2026) +{" "}
+              <span className="font-bold text-[#27AE60]">$145k/mes</span> de Papa 340g, que ago-dic
+              2025 no tenia. Piso +19%.
             </p>
           </div>
         </div>
