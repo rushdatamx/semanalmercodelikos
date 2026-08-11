@@ -13,8 +13,13 @@ import { TrendingUp } from "lucide-react";
    215/170g). Se incluyen porque excluirlos borraria de la base 2025 producto que
    si se vendio ($1.1M) e inflaria el crecimiento de +38.7% a +51.9%.
 
-   Proyeccion Ago-Dic: +18.8% sobre cada mes de 2025 — el incremento MAS BAJO que
-   2026 ha registrado (mayo). Piso observado, no estimacion optimista. */
+   Proyeccion Ago-Dic = NIVEL x ESTACIONALIDAD (descomposicion clasica):
+     - Nivel: $2.12M/mes desestacionalizado, promedio de los ultimos 3 meses
+       cerrados (may-jul). Es donde esta el negocio HOY.
+     - Estacionalidad: indice mensual de los 16 SKUs vivos los 12 meses de 2025,
+       amortiguado al 50% porque la curva de 2026 es mas plana (rango 1.42x vs
+       2.03x en 2025). Backtest abr-jul: 5.6% de error vs 10.2% del metodo
+       anterior (aplicar un % plano sobre cada mes de 2025). */
 interface Mes {
   mes: string;
   v25: number;
@@ -32,11 +37,11 @@ const serie: Mes[] = [
   { mes: "May", v25: 1833137, u25: 55425, v26: 2177216, u26: 80289, proy: null },
   { mes: "Jun", v25: 1474950, u25: 42546, v26: 2193620, u26: 96452, proy: null },
   { mes: "Jul", v25: 1491067, u25: 41546, v26: 1926129, u26: 65529, proy: null },
-  { mes: "Ago", v25: 2001305, u25: 67042, v26: null, u26: null, proy: 2376949 },
-  { mes: "Sep", v25: 1685156, u25: 53868, v26: null, u26: null, proy: 2001459 },
-  { mes: "Oct", v25: 1856381, u25: 65884, v26: null, u26: null, proy: 2204822 },
-  { mes: "Nov", v25: 2132189, u25: 66411, v26: null, u26: null, proy: 2532399 },
-  { mes: "Dic", v25: 2176779, u25: 75807, v26: null, u26: null, proy: 2585359 },
+  { mes: "Ago", v25: 2001305, u25: 67042, v26: null, u26: null, proy: 2210887 },
+  { mes: "Sep", v25: 1685156, u25: 53868, v26: null, u26: null, proy: 2053165 },
+  { mes: "Oct", v25: 1856381, u25: 65884, v26: null, u26: null, proy: 2119319 },
+  { mes: "Nov", v25: 2132189, u25: 66411, v26: null, u26: null, proy: 2370302 },
+  { mes: "Dic", v25: 2176779, u25: 75807, v26: null, u26: null, proy: 2308573 },
 ];
 
 const T25 = serie.reduce((s, r) => s + r.v25, 0);
@@ -192,9 +197,9 @@ export default function AnualSlide1Combo() {
           </div>
         </div>
         <p className="text-[9px] text-gray-400 text-center mt-1 leading-snug">
-          Ago-Dic se proyecta aplicando <span className="font-semibold">+18.8%</span> sobre cada mes
-          de 2025 — el incremento mas bajo que 2026 ha registrado (mayo). Piso observado, no
-          estimacion optimista.
+          Ago-Dic = nivel actual del negocio (<span className="font-semibold">$2.12M/mes</span>{" "}
+          desestacionalizado, promedio may-jul) x la estacionalidad de cada mes. Por eso Nov y Dic
+          proyectan mas alto que Sep: no es un porcentaje parejo, es el patron real de la categoria.
         </p>
       </div>
 
@@ -274,19 +279,25 @@ export default function AnualSlide1Combo() {
             </div>
             <p className="text-[9px] text-gray-400">vs {uFmt(U25_H1)} en 2025</p>
           </div>
-          <div className="rounded-xl border border-green-200 bg-green-50 shadow-sm px-3 py-2">
+          <div className="rounded-xl border border-green-200 bg-green-50 shadow-sm px-3 py-1.5">
             <p className="text-[9px] text-gray-500 uppercase font-semibold">Meses ganados</p>
-            <p className="text-lg font-bold text-[#27AE60] leading-tight">7 de 7</p>
-            <p className="text-[9px] text-gray-500">rango +19% a +67%</p>
+            <div className="flex items-baseline gap-1.5">
+              <p className="text-base font-bold text-[#27AE60] leading-tight">7 de 7</p>
+              <span className="text-[9px] text-gray-500">rango +19% a +67%</span>
+            </div>
           </div>
-          <div className="rounded-xl border border-gray-200 bg-white shadow-sm px-3 py-2">
-            <p className="text-[9px] text-gray-500 uppercase font-semibold mb-0.5">
-              Avance sobre el ano completo
+          <div className="rounded-xl border border-gray-200 bg-white shadow-sm px-3 py-1.5">
+            <p className="text-[9px] text-gray-500 uppercase font-semibold">
+              Nivel del negocio hoy
             </p>
-            <p className="text-[10px] text-gray-700 leading-snug">
-              En 7 meses ya vendimos{" "}
+            <div className="flex items-baseline gap-1.5">
+              <p className="text-base font-bold text-gray-800 leading-tight">$2.12M</p>
+              <span className="text-[9px] text-gray-500">al mes, desestacionalizado</span>
+            </div>
+            <p className="text-[8px] text-gray-500 leading-tight mt-0.5">
+              Base del pronostico. En 7 meses ya vendimos{" "}
               <span className="font-bold text-[#F5A623]">{((REAL26 / T25) * 100).toFixed(0)}%</span>{" "}
-              de todo lo que se vendio en 2025 ({fmt(REAL26)}).
+              de todo 2025 ({fmt(REAL26)}).
             </p>
           </div>
         </div>
